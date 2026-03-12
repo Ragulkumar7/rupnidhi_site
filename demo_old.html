@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FREE GST Billing Software Demo | Rupnidhi</title>
+  <meta name="description" content="Book a live demo of Rupnidhi GST Billing Software. Watch how easy it is to create invoices, manage inventory and file GST returns."/>
+  <link rel="canonical" href="https://rupnidhi.com/demo/"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { poppins: ['Poppins','sans-serif'] },
+          colors: { brand:'#283341', accent:'#EBA01E', green:'#00BA8B', light:'#F8F8F8' }
+        }
+      }
+    }
+  </script>
+  <style>
+    * { font-family: 'Poppins', sans-serif; }
+    .btn-primary { background:#00BA8B; color:#fff; border-radius:6px; padding:10px 22px; font-weight:600; display:inline-block; transition:background .2s; }
+    .btn-primary:hover { background:#009e75; }
+    .btn-outline { border:2px solid #283341; color:#283341; border-radius:6px; padding:9px 22px; font-weight:600; display:inline-block; transition:all .2s; }
+    .btn-outline:hover { background:#283341; color:#fff; }
+    .feature-item { display:flex; align-items:flex-start; gap:10px; padding:8px 0; font-size:15px; }
+    .feature-item i { color:#00BA8B; margin-top:3px; flex-shrink:0; }
+    .testimonial-card { background:#fff; border-radius:12px; padding:28px; box-shadow:0 4px 20px rgba(0,0,0,.07); }
+    .accordion-btn { width:100%; text-align:left; font-weight:600; padding:16px 0; cursor:pointer; display:flex; justify-content:space-between; align-items:center; color:#283341; background:none; border:none; border-bottom:1px solid #e2e8f0; font-size:15px; }
+    .accordion-content { max-height:0; overflow:hidden; transition:max-height .35s ease; }
+    .accordion-content.open { max-height:400px; }
+    .accordion-content p { padding:12px 0 16px; color:#555; line-height:1.7; font-size:14px; }
+    footer { background:#283341; color:#fff; }
+    footer a { color:#ccc; transition:color .2s; }
+    footer a:hover { color:#00BA8B; }
+    .footer-title { font-size:18px; font-weight:700; color:#fff; margin-bottom:14px; }
+
+    /* Header matching index page */
+    #site-header { position:sticky; top:0; z-index:9999; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,.08); }
+    #site-header .header-inner { max-width:1240px; margin:0 auto; padding:0 24px; display:flex; align-items:center; justify-content:space-between; height:80px; }
+    #site-header .logo-wrap { display:flex; align-items:center; gap:8px; text-decoration:none; }
+    #site-header .logo-img { max-width:50px; height:auto; display:block; }
+    #site-header .logo-text-wrap { display:flex; flex-direction:column; }
+    #site-header .logo-title { font-family:'Poppins',sans-serif; font-size:24px; font-weight:900; color:#283341; line-height:1; }
+    #site-header .logo-tagline { font-family:'Poppins',sans-serif; font-size:13px; font-weight:700; color:#283341; letter-spacing:1px; line-height:1.2; }
+    #site-header nav.desktop-nav { display:flex; align-items:center; gap:4px; }
+    #site-header nav.desktop-nav a { font-family:'Poppins',sans-serif; font-size:16px; font-weight:500; color:#283341; text-decoration:none; padding:0 10px; line-height:80px; white-space:nowrap; position:relative; transition:color .2s; }
+    #site-header nav.desktop-nav a:hover { color:#00BA8B; }
+    #site-header nav.desktop-nav a.active-link { color:#00BA8B; font-weight:700; }
+    #site-header nav.desktop-nav a.nav-login { border:1.5px solid #283341; border-radius:5px; line-height:38px; padding:0 18px; margin:0 4px; }
+    #site-header nav.desktop-nav a.nav-login:hover { background:#283341; color:#fff; }
+    #site-header nav.desktop-nav a.nav-signup { background:#EBA01E; color:#fff; border-radius:5px; line-height:40px; padding:0 20px; margin:0 0 0 4px; }
+    #site-header nav.desktop-nav a.nav-signup:hover { background:#283341; color:#fff; }
+    #site-header .mob-toggle { display:none; font-size:28px; color:#283341; cursor:pointer; background:none; border:none; padding:4px; }
+    #mob-menu-new { display:none; background:#fff; border-top:1px solid #f0f0f0; padding:12px 24px; }
+    #mob-menu-new a { display:block; font-family:'Poppins',sans-serif; font-size:16px; font-weight:600; color:#283341; padding:10px 0; border-bottom:1px solid #f5f5f5; text-decoration:none; }
+    #mob-menu-new a:last-child { border-bottom:none; }
+    #mob-menu-new a.nav-signup { background:#EBA01E; color:#fff; border-radius:5px; padding:10px 16px; margin-top:8px; text-align:center; border-bottom:none; }
+    @media (max-width:1100px) { #site-header nav.desktop-nav { display:none; } #site-header .mob-toggle { display:block; } }
+    @media (max-width:767px) { #site-header .logo-tagline { display:none; } #site-header .logo-title { font-size:20px; } }
+
+    /* Main demo form */
+    .demo-form-wrap { background:#fff; border-radius:16px; box-shadow:0 8px 40px rgba(0,0,0,.12); padding:32px; }
+    .demo-form-wrap h2 { font-size:24px; font-weight:800; color:#283341; margin-bottom:4px; }
+    .demo-form-wrap .subtitle { font-size:14px; color:#888; margin-bottom:20px; }
+    .demo-form-wrap label { display:block; font-size:13px; font-weight:600; color:#555; margin-bottom:4px; }
+    .demo-form-wrap input, .demo-form-wrap select { width:100%; border:1px solid #ddd; border-radius:8px; padding:10px 14px; font-size:14px; margin-bottom:14px; outline:none; font-family:'Poppins',sans-serif; transition:border .2s; box-sizing:border-box; }
+    .demo-form-wrap input:focus, .demo-form-wrap select:focus { border-color:#00BA8B; }
+    .get_otp_btn_main, .form_submit_main { background:#00BA8B; color:#fff; border:none; border-radius:8px; padding:12px 20px; font-weight:700; font-size:15px; cursor:pointer; width:100%; font-family:'Poppins',sans-serif; transition:background .2s; }
+    .get_otp_btn_main:hover, .form_submit_main:hover { background:#009e75; }
+    .get_otp_btn_main:disabled, .form_submit_main:disabled { opacity:.5; cursor:not-allowed; }
+    .response_msg_main { font-size:12px; color:#e53e3e; min-height:16px; margin-bottom:8px; }
+    .otp-info { font-size:13px; color:#555; margin-bottom:12px; line-height:1.6; }
+    .change_num_main { color:#00BA8B; cursor:pointer; font-weight:600; display:none; font-size:12px; }
+    .resend_otp_main { color:#00BA8B; font-size:12px; font-weight:600; cursor:pointer; margin-top:6px; display:none; }
+    .countdown_main { font-size:12px; color:#999; margin-top:4px; min-height:18px; }
+    .thank_you_main { text-align:center; padding:20px 0; }
+    .thank_you_main .ty-icon { font-size:48px; color:#00BA8B; margin-bottom:12px; }
+    .thank_you_main p { color:#555; line-height:1.7; font-size:14px; }
+
+    /* Why cards */
+    .why-card { background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.12); border-radius:12px; padding:24px; text-align:center; }
+    .why-card i { font-size:32px; color:#00BA8B; margin-bottom:12px; display:block; }
+    .why-card h3 { font-size:16px; font-weight:700; color:#fff; }
+
+    /* Template cards */
+    .template-card { border-radius:12px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,.1); transition:transform .2s, box-shadow .2s; display:block; }
+    .template-card:hover { transform:translateY(-4px); box-shadow:0 12px 32px rgba(0,0,0,.15); }
+    .template-card img { width:100%; display:block; }
+
+    /* WhatsApp widget */
+    #live-optin-container { position:fixed; bottom:24px; right:24px; z-index:9999; display:flex; flex-direction:column; align-items:flex-end; gap:8px; }
+    .chat-icon-box { background:#25D366; border-radius:50%; width:56px; height:56px; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 4px 16px rgba(0,0,0,.2); position:relative; }
+    .notification-badge { position:absolute; top:-4px; right:-4px; background:#e53e3e; color:#fff; border-radius:50%; width:20px; height:20px; font-size:11px; display:flex; align-items:center; justify-content:center; font-weight:700; }
+    #chat-welcome { background:#fff; border-radius:8px; padding:8px 14px; box-shadow:0 2px 8px rgba(0,0,0,.15); font-size:14px; font-weight:600; color:#283341; }
+    #container-form { width:340px; background:#fff; border-radius:12px; box-shadow:0 8px 32px rgba(0,0,0,.18); overflow:hidden; }
+    #container-form.hide { display:none; }
+    .conv-header { background:#075E54; color:#fff; padding:12px 16px; display:flex; align-items:center; gap:10px; }
+    .conv-header .title { font-weight:700; font-size:15px; display:block; }
+    .conv-header .status { font-size:12px; opacity:.8; display:block; }
+    .close-btn { margin-left:auto; background:none; border:none; color:#fff; cursor:pointer; }
+    .msgs-wrap { padding:10px; background:#ECE5DD; max-height:340px; overflow-y:auto; }
+    .bubble { background:#fff; border-radius:0 8px 8px 8px; padding:10px 14px; margin-bottom:8px; font-size:13px; line-height:1.5; box-shadow:0 1px 2px rgba(0,0,0,.1); }
+    .chat-link { display:block; background:#E8F5E9; color:#075E54; font-weight:600; font-size:13px; padding:8px 12px; border-radius:6px; margin:4px 0; text-decoration:none; }
+    .chat-link:hover { background:#C8E6C9; }
+    .otp-form-wrap { padding:12px; border-top:1px solid #eee; }
+    .form-back { cursor:pointer; color:#075E54; font-weight:600; margin-bottom:8px; font-size:13px; }
+    .form-title { font-weight:700; margin-bottom:10px; font-size:14px; color:#283341; }
+    .otp-form-wrap label { display:block; font-size:12px; font-weight:600; margin-bottom:3px; color:#666; }
+    .otp-form-wrap input, .otp-form-wrap select { width:100%; border:1px solid #ddd; border-radius:6px; padding:7px 10px; font-size:13px; margin-bottom:8px; outline:none; box-sizing:border-box; }
+    .get_otp_btn, .form_submit { background:#00BA8B; color:#fff; border:none; border-radius:6px; padding:9px 18px; font-weight:600; font-size:13px; cursor:pointer; width:100%; }
+    .get_otp_btn:disabled, .form_submit:disabled { opacity:.5; cursor:not-allowed; }
+    .response_msg { font-size:12px; color:#e53e3e; min-height:16px; }
+    .countdown { font-size:12px; color:#999; }
+    .resend_otp { color:#075E54; font-size:12px; font-weight:600; cursor:pointer; margin-top:4px; }
+    .enter_otp_phone { font-size:13px; margin-bottom:8px; line-height:1.5; }
+    .change_num { color:#075E54; cursor:pointer; font-weight:600; display:none; font-size:12px; }
+    .thank_you { text-align:center; padding:20px; }
+    .ty1 { font-size:14px; color:#283341; margin-bottom:8px; }
+    .chat-input-row { display:flex; align-items:center; gap:8px; padding:8px; background:#f0f0f0; border-top:1px solid #ddd; }
+    #chat-msg-input { flex:1; padding:8px 12px; border-radius:20px; border:1px solid #ddd; font-size:13px; outline:none; }
+  </style>
+</head>
+<body class="bg-white text-brand">
+
+<!-- NAVBAR -->
+<header id="site-header">
+  <div class="header-inner">
+    <a href="https://rupnidhi.com/" class="logo-wrap">
+      <img src="../assets/logo.webp" alt="Rupnidhi" class="logo-img" onerror="this.style.display='none'"/>
+      <span class="logo-text-wrap">
+        <span class="logo-title">Rupnidhi</span>
+        <span class="logo-tagline">GST Billing Software</span>
+      </span>
+    </a>
+    <nav class="desktop-nav">
+      <a href="https://rupnidhi.com/">Home</a>
+      <a href="https://rupnidhi.com/new/demo.html" class="active-link">Demo</a>
+      <a href="https://rupnidhi.com/new/features.html">Features</a>
+      <a href="https://rupnidhi.com/new/pricing.html">Pricing</a>
+      <a href="https://rupnidhi.com/new/support.html">Support</a>
+      <a href="https://rupnidhi.com/new/partner.html">Partner</a>
+      <a href="https://rupnidhi.com/new/contact.html">Contact Us</a>
+      <a href="https://rupnidhi.com/login.html" class="nav-login">Login</a>
+      <a href="https://rupnidhi.com/booking.html" class="nav-signup add-utm-link">Signup Free</a>
+    </nav>
+    <button class="mob-toggle" id="mob-btn-new" aria-label="Menu"><i class="fa fa-bars"></i></button>
+  </div>
+  <div id="mob-menu-new">
+    <a href="https://rupnidhi.com/">Home</a>
+    <a href="https://rupnidhi.com/new/demo.html" style="color:#00BA8B;">Demo</a>
+    <a href="https://rupnidhi.com/new/features.html">Features</a>
+    <a href="https://rupnidhi.com/new/pricing.html">Pricing</a>
+    <a href="https://rupnidhi.com/new/support.html">Support</a>
+    <a href="https://rupnidhi.com/new/partner.html">Partner</a>
+    <a href="https://rupnidhi.com/new/contact.html">Contact Us</a>
+    <a href="https://rupnidhi.com/login.html">Login</a>
+    <a href="https://rupnidhi.com/booking.html" class="nav-signup add-utm-link">Signup Free</a>
+  </div>
+</header>
+
+<!-- TOP AD BANNER -->
+
+
+<!-- HERO: Watch Demo + Book Demo Form -->
+<section style="padding:56px 0;background:#F8F8F8;">
+  <div class="max-w-7xl mx-auto px-4">
+    <div style="display:flex;flex-wrap:wrap;gap:48px;align-items:flex-start;">
+
+      <!-- LEFT: Watch Demo Video -->
+      <div style="flex:1;min-width:280px;">
+        <h1 style="font-size:clamp(28px,4vw,40px);font-weight:800;color:#283341;margin-bottom:8px;">Watch Demo Video</h1>
+        <p style="font-size:15px;color:#666;margin-bottom:24px;">Questions? Call us at <a href="tel:7043146478" style="color:#00BA8B;font-weight:700;">704-314-6478</a></p>
+        <div style="position:relative;border-radius:16px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,.15);background:#000;">
+          <img src="../assets/3.png" alt="Rupnidhi Demo Video" style="width:100%;display:block;"/>
+          <a href="https://www.youtube.com/watch?v=YRUD5b-jdtU" target="_blank" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-decoration:none;">
+            <div style="width:72px;height:72px;background:rgba(235,160,30,.92);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,.3);">
+              <i class="fa fa-play" style="color:#fff;font-size:24px;margin-left:4px;"></i>
+            </div>
+          </a>
+        </div>
+        <div style="margin-top:24px;text-align:center;">
+          <a href="https://rupnidhi.com/signup/" class="btn-primary add-utm-link" style="font-size:16px;padding:14px 32px;">Create Your Free Account &nbsp;<i class="fa fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- RIGHT: Book Live Demo Form -->
+      <div style="flex:1;min-width:280px;max-width:480px;">
+        <div class="demo-form-wrap">
+          <h2>Book Live Demo</h2>
+          <p class="subtitle">(On AnyDesk)</p>
+          <div class="demo-otp-container" id="demo-otp-container-main">
+            <form class="form_div_main">
+              <label>Name</label>
+              <input type="text" class="name" name="name" placeholder="Your full name"/>
+              <label>Phone</label>
+              <input type="text" class="phone" name="phone" maxlength="10" placeholder="10-digit mobile number"/>
+              <label>Best time to call</label>
+              <select class="time" name="time">
+                <option>Any Time (10 AM To 7 PM)</option>
+                <option>10 AM To 12 PM</option>
+                <option>12 PM To 2 PM</option>
+                <option>2 PM To 4 PM</option>
+                <option>4 PM To 7 PM</option>
+              </select>
+              <label>Business type</label>
+              <input type="text" class="business_type" name="business_type" placeholder="e.g. Retail, Medical, Wholesale"/>
+              <input type="hidden" class="hash" name="hash"/>
+              <div class="response_msg_main"></div>
+              <button type="button" class="get_otp_btn_main" disabled>Get OTP</button>
+            </form>
+            <form class="form_otp_main" style="display:none;">
+              <p class="otp-info">Enter OTP sent to <strong class="otp-phone-num"></strong><br/><span class="change_num_main">Change Phone Number</span></p>
+              <label>Enter OTP</label>
+              <input type="text" class="otp" maxlength="4" placeholder="4-digit OTP"/>
+              <div class="countdown_main"></div>
+              <div class="resend_otp_main">Resend OTP</div>
+              <div class="response_msg_main" style="margin-top:8px;"></div>
+              <button type="button" class="form_submit_main" disabled style="margin-top:10px;">Submit</button>
+            </form>
+            <div class="thank_you_main" style="display:none;">
+              <div class="ty-icon"><i class="fa fa-circle-check"></i></div>
+              <h3 style="font-size:20px;font-weight:800;color:#283341;margin-bottom:8px;">Thank you! &#127881;</h3>
+              <p>We have received your request to schedule a demo and a member of our team will be in touch with you shortly. Have a great day!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES GRID -->
+<section style="padding:64px 0;background:#fff;">
+  <div class="max-w-7xl mx-auto px-4">
+    <div style="text-align:center;margin-bottom:36px;">
+      <h2 style="font-size:30px;font-weight:800;color:#283341;">Rupnidhi Features</h2>
+      <p style="color:#666;margin-top:8px;font-size:16px;">Easiest GST Billing Software That Anyone Can Use!</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:0 48px;">
+      <div>
+        <div class="feature-item"><i class="fa fa-check-circle"></i><span>E-Way Bill</span></div>
+        <div class="feature-item"><i class="fa fa-check-circle"></i><span>E-Invoice</span></div>
+        <div class="feature-item"><i class="fa fa-check-circle"></i><span>Android &amp; iOS App</span></div>
+        <div class="feature-item"><i class="fa fa-check-circle"></i><span>Purchase Order</span></div>
+        <div class="feature-item"><i class="fa fa-check-circle"></i><span>Job Work</span></div>
+        <div class="feature-item"><i class="fa fa-check-circle"></i><span>Payment Receipt</span></div>
+        <div class="feature-item"><i class="fa fa-check-circle"></i><span>Staff Account</span></div>
+        <div class="feature-item"><i class="fa fa-check-circle"></i><span>Customized Report</span></div>
+        <div class="feature-item"><i class="fa fa-check-circle"></i><span>Expenses Tracking</span></div>
+        <div class="feature-item"><i class="fa fa-check-circle"></i><span>Import / Export</span></div>
+      </div>
+      <div>
+        <div class="feature-item"><i class="fa fa-check-circle"></i><span>Payment Reminder</span></div>
+        <div class="feature-item"><i class="fa fa-check-circle"></i><span>Professional GST Invoices</span></div>
+        <div class="feature-item"><i class="fa fa-check-circle"></i><span>Proforma &amp; Quotation</span></div>
+        <div class="feature-item"><i class="fa fa-check-circle"></i><span>Sale Order</span></div>
+        <div class="feature-item"><i class="fa fa-check-circle"></i><span>Credit / Debit Note</span></div>
+        <div class="feature-item"><i class="fa fa-check-circle"></i><span>Convert &amp; Duplicate</span></div>
+        <div class="feature-item"><i class="fa fa-check-circle"></i><span>Share on Email / WhatsApp</span></div>
+        <div class="feature-item"><i class="fa fa-check-circle"></i><span>GST Return Report</span></div>
+        <div class="feature-item"><i class="fa fa-check-circle"></i><span>11+ Invoice Templates</span></div>
+        <div class="feature-item"><i class="fa fa-check-circle"></i><span>Cheque Printing</span></div>
+      </div>
+      <div>
+        <div class="feature-item"><i class="fa fa-check-circle"></i><span>1 Click Add Customer</span></div>
+        <div class="feature-item"><i class="fa fa-check-circle"></i><span>Delivery Challan</span></div>
+        <div class="feature-item"><i class="fa fa-check-circle"></i><span>Export / SEZ Invoices</span></div>
+        <div class="feature-item"><i class="fa fa-check-circle"></i><span>Multi Currency Invoice</span></div>
+        <div class="feature-item"><i class="fa fa-check-circle"></i><span>Inventory Management</span></div>
+        <div class="feature-item"><i class="fa fa-check-circle"></i><span>Barcode Scanning</span></div>
+        <div class="feature-item"><i class="fa fa-check-circle"></i><span>Shipping Label</span></div>
+        <div class="feature-item"><i class="fa fa-check-circle"></i><span>A4, A5 &amp; Thermal Print</span></div>
+        <div class="feature-item"><i class="fa fa-check-circle"></i><span>Tally Integration</span></div>
+        <div class="feature-item"><i class="fa fa-check-circle"></i><span>Phone &amp; Email Support</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section style="padding:64px 0;background:#F8F8F8;">
+  <div class="max-w-7xl mx-auto px-4">
+    <div style="text-align:center;margin-bottom:16px;">
+      <h2 style="font-size:30px;font-weight:800;color:#283341;">See What Our Users Say</h2>
+      <p style="color:#555;margin-top:6px;font-size:16px;font-weight:600;">Rupnidhi is Fastest Growing GST Billing Software In India</p>
+      <a href="https://rupnidhi.com/testimonials/" style="display:inline-block;margin-top:10px;color:#00BA8B;font-weight:600;font-size:14px;">Read All Reviews &rarr;</a>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px;margin-top:36px;">
+      <div class="testimonial-card">
+        <div style="margin-bottom:10px;"><i class="fa fa-star" style="color:#EBA01E;"></i><i class="fa fa-star" style="color:#EBA01E;"></i><i class="fa fa-star" style="color:#EBA01E;"></i><i class="fa fa-star" style="color:#EBA01E;"></i><i class="fa fa-star" style="color:#EBA01E;"></i></div>
+        <i class="fa fa-quote-left" style="font-size:28px;color:#00BA8B;opacity:.25;display:block;margin-bottom:10px;"></i>
+        <p style="color:#555;line-height:1.8;margin-bottom:16px;">Rupnidhi is the most easy to use software when it comes to billing my clients. Everything is on screen, step by step. Good Work team — you got one lifetime customer.</p>
+        <div style="border-top:1px solid #eee;padding-top:14px;"><div style="font-weight:700;color:#283341;">Pankaj Thakur</div><div style="font-size:13px;color:#888;">Store Owner</div></div>
+      </div>
+      <div class="testimonial-card">
+        <div style="margin-bottom:10px;"><i class="fa fa-star" style="color:#EBA01E;"></i><i class="fa fa-star" style="color:#EBA01E;"></i><i class="fa fa-star" style="color:#EBA01E;"></i><i class="fa fa-star" style="color:#EBA01E;"></i><i class="fa fa-star" style="color:#EBA01E;"></i></div>
+        <i class="fa fa-quote-left" style="font-size:28px;color:#00BA8B;opacity:.25;display:block;margin-bottom:10px;"></i>
+        <p style="color:#555;line-height:1.8;margin-bottom:16px;">The best software available in this price segment and they have a free version too for small businesses. Please try if you are looking for billing software that is user friendly.</p>
+        <div style="border-top:1px solid #eee;padding-top:14px;"><div style="font-weight:700;color:#283341;">Manish Dave</div><div style="font-size:13px;color:#888;">Jewellery Shop</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY RUPNIDHI -->
+<section style="padding:64px 0;background:linear-gradient(135deg,#283341 0%,#1a2430 100%);">
+  <div class="max-w-7xl mx-auto px-4">
+    <div style="text-align:center;margin-bottom:40px;">
+      <h2 style="font-size:30px;font-weight:800;color:#fff;">Why Rupnidhi?</h2>
+      <p style="color:rgba(255,255,255,.7);margin-top:8px;font-size:16px;">Trusted By Over 1 Lakh+ Business Owners Across India</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;margin-bottom:40px;">
+      <div class="why-card"><i class="fa fa-infinity"></i><h3>Lifetime Free Plan</h3></div>
+      <div class="why-card"><i class="fa fa-headset"></i><h3>7 Days Phone Support</h3></div>
+      <div class="why-card"><i class="fa fa-mobile-screen"></i><h3>Use On Any Device</h3></div>
+      <div class="why-card"><i class="fa fa-shield-halved"></i><h3>Safe &amp; Secure</h3></div>
+    </div>
+    <div style="text-align:center;">
+      <a href="https://rupnidhi.com/signup/" class="btn-primary add-utm-link" style="font-size:16px;padding:14px 36px;">Create Your Free Account &nbsp;<i class="fa fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- MOBILE APP -->
+<section style="padding:64px 0;background:linear-gradient(135deg,#f0fdf4,#e8f5e9);">
+  <div class="max-w-7xl mx-auto px-4">
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:48px;">
+      <div style="flex:1;min-width:280px;">
+        <h2 style="font-size:30px;font-weight:800;color:#283341;margin-bottom:16px;">Your Business In<br>Your Pocket</h2>
+        <p style="color:#555;margin-bottom:12px;line-height:1.8;">With our user-friendly mobile app, you can now carry your entire business in your pocket.</p>
+        <p style="color:#555;margin-bottom:28px;line-height:1.8;">With mobile accessibility, you're empowered to stay in control whether you're in the office or on the move, ensuring your business is always at your fingertips.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:14px;">
+          <a href="https://play.google.com/store/apps/details?id=com.ifox.gogstbill" target="_blank">
+            <img src="https://gogstbill.com/wp-content/uploads/2022/08/google-play-badge.png" alt="Download Rupnidhi Android App" style="height:48px;"/>
+          </a>
+          <a href="https://apps.apple.com/tr/app/go-gst-bill/id6446317558?platform=iphone" target="_blank">
+            <img src="https://gogstbill.com/wp-content/uploads/2023/08/Download_on_the_App_Store_Badge.png" alt="Download Rupnidhi iOS App" style="height:48px;"/>
+          </a>
+        </div>
+      </div>
+      <div style="display:flex;gap:16px;justify-content:center;align-items:flex-end;">
+        <a href="https://play.google.com/store/apps/details?id=com.ifox.gogstbill&pli=1">
+          <img src="https://gogstbill.com/wp-content/uploads/2023/08/iPhone-X-1f-copy.png" alt="Rupnidhi mobile app" style="height:300px;filter:drop-shadow(0 16px 32px rgba(0,0,0,.15));"/>
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.ifox.gogstbill&pli=1">
+          <img src="https://gogstbill.com/wp-content/uploads/2023/08/iPhone-X-2-1-copy-2.png" alt="Rupnidhi customer list" style="height:300px;filter:drop-shadow(0 16px 32px rgba(0,0,0,.15));"/>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INVOICE TEMPLATES -->
+<section style="padding:64px 0;background:#fff;">
+  <div class="max-w-7xl mx-auto px-4">
+    <div style="text-align:center;margin-bottom:40px;">
+      <h2 style="font-size:30px;font-weight:800;color:#283341;">15+ Professional GST Invoice Templates</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;margin-bottom:36px;">
+      <a href="https://gogstbill.com/wp-content/uploads/2023/08/t1.pdf" target="_blank" class="template-card">
+        <img src="https://gogstbill.com/wp-content/uploads/2023/08/t1.jpg" alt="GST Bill Format Style 1"/>
+      </a>
+      <a href="https://gogstbill.com/wp-content/uploads/2023/08/t2.pdf" target="_blank" class="template-card">
+        <img src="https://gogstbill.com/wp-content/uploads/2023/08/t3.jpg" alt="GST Bill Format Style 2"/>
+      </a>
+      <a href="https://gogstbill.com/wp-content/uploads/2023/08/t3.pdf" target="_blank" class="template-card">
+        <img src="https://gogstbill.com/wp-content/uploads/2023/08/t4.jpg" alt="GST Bill Format Style 3"/>
+      </a>
+      <a href="https://gogstbill.com/wp-content/uploads/2023/08/t4.pdf" target="_blank" class="template-card">
+        <img src="https://gogstbill.com/wp-content/uploads/2023/08/t2.jpg" alt="GST Thermal Printer Bill Format"/>
+      </a>
+    </div>
+    <div style="text-align:center;">
+      <a href="https://rupnidhi.com/signup/" class="btn-primary add-utm-link" style="font-size:16px;padding:14px 36px;">Create Your Free Account &nbsp;<i class="fa fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="padding:64px 0;background:#F8F8F8;">
+  <div style="max-width:860px;margin:0 auto;padding:0 24px;">
+    <h2 style="font-size:30px;font-weight:800;color:#283341;margin-bottom:36px;">Frequently Asked Questions</h2>
+    <div id="faq">
+      <div><button class="accordion-btn">What is Rupnidhi? <i class="fa fa-chevron-down" style="font-size:13px;color:#00BA8B;transition:transform .3s;"></i></button><div class="accordion-content"><p>Rupnidhi is a comprehensive GST Billing Software designed to streamline and simplify the invoicing process for businesses. It ensures easy compliance with GST regulations in India, with features for invoice creation, inventory management, and automated reporting. It is ideal for MSMEs, retailers, wholesalers, and medical stores.</p></div></div>
+      <div><button class="accordion-btn">Is Rupnidhi really free for a lifetime? <i class="fa fa-chevron-down" style="font-size:13px;color:#00BA8B;transition:transform .3s;"></i></button><div class="accordion-content"><p>Yes. Our basic version is completely free for a lifetime. It has all necessary features like sale invoices, purchase invoices, payment receipts, products, stock, and customers. Thousands of small businesses and startups are already using our free GST billing software.</p></div></div>
+      <div><button class="accordion-btn">Can I use Rupnidhi offline? <i class="fa fa-chevron-down" style="font-size:13px;color:#00BA8B;transition:transform .3s;"></i></button><div class="accordion-content"><p>Rupnidhi offers the best of both worlds — cloud billing with offline support. This hybrid functionality allows you to manage your business data from anywhere while still being able to operate during network outages.</p></div></div>
+      <div><button class="accordion-btn">Can I use Rupnidhi on mobile? <i class="fa fa-chevron-down" style="font-size:13px;color:#00BA8B;transition:transform .3s;"></i></button><div class="accordion-content"><p>Yes. We have both Android and iOS mobile applications. Simply download the Rupnidhi app from the app stores, log in with your account, and enjoy seamless access to your business from anywhere, creating invoices, managing clients, and more on the go.</p></div></div>
+      <div><button class="accordion-btn">Can I share GST invoices on WhatsApp? <i class="fa fa-chevron-down" style="font-size:13px;color:#00BA8B;transition:transform .3s;"></i></button><div class="accordion-content"><p>Yes, you can share invoices via WhatsApp, Email, or SMS directly from Rupnidhi in just one tap. Customers receive a beautifully formatted PDF instantly on their phone, saving you time and printing costs.</p></div></div>
+      <div><button class="accordion-btn">Can I file GST returns using Rupnidhi? <i class="fa fa-chevron-down" style="font-size:13px;color:#00BA8B;transition:transform .3s;"></i></button><div class="accordion-content"><p>You cannot directly file GST returns using Rupnidhi, but we provide GST filling reports that you can use to easily file GST on the government portal. All your data is organized and ready for filing.</p></div></div>
+      <div><button class="accordion-btn">Can I generate E-Way Bills and E-Invoices with Rupnidhi? <i class="fa fa-chevron-down" style="font-size:13px;color:#00BA8B;transition:transform .3s;"></i></button><div class="accordion-content"><p>Yes, Rupnidhi allows you to generate E-Way Bills and E-Invoices with just a single click directly from the software, without needing to visit the government portal separately. Stay compliant with the latest GST mandates effortlessly.</p></div></div>
+      <div><button class="accordion-btn">Can I create staff accounts in Rupnidhi? <i class="fa fa-chevron-down" style="font-size:13px;color:#00BA8B;transition:transform .3s;"></i></button><div class="accordion-content"><p>Yes. Rupnidhi lets you create staff accounts with customizable permissions. Assign different roles to your team members so they access only the features they need, while you maintain full owner-level visibility and reporting.</p></div></div>
+      <div><button class="accordion-btn">Can I convert quotations to sale invoices? <i class="fa fa-chevron-down" style="font-size:13px;color:#00BA8B;transition:transform .3s;"></i></button><div class="accordion-content"><p>Yes. Rupnidhi lets you seamlessly convert quotations into sale invoices with one click. You can also duplicate existing invoices to save time and maintain accuracy in your day-to-day billing tasks.</p></div></div>
+      <div><button class="accordion-btn">Can I manage multiple businesses with one account? <i class="fa fa-chevron-down" style="font-size:13px;color:#00BA8B;transition:transform .3s;"></i></button><div class="accordion-content"><p>Yes. Rupnidhi allows you to manage multiple businesses from a single account. Switch between different businesses and handle their invoicing, billing, and GST requirements from one centralized platform — no need to juggle multiple logins.</p></div></div>
+      <div><button class="accordion-btn">Do I need to install anything to use Rupnidhi? <i class="fa fa-chevron-down" style="font-size:13px;color:#00BA8B;transition:transform .3s;"></i></button><div class="accordion-content"><p>No installation is required. Rupnidhi is cloud-based software, accessible directly from any web browser. Simply visit the Rupnidhi website, log in to your account, and start immediately. Updates and backups happen automatically.</p></div></div>
+      <div><button class="accordion-btn">Is my business data safe with Rupnidhi? <i class="fa fa-chevron-down" style="font-size:13px;color:#00BA8B;transition:transform .3s;"></i></button><div class="accordion-content"><p>Yes, your data is fully safe and secure with us. We use bank-grade security including SSL encryption, secured cloud servers, firewalls, and regular backups to keep your valuable business data fully protected at all times.</p></div></div>
+      <div><button class="accordion-btn">Does Rupnidhi work for medical stores? <i class="fa fa-chevron-down" style="font-size:13px;color:#00BA8B;transition:transform .3s;"></i></button><div class="accordion-content"><p>Yes. Rupnidhi is an excellent medical store billing software with full GST compliance, batch and expiry tracking, and inventory management — making it easy for pharmacies to handle invoices, stock alerts, and accurate product records.</p></div></div>
+      <div><button class="accordion-btn">Will I need to pay extra for new updates? <i class="fa fa-chevron-down" style="font-size:13px;color:#00BA8B;transition:transform .3s;"></i></button><div class="accordion-content"><p>No. All new features and improvements are included in your plan. As a cloud-based platform, Rupnidhi updates automatically — you'll always have the latest version without any extra charges or manual updates.</p></div></div>
+      <div><button class="accordion-btn">What if I have more questions or need assistance? <i class="fa fa-chevron-down" style="font-size:13px;color:#00BA8B;transition:transform .3s;"></i></button><div class="accordion-content"><p>Our dedicated support team is available 10 AM to 7 PM everyday. Call or WhatsApp us at <a href="tel:7043146478" style="color:#00BA8B;font-weight:600;">+91 704 314 6478</a> or email us at <a href="mailto:contact@rupnidhi.com" style="color:#00BA8B;font-weight:600;">contact@rupnidhi.com</a>. We're always happy to help!</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- NEED HELP -->
+<section style="padding:64px 0;background:#fff;">
+  <div style="max-width:900px;margin:0 auto;padding:0 24px;">
+    <div style="border-radius:20px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,.08);display:flex;flex-wrap:wrap;background:linear-gradient(135deg,#f0fdf4,#e0f2fe);">
+      <div style="width:240px;display:flex;align-items:flex-end;justify-content:center;background:linear-gradient(to bottom,rgba(0,186,139,.08),rgba(0,186,139,.18));padding:24px 16px 0;">
+        <img src="../assets/1.png" alt="Support Team" style="max-height:220px;object-fit:contain;"/>
+      </div>
+      <div style="flex:1;padding:40px;min-width:260px;">
+        <h2 style="font-size:28px;font-weight:800;color:#283341;margin-bottom:12px;">Need help? We're here!</h2>
+        <p style="color:#555;line-height:1.8;margin-bottom:24px;">Whether you have questions about features, customizations, trials, pricing, need a demo, or anything else, our support team is ready to answer all your queries about Rupnidhi GST billing software.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:14px;">
+          <a href="https://rupnidhi.com/contact/" class="btn-primary"><i class="fa fa-comments" style="margin-right:8px;"></i>Contact Us</a>
+          <a href="https://rupnidhi.com/signup/" class="btn-outline add-utm-link">Create Account</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="max-w-7xl mx-auto px-4 py-14">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;">
+      <div>
+        <div class="footer-title">Get in touch</div>
+        <p style="color:#aaa;font-size:14px;margin-bottom:8px;">Sales &amp; Support</p>
+        <a href="tel:704-314-6478" style="display:flex;align-items:center;gap:8px;font-weight:700;font-size:20px;color:#fff;margin-bottom:4px;">
+          <i class="fab fa-whatsapp" style="color:#25D366;font-size:24px;"></i> 704-314-6478
+        </a>
+        <p style="color:#aaa;font-size:13px;margin-bottom:16px;">(10 AM To 7 PM - Everyday)</p>
+        <p style="color:#aaa;font-size:13px;margin-bottom:4px;">Email</p>
+        <a href="mailto:contact@rupnidhi.com" style="color:#ccc;font-size:14px;">contact@rupnidhi.com</a>
+        <p style="color:#aaa;font-size:13px;margin-top:16px;margin-bottom:10px;">Follow us</p>
+        <div style="display:flex;gap:10px;">
+          <a href="https://www.facebook.com/rupnidhi" target="_blank" style="width:32px;height:32px;background:rgba(255,255,255,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;"><i class="fab fa-facebook-f" style="font-size:13px;"></i></a>
+          <a href="https://www.instagram.com/rupnidhi/" target="_blank" style="width:32px;height:32px;background:rgba(255,255,255,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;"><i class="fab fa-instagram" style="font-size:13px;"></i></a>
+          <a href="https://www.linkedin.com/company/rupnidhi/" target="_blank" style="width:32px;height:32px;background:rgba(255,255,255,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;"><i class="fab fa-linkedin-in" style="font-size:13px;"></i></a>
+          <a href="https://twitter.com/rupnidhi" target="_blank" style="width:32px;height:32px;background:rgba(255,255,255,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;"><i class="fab fa-x-twitter" style="font-size:13px;"></i></a>
+          <a href="https://www.youtube.com/@rupnidhi" target="_blank" style="width:32px;height:32px;background:rgba(255,255,255,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;"><i class="fab fa-youtube" style="font-size:13px;"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-title">Document Format</div>
+        <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:8px;font-size:14px;">
+          <li><a href="https://rupnidhi.com/gst-invoice-format/">GST Invoice</a></li>
+          <li><a href="https://rupnidhi.com/delivery-challan/">Delivery Challan</a></li>
+          <li><a href="https://rupnidhi.com/quotation-format/">Quotation</a></li>
+          <li><a href="https://rupnidhi.com/purchase-order/">Purchase Order</a></li>
+          <li><a href="https://rupnidhi.com/proforma-invoice/">Proforma Invoice</a></li>
+          <li><a href="https://rupnidhi.com/credit-debit-note/">Credit &amp; Debit Note</a></li>
+          <li><a href="https://rupnidhi.com/export-invoice/">Export Invoice</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-title">Resources</div>
+        <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:8px;font-size:14px;">
+          <li><a href="https://rupnidhi.com/about-us">About Us</a></li>
+          <li><a href="https://rupnidhi.com/careers/">Careers</a></li>
+          <li><a href="https://gogstbill.com/blog/">Blog &amp; News</a></li>
+          <li><a href="https://rupnidhi.com/knowledge-base/">Knowledge Base</a></li>
+          <li><a href="https://rupnidhi.com/support/">Feature Request</a></li>
+          <li><a href="https://rupnidhi.com/testimonials/">Testimonials</a></li>
+          <li><a href="https://rupnidhi.com/partner/">Partner Program</a></li>
+          <li><a href="https://rupnidhi.com/industries/">Industries We Serve</a></li>
+          <li><a href="https://rupnidhi.com/data-migration/">Data Migration</a></li>
+          <li><a href="https://rupnidhi.com/faq/">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-title">Features</div>
+        <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:8px;font-size:14px;">
+          <li><a href="https://rupnidhi.com/e-way-bill/">E-Way Bill</a></li>
+          <li><a href="https://rupnidhi.com/e-invoice/">E-Invoice</a></li>
+          <li><a href="https://rupnidhi.com/accounting-software/">Accounting Software</a></li>
+          <li><a href="https://rupnidhi.com/download/">Download App</a></li>
+          <li><a href="https://rupnidhi.com/comparison/">Comparison</a></li>
+          <li><a href="https://rupnidhi.com/vs-swipe/">Rupnidhi Vs Swipe</a></li>
+          <li><a href="https://rupnidhi.com/vs-mybillbook/">Rupnidhi Vs myBillBook</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div style="border-top:1px solid rgba(255,255,255,.1);">
+    <div class="max-w-7xl mx-auto px-4 py-5">
+      <p style="color:#aaa;font-size:13px;">
+        &copy; Copyright 2025 - FinSync Technolabs Private Limited |
+        <a href="https://gogstbill.com/privacy/">Privacy Policy</a> |
+        <a href="https://gogstbill.com/terms/">Terms of Service</a> |
+        <a href="https://gogstbill.com/cancellation-refund/">Cancellation &amp; Refund</a> |
+        All Rights Reserved.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP CHAT WIDGET -->
+<div id="live-optin-container">
+  <div id="chat-welcome" style="display:block;">Chat Now</div>
+  <div class="chat-icon-box" id="btn-icon-chat">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 24L1.695 17.838C0.65 16.034 0.1 13.988 0.1 11.892C0.103 5.335 5.463 0 12.05 0C15.247 0.001 18.247 1.24 20.503 3.488C22.759 5.736 24.001 8.724 24 11.902C23.997 18.459 18.636 23.794 12.05 23.794H12.045C10.045 23.793 8.08 23.294 6.335 22.346L0 24Z" fill="white"/><path fill-rule="evenodd" clip-rule="evenodd" d="M9.05 6.56C8.83 6.03 8.6 6.02 8.39 6.01C8.21 6 8.02 6 7.82 6C7.62 6 7.3 6.08 7.03 6.4C6.76 6.72 6 7.49 6 9.05C6 10.62 7.06 12.13 7.21 12.35C7.35 12.56 9.25 15.87 12.25 17.15C14.74 18.21 15.25 18 15.79 17.95C16.33 17.9 17.54 17.18 17.78 16.43C18.03 15.69 18.03 15.05 17.96 14.92C17.88 14.79 17.69 14.71 17.39 14.55C17.1 14.39 15.64 13.62 15.37 13.51C15.1 13.41 14.91 13.35 14.71 13.67C14.51 13.99 13.95 14.71 13.77 14.92C13.6 15.13 13.43 15.16 13.13 15C12.84 14.84 11.89 14.5 10.76 13.42C9.88 12.58 9.29 11.53 9.12 11.22C8.95 10.9 9.12 10.74 9.25 10.57C9.49 10.25 9.89 9.69 9.99 9.48C10.08 9.27 10.03 9.08 9.96 8.92C9.89 8.76 9.31 7.19 9.05 6.56Z" fill="white"/></svg>
+    <div class="notification-badge">1</div>
+  </div>
+  <div id="container-form" class="hide">
+    <div class="conv-header">
+      <img src="https://gogstbill.com/wp-content/uploads/2022/07/Chat-icon-go.png" alt="Rupnidhi" style="width:36px;height:36px;border-radius:50%;"/>
+      <div style="margin-left:10px;"><span class="title">Rupnidhi</span><span class="status">GST Billing Software</span></div>
+      <button class="close-btn chat-box-close" aria-label="Close">
+        <svg width="15" height="15" viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg"><path d="M9.502 8.5l7.29 7.29c.277.278.277.727 0 1.003-.137.138-.32.207-.5.207s-.362-.07-.5-.207L8.5 9.503l-7.29 7.29c-.14.138-.32.207-.5.207-.183 0-.364-.07-.502-.207-.277-.276-.277-.725 0-1.002l7.29-7.29-7.29-7.29C-.07.932-.07.483.208.206c.277-.276.725-.276 1 0L8.5 7.497l7.29-7.29c.277-.276.725-.276 1.002 0 .277.277.277.726 0 1.002L9.502 8.5z" fill="white" fill-rule="evenodd"/></svg>
+      </button>
+    </div>
+    <div class="msgs-wrap">
+      <div class="bubble">Welcome to Rupnidhi &#128075;</div>
+      <div class="bubble">
+        <p style="margin-bottom:8px;font-weight:600;">How can we help you?</p>
+        <a href="#" class="chat-link show-demo-form">Request Demo</a>
+        <a href="https://www.youtube.com/watch?v=YRUD5b-jdtU" class="chat-link" target="_blank" rel="noreferrer">Watch Demo Video &#9654;</a>
+        <a href="https://rupnidhi.com/support/" class="chat-link" target="_blank" rel="noreferrer">Request a Call Back</a>
+        <a href="https://rupnidhi.com/pricing/" class="chat-link" target="_blank" rel="noreferrer">Pricing</a>
+        <a href="https://rupnidhi.com/support/" class="chat-link" target="_blank" rel="noreferrer">Support Request</a>
+        <a href="https://api.whatsapp.com/send/?phone=+917043146478&text=Hi, I am interested in Rupnidhi" class="chat-link" target="_blank" rel="noreferrer">WhatsApp Us &#128362;</a>
+      </div>
+      <div class="bubble">
+        <p>Need more help? Call us<br/>
+          <a href="tel:704-314-6478" style="font-weight:700;color:#075E54;">&#128222; 704-314-6478</a><br/>
+          <small style="color:#888;">(10 AM To 7 PM - Everyday)</small>
+        </p>
+      </div>
+    </div>
+    <div class="otp-form-wrap" id="otp-form-section" style="display:none;">
+      <div class="form-back" id="form-back-btn">&#8592; Back</div>
+      <div class="form-title">Fill up the form below for a demo</div>
+      <div class="demo-otp-container" id="demo-otp-container-8501">
+        <form class="form_div">
+          <label>Name</label>
+          <input type="text" class="name" name="name"/>
+          <label>Phone</label>
+          <input type="text" class="phone" name="phone" maxlength="10"/>
+          <label>Best time to call</label>
+          <select class="time" name="time">
+            <option>Any Time (10 AM To 7 PM)</option>
+            <option>10 AM To 12 PM</option>
+            <option>12 PM To 2 PM</option>
+            <option>2 PM To 4 PM</option>
+            <option>4 PM To 7 PM</option>
+          </select>
+          <label>Business type</label>
+          <input type="text" class="business_type" name="business_type"/>
+          <input type="hidden" class="hash" name="hash"/>
+          <div class="response_msg"></div>
+          <input type="submit" value="Get OTP" class="get_otp_btn" disabled/>
+        </form>
+        <form class="form_otp" style="display:none;">
+          <div class="enter_otp_phone">Enter OTP sent to <span></span><br/><div class="change_num">Change Phone Number</div></div>
+          <div class="otp_field_div"></div>
+          <div class="response_msg"></div>
+          <input type="submit" value="Submit" class="form_submit" disabled/>
+        </form>
+        <div class="thank_you" style="display:none;">
+          <div class="ty1">&#127881; Thank you!</div>
+          <div class="ty1">We have received your request. A member of our team will be in touch with you shortly.</div>
+        </div>
+      </div>
+    </div>
+    <div class="chat-input-row">
+      <input type="text" id="chat-msg-input" placeholder="Send a message..."/>
+      <a id="chat-msg-link" href="https://api.whatsapp.com/send/?phone=+917043146478&text=" target="_blank" rel="noreferrer"
+         style="background:#075E54;color:#fff;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;text-decoration:none;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M1.101 21.757L23.8 12.028 1.101 2.3l.011 7.912 13.623 1.816-13.623 1.817-.011 7.912z"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+
+  // Mobile menu
+  document.getElementById('mob-btn-new').onclick = function() {
+    var m = document.getElementById('mob-menu-new');
+    m.style.display = m.style.display === 'block' ? 'none' : 'block';
+  };
+
+  // FAQ accordion
+  document.querySelectorAll('.accordion-btn').forEach(function(btn) {
+    btn.onclick = function() {
+      var content = this.nextElementSibling;
+      var icon = this.querySelector('i');
+      var isOpen = content.classList.contains('open');
+      document.querySelectorAll('.accordion-content').forEach(function(c) { c.classList.remove('open'); });
+      document.querySelectorAll('.accordion-btn i').forEach(function(i) { i.style.transform = ''; });
+      if (!isOpen) { content.classList.add('open'); icon.style.transform = 'rotate(180deg)'; }
+    };
+  });
+
+  // Chat widget
+  var chatForm = document.getElementById('container-form');
+  var chatWelcome = document.getElementById('chat-welcome');
+  document.getElementById('btn-icon-chat').onclick = function() {
+    chatForm.classList.toggle('hide');
+    chatWelcome.style.display = chatForm.classList.contains('hide') ? 'block' : 'none';
+    this.querySelector('.notification-badge').style.display = 'none';
+  };
+  document.querySelectorAll('.chat-box-close').forEach(function(btn) {
+    btn.onclick = function() { chatForm.classList.add('hide'); chatWelcome.style.display = 'block'; };
+  });
+  document.querySelectorAll('.show-demo-form').forEach(function(link) {
+    link.onclick = function(e) {
+      e.preventDefault();
+      document.getElementById('otp-form-section').style.display = 'block';
+    };
+  });
+  document.getElementById('form-back-btn').onclick = function() {
+    document.getElementById('otp-form-section').style.display = 'none';
+  };
+  document.getElementById('chat-msg-input').addEventListener('input', function() {
+    document.getElementById('chat-msg-link').href = 'https://api.whatsapp.com/send/?phone=+917043146478&text=' + encodeURIComponent(this.value);
+  });
+
+  // UTM handling
+  var urlParams = new URLSearchParams(window.location.search);
+  var utmKeys = ['utm_source','utm_medium','utm_campaign','utm_content','gclid'];
+  if (urlParams.toString()) {
+    utmKeys.forEach(function(k) { var v = urlParams.get(k); if (v) localStorage.setItem(k, v); });
+  }
+  var hasUTM = utmKeys.some(function(k) { return localStorage.getItem(k); });
+  if (hasUTM) {
+    document.querySelectorAll('a.add-utm-link').forEach(function(link) {
+      try {
+        var url = new URL(link.href);
+        utmKeys.forEach(function(k) { var v = localStorage.getItem(k); if (v) url.searchParams.set(k, v); });
+        link.href = url.toString();
+      } catch(e) {}
+    });
+  }
+});
+</script>
+
+<!-- MAIN PAGE OTP FORM LOGIC -->
+<script>
+window.addEventListener('DOMContentLoaded', function() {
+  var $main = jQuery('#demo-otp-container-main');
+
+  function checkMainFields() {
+    var ok = $main.find('.phone').val().length == 10 && $main.find('.name').val().trim() != '';
+    $main.find('.get_otp_btn_main').prop('disabled', !ok);
+  }
+  $main.find('.phone').on('keypress', function(e) {
+    if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) return false;
+  });
+  $main.find('.phone, .name').on('change paste keyup', checkMainFields);
+
+  var mainOtpInterval;
+  function mainCountdown() {
+    var t = '1:00';
+    if (mainOtpInterval) { clearInterval(mainOtpInterval); mainOtpInterval = null; }
+    mainOtpInterval = setInterval(function() {
+      var s = t.split(':'), m = parseInt(s[0]), sec = parseInt(s[1]);
+      --sec; m = sec < 0 ? --m : m;
+      if (m < 0) { $main.find('.countdown_main').html(''); clearInterval(mainOtpInterval); $main.find('.resend_otp_main').show(); return; }
+      sec = sec < 0 ? 59 : sec; sec = sec < 10 ? '0'+sec : sec;
+      $main.find('.countdown_main').html('Resend OTP in ' + m + ':' + sec); t = m+':'+sec;
+    }, 1000);
+  }
+
+  function generateMainOTP(phone) {
+    jQuery.ajax({
+      url: 'https://api.gogstbill.com', type: 'post',
+      data: { action: 'generateDemoOTP', phone: phone },
+      success: function(r) {
+        if (r.Status == 'Success') {
+          $main.find('.hash').val(r.hash);
+          $main.find('.form_div_main').hide();
+          $main.find('.form_otp_main').show();
+          $main.find('.otp-phone-num').html(phone);
+          $main.find('.otp').val('');
+          $main.find('.form_submit_main').prop('disabled', true);
+          $main.find('.response_msg_main').html('');
+          $main.find('.resend_otp_main').hide();
+          mainCountdown();
+        } else {
+          $main.find('.response_msg_main').html(r.Details || 'Something went wrong.');
+        }
+      },
+      error: function() { $main.find('.response_msg_main').html('Something went wrong. Please try again.'); }
+    });
+  }
+
+  $main.find('.get_otp_btn_main').on('click', function() { generateMainOTP($main.find('.phone').val()); });
+
+  $main.find('.change_num_main').on('click', function() {
+    $main.find('.form_otp_main').hide();
+    $main.find('.form_div_main').show();
+    $main.find('.otp').val('');
+    $main.find('.response_msg_main').html('');
+    checkMainFields();
+  });
+
+  jQuery(document).on('click', '#demo-otp-container-main .resend_otp_main', function() {
+    generateMainOTP($main.find('.phone').val());
+  });
+  jQuery(document).on('change paste keyup', '#demo-otp-container-main .otp', function() {
+    $main.find('.form_submit_main').prop('disabled', jQuery(this).val().length < 4);
+  });
+
+  $main.find('.form_submit_main').on('click', function() {
+    jQuery.ajax({
+      url: 'https://api.gogstbill.com', type: 'post',
+      data: {
+        action: 'verifyDemoOTP',
+        phone: $main.find('.phone').val(),
+        name: $main.find('.name').val(),
+        otp: $main.find('.otp').val(),
+        hash: $main.find('.hash').val(),
+        time: $main.find('.time').val(),
+        business_type: $main.find('.business_type').val()
+      },
+      success: function(r) {
+        if (r.Status == 'OK') {
+          $main.find('.form_otp_main, .form_div_main').hide();
+          $main.find('.thank_you_main').show();
+        } else {
+          $main.find('.response_msg_main').html(r.Details || 'Invalid OTP. Please try again.');
+        }
+      },
+      error: function() { $main.find('.response_msg_main').html('Something went wrong. Please try again.'); }
+    });
+  });
+});
+</script>
+
+<!-- WHATSAPP WIDGET OTP LOGIC -->
+<script>
+window.addEventListener('DOMContentLoaded', function() {
+  jQuery('#demo-otp-container-8501 .phone').on('keypress', function(e) {
+    if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) return false;
+  });
+  function checkFields($c) {
+    var ok = $c.find('.phone').val().length == 10 && $c.find('.name').val() != '';
+    $c.find('.get_otp_btn').prop('disabled', !ok);
+  }
+  jQuery('#demo-otp-container-8501 .phone, #demo-otp-container-8501 .name').on('change paste keyup', function() {
+    checkFields(jQuery(this).parents('.demo-otp-container'));
+  });
+  jQuery('#demo-otp-container-8501 .change_num').on('click', function() {
+    var $c = jQuery(this).parents('.demo-otp-container');
+    $c.find('.otp_field').remove();
+    $c.find('.phone').prop('disabled', false).focus();
+    $c.find('.change_num').hide();
+    $c.find('.resend_otp').remove();
+    $c.find('.form_otp').hide();
+    $c.find('.form_div').show();
+    $c.find('.response_msg').html('');
+    $c.find('.form_submit').prop('disabled', true);
+    checkFields($c);
+  });
+  var otpInterval;
+  function countdown() {
+    var t = '1:00';
+    if (otpInterval) { clearInterval(otpInterval); otpInterval = null; }
+    otpInterval = setInterval(function() {
+      var s = t.split(':'), m = parseInt(s[0]), sec = parseInt(s[1]);
+      --sec; m = sec < 0 ? --m : m;
+      if (m < 0) { jQuery('.countdown').html(''); clearInterval(otpInterval); return; }
+      sec = sec < 0 ? 59 : sec; sec = sec < 10 ? '0'+sec : sec;
+      jQuery('.countdown').html(m+':'+sec); t = m+':'+sec;
+    }, 1000);
+  }
+  function generateOTP($c, phone) {
+    jQuery.ajax({
+      url: 'https://api.gogstbill.com', type: 'post',
+      data: { action: 'generateDemoOTP', phone: phone },
+      success: function(r) {
+        if (r.Status == 'Success') {
+          $c.find('.hash').val(r.hash);
+          $c.find('.phone').prop('disabled', true);
+          $c.find('.change_num').show();
+          $c.find('.form_div').hide();
+          $c.find('.form_otp').show();
+          $c.find('.get_otp_btn').prop('disabled', true);
+          $c.find('.enter_otp_phone span').html(phone);
+          $c.find('.otp_field_div').html('<div class="otp_field"><label>Enter OTP</label><input type="text" class="otp" maxlength="4"/><div class="countdown"></div></div><div class="resend_otp">Resend OTP</div>');
+          $c.find('.response_msg').html('');
+          countdown();
+          setTimeout(function() { jQuery('.resend_otp').show(); jQuery('.countdown').hide(); }, 60000);
+        } else { $c.find('.response_msg').html(r.Details || ''); }
+      },
+      error: function() { $c.find('.response_msg').html('Something went wrong. Please try again.'); }
+    });
+  }
+  jQuery('#demo-otp-container-8501 .get_otp_btn').on('click', function(e) {
+    e.preventDefault();
+    var $c = jQuery(this).parents('.demo-otp-container');
+    generateOTP($c, $c.find('.phone').val());
+  });
+  jQuery(document).on('click', '#demo-otp-container-8501 .resend_otp', function() {
+    generateOTP(jQuery(this).parents('.demo-otp-container'), jQuery(this).parents('.demo-otp-container').find('.phone').val());
+  });
+  jQuery('#demo-otp-container-8501 .form_submit').on('click', function(e) {
+    e.preventDefault();
+    var $c = jQuery(this).parents('.demo-otp-container');
+    jQuery.ajax({
+      url: 'https://api.gogstbill.com', type: 'post',
+      data: {
+        action: 'verifyDemoOTP',
+        phone: $c.find('.phone').val(),
+        name: $c.find('.name').val(),
+        otp: $c.find('.otp').val(),
+        hash: $c.find('.hash').val(),
+        time: $c.find('.time').val(),
+        business_type: $c.find('.business_type').val()
+      },
+      success: function(r) {
+        if (r.Status == 'OK') { $c.find('.form_otp').hide(); $c.find('.thank_you').show(); }
+        else { $c.find('.response_msg').html(r.Details || ''); }
+      },
+      error: function() { $c.find('.response_msg').html('Something went wrong. Please try again.'); }
+    });
+  });
+  jQuery(document).on('change paste keyup', '#demo-otp-container-8501 .otp', function() {
+    jQuery(this).parents('.demo-otp-container').find('.form_submit').prop('disabled', jQuery(this).val().length < 4);
+  });
+});
+</script>
+
+</body>
+</html>

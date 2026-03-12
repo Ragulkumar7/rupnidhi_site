@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frequently Asked Questions | Rupnidhi</title>
+  <meta name="description" content="Find answers to all your questions about Rupnidhi's GST billing, inventory, POS, and business management solutions.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  
+  <link rel="stylesheet" href="assets/css/style.css"> 
+  
+  <style>
+    /* =========================================================================
+       FAQ PAGE SPECIFIC STYLES
+       ========================================================================= */
+
+    /* Sleek Hero Section */
+    .faq-page-hero {
+      background: linear-gradient(135deg, var(--brand-primary) 0%, #1a0f3d 100%);
+      padding: 100px 0 120px 0;
+      color: #fff;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .faq-page-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -50px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120%;
+      height: 100px;
+      background: #f8fafc;
+      border-radius: 50% 50% 0 0;
+    }
+
+    .faq-page-hero-content {
+      max-width: 850px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .faq-page-hero h1 {
+      font-family: var(--font-head);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      letter-spacing: -1px;
+    }
+
+    .faq-page-hero p {
+      font-size: 1.15rem;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.6;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* FAQ Content Section */
+    .faq-content-wrapper {
+      background: #f8fafc;
+      padding: 40px 0 100px 0;
+    }
+
+    .faq-category-group {
+      max-width: 900px;
+      margin: 0 auto 60px auto;
+    }
+
+    .faq-category-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .faq-category-title {
+      font-family: var(--font-head);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--brand-primary);
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .faq-category-title i {
+      color: #10b981;
+    }
+
+    /* Accordion overrides for dedicated page */
+    .faq-item {
+      background: #fff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      margin-bottom: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    }
+
+    .faq-question {
+      width: 100%;
+      text-align: left;
+      padding: 20px 24px;
+      background: none;
+      border: none;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-main);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-base);
+      transition: background 0.3s;
+    }
+
+    .faq-question:hover {
+      background: var(--brand-light);
+      color: var(--brand-primary);
+    }
+
+    .faq-question.active {
+      color: var(--brand-primary);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .faq-icon {
+      font-size: 1.5rem;
+      color: var(--brand-primary);
+      transition: transform 0.3s ease;
+      font-weight: 400;
+    }
+
+    .faq-question.active .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease-out;
+      background: #fff;
+    }
+
+    .faq-answer p {
+      padding: 20px 24px;
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1.7;
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body style="background-color: #f8fafc;">
+
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/images/logo.webp" alt="Rupnidhi Logo" class="logo-mark">
+        <img src="assets/name.png" class="brand-name-img" alt="Rupnidhi Brand Name" onerror="this.style.display='none'">
+      </a>
+      
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="demo.html">Demo</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li class="has-dropdown">
+          <a href="#">Solutions <i class="fa fa-chevron-down" style="font-size: 10px; margin-left:4px;"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="invoice.html">GST Invoicing</a></li>
+            <li><a href="supermarket.html">Supermarket POS</a></li>
+            <li><a href="medical.html">Medical Store</a></li>
+            <li><a href="poss.html">Restaurant POS</a></li>
+            <li><a href="purchase.html">Purchase & AI</a></li>
+            <li><a href="payroll.html">Payroll & HR</a></li>
+            <li><a href="tasks.html">Task Management</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+      
+      <div class="nav-actions">
+        <a href="https://rupnidhi.com/login.php" class="btn btn-outline-dark">Login</a>
+        <a href="https://rupnidhi.com/booking.html" class="btn btn-orange">Signup</a>
+      </div>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <div class="mobile-nav-wrapper" id="mobileNavWrapper">
+      <div class="mobile-nav-links">
+        <a href="index.html">Home</a>
+        <a href="demo.html">Demo</a>
+        <a href="features.html">Features</a>
+        <a href="pricing.html">Pricing</a>
+        
+        <div class="mobile-dropdown-group">
+          <a href="#" class="mobile-dropdown-toggle" id="mobileDropdownBtn">
+            Solutions <i class="fa fa-chevron-down"></i>
+          </a>
+          <div class="mobile-sub-links" id="mobileSubLinks">
+            <a href="invoice.html">GST Invoicing</a>
+            <a href="supermarket.html">Supermarket POS</a>
+            <a href="medical.html">Medical Store</a>
+            <a href="poss.html">Restaurant POS</a>
+            <a href="purchase.html">Purchase & AI</a>
+            <a href="payroll.html">Payroll & HR</a>
+            <a href="tasks.html">Task Management</a>
+          </div>
+        </div>
+
+        <a href="contact.html">Contact Us</a>
+        
+        <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 20px;">
+          <a href="https://rupnidhi.com/login.php" class="btn btn-outline-dark" style="text-align: center;">Login</a>
+          <a href="https://rupnidhi.com/booking.html" class="btn btn-orange" style="text-align: center;">Signup Free</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="faq-page-hero">
+    <div class="container">
+      <div class="faq-page-hero-content">
+        <div class="hero-badge" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);">
+          <i class="fa fa-circle-question" style="margin-right: 6px;"></i> Help Center
+        </div>
+        <h1>Frequently Asked Questions</h1>
+        <p>Find answers to everything regarding Rupnidhi's GST billing, inventory, POS operations, and account management.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-content-wrapper">
+    <div class="container">
+
+      <div class="faq-category-group">
+        <h3 class="faq-category-title"><i class="fa fa-user-shield"></i> General & Account</h3>
+        
+        <div class="faq-item">
+          <button class="faq-question">Why should businesses choose Rupnidhi as their billing and invoicing software? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>Businesses choose Rupnidhi because it combines GST billing, POS billing, inventory management, and reporting tools in one powerful platform. It is reliable, easy to use, and designed to support both local and international business operations.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Does Rupnidhi work for my industry? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>Rupnidhi is engineered with industry-specific modules to ensure a perfect fit for your business. It is the best billing software for retail shops, medical stores (pharmacies), supermarkets, and wholesale distribution businesses.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Can Rupnidhi support the needs of a rapidly scaling enterprise? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>Absolutely. Rupnidhi is built for scalability, offering robust management tools. With features like multi-user access, real-time inventory tracking, and multi-business management, it grows with your business.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Is the software cloud-based or offline? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>Rupnidhi provides the best of both worlds as a cloud billing software that also features offline capabilities. This hybrid functionality allows you to manage your business data from anywhere while still being able to operate during network outages.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Can Rupnidhi be used as a cloud billing software for international businesses? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>Yes, Rupnidhi supports cloud billing software capabilities, allowing businesses to manage invoices, track sales, and monitor inventory from anywhere. It can support both local and international business operations with ease.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question">Is my business data safe with Rupnidhi? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>Yes, your data is fully safe and secure with us. We use bank-grade security including SSL encryption, secured cloud servers, firewalls, and regular backups to keep your valuable business data fully protected at all times.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Can I manage multiple businesses with one account? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>Yes. Rupnidhi allows you to manage multiple businesses from a single account. Switch between different businesses and handle their invoicing, billing, and GST requirements from one centralized platform.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Do I need to provide a credit card for the free trial? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>No, you do not need to provide a credit card to start your 30-day free trial. You only need to enter your payment details if you decide to upgrade to a paid plan after your trial expires.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question">Will I need to pay extra for new updates? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>No. All new features and improvements are included in your plan. As a cloud-based platform, Rupnidhi updates automatically — you'll always have the latest version without any extra charges or manual updates.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-category-group">
+        <h3 class="faq-category-title"><i class="fa fa-file-invoice-dollar"></i> GST & Invoicing</h3>
+        
+        <div class="faq-item">
+          <button class="faq-question">What is GST billing software? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>GST billing software is a specialized digital tool designed to help businesses automate compliance by creating tax-ready invoices, managing real-time inventory, and calculating taxes like CGST, SGST, and IGST automatically.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Is Rupnidhi a GST compliant billing software? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>Yes, Rupnidhi is a fully GST-compliant billing software designed to help Indian businesses meet all legal requirements. It automatically generates GST invoices and provides the reports needed for GST return filing.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">What makes Rupnidhi one of the best GST billing software solutions in India? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>Rupnidhi is designed to simplify invoicing, GST calculations, and inventory management for businesses. It provides automated tax calculations, real-time stock tracking, and customizable invoice templates — all in one powerful platform.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Does Rupnidhi support one-time and recurring billing? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>Yes, Rupnidhi supports a variety of billing needs, from quick one-time retail transactions using barcode support to managing ongoing wholesale accounts. Whether you are a distributor handling bulk invoices or a retailer processing counter sales, Rupnidhi handles it all.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">What is a GSP? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>A GSP (GST Suvidha Provider) is a government-approved platform that facilitates secure interaction with the GST Portal. Rupnidhi is designed to be compatible with GSP integrations for e-invoice and e-way bill generation.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Does it support sending e-invoices? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>Yes, Rupnidhi fully supports e-invoicing in compliance with Indian regulations. Our system enables you to generate the necessary digital signatures and unique identifiers required by the GST portal.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Can I customize my invoice format? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>Yes, Rupnidhi offers a highly flexible customization feature. You can add your brand logo, adjust theme colors, include custom business fields, and choose from multiple professional templates.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-category-group">
+        <h3 class="faq-category-title"><i class="fa fa-shopping-cart"></i> Retail POS & Supermarkets</h3>
+        
+        <div class="faq-item">
+          <button class="faq-question">Is Rupnidhi suitable for small retail shops? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>Absolutely. Rupnidhi is the best billing software for retail shop owners because it simplifies complex tasks like barcode billing, stock alerts, and fast counter sales. Unlike complex alternatives, Rupnidhi is easy to set up and use.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">What software do supermarkets use for billing? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>Supermarkets typically use grocery store billing software or supermarket POS software to process customer transactions, generate bills, and manage daily retail operations.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">What is POS Software? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>POS (Point of Sale) software is a computer program used in shops, supermarkets, restaurants, and retail stores to process sales transactions and generate bills when customers purchase products or services.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">What are the benefits of grocery store billing software? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>Grocery store billing software helps retailers reduce billing errors, manage inventory efficiently, track sales performance, and improve customer service with faster checkout processes.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">How do I choose the right billing software? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>Choose billing software that offers fast billing, GST compliance, inventory management, multiple payment options, and detailed sales reports with an easy-to-use interface.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-category-group">
+        <h3 class="faq-category-title"><i class="fa fa-pills"></i> Pharmacy & Medical Store</h3>
+        
+        <div class="faq-item">
+          <button class="faq-question">Can Rupnidhi be used as medical store billing software? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>Yes, Rupnidhi works as a medical store billing software with GST compliance, allowing pharmacies to manage invoices, track stock, and maintain accurate records for medicines and products.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">What is pharmacy billing software in India? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>Pharmacy billing software India is a digital solution designed to help pharmacies manage billing, inventory, and sales efficiently. It allows medical store owners to generate invoices, track medicine stock, monitor expiry dates, and maintain accurate records while complying with GST regulations.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Why do medical stores need medical shop GST software? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>Medical shop GST software helps pharmacies generate GST-compliant invoices and maintain proper tax records. It simplifies tax calculations, ensures accurate billing, and helps pharmacy owners stay compliant with Indian GST rules while managing daily pharmacy operations.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Is medical store billing software suitable for small pharmacies? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>Yes, medical store billing software is suitable for both small and large pharmacies. It simplifies billing, manages inventory, and reduces manual work, helping pharmacy owners run their businesses more efficiently regardless of store size.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Can pharmacy billing software generate sales and GST reports? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>Yes, pharmacy billing software India generates detailed sales reports, inventory reports, and GST reports. These reports help pharmacy owners track business performance and maintain accurate financial records.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-category-group">
+        <h3 class="faq-category-title"><i class="fa fa-robot"></i> AI Purchase, Inventory & Restaurants</h3>
+        
+        <div class="faq-item">
+          <button class="faq-question">Does Rupnidhi support inventory management with billing software? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>Yes, Rupnidhi integrates inventory management with billing software, allowing businesses to track stock levels, manage product categories, and receive alerts for low inventory.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">How does the AI invoice scanning work? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>Our system uses Optical Character Recognition (OCR) and machine learning. You simply upload a PDF or image of your vendor's bill, and the software reads the text, categorizes the items, extracts the taxes, and prepares a draft purchase entry for you to approve.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Does this automatically update my stock? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>Yes! Once you verify and approve the scanned purchase invoice, the exact quantities of the items purchased are automatically added to your available inventory.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Will this help me claim Input Tax Credit (ITC)? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>Yes. By accurately recording all your purchase invoices and their associated GST amounts, our software makes it incredibly easy to reconcile your data with GSTR-2B, ensuring you claim maximum ITC.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">How does the recipe inventory work for restaurants? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>You can link raw ingredients (like 100g of flour, 20g of sugar) to a finished menu item (like a cake). Whenever a cake is sold, the system automatically deducts the precise raw ingredient quantities from your inventory.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Does the restaurant POS support Kitchen Order Tickets (KOT)? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>Absolutely. You can generate digital KOTs and route them automatically to specific kitchen printers or display screens, ensuring the kitchen staff gets the exact order modifications instantly.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-category-group">
+        <h3 class="faq-category-title"><i class="fa fa-users-cog"></i> Payroll, HR & Task Management</h3>
+        
+        <div class="faq-item">
+          <button class="faq-question">Can this software connect to my existing biometric machine? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>Yes, Rupnidhi Payroll can integrate with the majority of modern network-enabled biometric (Fingerprint/Face-ID) devices to push attendance data directly into the cloud.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Does it calculate overtime (OT) automatically? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>Absolutely. You can set custom overtime rules and rates. If an employee punches out late according to their assigned shift, the system will automatically calculate their OT pay.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Do employees need a computer to see their tasks? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>No. Employees can access their daily checklists and assigned tasks directly from the Rupnidhi mobile app on their own smartphones.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">How do I know if a task was actually completed properly? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>You can enable "Visual Validation" for any task. This forces the employee to upload a live photo through the app before the system will allow them to mark the task as "Complete."</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="need-help-section">
+    <div class="container">
+      <div class="help-grid">
+        <div class="help-visual">
+          <img src="assets/images/support_team.png" alt="Support Team" loading="lazy" onerror="this.src='assets/images/image copy 12.png'">
+        </div>
+        <div class="help-content">
+          <h2>Still have questions?</h2>
+          <p>Whether you need help understanding a specific feature, want to discuss custom enterprise requirements, or need technical assistance, our support team is just a click away.</p>
+          
+          <div class="help-buttons">
+            <a href="contact.html" class="btn btn-orange">
+              <i class="fa fa-comments" style="margin-right: 8px;"></i> Contact Us
+            </a>
+            <a href="demo.html" class="btn btn-outline-dark">Book a Live Demo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="rupnidhi-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+
+        <div class="footer-brand-col">
+          <h2 class="footer-logo-text">Rupnidhi</h2>
+          <p class="footer-bio">
+            A complete GST billing solution for growing businesses in India. Simplify your invoicing, track inventory in real-time, and ensure 100% tax compliance with ease.
+          </p>
+
+          <div class="footer-socials">
+            <a href="#" aria-label="Facebook" class="social-icon">
+              <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
+            </a>
+            <a href="#" aria-label="Twitter" class="social-icon">
+              <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" /></svg>
+            </a>
+            <a href="#" aria-label="Instagram" class="social-icon">
+              <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" /></svg>
+            </a>
+            <a href="#" aria-label="LinkedIn" class="social-icon">
+              <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" /></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-links-col">
+          <h4 class="footer-heading">Solutions</h4>
+          <ul class="footer-list">
+            <li><a href="invoice.html">GST Invoicing</a></li>
+            <li><a href="supermarket.html">Supermarket POS</a></li>
+            <li><a href="medical.html">Medical Store</a></li>
+            <li><a href="poss.html">Restaurant POS</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4 class="footer-heading">Company</h4>
+          <ul class="footer-list">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4 class="footer-heading">Support</h4>
+          <ul class="footer-list">
+            <li><a href="faq.html">FAQs</a></li>
+            <li><a href="help.html">Help Center</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Rupnidhi. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Security</a>
+          <span class="divider">|</span>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile Hamburger Menu Logic
+    document.addEventListener("DOMContentLoaded", function() {
+      const menuBtn = document.getElementById('mobileMenuBtn');
+      const navWrapper = document.getElementById('mobileNavWrapper');
+      const dropdownBtn = document.getElementById('mobileDropdownBtn');
+      const subLinks = document.getElementById('mobileSubLinks');
+
+      if (menuBtn) {
+        menuBtn.addEventListener('click', function() {
+          this.classList.toggle('open');
+          navWrapper.classList.toggle('open');
+        });
+      }
+
+      if (dropdownBtn) {
+        dropdownBtn.addEventListener('click', function(e) {
+          e.preventDefault(); 
+          subLinks.classList.toggle('open');
+          const icon = this.querySelector('i');
+          if (subLinks.classList.contains('open')) {
+            icon.style.transform = 'rotate(180deg)';
+          } else {
+            icon.style.transform = 'rotate(0deg)';
+          }
+        });
+      }
+    });
+
+    // FAQ Accordion Logic
+    document.addEventListener("DOMContentLoaded", function() {
+      const faqButtons = document.querySelectorAll('.faq-question');
+      
+      faqButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          // Toggle active class on the button to rotate the icon
+          this.classList.toggle('active');
+          
+          // Find the corresponding answer panel
+          const answer = this.nextElementSibling;
+          
+          // Toggle max-height for smooth opening/closing
+          if (answer.style.maxHeight) {
+            answer.style.maxHeight = null;
+          } else {
+            answer.style.maxHeight = answer.scrollHeight + "px";
+          } 
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

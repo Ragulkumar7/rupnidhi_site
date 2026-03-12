@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing Plans | Rupnidhi Billing Software</title>
+  <meta name="description" content="Simple, transparent pricing for Rupnidhi GST and multi-currency billing software. Three tiers for every stage of growth.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  
+  <link rel="stylesheet" href="assets/css/style.css"> 
+  
+  <style>
+    /* =========================================================================
+       PRICING PAGE SPECIFIC STYLES
+       ========================================================================= */
+    .pricing-section {
+      padding: 100px 0 120px 0;
+      background-color: var(--bg-slate);
+      font-family: var(--font-base);
+    }
+
+    .pricing-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 60px;
+    }
+
+    .pricing-header h1 {
+      font-family: var(--font-head);
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+
+    .pricing-header p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Pricing Grid */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+      max-width: 1100px;
+      margin: 0 auto;
+      align-items: center; /* Aligns cards properly, especially the highlighted one */
+    }
+
+    @media (min-width: 768px) {
+      .pricing-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* Individual Cards */
+    .pricing-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 40px 30px;
+      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    }
+
+    /* Highlighted Middle Card */
+    .pricing-card.popular {
+      background: var(--brand-primary);
+      color: #ffffff;
+      border-color: var(--brand-primary);
+      transform: scale(1);
+      box-shadow: 0 20px 50px rgba(43, 24, 103, 0.25);
+    }
+
+    @media (min-width: 992px) {
+      .pricing-card.popular {
+        transform: scale(1.05); /* Pops out slightly on desktop */
+      }
+      .pricing-card.popular:hover {
+        transform: scale(1.05) translateY(-5px);
+      }
+    }
+
+    .popular-badge {
+      position: absolute;
+      top: -16px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #f59e0b; /* Accent orange for visibility */
+      color: #ffffff;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      box-shadow: 0 4px 10px rgba(245, 158, 11, 0.3);
+    }
+
+    /* Text inside Cards */
+    .plan-name {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .plan-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      min-height: 45px;
+      line-height: 1.5;
+    }
+
+    .pricing-card.popular .plan-desc {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .plan-price {
+      font-family: var(--font-head);
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 32px;
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+    }
+
+    .plan-price span {
+      font-family: var(--font-base);
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+
+    .pricing-card.popular .plan-price span {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* Feature Lists */
+    .plan-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 32px 0;
+    }
+
+    .plan-features li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .plan-features i {
+      color: #10b981; /* Green checkmark */
+      font-size: 1.1rem;
+    }
+
+    .pricing-card.popular .plan-features i {
+      color: #34d399; /* Slightly brighter green for dark background */
+    }
+
+    /* Buttons */
+    .btn-plan {
+      width: 100%;
+      padding: 14px;
+      font-size: 1.05rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/images/logo.webp" alt="Rupnidhi Logo" class="logo-mark">
+        <img src="assets/name.png" class="brand-name-img" alt="Rupnidhi Brand Name" onerror="this.style.display='none'">
+      </a>
+      
+      <ul class="nav-links">
+        <li><a href="index.html" >Home</a></li>
+        <li><a href="demo.html">Demo</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="pricing.html"class="active"><span class="dot"></span>Pricing</a></li>
+        <li class="has-dropdown">
+          <a href="#">Solutions <i class="fa fa-chevron-down" style="font-size: 10px; margin-left:4px;"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="invoice.html">GST Invoicing</a></li>
+            <li><a href="supermarket.html">Supermarket POS</a></li>
+            <li><a href="medical.html">Medical Store</a></li>
+            <li><a href="poss.html">Restaurant POS</a></li>
+            <li><a href="purchase.html">Purchase & AI</a></li>
+            <li><a href="payroll.html">Payroll & HR</a></li>
+            <li><a href="tasks.html">Task Management</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="https://rupnidhi.com/login.php" class="btn btn-outline-dark">Login</a>
+        <a href="https://rupnidhi.com/booking.html" class="btn btn-orange">Signup</a>
+      </div>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <div class="mobile-nav-wrapper" id="mobileNavWrapper">
+      <div class="mobile-nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="demo.html">Demo</a>
+        <a href="features.html">Features</a>
+        <a href="pricing.html">Pricing</a>
+        
+        <div class="mobile-dropdown-group">
+          <a href="#" class="mobile-dropdown-toggle" id="mobileDropdownBtn">
+            Solutions <i class="fa fa-chevron-down"></i>
+          </a>
+          <div class="mobile-sub-links" id="mobileSubLinks">
+            <a href="invoice.html">GST Invoicing</a>
+            <a href="supermarket.html">Supermarket POS</a>
+            <a href="medical.html">Medical Store</a>
+            <a href="poss.html">Restaurant POS</a>
+            <a href="purchase.html">Purchase & AI</a>
+            <a href="payroll.html">Payroll & HR</a>
+            <a href="tasks.html">Task Management</a>
+          </div>
+        </div>
+
+        <a href="contact.html">Contact Us</a>
+        
+        <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 20px;">
+          <a href="https://rupnidhi.com/login.php" class="btn btn-outline-dark" style="text-align: center;">Login</a>
+          <a href="https://rupnidhi.com/booking.html" class="btn btn-orange" style="text-align: center;">Signup Free</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="pricing-section">
+    <div class="container">
+      
+      <div class="pricing-header">
+        <div class="hero-badge" style="background: var(--brand-light); color: var(--brand-primary); border-color: var(--brand-border); margin-bottom: 16px;">
+          Scalable Investment Tiers
+        </div>
+        <h1>Simple, Transparent Pricing</h1>
+        <p>Three tiers for every stage of growth. The first 30 days are completely free — no credit card required.</p>
+      </div>
+
+      <div class="pricing-grid">
+        
+        <div class="pricing-card">
+          <h3 class="plan-name">Starter</h3>
+          <p class="plan-desc">For small retail shops getting started with GST billing.</p>
+          <div class="plan-price">
+            $29 <span>/mo</span>
+          </div>
+          <ul class="plan-features">
+            <li><i class="fa fa-check-circle"></i> Billing & Stock Management</li>
+            <li><i class="fa fa-check-circle"></i> Real-time Basic Analytics</li>
+            <li><i class="fa fa-check-circle"></i> GST-compliant Invoicing</li>
+            <li><i class="fa fa-check-circle"></i> Mobile Billing (Android/iOS)</li>
+            <li><i class="fa fa-check-circle"></i> Email Support</li>
+          </ul>
+          <a href="https://rupnidhi.com/booking.html" class="btn btn-outline-dark btn-plan">Choose Starter</a>
+        </div>
+
+        <div class="pricing-card popular">
+          <div class="popular-badge">Recommended</div>
+          <h3 class="plan-name">Professional</h3>
+          <p class="plan-desc">For growing businesses needing full compliance and automation.</p>
+          <div class="plan-price">
+            $99 <span>/mo</span>
+          </div>
+          <ul class="plan-features">
+            <li><i class="fa fa-check-circle"></i> Everything in Starter</li>
+            <li><i class="fa fa-check-circle"></i> Full ZATCA & VAT Compliance</li>
+            <li><i class="fa fa-check-circle"></i> Global Trade Logic Engine</li>
+            <li><i class="fa fa-check-circle"></i> E-invoice & E-way Bill</li>
+            <li><i class="fa fa-check-circle"></i> Multi-Currency & Cloud Sync</li>
+            <li><i class="fa fa-check-circle"></i> Priority 24/7 Support</li>
+          </ul>
+          <a href="https://rupnidhi.com/booking.html" class="btn btn-zoho-green btn-plan" style="color: var(--brand-primary);">Go Professional</a>
+        </div>
+
+        <div class="pricing-card">
+          <h3 class="plan-name">Enterprise</h3>
+          <p class="plan-desc">For multi-branch enterprises with custom requirements.</p>
+          <div class="plan-price">
+            Custom
+          </div>
+          <ul class="plan-features">
+            <li><i class="fa fa-check-circle"></i> Everything in Professional</li>
+            <li><i class="fa fa-check-circle"></i> Full API Access</li>
+            <li><i class="fa fa-check-circle"></i> Dedicated Account Manager</li>
+            <li><i class="fa fa-check-circle"></i> Custom Security Audits</li>
+            <li><i class="fa fa-check-circle"></i> Custom Integrations</li>
+          </ul>
+          <a href="contact.html" class="btn btn-outline-dark btn-plan">Contact Sales</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section" style="background: #ffffff; border-top: 1px solid var(--border-color);">
+    <div class="container">
+      <div class="faq-header">
+        <h2>Frequently Asked Questions</h2>
+      </div>
+      
+      <div class="faq-accordion">
+        <div class="faq-item">
+          <button class="faq-question">1. Will I need to pay extra for new updates? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>No. All new features and improvements are included in your plan. As a cloud-based platform, Rupnidhi updates automatically — you'll always have the latest version without any extra charges or manual updates.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">2. Is my business data safe with Rupnidhi? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>Yes, your data is fully safe and secure with us. We use bank-grade security including SSL encryption, secured cloud servers, firewalls, and regular backups to keep your valuable business data fully protected at all times.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">3. Can I manage multiple businesses with one account? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>Yes. Rupnidhi allows you to manage multiple businesses from a single account on our Professional and Enterprise tiers. Switch between different businesses and handle their invoicing, billing, and GST requirements from one centralized platform.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">4. Do I need to provide a credit card for the free trial? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>No, you do not need to provide a credit card to start your 30-day free trial. You only need to enter your payment details if you decide to upgrade to a paid plan after your trial expires.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="rupnidhi-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+
+        <div class="footer-brand-col">
+          <h2 class="footer-logo-text">Rupnidhi</h2>
+          <p class="footer-bio">
+            A complete GST billing solution for growing businesses in India. Simplify your invoicing, track inventory in real-time, and ensure 100% tax compliance with ease.
+          </p>
+
+          <div class="footer-socials">
+            <a href="#" aria-label="Facebook" class="social-icon">
+              <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+              </svg>
+            </a>
+            <a href="#" aria-label="Twitter" class="social-icon">
+              <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
+                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+              </svg>
+            </a>
+            <a href="#" aria-label="Instagram" class="social-icon">
+              <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+            </a>
+            <a href="#" aria-label="LinkedIn" class="social-icon">
+              <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                <rect x="2" y="9" width="4" height="12" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-links-col">
+          <h4 class="footer-heading">Solutions</h4>
+          <ul class="footer-list">
+            <li><a href="invoice.html">GST Invoicing</a></li>
+            <li><a href="supermarket.html">Supermarket POS</a></li>
+            <li><a href="medical.html">Medical Store</a></li>
+            <li><a href="poss.html">Restaurant POS</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4 class="footer-heading">Company</h4>
+          <ul class="footer-list">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4 class="footer-heading">Support</h4>
+          <ul class="footer-list">
+            <li><a href="faq.html">FAQs</a></li>
+            <li><a href="help.html">Help Center</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Rupnidhi. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Security</a>
+          <span class="divider">|</span>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="live-optin-container">
+    <div id="chat-welcome" style="display:block;">Chat Now</div>
+    <div class="chat-icon-box" id="btn-icon-chat">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 24L1.695 17.838C0.65 16.034 0.1 13.988 0.1 11.892C0.103 5.335 5.463 0 12.05 0C15.247 0.001 18.247 1.24 20.503 3.488C22.759 5.736 24.001 8.724 24 11.902C23.997 18.459 18.636 23.794 12.05 23.794H12.045C10.045 23.793 8.08 23.294 6.335 22.346L0 24Z" fill="white" />
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.05 6.56C8.83 6.03 8.6 6.02 8.39 6.01C8.21 6 8.02 6 7.82 6C7.62 6 7.3 6.08 7.03 6.4C6.76 6.72 6 7.49 6 9.05C6 10.62 7.06 12.13 7.21 12.35C7.35 12.56 9.25 15.87 12.25 17.15C14.74 18.21 15.25 18 15.79 17.95C16.33 17.9 17.54 17.18 17.78 16.43C18.03 15.69 18.03 15.05 17.96 14.92C17.88 14.79 17.69 14.71 17.39 14.55C17.1 14.39 15.64 13.62 15.37 13.51C15.1 13.41 14.91 13.35 14.71 13.67C14.51 13.99 13.95 14.71 13.77 14.92C13.6 15.13 13.43 15.16 13.13 15C12.84 14.84 11.89 14.5 10.76 13.42C9.88 12.58 9.29 11.53 9.12 11.22C8.95 10.9 9.12 10.74 9.25 10.57C9.49 10.25 9.89 9.69 9.99 9.48C10.08 9.27 10.03 9.08 9.96 8.92C9.89 8.76 9.31 7.19 9.05 6.56Z" fill="white" />
+      </svg>
+      <div class="notification-badge">1</div>
+    </div>
+
+    <div id="container-form" class="hide">
+      <div class="conv-header">
+        <div style="background:#fff; border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center;">
+          <img src="assets/images/logo.webp" alt="Rupnidhi" style="width:24px; object-fit:contain;" onerror="this.style.display='none'" />
+        </div>
+        <div><span class="title">Rupnidhi</span><span class="status">GST Billing Software</span></div>
+        <button class="close-btn chat-box-close" aria-label="Close"><i class="fa fa-times"></i></button>
+      </div>
+      <div class="msgs-wrap">
+        <div class="bubble">Welcome to Rupnidhi 👋</div>
+        <div class="bubble">
+          <p style="margin-bottom:8px;font-weight:600;">How can we help you?</p>
+          <a href="#" class="chat-link show-demo-form">Request Demo</a>
+          <a href="https://rupnidhi.com/pricing/" class="chat-link">Pricing</a>
+          <a href="https://api.whatsapp.com/send/?phone=+918668025451&text=Hi" class="chat-link" target="_blank">WhatsApp Us</a>
+        </div>
+      </div>
+
+      <div class="otp-form-wrap" id="otp-form-section" style="display:none;">
+        <div class="form-back" id="form-back-btn">← Back</div>
+        <div class="form-title">Fill up the form below for a demo</div>
+        <div class="demo-otp-container" id="demo-otp-container-8501">
+          <form class="form_div">
+            <label>Name</label><input type="text" class="name" name="name" />
+            <label>Phone</label><input type="text" class="phone" name="phone" maxlength="10" />
+            <label>Time to call</label>
+            <select class="time" name="time">
+              <option>Any Time</option>
+              <option>10 AM To 12 PM</option>
+            </select>
+            <label>Business type</label><input type="text" class="business_type" name="business_type" />
+            <input type="hidden" class="hash" name="hash" />
+            <div class="response_msg" style="color:#e53e3e;font-size:12px;margin-bottom:8px;"></div>
+            <input type="submit" value="Get OTP" class="get_otp_btn" disabled />
+          </form>
+          <form class="form_otp" style="display:none;">
+            <div style="font-size:12px;margin-bottom:8px;">Enter OTP sent to <span></span> <br>
+              <div class="change_num" style="color:var(--brand-primary);cursor:pointer;margin-top:4px;">Change Number</div>
+            </div>
+            <div class="otp_field_div"></div>
+            <div class="response_msg" style="color:#e53e3e;font-size:12px;margin-bottom:8px;"></div>
+            <input type="submit" value="Submit" class="form_submit" disabled />
+          </form>
+          <div class="thank_you" style="display:none;text-align:center;padding:20px 0;">
+            <div style="font-weight:700;color:var(--brand-primary);margin-bottom:8px;">🎉 Thank you!</div>
+            <div style="font-size:13px;color:#666;">We will be in touch with you shortly.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="chat-input-row">
+        <input type="text" id="chat-msg-input" placeholder="Send a message..." />
+        <a id="chat-msg-link" href="https://api.whatsapp.com/send/?phone=+918668025451&text=" target="_blank">
+          <i class="fa fa-paper-plane"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Chat widget UI Toggles
+    const chatForm = document.getElementById('container-form');
+    const chatWelcome = document.getElementById('chat-welcome');
+
+    document.getElementById('btn-icon-chat').onclick = function () {
+      chatForm.classList.toggle('hide');
+      chatWelcome.style.display = chatForm.classList.contains('hide') ? 'block' : 'none';
+      this.querySelector('.notification-badge').style.display = 'none';
+    };
+
+    document.querySelectorAll('.chat-box-close').forEach(btn => {
+      btn.onclick = () => { chatForm.classList.add('hide'); chatWelcome.style.display = 'block'; };
+    });
+
+    document.querySelectorAll('.show-demo-form').forEach(link => {
+      link.onclick = (e) => { e.preventDefault(); document.getElementById('otp-form-section').style.display = 'block'; };
+    });
+
+    document.getElementById('form-back-btn').onclick = () => {
+      document.getElementById('otp-form-section').style.display = 'none';
+    };
+
+    document.getElementById('chat-msg-input').addEventListener('input', function () {
+      document.getElementById('chat-msg-link').href = 'https://api.whatsapp.com/send/?phone=+918668025451&text=' + encodeURIComponent(this.value);
+    });
+
+    // Chat widget OTP logic
+    window.addEventListener('DOMContentLoaded', function () {
+      jQuery('#demo-otp-container-8501 .phone').on('keypress', function (e) {
+        if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) return false;
+      });
+      function checkFields($c) {
+        var ok = $c.find('.phone').val().length == 10 && $c.find('.name').val() != '';
+        $c.find('.get_otp_btn').prop('disabled', !ok);
+      }
+      jQuery('#demo-otp-container-8501 .phone, #demo-otp-container-8501 .name').on('change paste keyup', function () {
+        checkFields(jQuery(this).parents('.demo-otp-container'));
+      });
+      jQuery('#demo-otp-container-8501 .change_num').on('click', function () {
+        var $c = jQuery(this).parents('.demo-otp-container');
+        $c.find('.otp_field').remove();
+        $c.find('.phone').prop('disabled', false).focus();
+        $c.find('.change_num').hide();
+        $c.find('.resend_otp').remove();
+        $c.find('.form_otp').hide();
+        $c.find('.form_div').show();
+        $c.find('.response_msg').html('');
+        $c.find('.form_submit').prop('disabled', true);
+        checkFields($c);
+      });
+      var otpInterval;
+      function countdown() {
+        var t = '1:00';
+        if (otpInterval) { clearInterval(otpInterval); otpInterval = null; }
+        otpInterval = setInterval(function () {
+          var s = t.split(':'), m = parseInt(s[0]), sec = parseInt(s[1]);
+          --sec; m = sec < 0 ? --m : m;
+          if (m < 0) { jQuery('.countdown').html(''); clearInterval(otpInterval); return; }
+          sec = sec < 0 ? 59 : sec; sec = sec < 10 ? '0' + sec : sec;
+          jQuery('.countdown').html(m + ':' + sec); t = m + ':' + sec;
+        }, 1000);
+      }
+      function generateOTP($c, phone) {
+        jQuery.ajax({
+          url: 'https://api.gogstbill.com', type: 'post',
+          data: { action: 'generateDemoOTP', phone: phone },
+          success: function (r) {
+            if (r.Status == 'Success') {
+              $c.find('.hash').val(r.hash);
+              $c.find('.phone').prop('disabled', true);
+              $c.find('.change_num').show();
+              $c.find('.form_div').hide();
+              $c.find('.form_otp').show();
+              $c.find('.get_otp_btn').prop('disabled', true);
+              $c.find('.enter_otp_phone span').html(phone);
+              $c.find('.otp_field_div').html('<div class="otp_field"><label style="font-size:12px; font-weight:600; color:#666; margin-bottom:4px; display:block;">Enter OTP</label><input type="text" class="otp" maxlength="4" style="width:100%; border:1px solid #ddd; border-radius:6px; padding:8px; margin-bottom:8px;"/><div class="countdown" style="font-size:12px; color:#999;"></div></div><div class="resend_otp" style="color:var(--brand-primary); font-size:12px; font-weight:600; cursor:pointer; margin-top:4px;">Resend OTP</div>');
+              $c.find('.response_msg').html('');
+              countdown();
+              setTimeout(function () { jQuery('.resend_otp').show(); jQuery('.countdown').hide(); }, 60000);
+            } else { $c.find('.response_msg').html(r.Details || ''); }
+          },
+          error: function () { $c.find('.response_msg').html('Something went wrong. Please try again.'); }
+        });
+      }
+      jQuery('#demo-otp-container-8501 .get_otp_btn').on('click', function (e) {
+        e.preventDefault();
+        var $c = jQuery(this).parents('.demo-otp-container');
+        generateOTP($c, $c.find('.phone').val());
+      });
+      jQuery(document).on('click', '#demo-otp-container-8501 .resend_otp', function () {
+        generateOTP(jQuery(this).parents('.demo-otp-container'), jQuery(this).parents('.demo-otp-container').find('.phone').val());
+      });
+      jQuery('#demo-otp-container-8501 .form_submit').on('click', function (e) {
+        e.preventDefault();
+        var $c = jQuery(this).parents('.demo-otp-container');
+        jQuery.ajax({
+          url: 'https://api.gogstbill.com', type: 'post',
+          data: {
+            action: 'verifyDemoOTP',
+            phone: $c.find('.phone').val(),
+            name: $c.find('.name').val(),
+            otp: $c.find('.otp').val(),
+            hash: $c.find('.hash').val(),
+            time: $c.find('.time').val(),
+            business_type: $c.find('.business_type').val()
+          },
+          success: function (r) {
+            if (r.Status == 'OK') { $c.find('.form_otp').hide(); $c.find('.thank_you').show(); }
+            else { $c.find('.response_msg').html(r.Details || ''); }
+          },
+          error: function () { $c.find('.response_msg').html('Something went wrong. Please try again.'); }
+        });
+      });
+      jQuery(document).on('change paste keyup', '#demo-otp-container-8501 .otp', function () {
+        jQuery(this).parents('.demo-otp-container').find('.form_submit').prop('disabled', jQuery(this).val().length < 4);
+      });
+    });
+  </script>
+
+  <script>
+    // ==========================================
+    // HAMBURGER MENU LOGIC
+    // ==========================================
+    document.addEventListener("DOMContentLoaded", function() {
+      const menuBtn = document.getElementById('mobileMenuBtn');
+      const navWrapper = document.getElementById('mobileNavWrapper');
+      const dropdownBtn = document.getElementById('mobileDropdownBtn');
+      const subLinks = document.getElementById('mobileSubLinks');
+
+      // Toggle Main Hamburger Menu
+      if (menuBtn) {
+        menuBtn.addEventListener('click', function() {
+          this.classList.toggle('open');
+          navWrapper.classList.toggle('open');
+        });
+      }
+
+      // Toggle Mobile Sub-Menu (Solutions)
+      if (dropdownBtn) {
+        dropdownBtn.addEventListener('click', function(e) {
+          e.preventDefault(); // Prevent jump to top
+          subLinks.classList.toggle('open');
+          
+          // Flip arrow
+          const icon = this.querySelector('i');
+          if (subLinks.classList.contains('open')) {
+            icon.style.transform = 'rotate(180deg)';
+          } else {
+            icon.style.transform = 'rotate(0deg)';
+          }
+        });
+      }
+    });
+
+    // FAQ Accordion Logic
+    document.addEventListener("DOMContentLoaded", function() {
+      const faqButtons = document.querySelectorAll('.faq-question');
+      
+      faqButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          this.classList.toggle('active');
+          const answer = this.nextElementSibling;
+          
+          if (answer.style.maxHeight) {
+            answer.style.maxHeight = null;
+          } else {
+            answer.style.maxHeight = answer.scrollHeight + "px";
+          } 
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

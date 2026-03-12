@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Consultation | Rupnidhi</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V8R88VX8TT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-V8R88VX8TT');
+    </script>
+    
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                DEFAULT: '#2b1867', // Deep Indigo Brand Color
+                hover: '#3c248f',
+                light: '#f4f1fb'
+              }
+            },
+            fontFamily: {
+              sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+
+    <style>
+        body, html { 
+            margin: 0; 
+            padding: 0; 
+            width: 100%; 
+            min-height: 100%; 
+            background-color: #f8fafc;
+            overflow-x: hidden;
+        }
+
+        /* --- BACKGROUND ANIMATION (Scoped to Left Panel) --- */
+        .liquid-blob {
+            position: absolute;
+            width: 500px; height: 500px;
+            animation: morphFlow 18s infinite alternate ease-in-out;
+            opacity: 0.4;
+            filter: blur(60px);
+            pointer-events: none;
+        }
+
+        .blob-1 { top: -10%; left: -10%; background: #4c1d95; animation-duration: 14s; }
+        .blob-2 { bottom: -10%; right: -10%; background: #3c248f; animation-duration: 20s; animation-delay: -3s; }
+        .blob-3 { top: 30%; left: 20%; background: #6d28d9; animation-duration: 24s; animation-delay: -6s; }
+
+        @keyframes morphFlow {
+            0% { border-radius: 40% 60% 60% 40% / 60% 30% 70% 40%; transform: translate(0, 0) scale(1); }
+            33% { border-radius: 60% 40% 50% 50% / 40% 60% 40% 60%; transform: translate(40px, 60px) scale(1.05) rotate(45deg); }
+            66% { border-radius: 40% 60% 30% 70% / 50% 40% 60% 50%; transform: translate(-40px, 40px) scale(0.95) rotate(-45deg); }
+            100% { border-radius: 60% 40% 60% 40% / 40% 60% 40% 60%; transform: translate(0, 0) scale(1); }
+        }
+
+        /* Initial states for GSAP */
+        #textSide { opacity: 0; transform: translateX(-30px); }
+        #bookingCard { opacity: 0; transform: translateY(30px); }
+        
+        /* Custom Select Arrow */
+        select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1.2em;
+        }
+    </style>
+</head>
+<body class="antialiased text-gray-800 flex items-center justify-center min-h-screen p-4 lg:p-8 relative">
+
+    <a href="index.html" class="fixed top-6 left-6 lg:top-10 lg:left-10 z-50 flex items-center gap-2 text-brand font-bold hover:text-brand-hover transition-all hover:-translate-x-1 bg-white/80 backdrop-blur-md px-4 py-2 rounded-full shadow-sm border border-gray-200">
+        <i class="fa-solid fa-arrow-left"></i> Back
+    </a>
+
+    <div class="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 rounded-[2rem] overflow-hidden shadow-[0_20px_60px_rgba(43,24,103,0.08)] border border-gray-100 bg-white min-h-[85vh] relative z-10">
+        
+        <div class="hidden lg:flex flex-col justify-center p-16 bg-gradient-to-br from-brand to-[#1a0f3d] text-white relative overflow-hidden" id="textSide">
+            
+            <div class="absolute inset-0 z-0">
+                <div class="liquid-blob blob-1"></div>
+                <div class="liquid-blob blob-2"></div>
+                <div class="liquid-blob blob-3"></div>
+            </div>
+
+            <div class="relative z-10">
+                <div class="flex items-center gap-3 mb-8">
+                    <h3 class="text-2xl font-extrabold tracking-tight">RUPNIDHI</h3>
+                </div>
+                
+                <h2 class="text-6xl font-extrabold leading-[1.15] tracking-tight">
+                    Easy <br>
+                    <span id="typing-text" class="text-purple-300"></span><br> 
+                    ahead.
+                </h2>
+                
+                <p class="mt-8 text-lg text-white/80 max-w-sm leading-relaxed">
+                    Join 1 Lakh+ businesses simplifying their operations and compliance with our smart GST billing platform.
+                </p>
+            </div>
+        </div>
+
+        <div class="p-8 md:p-12 lg:p-16 flex flex-col justify-center bg-white" id="bookingCard">
+            <div class="mb-8">
+                <h1 class="text-3xl font-extrabold text-gray-900 mb-2">Book a Consultation</h1>
+                <p class="text-gray-500 font-medium text-sm">Provide your details and any promo code to get started.</p>
+            </div>
+            
+            <form id="bookingForm" class="space-y-5">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    
+                    <div class="md:col-span-2">
+                        <label class="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-2">Full Name</label>
+                        <input type="text" id="nameField" placeholder="Enter your name" required pattern="^[a-zA-Z\s\.]+$" title="Please enter letters only."
+                            class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 font-medium placeholder-gray-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand/20 focus:border-brand transition-all">
+                    </div>
+
+                    <div>
+                        <label class="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-2">Email Address</label>
+                        <input type="email" id="emailField" placeholder="email@company.com" required
+                            class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 font-medium placeholder-gray-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand/20 focus:border-brand transition-all">
+                    </div>
+
+                    <div>
+                        <label class="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-2">Phone Number</label>
+                        <input type="tel" id="phoneField" placeholder="+91..." required pattern="^\+?[0-9]{10,15}$" title="Enter a valid phone number (10-15 digits)."
+                            class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 font-medium placeholder-gray-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand/20 focus:border-brand transition-all">
+                    </div>
+
+                    <div>
+                        <label class="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-2">Organization</label>
+                        <input type="text" id="orgField" placeholder="Company Name" required pattern="^[a-zA-Z0-9\s\.\-_]+$"
+                            class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 font-medium placeholder-gray-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand/20 focus:border-brand transition-all">
+                    </div>
+
+                    <div>
+                        <label class="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-2">Industry</label>
+                        <input type="text" id="industryField" placeholder="Retail, Tech, etc." pattern="^[a-zA-Z\s]+$"
+                            class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 font-medium placeholder-gray-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand/20 focus:border-brand transition-all">
+                    </div>
+
+                    <div class="md:col-span-2">
+                        <label class="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-2">Consultation Focus</label>
+                        <select id="focusField" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 font-medium focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand/20 focus:border-brand transition-all cursor-pointer">
+                            <option value="Billing">Billing Automation</option>
+                            <option value="Workflow">Logic-Driven Workflows</option>
+                            <option value="Custom">Custom Enterprise Solution</option>
+                        </select>
+                    </div>
+
+                    <div class="md:col-span-2">
+                        <label class="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-2">Promo Code (Optional)</label>
+                        <input type="text" id="promoField" placeholder="Enter code if any" pattern="^[a-zA-Z0-9]+$"
+                            class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 font-medium placeholder-gray-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand/20 focus:border-brand transition-all uppercase">
+                    </div>
+                </div>
+                
+                <div class="pt-4">
+                    <button type="submit" class="btn-action w-full py-4 px-6 bg-brand hover:bg-brand-hover text-white font-bold rounded-xl shadow-[0_8px_20px_rgba(43,24,103,0.2)] transform transition-all hover:-translate-y-[1px] active:translate-y-[1px] flex items-center justify-center gap-3">
+                        Confirm Booking <i class="fa-solid fa-arrow-right text-sm"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('load', () => {
+            // GSAP Animations
+            gsap.to("#textSide", { duration: 1, opacity: 1, x: 0, ease: "power3.out" });
+            gsap.to("#bookingCard", { duration: 1, opacity: 1, y: 0, ease: "power3.out", delay: 0.2 });
+
+            // Typed.js Animation
+            new Typed('#typing-text', {
+                strings: ['scheduling', 'growth', 'billing'],
+                typeSpeed: 60,
+                backSpeed: 40,
+                loop: true,
+                cursorChar: '|'
+            });
+        });
+
+        // Form Submit Listener
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            completeBooking();
+        });
+
+        function completeBooking() {
+            const btn = document.querySelector('.btn-action');
+            
+            // SECURITY: Sanitize function
+            const sanitize = (str) => {
+                const temp = document.createElement('div');
+                temp.textContent = str;
+                return temp.innerHTML;
+            };
+
+            const name = sanitize(document.getElementById('nameField').value);
+            const email = document.getElementById('emailField').value;
+            const phone = sanitize(document.getElementById('phoneField').value);
+            const org = sanitize(document.getElementById('orgField').value);
+
+            // Double check validation
+            if(!name || !email || !phone || !org) {
+                alert("Please fill in all required fields correctly.");
+                return;
+            }
+            
+            // Update button state (Using FontAwesome spinner)
+            btn.innerHTML = 'Scheduling... <i class="fa-solid fa-spinner fa-spin"></i>';
+            btn.disabled = true;
+
+            const formData = new FormData();
+            formData.append('name', name);
+            formData.append('email', email);
+            formData.append('phone', phone);
+            formData.append('organization', org);
+            formData.append('industry', sanitize(document.getElementById('industryField').value));
+            formData.append('focus', document.getElementById('focusField').value);
+            formData.append('promo', sanitize(document.getElementById('promoField').value));
+
+            // AJAX Fetch request
+            fetch('./send_mail.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if(data.status === "success") {
+                    alert("Success! Your consultation request has been sent.");
+                    window.location.href = 'index.html';
+                } else {
+                    alert("Error: " + data.message);
+                    resetBtn(btn);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert("Connection failed. Check if send_mail.php exists.");
+                resetBtn(btn);
+            });
+        }
+
+        function resetBtn(btn) {
+            btn.innerHTML = 'Confirm Booking <i class="fa-solid fa-arrow-right text-sm"></i>';
+            btn.disabled = false;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Watch Live Demo – Rupnidhi GST Billing Software</title>
+  <meta name="description"
+    content="Book a live demo of Rupnidhi GST Billing Software. Watch how easy it is to create invoices, manage inventory and file GST returns." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <style>
+    /* =========================================================================
+       DEMO PAGE SPECIFIC STYLES (Inherits variables from style.css)
+       ========================================================================= */
+
+    /* --- Split Hero Section --- */
+    .demo-split-hero {
+      background-color: var(--brand-primary);
+      padding: 80px 0 100px 0;
+      color: #ffffff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .demo-hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    @media (min-width: 992px) {
+      .demo-hero-grid {
+        grid-template-columns: 1.2fr 1fr;
+      }
+    }
+
+    .demo-hero-content h1 {
+      font-family: var(--font-head);
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .demo-hero-content p {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 32px;
+    }
+
+    /* Video Card */
+    .video-card {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      aspect-ratio: 16 / 9;
+      background: #000;
+      cursor: pointer;
+    }
+
+    .video-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .video-card:hover img {
+      transform: scale(1.03);
+    }
+
+    .play-btn-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 72px;
+      height: 72px;
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+      z-index: 2;
+    }
+
+    .play-btn-overlay i {
+      color: var(--brand-primary);
+      font-size: 24px;
+      margin-left: 4px;
+    }
+
+    .video-card:hover .play-btn-overlay {
+      transform: translate(-50%, -50%) scale(1.1);
+      background-color: #ffffff;
+    }
+
+    .video-card iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      opacity: 0;
+      pointer-events: none;
+      z-index: 3;
+      transition: opacity 0.3s ease;
+    }
+
+    .video-card.is-playing img,
+    .video-card.is-playing .play-btn-overlay {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .video-card.is-playing iframe {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* --- Form Card (OTP logic styling) --- */
+    .demo-form-card {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 40px;
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+      color: var(--text-main);
+    }
+
+    .demo-form-card h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--brand-primary);
+      margin-bottom: 4px;
+    }
+
+    .demo-form-card .subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+
+    .demo-form-card label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .demo-form-card input,
+    .demo-form-card select {
+      width: 100%;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 12px 16px;
+      font-size: 0.95rem;
+      font-family: var(--font-base);
+      margin-bottom: 20px;
+      transition: border-color 0.3s ease;
+      color: var(--text-main);
+      background-color: #fcfcfc;
+    }
+
+    .demo-form-card input:focus,
+    .demo-form-card select:focus {
+      outline: none;
+      border-color: var(--brand-primary);
+      background-color: #ffffff;
+    }
+
+    /* OTP Buttons using brand colors */
+    .get_otp_btn_main,
+    .form_submit_main {
+      background-color: var(--brand-primary);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-sm);
+      padding: 14px 20px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      width: 100%;
+      transition: background 0.2s;
+      font-family: var(--font-base);
+    }
+
+    .get_otp_btn_main:hover,
+    .form_submit_main:hover {
+      background-color: var(--brand-hover);
+    }
+
+    .get_otp_btn_main:disabled,
+    .form_submit_main:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    .response_msg_main {
+      color: #e53e3e;
+      font-size: 0.85rem;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+
+    .otp-info {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .change_num_main,
+    .resend_otp_main {
+      color: var(--brand-primary);
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+
+    .countdown_main {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 8px;
+      min-height: 18px;
+    }
+
+    .thank_you_main {
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .thank_you_main .ty-icon {
+      font-size: 56px;
+      color: var(--brand-primary);
+      margin-bottom: 16px;
+    }
+
+    /* --- Features Alternating Grid --- */
+    .demo-feature-row {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      margin-top: 80px;
+    }
+
+    .demo-feature-row:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .df-content {
+      flex: 1;
+    }
+
+    .df-content h3 {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    .df-content p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    .df-content ul {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .df-content li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1rem;
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    .df-content li i {
+      color: var(--brand-primary);
+      font-size: 1.2rem;
+    }
+
+    .df-image {
+      flex: 1;
+    }
+
+    .df-image img {
+      width: 100%;
+      border-radius: var(--radius-lg);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    @media (max-width: 900px) {
+
+      .demo-feature-row,
+      .demo-feature-row:nth-child(even) {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+        margin-top: 60px;
+      }
+
+      .df-content ul {
+        align-items: center;
+      }
+    }
+
+    /* --- Quick Features List --- */
+    .quick-features {
+      padding: 80px 0;
+      background: var(--bg-slate);
+    }
+
+    .qf-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 40px auto 0;
+    }
+
+    .qf-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-main);
+      padding: 12px 0;
+    }
+
+    .qf-item i {
+      color: var(--brand-primary);
+      font-size: 1.2rem;
+    }
+
+    /* --- Why Us Cards --- */
+    .why-section {
+      padding: 80px 0;
+      background: var(--brand-primary);
+      color: #fff;
+      text-align: center;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .why-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-md);
+      padding: 32px 24px;
+      transition: transform 0.3s;
+    }
+
+    .why-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .why-card i {
+      font-size: 36px;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+
+    .why-card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    /* --- Mobile App Section --- */
+    .app-section {
+      padding: 80px 0;
+      background: var(--brand-light);
+    }
+
+    .app-flex {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .app-content {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .app-content h2 {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 800;
+      color: var(--brand-primary);
+      margin-bottom: 20px;
+      line-height: 1.1;
+    }
+
+    .app-content p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .app-badges {
+      display: flex;
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .app-badges img {
+      height: 50px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .app-badges img:hover {
+      transform: scale(1.05);
+    }
+
+    .app-visual {
+      flex: 1;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      align-items: flex-end;
+    }
+
+    .app-visual img {
+      max-height: 400px;
+      filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.15));
+      border-radius: 24px;
+    }
+
+    /* --- Templates --- */
+    .template-section {
+      padding: 80px 0;
+      background: #fff;
+      text-align: center;
+    }
+
+    .template-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .template-card {
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s;
+      border: 1px solid var(--border-color);
+    }
+
+    .template-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    /* --- WhatsApp Widget Overrides --- */
+    #live-optin-container {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 8px;
+    }
+
+    .chat-icon-box {
+      background: #25D366;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+      position: relative;
+      transition: transform 0.3s;
+    }
+
+    .chat-icon-box:hover {
+      transform: scale(1.05);
+    }
+
+    .notification-badge {
+      position: absolute;
+      top: -2px;
+      right: -2px;
+      background: #e53e3e;
+      color: #fff;
+      border-radius: 50%;
+      width: 22px;
+      height: 22px;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      border: 2px solid #fff;
+    }
+
+    #chat-welcome {
+      background: #fff;
+      border-radius: 8px;
+      padding: 8px 16px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    #container-form {
+      width: 340px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      font-family: var(--font-base);
+    }
+
+    #container-form.hide {
+      display: none;
+    }
+
+    .conv-header {
+      background: var(--brand-primary);
+      color: #fff;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .conv-header .title {
+      font-weight: 700;
+      font-size: 1rem;
+      display: block;
+    }
+
+    .conv-header .status {
+      font-size: 0.8rem;
+      opacity: 0.8;
+      display: block;
+    }
+
+    .close-btn {
+      margin-left: auto;
+      background: none;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      opacity: 0.8;
+      transition: opacity 0.2s;
+    }
+
+    .close-btn:hover {
+      opacity: 1;
+    }
+
+    .msgs-wrap {
+      padding: 16px;
+      background: #E5DDD5;
+      max-height: 380px;
+      overflow-y: auto;
+    }
+
+    .bubble {
+      background: #fff;
+      border-radius: 0 8px 8px 8px;
+      padding: 12px;
+      margin-bottom: 12px;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+      color: var(--text-main);
+    }
+
+    .chat-link {
+      display: block;
+      background: var(--brand-light);
+      color: var(--brand-primary);
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 10px 12px;
+      border-radius: 6px;
+      margin: 6px 0;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .chat-link:hover {
+      background: var(--border-color);
+    }
+
+    /* WhatsApp Widget OTP Sub-form */
+    .otp-form-wrap {
+      padding: 16px;
+      border-top: 1px solid #eee;
+      background: #fff;
+    }
+
+    .form-back {
+      cursor: pointer;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-bottom: 12px;
+      font-size: 0.85rem;
+    }
+
+    .form-back:hover {
+      color: var(--brand-primary);
+    }
+
+    .form-title {
+      font-weight: 700;
+      margin-bottom: 16px;
+      font-size: 0.95rem;
+      color: var(--text-main);
+    }
+
+    .otp-form-wrap label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: var(--text-muted);
+    }
+
+    .otp-form-wrap input,
+    .otp-form-wrap select {
+      width: 100%;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 10px;
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+      outline: none;
+      box-sizing: border-box;
+      font-family: var(--font-base);
+    }
+
+    .otp-form-wrap input:focus,
+    .otp-form-wrap select:focus {
+      border-color: var(--brand-primary);
+    }
+
+    .get_otp_btn,
+    .form_submit {
+      background: var(--brand-primary);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 10px 18px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      width: 100%;
+      font-family: var(--font-base);
+    }
+
+    .get_otp_btn:disabled,
+    .form_submit:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .chat-input-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px;
+      background: #f0f0f0;
+    }
+
+    #chat-msg-input {
+      flex: 1;
+      padding: 10px 16px;
+      border-radius: 24px;
+      border: none;
+      font-size: 0.9rem;
+      outline: none;
+      font-family: var(--font-base);
+    }
+
+    #chat-msg-link {
+      background: var(--brand-primary);
+      color: #fff;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    #chat-msg-link:hover {
+      background: var(--brand-hover);
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/images/logo.webp" alt="Rupnidhi Logo" class="logo-mark">
+        <img src="assets/name.png" class="brand-name-img" alt="Rupnidhi Brand Name" onerror="this.style.display='none'">
+      </a>
+      
+      <ul class="nav-links">
+        <li><a href="index.html" >Home</a></li>
+        <li><a href="demo.html"class="active"><span class="dot"></span>Demo</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li class="has-dropdown">
+          <a href="#">Solutions <i class="fa fa-chevron-down" style="font-size: 10px; margin-left:4px;"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="invoice.html">GST Invoicing</a></li>
+            <li><a href="supermarket.html">Supermarket POS</a></li>
+            <li><a href="medical.html">Medical Store</a></li>
+            <li><a href="poss.html">Restaurant POS</a></li>
+            <li><a href="purchase.html">Purchase & AI</a></li>
+            <li><a href="payroll.html">Payroll & HR</a></li>
+            <li><a href="tasks.html">Task Management</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="https://rupnidhi.com/login.php" class="btn btn-outline-dark">Login</a>
+        <a href="https://rupnidhi.com/booking.html" class="btn btn-orange">Signup</a>
+      </div>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <div class="mobile-nav-wrapper" id="mobileNavWrapper">
+      <div class="mobile-nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="demo.html">Demo</a>
+        <a href="features.html">Features</a>
+        <a href="pricing.html">Pricing</a>
+        
+        <div class="mobile-dropdown-group">
+          <a href="#" class="mobile-dropdown-toggle" id="mobileDropdownBtn">
+            Solutions <i class="fa fa-chevron-down"></i>
+          </a>
+          <div class="mobile-sub-links" id="mobileSubLinks">
+            <a href="invoice.html">GST Invoicing</a>
+            <a href="supermarket.html">Supermarket POS</a>
+            <a href="medical.html">Medical Store</a>
+            <a href="poss.html">Restaurant POS</a>
+            <a href="purchase.html">Purchase & AI</a>
+            <a href="payroll.html">Payroll & HR</a>
+            <a href="tasks.html">Task Management</a>
+          </div>
+        </div>
+
+        <a href="contact.html">Contact Us</a>
+        
+        <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 20px;">
+          <a href="https://rupnidhi.com/login.php" class="btn btn-outline-dark" style="text-align: center;">Login</a>
+          <a href="https://rupnidhi.com/booking.html" class="btn btn-orange" style="text-align: center;">Signup Free</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="demo-split-hero">
+    <div class="container">
+      <div class="demo-hero-grid">
+
+        <div class="demo-hero-content">
+          <h1>See Rupnidhi in Action</h1>
+          <p>Watch how easy it is to create GST invoices, manage your inventory, and check your business reports in
+            real-time. Have questions? Call us at <a href="tel:8668025451"
+              style="font-weight:700; color:#fff;">866-802-5451</a></p>
+
+          <div class="video-card" id="videoWrapper">
+  <img src="assets/images/demo_cover.png" alt="Rupnidhi Demo Video Preview" onerror="this.src='https://gogstbill.com/wp-content/uploads/2023/08/iPhone-X-1f-copy.png'" />
+  <div class="play-btn-overlay">
+    <i class="fa fa-play"></i>
+  </div>
+  <iframe id="youtubeIframe" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="width: 100%; height: 100%;"></iframe>
+</div>
+        </div>
+
+        <div class="demo-form-card">
+          <h2>Book Live Demo</h2>
+          <p class="subtitle">Get a personalized 1-on-1 walkthrough via AnyDesk.</p>
+
+          <div id="demo-otp-container-main">
+            <form class="form_div_main">
+              <label>Full Name</label>
+              <input type="text" class="name" name="name" placeholder="Enter your name" />
+
+              <label>Phone Number</label>
+              <input type="text" class="phone" name="phone" maxlength="10" placeholder="10-digit mobile number" />
+
+              <label>Best time to call</label>
+              <select class="time" name="time">
+                <option>Any Time (10 AM To 7 PM)</option>
+                <option>10 AM To 12 PM</option>
+                <option>12 PM To 2 PM</option>
+                <option>2 PM To 4 PM</option>
+                <option>4 PM To 7 PM</option>
+              </select>
+
+              <label>Industry / Business Type</label>
+              <input type="text" class="business_type" name="business_type"
+                placeholder="e.g. Retail, Medical, Supermarket" />
+
+              <input type="hidden" class="hash" name="hash" />
+              <div class="response_msg_main"></div>
+
+              <button type="button" class="get_otp_btn_main" disabled>Get OTP</button>
+            </form>
+
+            <form class="form_otp_main" style="display:none;">
+              <p class="otp-info">We sent a 4-digit code to <strong class="otp-phone-num"></strong>. <br><span
+                  class="change_num_main">Change Phone Number</span></p>
+
+              <label>Enter OTP</label>
+              <input type="text" class="otp" maxlength="4" placeholder="4-digit OTP" />
+
+              <div class="countdown_main"></div>
+              <div class="resend_otp_main" style="display:none;">Resend OTP</div>
+
+              <div class="response_msg_main" style="margin-top:8px;"></div>
+              <button type="button" class="form_submit_main" disabled style="margin-top:10px;">Submit Request</button>
+            </form>
+
+            <div class="thank_you_main" style="display:none;">
+              <div class="ty-icon"><i class="fa fa-circle-check"></i></div>
+              <h3 style="font-size:20px;font-weight:700;color:var(--brand-primary);margin-bottom:8px;">Thank you!</h3>
+              <p style="color:var(--text-muted);font-size:0.95rem;line-height:1.6;">We have received your request. A
+                member of our team will contact you shortly to schedule your demo.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="container" style="padding-bottom: 40px;">
+    <div class="demo-feature-row">
+      <div class="df-content">
+        <h3>Create Beautiful GST Invoices in Seconds</h3>
+        <p>No more manual calculations. Easily generate professional, customized GST bills that automatically calculate
+          CGST, SGST, and IGST to ensure 100% compliance.</p>
+        <ul>
+          <li><i class="fa fa-check-circle"></i> Instant WhatsApp &amp; Email Sharing</li>
+          <li><i class="fa fa-check-circle"></i> 15+ Advanced Invoice Templates</li>
+          <li><i class="fa fa-check-circle"></i> Barcode Integration &amp; Thermal Printing</li>
+        </ul>
+      </div>
+      <div class="df-image">
+        <img src="assets/images/image copy 2.png" alt="GST Invoicing" loading="lazy" />
+      </div>
+    </div>
+
+    <div class="demo-feature-row">
+      <div class="df-content">
+        <h3>Real-time Inventory &amp; Stock Management</h3>
+        <p>Never run out of your best-selling products again. Track every item in your store in real-time, get low-stock
+          alerts, and manage multiple godowns effortlessly.</p>
+        <ul>
+          <li><i class="fa fa-check-circle"></i> Batch &amp; Expiry Date Tracking</li>
+          <li><i class="fa fa-check-circle"></i> Instant Low-Stock Notifications</li>
+          <li><i class="fa fa-check-circle"></i> Easy Purchase Order Generation</li>
+        </ul>
+      </div>
+      <div class="df-image">
+        <img src="assets/images/inventory_mockup.jpg" alt="Inventory tracking" loading="lazy"
+          onerror="this.src='assets/images/image copy 3.png'" />
+      </div>
+    </div>
+  </section>
+
+  <section class="quick-features">
+    <div class="container">
+      <div style="text-align:center;">
+        <h2 style="font-family:var(--font-head); font-size:2rem; font-weight:800; color:var(--text-main);">Everything
+          You Need to Grow</h2>
+        <p style="color:var(--text-muted); margin-top:8px;">Easiest GST Billing Software That Anyone Can Use!</p>
+      </div>
+
+      <div class="qf-grid">
+        <div class="qf-item"><i class="fa fa-check-circle"></i> E-Way Bill Generation</div>
+        <div class="qf-item"><i class="fa fa-check-circle"></i> E-Invoice Support</div>
+        <div class="qf-item"><i class="fa fa-check-circle"></i> Android &amp; iOS App</div>
+        <div class="qf-item"><i class="fa fa-check-circle"></i> Purchase Orders</div>
+        <div class="qf-item"><i class="fa fa-check-circle"></i> Payment Receipts</div>
+        <div class="qf-item"><i class="fa fa-check-circle"></i> Staff Permissions</div>
+        <div class="qf-item"><i class="fa fa-check-circle"></i> Customized Reports</div>
+        <div class="qf-item"><i class="fa fa-check-circle"></i> Expenses Tracking</div>
+        <div class="qf-item"><i class="fa fa-check-circle"></i> Payment Reminders</div>
+        <div class="qf-item"><i class="fa fa-check-circle"></i> Inventory Management</div>
+        <div class="qf-item"><i class="fa fa-check-circle"></i> Credit / Debit Note</div>
+        <div class="qf-item"><i class="fa fa-check-circle"></i> A4, A5 & Thermal Print</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="app-section">
+    <div class="container app-flex">
+      <div class="app-content">
+        <h2>Your Business In<br>Your Pocket</h2>
+        <p>With our user-friendly mobile app, you can now carry your entire business in your pocket. Create invoices,
+          manage clients, and track stock from anywhere.</p>
+        <b style="color: var(--brand-primary);">Coming soon</b>
+        <div class="app-badges">
+          <a href="#"><img src="https://gogstbill.com/wp-content/uploads/2022/08/google-play-badge.png"
+              alt="Google Play" /></a>
+          <a href="#"><img src="https://gogstbill.com/wp-content/uploads/2023/08/Download_on_the_App_Store_Badge.png"
+              alt="App Store" /></a>
+        </div>
+      </div>
+      <div class="app-visual">
+        <img src="https://gogstbill.com/wp-content/uploads/2023/08/iPhone-X-1f-copy.png" alt="Mobile App" />
+        <img src="https://gogstbill.com/wp-content/uploads/2023/08/iPhone-X-2-1-copy-2.png" alt="Customer List" />
+      </div>
+    </div>
+  </section>
+
+  <section class="why-section">
+    <div class="container">
+      <h2 style="font-family:var(--font-head); font-size:2.5rem; font-weight:800;">Why Rupnidhi?</h2>
+      <p style="opacity:0.8; font-size:1.1rem; margin-top:8px;">Trusted By Over 1 Lakh+ Business Owners Across India</p>
+
+      <div class="why-grid">
+        <div class="why-card"><i class="fa fa-infinity"></i>
+          <h3>Lifetime Free Plan</h3>
+        </div>
+        <div class="why-card"><i class="fa fa-headset"></i>
+          <h3>7 Days Phone Support</h3>
+        </div>
+        <div class="why-card"><i class="fa fa-mobile-screen"></i>
+          <h3>Use On Any Device</h3>
+        </div>
+        <div class="why-card"><i class="fa fa-shield-halved"></i>
+          <h3>Safe &amp; Secure</h3>
+        </div>
+      </div>
+
+      <div style="margin-top:50px;">
+        <a href="https://rupnidhi.com/signup/" class="btn"
+          style="background:#fff; color:var(--brand-primary); padding:14px 36px; font-size:1.05rem;">
+          Create Your Free Account <i class="fa fa-arrow-right" style="margin-left:8px;"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="rupnidhi-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+
+        <div class="footer-brand-col">
+          <h2 class="footer-logo-text">Rupnidhi</h2>
+          <p class="footer-bio">
+            A complete GST billing solution for growing businesses in India. Simplify your invoicing, track inventory in real-time, and ensure 100% tax compliance with ease.
+          </p>
+
+          <div class="footer-socials">
+            <a href="#" aria-label="Facebook" class="social-icon">
+              <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+              </svg>
+            </a>
+            <a href="#" aria-label="Twitter" class="social-icon">
+              <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
+                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+              </svg>
+            </a>
+            <a href="#" aria-label="Instagram" class="social-icon">
+              <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+            </a>
+            <a href="#" aria-label="LinkedIn" class="social-icon">
+              <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                <rect x="2" y="9" width="4" height="12" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-links-col">
+          <h4 class="footer-heading">Solutions</h4>
+          <ul class="footer-list">
+            <li><a href="invoice.html">GST Invoicing</a></li>
+            <li><a href="supermarket.html">Supermarket POS</a></li>
+            <li><a href="medical.html">Medical Store</a></li>
+            <li><a href="poss.html">Restaurant POS</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4 class="footer-heading">Company</h4>
+          <ul class="footer-list">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4 class="footer-heading">Support</h4>
+          <ul class="footer-list">
+            <li><a href="faq.html">FAQs</a></li>
+            <li><a href="help.html">Help Center</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Rupnidhi. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Security</a>
+          <span class="divider">|</span>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="live-optin-container">
+    <div id="chat-welcome" style="display:block;">Chat Now</div>
+    <div class="chat-icon-box" id="btn-icon-chat">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M0 24L1.695 17.838C0.65 16.034 0.1 13.988 0.1 11.892C0.103 5.335 5.463 0 12.05 0C15.247 0.001 18.247 1.24 20.503 3.488C22.759 5.736 24.001 8.724 24 11.902C23.997 18.459 18.636 23.794 12.05 23.794H12.045C10.045 23.793 8.08 23.294 6.335 22.346L0 24Z"
+          fill="white" />
+        <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M9.05 6.56C8.83 6.03 8.6 6.02 8.39 6.01C8.21 6 8.02 6 7.82 6C7.62 6 7.3 6.08 7.03 6.4C6.76 6.72 6 7.49 6 9.05C6 10.62 7.06 12.13 7.21 12.35C7.35 12.56 9.25 15.87 12.25 17.15C14.74 18.21 15.25 18 15.79 17.95C16.33 17.9 17.54 17.18 17.78 16.43C18.03 15.69 18.03 15.05 17.96 14.92C17.88 14.79 17.69 14.71 17.39 14.55C17.1 14.39 15.64 13.62 15.37 13.51C15.1 13.41 14.91 13.35 14.71 13.67C14.51 13.99 13.95 14.71 13.77 14.92C13.6 15.13 13.43 15.16 13.13 15C12.84 14.84 11.89 14.5 10.76 13.42C9.88 12.58 9.29 11.53 9.12 11.22C8.95 10.9 9.12 10.74 9.25 10.57C9.49 10.25 9.89 9.69 9.99 9.48C10.08 9.27 10.03 9.08 9.96 8.92C9.89 8.76 9.31 7.19 9.05 6.56Z"
+          fill="white" />
+      </svg>
+      <div class="notification-badge">1</div>
+    </div>
+
+    <div id="container-form" class="hide">
+      <div class="conv-header">
+        <div
+          style="background:#fff; border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center;">
+          <img src="assets/images/logo.webp" alt="Rupnidhi" style="width:24px; object-fit:contain;"
+            onerror="this.style.display='none'" />
+        </div>
+        <div><span class="title">Rupnidhi</span><span class="status">GST Billing Software</span></div>
+        <button class="close-btn chat-box-close" aria-label="Close"><i class="fa fa-times"></i></button>
+      </div>
+      <div class="msgs-wrap">
+        <div class="bubble">Welcome to Rupnidhi 👋</div>
+        <div class="bubble">
+          <p style="margin-bottom:8px;font-weight:600;">How can we help you?</p>
+          <a href="#" class="chat-link show-demo-form">Request Demo</a>
+          <a href="https://rupnidhi.com/pricing.html" class="chat-link">Pricing</a>
+          <a href="https://api.whatsapp.com/send/?phone=+918668025451&text=Hi" class="chat-link"
+            target="_blank">WhatsApp Us</a>
+        </div>
+      </div>
+
+      <div class="otp-form-wrap" id="otp-form-section" style="display:none;">
+        <div class="form-back" id="form-back-btn">← Back</div>
+        <div class="form-title">Fill up the form below for a demo</div>
+        <div class="demo-otp-container" id="demo-otp-container-8501">
+          <form class="form_div">
+            <label>Name</label><input type="text" class="name" name="name" />
+            <label>Phone</label><input type="text" class="phone" name="phone" maxlength="10" />
+            <label>Time to call</label>
+            <select class="time" name="time">
+              <option>Any Time</option>
+              <option>10 AM To 12 PM</option>
+            </select>
+            <label>Business type</label><input type="text" class="business_type" name="business_type" />
+            <input type="hidden" class="hash" name="hash" />
+            <div class="response_msg" style="color:#e53e3e;font-size:12px;margin-bottom:8px;"></div>
+            <input type="submit" value="Get OTP" class="get_otp_btn" disabled />
+          </form>
+          <form class="form_otp" style="display:none;">
+            <div style="font-size:12px;margin-bottom:8px;">Enter OTP sent to <span></span> <br>
+              <div class="change_num" style="color:var(--brand-primary);cursor:pointer;margin-top:4px;">Change Number
+              </div>
+            </div>
+            <div class="otp_field_div"></div>
+            <div class="response_msg" style="color:#e53e3e;font-size:12px;margin-bottom:8px;"></div>
+            <input type="submit" value="Submit" class="form_submit" disabled />
+          </form>
+          <div class="thank_you" style="display:none;text-align:center;padding:20px 0;">
+            <div style="font-weight:700;color:var(--brand-primary);margin-bottom:8px;">🎉 Thank you!</div>
+            <div style="font-size:13px;color:#666;">We will be in touch with you shortly.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="chat-input-row">
+        <input type="text" id="chat-msg-input" placeholder="Send a message..." />
+        <a id="chat-msg-link" href="https://api.whatsapp.com/send/?phone=+918668025451&text=" target="_blank">
+          <i class="fa fa-paper-plane"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ==========================================
+    // HAMBURGER MENU LOGIC
+    // ==========================================
+    document.addEventListener("DOMContentLoaded", function() {
+      const menuBtn = document.getElementById('mobileMenuBtn');
+      const navWrapper = document.getElementById('mobileNavWrapper');
+      const dropdownBtn = document.getElementById('mobileDropdownBtn');
+      const subLinks = document.getElementById('mobileSubLinks');
+
+      // Toggle Main Hamburger Menu
+      if (menuBtn) {
+        menuBtn.addEventListener('click', function() {
+          this.classList.toggle('open');
+          navWrapper.classList.toggle('open');
+        });
+      }
+
+      // Toggle Mobile Sub-Menu (Solutions)
+      if (dropdownBtn) {
+        dropdownBtn.addEventListener('click', function(e) {
+          e.preventDefault(); // Prevent jump to top
+          subLinks.classList.toggle('open');
+          
+          // Flip arrow
+          const icon = this.querySelector('i');
+          if (subLinks.classList.contains('open')) {
+            icon.style.transform = 'rotate(180deg)';
+          } else {
+            icon.style.transform = 'rotate(0deg)';
+          }
+        });
+      }
+    });
+
+    // Video Player Logic
+    // Video Player Logic
+// Video Player Logic
+const videoWrapper = document.getElementById('videoWrapper');
+const iframe = document.getElementById('youtubeIframe');
+
+videoWrapper.addEventListener('click', () => {
+  if (!videoWrapper.classList.contains('is-playing')) {
+    // Testing with a confirmed working video ID (Costa Rica 4K)
+    iframe.src = "https://www.youtube.com/embed/LXb3EKWsInQ?autoplay=1"; 
+    videoWrapper.classList.add('is-playing');
+  }
+});
+
+    // Chat widget Toggles
+    const chatForm = document.getElementById('container-form');
+    const chatWelcome = document.getElementById('chat-welcome');
+
+    document.getElementById('btn-icon-chat').onclick = function () {
+      chatForm.classList.toggle('hide');
+      chatWelcome.style.display = chatForm.classList.contains('hide') ? 'block' : 'none';
+      this.querySelector('.notification-badge').style.display = 'none';
+    };
+
+    document.querySelectorAll('.chat-box-close').forEach(btn => {
+      btn.onclick = () => { chatForm.classList.add('hide'); chatWelcome.style.display = 'block'; };
+    });
+
+    document.querySelectorAll('.show-demo-form').forEach(link => {
+      link.onclick = (e) => { e.preventDefault(); document.getElementById('otp-form-section').style.display = 'block'; };
+    });
+
+    document.getElementById('form-back-btn').onclick = () => {
+      document.getElementById('otp-form-section').style.display = 'none';
+    };
+
+    document.getElementById('chat-msg-input').addEventListener('input', function () {
+      document.getElementById('chat-msg-link').href = 'https://api.whatsapp.com/send/?phone=+918668025451&text=' + encodeURIComponent(this.value);
+    });
+  </script>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      var $main = jQuery('#demo-otp-container-main');
+
+      function checkMainFields() {
+        var ok = $main.find('.phone').val().length == 10 && $main.find('.name').val().trim() != '';
+        $main.find('.get_otp_btn_main').prop('disabled', !ok);
+      }
+      $main.find('.phone').on('keypress', function (e) {
+        if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) return false;
+      });
+      $main.find('.phone, .name').on('change paste keyup', checkMainFields);
+
+      var mainOtpInterval;
+      function mainCountdown() {
+        var t = '1:00';
+        if (mainOtpInterval) { clearInterval(mainOtpInterval); mainOtpInterval = null; }
+        mainOtpInterval = setInterval(function () {
+          var s = t.split(':'), m = parseInt(s[0]), sec = parseInt(s[1]);
+          --sec; m = sec < 0 ? --m : m;
+          if (m < 0) { $main.find('.countdown_main').html(''); clearInterval(mainOtpInterval); $main.find('.resend_otp_main').show(); return; }
+          sec = sec < 0 ? 59 : sec; sec = sec < 10 ? '0' + sec : sec;
+          $main.find('.countdown_main').html('Resend OTP in ' + m + ':' + sec); t = m + ':' + sec;
+        }, 1000);
+      }
+
+      function generateMainOTP(phone) {
+        jQuery.ajax({
+          url: 'https://api.gogstbill.com', type: 'post',
+          data: { action: 'generateDemoOTP', phone: phone },
+          success: function (r) {
+            if (r.Status == 'Success') {
+              $main.find('.hash').val(r.hash);
+              $main.find('.form_div_main').hide();
+              $main.find('.form_otp_main').show();
+              $main.find('.otp-phone-num').html(phone);
+              $main.find('.otp').val('');
+              $main.find('.form_submit_main').prop('disabled', true);
+              $main.find('.response_msg_main').html('');
+              $main.find('.resend_otp_main').hide();
+              mainCountdown();
+            } else {
+              $main.find('.response_msg_main').html(r.Details || 'Something went wrong.');
+            }
+          },
+          error: function () { $main.find('.response_msg_main').html('Something went wrong. Please try again.'); }
+        });
+      }
+
+      $main.find('.get_otp_btn_main').on('click', function () { generateMainOTP($main.find('.phone').val()); });
+
+      $main.find('.change_num_main').on('click', function () {
+        $main.find('.form_otp_main').hide();
+        $main.find('.form_div_main').show();
+        $main.find('.otp').val('');
+        $main.find('.response_msg_main').html('');
+        checkMainFields();
+      });
+
+      jQuery(document).on('click', '#demo-otp-container-main .resend_otp_main', function () {
+        generateMainOTP($main.find('.phone').val());
+      });
+      jQuery(document).on('change paste keyup', '#demo-otp-container-main .otp', function () {
+        $main.find('.form_submit_main').prop('disabled', jQuery(this).val().length < 4);
+      });
+
+      $main.find('.form_submit_main').on('click', function () {
+        jQuery.ajax({
+          url: 'https://api.gogstbill.com', type: 'post',
+          data: {
+            action: 'verifyDemoOTP',
+            phone: $main.find('.phone').val(),
+            name: $main.find('.name').val(),
+            otp: $main.find('.otp').val(),
+            hash: $main.find('.hash').val(),
+            time: $main.find('.time').val(),
+            business_type: $main.find('.business_type').val()
+          },
+          success: function (r) {
+            if (r.Status == 'OK') {
+              $main.find('.form_otp_main, .form_div_main').hide();
+              $main.find('.thank_you_main').show();
+            } else {
+              $main.find('.response_msg_main').html(r.Details || 'Invalid OTP. Please try again.');
+            }
+          },
+          error: function () { $main.find('.response_msg_main').html('Something went wrong. Please try again.'); }
+        });
+      });
+    });
+  </script>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      jQuery('#demo-otp-container-8501 .phone').on('keypress', function (e) {
+        if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) return false;
+      });
+      function checkFields($c) {
+        var ok = $c.find('.phone').val().length == 10 && $c.find('.name').val() != '';
+        $c.find('.get_otp_btn').prop('disabled', !ok);
+      }
+      jQuery('#demo-otp-container-8501 .phone, #demo-otp-container-8501 .name').on('change paste keyup', function () {
+        checkFields(jQuery(this).parents('.demo-otp-container'));
+      });
+      jQuery('#demo-otp-container-8501 .change_num').on('click', function () {
+        var $c = jQuery(this).parents('.demo-otp-container');
+        $c.find('.otp_field').remove();
+        $c.find('.phone').prop('disabled', false).focus();
+        $c.find('.change_num').hide();
+        $c.find('.resend_otp').remove();
+        $c.find('.form_otp').hide();
+        $c.find('.form_div').show();
+        $c.find('.response_msg').html('');
+        $c.find('.form_submit').prop('disabled', true);
+        checkFields($c);
+      });
+      var otpInterval;
+      function countdown() {
+        var t = '1:00';
+        if (otpInterval) { clearInterval(otpInterval); otpInterval = null; }
+        otpInterval = setInterval(function () {
+          var s = t.split(':'), m = parseInt(s[0]), sec = parseInt(s[1]);
+          --sec; m = sec < 0 ? --m : m;
+          if (m < 0) { jQuery('.countdown').html(''); clearInterval(otpInterval); return; }
+          sec = sec < 0 ? 59 : sec; sec = sec < 10 ? '0' + sec : sec;
+          jQuery('.countdown').html(m + ':' + sec); t = m + ':' + sec;
+        }, 1000);
+      }
+      function generateOTP($c, phone) {
+        jQuery.ajax({
+          url: 'https://api.gogstbill.com', type: 'post',
+          data: { action: 'generateDemoOTP', phone: phone },
+          success: function (r) {
+            if (r.Status == 'Success') {
+              $c.find('.hash').val(r.hash);
+              $c.find('.phone').prop('disabled', true);
+              $c.find('.change_num').show();
+              $c.find('.form_div').hide();
+              $c.find('.form_otp').show();
+              $c.find('.get_otp_btn').prop('disabled', true);
+              $c.find('.enter_otp_phone span').html(phone);
+              $c.find('.otp_field_div').html('<div class="otp_field"><label style="font-size:12px; font-weight:600; color:#666; margin-bottom:4px; display:block;">Enter OTP</label><input type="text" class="otp" maxlength="4" style="width:100%; border:1px solid #ddd; border-radius:6px; padding:8px; margin-bottom:8px;"/><div class="countdown" style="font-size:12px; color:#999;"></div></div><div class="resend_otp" style="color:var(--brand-primary); font-size:12px; font-weight:600; cursor:pointer; margin-top:4px;">Resend OTP</div>');
+              $c.find('.response_msg').html('');
+              countdown();
+              setTimeout(function () { jQuery('.resend_otp').show(); jQuery('.countdown').hide(); }, 60000);
+            } else { $c.find('.response_msg').html(r.Details || ''); }
+          },
+          error: function () { $c.find('.response_msg').html('Something went wrong. Please try again.'); }
+        });
+      }
+      jQuery('#demo-otp-container-8501 .get_otp_btn').on('click', function (e) {
+        e.preventDefault();
+        var $c = jQuery(this).parents('.demo-otp-container');
+        generateOTP($c, $c.find('.phone').val());
+      });
+      jQuery(document).on('click', '#demo-otp-container-8501 .resend_otp', function () {
+        generateOTP(jQuery(this).parents('.demo-otp-container'), jQuery(this).parents('.demo-otp-container').find('.phone').val());
+      });
+      jQuery('#demo-otp-container-8501 .form_submit').on('click', function (e) {
+        e.preventDefault();
+        var $c = jQuery(this).parents('.demo-otp-container');
+        jQuery.ajax({
+          url: 'https://api.gogstbill.com', type: 'post',
+          data: {
+            action: 'verifyDemoOTP',
+            phone: $c.find('.phone').val(),
+            name: $c.find('.name').val(),
+            otp: $c.find('.otp').val(),
+            hash: $c.find('.hash').val(),
+            time: $c.find('.time').val(),
+            business_type: $c.find('.business_type').val()
+          },
+          success: function (r) {
+            if (r.Status == 'OK') { $c.find('.form_otp').hide(); $c.find('.thank_you').show(); }
+            else { $c.find('.response_msg').html(r.Details || ''); }
+          },
+          error: function () { $c.find('.response_msg').html('Something went wrong. Please try again.'); }
+        });
+      });
+      jQuery(document).on('change paste keyup', '#demo-otp-container-8501 .otp', function () {
+        jQuery(this).parents('.demo-otp-container').find('.form_submit').prop('disabled', jQuery(this).val().length < 4);
+      });
+    });
+  </script>
+
+</body>
+
+</html>
