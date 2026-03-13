@@ -5,24 +5,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact Us — Rupnidhi GST Billing Software</title>
-  <meta name="description" content="Contact Rupnidhi support team. For any questions or support simply complete the form and a member of our team will respond promptly." />
-  
+  <meta name="description"
+    content="Contact Rupnidhi support team. For any questions or support simply complete the form and a member of our team will respond promptly." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  
-  <link rel="stylesheet" href="assets/css/style.css"> 
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="assets/css/style.css">
 
   <style>
     /* =========================================================================
        CONTACT PAGE SPECIFIC STYLES
        ========================================================================= */
-    
+
     /* Contact Hero */
     .contact-hero {
       background: linear-gradient(135deg, var(--brand-primary) 0%, #1a0f3d 100%);
-      padding: 80px 0 160px 0; /* Extra bottom padding for card overlap */
+      padding: 80px 0 160px 0;
+      /* Extra bottom padding for card overlap */
       color: #fff;
       text-align: center;
     }
@@ -60,7 +63,8 @@
 
     @media (min-width: 992px) {
       .contact-grid {
-        grid-template-columns: 1fr 1.5fr; /* Info sidebar smaller, form larger */
+        grid-template-columns: 1fr 1.5fr;
+        /* Info sidebar smaller, form larger */
         align-items: start;
       }
     }
@@ -77,7 +81,7 @@
       border: 1px solid var(--border-color);
       border-radius: var(--radius-md);
       padding: 32px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     }
 
     .info-card h3 {
@@ -95,7 +99,7 @@
       gap: 16px;
       margin-bottom: 24px;
     }
-    
+
     .contact-item:last-child {
       margin-bottom: 0;
     }
@@ -132,7 +136,7 @@
       font-weight: 700;
       color: var(--text-main);
     }
-    
+
     .ci-value a:hover {
       color: var(--brand-primary);
     }
@@ -151,9 +155,22 @@
       border-bottom: 1px solid var(--border-color);
       font-size: 0.95rem;
     }
-    .hours-row:last-child { border-bottom: none; padding-bottom: 0; }
-    .hours-row .day { color: var(--text-muted); font-weight: 500; }
-    .hours-row .time { color: var(--text-main); font-weight: 700; }
+
+    .hours-row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .hours-row .day {
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .hours-row .time {
+      color: var(--text-main);
+      font-weight: 700;
+    }
+
     .badge-open {
       background: #dcfce7;
       color: #059669;
@@ -169,7 +186,7 @@
       gap: 12px;
       flex-wrap: wrap;
     }
-    
+
     .social-link {
       display: flex;
       align-items: center;
@@ -183,7 +200,7 @@
       color: var(--text-main);
       transition: all 0.2s;
     }
-    
+
     .social-link:hover {
       border-color: var(--brand-primary);
       color: var(--brand-primary);
@@ -196,7 +213,7 @@
       border: 1px solid var(--border-color);
       border-radius: var(--radius-md);
       padding: 40px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
     }
 
     .form-card h2 {
@@ -217,9 +234,11 @@
       grid-template-columns: 1fr;
       gap: 20px;
     }
-    
+
     @media (min-width: 640px) {
-      .form-row { grid-template-columns: 1fr 1fr; }
+      .form-row {
+        grid-template-columns: 1fr 1fr;
+      }
     }
 
     .form-group {
@@ -297,7 +316,7 @@
       text-align: center;
       padding: 60px 20px;
     }
-    
+
     #form-success .success-icon {
       font-size: 64px;
       color: #10b981;
@@ -352,7 +371,7 @@
 
     .office-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
     }
 
     .office-card::before {
@@ -456,20 +475,21 @@
       font-size: 0.95rem;
       color: var(--brand-primary);
     }
-
   </style>
 </head>
+
 <body>
 
   <nav class="navbar">
     <div class="container nav-inner">
       <a href="index.html" class="nav-logo">
         <img src="assets/images/logo.webp" alt="Rupnidhi Logo" class="logo-mark">
-        <img src="assets/images/name.webp" class="brand-name-img" alt="Rupnidhi Brand Name" onerror="this.style.display='none'">
+        <img src="assets/images/name.webp" class="brand-name-img" alt="Rupnidhi Brand Name"
+          onerror="this.style.display='none'">
       </a>
-      
+
       <ul class="nav-links">
-        <li><a href="index.html" >Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="demo.html">Demo</a></li>
         <li><a href="features.html">Features</a></li>
         <li><a href="pricing.html">Pricing</a></li>
@@ -485,7 +505,7 @@
             <li><a href="tasks.html">Task Management</a></li>
           </ul>
         </li>
-        <li><a href="contact.html"class="active"><span class="dot"></span>Contact Us</a></li>
+        <li><a href="contact.html" class="active"><span class="dot"></span>Contact Us</a></li>
       </ul>
 
       <div class="nav-actions">
@@ -506,7 +526,7 @@
         <a href="demo.html">Demo</a>
         <a href="features.html">Features</a>
         <a href="pricing.html">Pricing</a>
-        
+
         <div class="mobile-dropdown-group">
           <a href="#" class="mobile-dropdown-toggle" id="mobileDropdownBtn">
             Solutions <i class="fa fa-chevron-down"></i>
@@ -523,7 +543,7 @@
         </div>
 
         <a href="contact.html">Contact Us</a>
-        
+
         <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 20px;">
           <a href="https://rupnidhi.com/login.php" class="btn btn-outline-dark" style="text-align: center;">Login</a>
           <a href="https://rupnidhi.com/booking.html" class="btn btn-orange" style="text-align: center;">Signup Free</a>
@@ -535,18 +555,19 @@
   <section class="contact-hero">
     <div class="container">
       <h1>Get in Touch</h1>
-      <p>For any questions or support, simply complete the form below and a member of our team will review and respond promptly to your request.</p>
+      <p>For any questions or support, simply complete the form below and a member of our team will review and respond
+        promptly to your request.</p>
     </div>
   </section>
 
   <section class="contact-wrapper">
     <div class="contact-grid">
-      
+
       <div class="contact-sidebar">
-        
+
         <div class="info-card">
           <h3>Contact Details</h3>
-          
+
           <div class="contact-item">
             <div class="ci-icon"><i class="fa fa-phone"></i></div>
             <div class="ci-text">
@@ -560,7 +581,7 @@
             <div class="ci-icon"><i class="fa fa-envelope"></i></div>
             <div class="ci-text">
               <span class="ci-label">Digital Desk</span>
-              <span class="ci-value"><a href="mailto:info@neoerainfotech.com">info@neoerainfotech.com</a></span>
+              <span class="ci-value"><a href="mailto:contact@rupnidhi.com">contact@rupnidhi.com</a></span>
               <span class="ci-sub">Response within 12–24 hours</span>
             </div>
           </div>
@@ -569,17 +590,19 @@
             <div class="ci-icon"><i class="fa fa-location-dot"></i></div>
             <div class="ci-text">
               <span class="ci-label">Global Headquarters</span>
-              <span class="ci-value" style="font-size: 0.95rem;">Coimbatore, Tamil Nadu,<br/>India.</span>
+              <span class="ci-value" style="font-size: 0.95rem;">Coimbatore, Tamil Nadu,<br />India.</span>
             </div>
           </div>
 
-          <a href="https://api.whatsapp.com/send/?phone=918668025451&text=Hi, I need support with Rupnidhi GST Software" target="_blank" class="btn" style="background:#25D366; color:#fff; width:100%; margin-top:16px;">
+          <a href="https://api.whatsapp.com/send/?phone=918668025451&text=Hi, I need support with Rupnidhi GST Software"
+            target="_blank" class="btn" style="background:#25D366; color:#fff; width:100%; margin-top:16px;">
             <i class="fab fa-whatsapp" style="font-size: 18px; margin-right: 8px;"></i> Chat on WhatsApp
           </a>
         </div>
 
         <div class="info-card">
-          <h3 style="margin-bottom: 16px;"><i class="fa fa-clock" style="color: var(--brand-primary); margin-right: 8px;"></i> Support Hours</h3>
+          <h3 style="margin-bottom: 16px;"><i class="fa fa-clock"
+              style="color: var(--brand-primary); margin-right: 8px;"></i> Support Hours</h3>
           <div class="hours-row">
             <span class="day">Monday – Friday</span>
             <span class="time">10 AM – 7 PM</span>
@@ -621,7 +644,7 @@
               <input type="tel" id="c-phone" placeholder="10-digit mobile number" maxlength="10" />
             </div>
           </div>
-          
+
           <div class="form-row">
             <div class="form-group">
               <label>Email Address *</label>
@@ -632,7 +655,7 @@
               <input type="text" id="c-business" placeholder="e.g. Retail, Medical" />
             </div>
           </div>
-          
+
           <div class="form-group">
             <label>Subject / Query Type *</label>
             <select id="c-subject">
@@ -645,18 +668,18 @@
               <option>Other</option>
             </select>
           </div>
-          
+
           <div class="form-group">
             <label>Message *</label>
             <textarea id="c-message" placeholder="Describe your query or requirement in detail..."></textarea>
           </div>
-          
+
           <div id="form-error"></div>
-          
+
           <button class="btn-submit" onclick="submitContactForm()">
             <i class="fa fa-paper-plane"></i> Send Message
           </button>
-          
+
           <p style="font-size:0.8rem; color:var(--text-muted); margin-top:16px; text-align:center;">
             <i class="fa fa-lock" style="color:var(--brand-primary); margin-right:4px;"></i>
             Your information is safe. We never share your details with third parties.
@@ -666,9 +689,11 @@
         <div id="form-success">
           <div class="success-icon"><i class="fa fa-check-circle"></i></div>
           <h3>Message Received!</h3>
-          <p style="color:var(--text-muted); line-height:1.6;">Thank you for reaching out. A member of our support team will get back to you shortly via phone or email.</p>
-          <p style="margin-top: 24px; font-size: 0.95rem;">Need immediate help? Call us at<br/>
-            <a href="tel:+918668025451" style="color:var(--brand-primary); font-weight:800; font-size:1.25rem;">+91 86680 25451</a>
+          <p style="color:var(--text-muted); line-height:1.6;">Thank you for reaching out. A member of our support team
+            will get back to you shortly via phone or email.</p>
+          <p style="margin-top: 24px; font-size: 0.95rem;">Need immediate help? Call us at<br />
+            <a href="tel:+918668025451" style="color:var(--brand-primary); font-weight:800; font-size:1.25rem;">+91
+              86680 25451</a>
           </p>
         </div>
       </div>
@@ -682,9 +707,9 @@
         <h2>Our Global Hubs</h2>
         <p>Rupnidhi is powered by Neoera Infotech — engineering the future from Coimbatore to the world.</p>
       </div>
-      
+
       <div class="offices-grid">
-        
+
         <div class="office-card">
           <span style="font-size: 40px; margin-bottom: 16px; display: block;">🇮🇳</span>
           <div class="office-badge">Global HQ</div>
@@ -692,20 +717,11 @@
           <p>Global Engineering Headquarters. Tamil Nadu, India.</p>
           <div class="office-contact">
             <span><i class="fa fa-phone"></i> <a href="tel:+918668025451">+91 86680 25451</a></span>
-            <span><i class="fa fa-envelope"></i> <a href="mailto:info@neoerainfotech.com">info@neoerainfotech.com</a></span>
+            <span><i class="fa fa-envelope"></i> <a href="mailto:contact@rupnidhi.com">contact@rupnidhi.com</a></span>
           </div>
         </div>
 
-        <div class="office-card">
-          <span style="font-size: 40px; margin-bottom: 16px; display: block;">🇦🇪</span>
-          <div class="office-badge" style="background:#fef3c7; color:#d97706;">Middle East</div>
-          <h3>Sharjah / Dubai</h3>
-          <p>Middle East Operations Hub. United Arab Emirates.</p>
-          <div class="office-contact">
-            <span><i class="fa fa-globe"></i> UAE Office</span>
-            <span><i class="fa fa-envelope"></i> <a href="mailto:info@neoerainfotech.com">info@neoerainfotech.com</a></span>
-          </div>
-        </div>
+
 
         <div class="office-card">
           <span style="font-size: 40px; margin-bottom: 16px; display: block;">🌐</span>
@@ -713,8 +729,9 @@
           <h3>Global Online</h3>
           <p>Serving businesses across India and the world. Prioritised digital response.</p>
           <div class="office-contact">
-            <span><i class="fab fa-whatsapp"></i> <a href="https://api.whatsapp.com/send/?phone=918668025451" target="_blank">WhatsApp Us</a></span>
-            <span><i class="fa fa-envelope"></i> <a href="mailto:info@neoerainfotech.com">info@neoerainfotech.com</a></span>
+            <span><i class="fab fa-whatsapp"></i> <a href="https://api.whatsapp.com/send/?phone=918668025451"
+                target="_blank">WhatsApp Us</a></span>
+            <span><i class="fa fa-envelope"></i> <a href="mailto:contact@rupnidhi.com">contact@rupnidhi.com</a></span>
           </div>
         </div>
 
@@ -728,28 +745,28 @@
         <h2>Need More Help?</h2>
       </div>
       <div class="ql-grid">
-        
+
         <div class="ql-card">
           <i class="fa fa-book-open"></i>
           <h4>Knowledge Base</h4>
           <p>Find step-by-step guides and how-to articles for every Rupnidhi feature.</p>
           <a href="#">Browse Articles →</a>
         </div>
-        
+
         <div class="ql-card">
           <i class="fa fa-video"></i>
           <h4>Request a Demo</h4>
           <p>Schedule a free live demo with our team and see Rupnidhi in action.</p>
           <a href="demo.html">Book Demo →</a>
         </div>
-        
+
         <div class="ql-card">
           <i class="fa fa-circle-question"></i>
           <h4>FAQs</h4>
           <p>Quick answers to the most common questions about Rupnidhi GST software.</p>
           <a href="#">View FAQs →</a>
         </div>
-        
+
         <div class="ql-card">
           <i class="fa fa-handshake"></i>
           <h4>Partner Program</h4>
@@ -777,7 +794,8 @@
         <div class="footer-brand-col">
           <h2 class="footer-logo-text">Rupnidhi</h2>
           <p class="footer-bio">
-            A complete GST billing solution for growing businesses in India. Simplify your invoicing, track inventory in real-time, and ensure 100% tax compliance with ease.
+            A complete GST billing solution for growing businesses in India. Simplify your invoicing, track inventory in
+            real-time, and ensure 100% tax compliance with ease.
           </p>
 
           <div class="footer-socials">
@@ -788,7 +806,8 @@
             </a>
             <a href="#" aria-label="Twitter" class="social-icon">
               <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
-                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+                <path
+                  d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
               </svg>
             </a>
             <a href="#" aria-label="Instagram" class="social-icon">
@@ -855,16 +874,22 @@
     <div id="chat-welcome" style="display:block;">Chat Now</div>
     <div class="chat-icon-box" id="btn-icon-chat">
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0 24L1.695 17.838C0.65 16.034 0.1 13.988 0.1 11.892C0.103 5.335 5.463 0 12.05 0C15.247 0.001 18.247 1.24 20.503 3.488C22.759 5.736 24.001 8.724 24 11.902C23.997 18.459 18.636 23.794 12.05 23.794H12.045C10.045 23.793 8.08 23.294 6.335 22.346L0 24Z" fill="white" />
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.05 6.56C8.83 6.03 8.6 6.02 8.39 6.01C8.21 6 8.02 6 7.82 6C7.62 6 7.3 6.08 7.03 6.4C6.76 6.72 6 7.49 6 9.05C6 10.62 7.06 12.13 7.21 12.35C7.35 12.56 9.25 15.87 12.25 17.15C14.74 18.21 15.25 18 15.79 17.95C16.33 17.9 17.54 17.18 17.78 16.43C18.03 15.69 18.03 15.05 17.96 14.92C17.88 14.79 17.69 14.71 17.39 14.55C17.1 14.39 15.64 13.62 15.37 13.51C15.1 13.41 14.91 13.35 14.71 13.67C14.51 13.99 13.95 14.71 13.77 14.92C13.6 15.13 13.43 15.16 13.13 15C12.84 14.84 11.89 14.5 10.76 13.42C9.88 12.58 9.29 11.53 9.12 11.22C8.95 10.9 9.12 10.74 9.25 10.57C9.49 10.25 9.89 9.69 9.99 9.48C10.08 9.27 10.03 9.08 9.96 8.92C9.89 8.76 9.31 7.19 9.05 6.56Z" fill="white" />
+        <path
+          d="M0 24L1.695 17.838C0.65 16.034 0.1 13.988 0.1 11.892C0.103 5.335 5.463 0 12.05 0C15.247 0.001 18.247 1.24 20.503 3.488C22.759 5.736 24.001 8.724 24 11.902C23.997 18.459 18.636 23.794 12.05 23.794H12.045C10.045 23.793 8.08 23.294 6.335 22.346L0 24Z"
+          fill="white" />
+        <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M9.05 6.56C8.83 6.03 8.6 6.02 8.39 6.01C8.21 6 8.02 6 7.82 6C7.62 6 7.3 6.08 7.03 6.4C6.76 6.72 6 7.49 6 9.05C6 10.62 7.06 12.13 7.21 12.35C7.35 12.56 9.25 15.87 12.25 17.15C14.74 18.21 15.25 18 15.79 17.95C16.33 17.9 17.54 17.18 17.78 16.43C18.03 15.69 18.03 15.05 17.96 14.92C17.88 14.79 17.69 14.71 17.39 14.55C17.1 14.39 15.64 13.62 15.37 13.51C15.1 13.41 14.91 13.35 14.71 13.67C14.51 13.99 13.95 14.71 13.77 14.92C13.6 15.13 13.43 15.16 13.13 15C12.84 14.84 11.89 14.5 10.76 13.42C9.88 12.58 9.29 11.53 9.12 11.22C8.95 10.9 9.12 10.74 9.25 10.57C9.49 10.25 9.89 9.69 9.99 9.48C10.08 9.27 10.03 9.08 9.96 8.92C9.89 8.76 9.31 7.19 9.05 6.56Z"
+          fill="white" />
       </svg>
       <div class="notification-badge">1</div>
     </div>
 
     <div id="container-form" class="hide">
       <div class="conv-header">
-        <div style="background:#fff; border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center;">
-          <img src="assets/images/logo.webp" alt="Rupnidhi" style="width:24px; object-fit:contain;" onerror="this.style.display='none'" />
+        <div
+          style="background:#fff; border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center;">
+          <img src="assets/images/logo.webp" alt="Rupnidhi" style="width:24px; object-fit:contain;"
+            onerror="this.style.display='none'" />
         </div>
         <div><span class="title">Rupnidhi</span><span class="status">GST Billing Software</span></div>
         <button class="close-btn chat-box-close" aria-label="Close"><i class="fa fa-times"></i></button>
@@ -875,7 +900,8 @@
           <p style="margin-bottom:8px;font-weight:600;">How can we help you?</p>
           <a href="#" class="chat-link show-demo-form">Request Demo</a>
           <a href="https://rupnidhi.com/pricing/" class="chat-link">Pricing</a>
-          <a href="https://api.whatsapp.com/send/?phone=+918668025451&text=Hi" class="chat-link" target="_blank">WhatsApp Us</a>
+          <a href="https://api.whatsapp.com/send/?phone=+918668025451&text=Hi" class="chat-link"
+            target="_blank">WhatsApp Us</a>
         </div>
       </div>
 
@@ -898,7 +924,8 @@
           </form>
           <form class="form_otp" style="display:none;">
             <div style="font-size:12px;margin-bottom:8px;">Enter OTP sent to <span></span> <br>
-              <div class="change_num" style="color:var(--brand-primary);cursor:pointer;margin-top:4px;">Change Number</div>
+              <div class="change_num" style="color:var(--brand-primary);cursor:pointer;margin-top:4px;">Change Number
+              </div>
             </div>
             <div class="otp_field_div"></div>
             <div class="response_msg" style="color:#e53e3e;font-size:12px;margin-bottom:8px;"></div>
@@ -1044,7 +1071,7 @@
     // ==========================================
     // HAMBURGER MENU LOGIC
     // ==========================================
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
       const menuBtn = document.getElementById('mobileMenuBtn');
       const navWrapper = document.getElementById('mobileNavWrapper');
       const dropdownBtn = document.getElementById('mobileDropdownBtn');
@@ -1052,7 +1079,7 @@
 
       // Toggle Main Hamburger Menu
       if (menuBtn) {
-        menuBtn.addEventListener('click', function() {
+        menuBtn.addEventListener('click', function () {
           this.classList.toggle('open');
           navWrapper.classList.toggle('open');
         });
@@ -1060,10 +1087,10 @@
 
       // Toggle Mobile Sub-Menu (Solutions)
       if (dropdownBtn) {
-        dropdownBtn.addEventListener('click', function(e) {
+        dropdownBtn.addEventListener('click', function (e) {
           e.preventDefault(); // Prevent jump to top
           subLinks.classList.toggle('open');
-          
+
           // Flip arrow
           const icon = this.querySelector('i');
           if (subLinks.classList.contains('open')) {
@@ -1077,18 +1104,18 @@
 
 
     function submitContactForm() {
-      var name    = document.getElementById('c-name').value.trim();
-      var phone   = document.getElementById('c-phone').value.trim();
-      var email   = document.getElementById('c-email').value.trim();
+      var name = document.getElementById('c-name').value.trim();
+      var phone = document.getElementById('c-phone').value.trim();
+      var email = document.getElementById('c-email').value.trim();
       var subject = document.getElementById('c-subject').value;
       var message = document.getElementById('c-message').value.trim();
-      var errEl   = document.getElementById('form-error');
+      var errEl = document.getElementById('form-error');
 
-      if (!name)                            { errEl.textContent='Please enter your full name.'; return; }
-      if (phone.length!==10||isNaN(phone))  { errEl.textContent='Please enter a valid 10-digit phone number.'; return; }
-      if (!email||!email.includes('@'))     { errEl.textContent='Please enter a valid email address.'; return; }
-      if (!subject)                         { errEl.textContent='Please select a subject.'; return; }
-      if (!message)                         { errEl.textContent='Please enter your message.'; return; }
+      if (!name) { errEl.textContent = 'Please enter your full name.'; return; }
+      if (phone.length !== 10 || isNaN(phone)) { errEl.textContent = 'Please enter a valid 10-digit phone number.'; return; }
+      if (!email || !email.includes('@')) { errEl.textContent = 'Please enter a valid email address.'; return; }
+      if (!subject) { errEl.textContent = 'Please select a subject.'; return; }
+      if (!message) { errEl.textContent = 'Please enter your message.'; return; }
 
       errEl.textContent = '';
       var btn = document.querySelector('.btn-submit');
@@ -1104,6 +1131,41 @@
       }, 1400);
     }
   </script>
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const lenis = new Lenis({
+        duration: 0.8, // Reduced from 1.2 to 0.8 for a snappier, less "laggy" feel
+        easing: (t) => 1 - Math.pow(1 - t, 3), // Lighter math calculation for older devices
+        smoothWheel: true,
+        wheelMultiplier: 1.2, // Makes the scroll wheel feel slightly more responsive
+        smoothTouch: false, // Prevents mobile touch lag
+      });
+
+      // Highly optimized animation frame loop
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
+
+      // Smooth anchor link jumping
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          const targetId = this.getAttribute('href');
+          if (targetId !== '#') {
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              e.preventDefault();
+              lenis.scrollTo(targetElement, { offset: -80 }); // -80px offsets the sticky navbar!
+            }
+          }
+        });
+      });
+    });
+  </script>
 
 </body>
+
 </html>

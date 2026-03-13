@@ -743,6 +743,46 @@
       });
     });
   </script>
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const lenis = new Lenis({
+        duration: 0.8, // Reduced from 1.2 to 0.8 for a snappier, less "laggy" feel
+        easing: (t) => 1 - Math.pow(1 - t, 3), // Lighter math calculation for older devices
+        direction: 'vertical', // Vertical scrolling
+        gestureDirection: 'vertical', // Allow vertical scrolling only
+        smooth: true,
+        mouseMultiplier: 1,
+        smoothTouch: false,
+        touchMultiplier: 2,
+        infinite: false,
+      });
+
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
+      
+      // Smooth anchor link jumping
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          const href = this.getAttribute('href');
+          if(href === '#') return;
+          
+          const targetId = href.substring(1); // Remove the '#' symbol
+          if(targetId !== '#') {
+            const targetElement = document.querySelector('#' + targetId);
+            if(targetElement) {
+              e.preventDefault();
+              lenis.scrollTo(targetElement, { offset: -80 }); // -80px offsets the sticky navbar!
+            }
+          }
+        });
+      });
+    });
+  </script>
 
 </body>
 </html>

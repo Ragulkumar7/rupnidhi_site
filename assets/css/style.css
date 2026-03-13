@@ -1,9 +1,13 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
 /* =========================================================================
    ROUPNIDHI V2 - GLOBAL STYLESHEET (Unified Brand Colors)
    ========================================================================= */
-
+/* FORCE OVERRIDE TO FIX LENIS LAG */
+html, html.lenis, html.lenis body {
+  scroll-behavior: auto !important;
+}
 :root {
   /* Unified Brand Colors (Matches the Deep Indigo Logo) */
   --brand-primary: #2b1867;   /* Exact logo color match */
