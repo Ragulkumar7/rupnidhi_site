@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Best Retail Billing Software with GST & Barcode | Rupnidhi</title>
+  <meta name="description" content="Streamline your shop with Rupnidhi's retail billing software. Generate quick GST invoices, manage inventory, and speed up checkout with barcode support.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  
+  <link rel="stylesheet" href="assets/css/style.css"> 
+  
+  <style>
+    /* =========================================================================
+       RETAIL PAGE SPECIFIC STYLES
+       ========================================================================= */
+
+    /* Sleek Hero Section */
+    .retail-hero {
+      background: linear-gradient(135deg, var(--brand-primary) 0%, #1a0f3d 100%);
+      padding: 100px 0 120px 0;
+      color: #fff;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .retail-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -50px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120%;
+      height: 100px;
+      background: var(--bg-slate);
+      border-radius: 50% 50% 0 0;
+    }
+
+    .retail-hero-content {
+      max-width: 850px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .retail-hero h1 {
+      font-family: var(--font-head);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      letter-spacing: -1px;
+    }
+
+    .retail-hero p {
+      font-size: 1.15rem;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 40px;
+      line-height: 1.6;
+    }
+
+    .retail-hero-checks {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-top: 24px;
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.9);
+      font-weight: 500;
+    }
+    
+    .retail-hero-checks span {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .retail-hero-checks i {
+      color: #10b981; /* Green check */
+    }
+
+    /* Central Dashboard Showcase */
+    .retail-dashboard-showcase {
+      background: var(--bg-slate);
+      padding: 0 0 80px 0;
+      text-align: center;
+    }
+
+    .retail-dash-wrapper {
+      max-width: 1000px;
+      margin: -80px auto 0 auto;
+      position: relative;
+      z-index: 10;
+      border-radius: var(--radius-md);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+      border: 4px solid #fff;
+      background: #fff;
+    }
+
+    .retail-dash-wrapper img {
+      width: 100%;
+      border-radius: var(--radius-sm);
+      display: block;
+    }
+
+    /* Premium Feature Cards */
+    .retail-features {
+      padding: 80px 0;
+      background: #fff;
+    }
+
+    .retail-feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+      margin-top: 48px;
+    }
+
+    .retail-card {
+      background: #fff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 40px 32px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .retail-card:hover {
+      box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+      transform: translateY(-5px);
+      border-color: var(--brand-border);
+    }
+
+    .retail-card-icon {
+      width: 60px;
+      height: 60px;
+      background: var(--brand-light);
+      color: var(--brand-primary);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 24px;
+    }
+
+    .retail-card h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+
+    .retail-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* CTA Banner */
+    .retail-cta-banner {
+      background: var(--brand-light);
+      border-radius: var(--radius-lg);
+      padding: 60px;
+      text-align: center;
+      margin: 80px auto;
+      max-width: 1000px;
+      border: 1px solid var(--brand-border);
+    }
+
+    .retail-cta-banner h2 {
+      font-family: var(--font-head);
+      font-size: 2.2rem;
+      color: var(--brand-primary);
+      margin-bottom: 16px;
+      font-weight: 800;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/images/logo.webp" alt="Rupnidhi Logo" class="logo-mark">
+        <img src="assets/images/name.webp" class="brand-name-img" alt="Rupnidhi Brand Name" onerror="this.style.display='none'">
+      </a>
+      
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="demo.html">Demo</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li class="has-dropdown">
+          <a href="#" class="active"><span class="dot"></span>Solutions <i class="fa fa-chevron-down" style="font-size: 10px; margin-left:4px;"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="retail.html" style="color: var(--brand-primary);">Retail Billing</a></li>
+            <li><a href="invoice.html">GST Invoicing</a></li>
+            <li><a href="supermarket.html">Supermarket POS</a></li>
+            <li><a href="medical.html">Medical Store</a></li>
+            <li><a href="poss.html">Restaurant POS</a></li>
+            <li><a href="purchase.html">Purchase & AI</a></li>
+            <li><a href="payroll.html">Payroll & HR</a></li>
+            <li><a href="tasks.html">Task Management</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+      
+      <div class="nav-actions">
+        <a href="https://rupnidhi.com/login.php" class="btn btn-outline-dark">Login</a>
+        <a href="https://rupnidhi.com/booking.html" class="btn btn-orange">Signup</a>
+      </div>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobile-nav-wrapper" id="mobileNavWrapper">
+      <div class="mobile-nav-links">
+        <a href="index.html">Home</a>
+        <a href="demo.html">Demo</a>
+        <a href="features.html">Features</a>
+        <a href="pricing.html">Pricing</a>
+        
+        <div class="mobile-dropdown-group">
+          <a href="#" class="mobile-dropdown-toggle" id="mobileDropdownBtn">Solutions <i class="fa fa-chevron-down"></i></a>
+          <div class="mobile-sub-links" id="mobileSubLinks">
+            <a href="retail.html" style="color: var(--brand-primary);">Retail Billing</a>
+            <a href="invoice.html">GST Invoicing</a>
+            <a href="supermarket.html">Supermarket POS</a>
+            <a href="medical.html">Medical Store</a>
+            <a href="poss.html">Restaurant POS</a>
+            <a href="purchase.html">Purchase & AI</a>
+            <a href="payroll.html">Payroll & HR</a>
+            <a href="tasks.html">Task Management</a>
+          </div>
+        </div>
+
+        <a href="contact.html">Contact Us</a>
+        <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 20px;">
+          <a href="https://rupnidhi.com/login.php" class="btn btn-outline-dark" style="text-align: center;">Login</a>
+          <a href="https://rupnidhi.com/booking.html" class="btn btn-orange" style="text-align: center;">Signup Free</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="retail-hero">
+    <div class="container">
+      <div class="retail-hero-content">
+        <div class="hero-badge" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);">
+          <i class="fa fa-store" style="margin-right: 6px;"></i> Small & Medium Shops
+        </div>
+        <h1>Fast & Efficient Retail Billing Software.</h1>
+        <p>A complete solution for small and medium retail shops. Handle daily transactions smoothly with quick GST invoice generation, barcode support, and automatic stock updates.</p>
+        
+        <div class="hero-btns" style="justify-content: center;">
+          <a href="https://rupnidhi.com/booking.html" class="btn btn-zoho-green" style="padding: 14px 32px; font-size: 1.05rem;">Start Free Trial</a>
+          <a href="demo.html" class="btn btn-zoho-outline" style="padding: 14px 32px; font-size: 1.05rem;">Book a Demo</a>
+        </div>
+        
+        <div class="retail-hero-checks">
+          <span><i class="fa fa-check-circle"></i> Barcode Scanning</span>
+          <span><i class="fa fa-check-circle"></i> 100% GST Compliant</span>
+          <span><i class="fa fa-check-circle"></i> Works Offline & Online</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="retail-dashboard-showcase">
+    <div class="container">
+      <div class="retail-dash-wrapper">
+        <img src="assets/images/image copy 10.png" alt="Retail Billing Software Dashboard" onerror="this.src='assets/images/image copy.png'">
+      </div>
+    </div>
+  </section>
+
+  <section class="retail-features">
+    <div class="container">
+      <div class="section-title" style="text-align: center; max-width: 800px; margin: 0 auto;">
+        <span class="sub-title">Improve Customer Satisfaction</span>
+        <h2 style="font-size: 2.5rem; margin-bottom: 16px;">Run Your Shop Smoothly</h2>
+        <p style="color: var(--text-muted); font-size: 1.1rem;">Ensure faster checkout, reduced manual errors, and complete control over your inventory from a single, easy-to-use platform.</p>
+      </div>
+
+      <div class="retail-feature-grid">
+        
+        <div class="retail-card">
+          <div class="retail-card-icon">
+            <i class="fa fa-barcode"></i>
+          </div>
+          <h3>Fast Barcode Billing</h3>
+          <p>Speed up your checkout counter significantly. Scan product barcodes to instantly add them to the invoice, ensuring quick and error-free billing during rush hours.</p>
+        </div>
+
+        <div class="retail-card">
+          <div class="retail-card-icon">
+            <i class="fa fa-file-invoice-dollar"></i>
+          </div>
+          <h3>Quick GST Invoices</h3>
+          <p>Generate professional, 100% GST-compliant invoices in seconds. The software automatically calculates CGST, SGST, and IGST so you never have to worry about tax errors.</p>
+        </div>
+
+        <div class="retail-card">
+          <div class="retail-card-icon">
+            <i class="fa fa-boxes-stacked"></i>
+          </div>
+          <h3>Automatic Stock Updates</h3>
+          <p>Every time you generate a bill, the items are automatically deducted from your inventory. Monitor product availability in real-time and get alerts when stock is low.</p>
+        </div>
+
+        <div class="retail-card">
+          <div class="retail-card-icon">
+            <i class="fa fa-users"></i>
+          </div>
+          <h3>Customer Management</h3>
+          <p>Track customer purchases and maintain a loyal customer database. Easily pull up old invoices, track pending credits, and send payment reminders via WhatsApp.</p>
+        </div>
+
+        <div class="retail-card">
+          <div class="retail-card-icon">
+            <i class="fa fa-wifi"></i>
+          </div>
+          <h3>Cloud & Offline Support</h3>
+          <p>Keep the billing counter running even if the internet goes down. Our hybrid software works perfectly offline and safely syncs your data to the cloud once you reconnect.</p>
+        </div>
+
+        <div class="retail-card">
+          <div class="retail-card-icon">
+            <i class="fa fa-chart-line"></i>
+          </div>
+          <h3>Detailed Sales Reports</h3>
+          <p>Make better business decisions. Generate detailed daily, weekly, or monthly sales reports to identify your fast-moving items, peak sales hours, and overall shop profit.</p>
+        </div>
+
+      </div>
+      
+      <div class="retail-cta-banner">
+        <h2>Ready to upgrade your retail shop?</h2>
+        <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 32px;">Join thousands of shop owners in India who have simplified their billing process.</p>
+        <a href="https://rupnidhi.com/booking.html" class="btn btn-orange" style="padding: 16px 40px; font-size: 1.1rem;">Create Your Free Account</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="faq-section" style="background: var(--bg-slate); border-top: 1px solid var(--border-color);">
+    <div class="container">
+      <div class="faq-header">
+        <h2>Frequently Asked Questions</h2>
+      </div>
+      
+      <div class="faq-accordion">
+        
+        <div class="faq-item">
+          <button class="faq-question">1. Is Rupnidhi suitable for small retail shops? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>Absolutely. Rupnidhi is the best billing software for retail shop owners because it simplifies complex tasks like barcode billing, stock alerts, and fast counter sales. Unlike complex alternatives, Rupnidhi offers a user-friendly experience specifically tailored for small shop needs.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">2. Can I use a barcode scanner with this software? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>Yes, our software seamlessly integrates with standard plug-and-play barcode scanners. It allows you to scan products directly into the billing screen, drastically reducing checkout time.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">3. What happens if my shop loses internet connection? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>Rupnidhi provides offline billing support. You can continue scanning items, generating bills, and printing receipts without an internet connection. Once your connection is restored, the software automatically syncs your sales data to the cloud.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">4. Can I print bills using a thermal printer? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>Yes, Rupnidhi supports both 2-inch and 3-inch thermal receipt printers, as well as standard A4 and A5 printers, giving you complete flexibility for your retail counter.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="need-help-section">
+    <div class="container">
+      <div class="help-grid">
+        <div class="help-visual">
+          <img src="assets/images/image copy 20.png" alt="Support Team" loading="lazy">
+        </div>
+        <div class="help-content">
+          <h2>Need help setting up your shop?</h2>
+          <p>Whether you need help importing your existing inventory, connecting your barcode scanner, or formatting your thermal receipts, our onboarding team is ready to assist you.</p>
+          
+          <div class="help-buttons">
+            <a href="contact.html" class="btn btn-red">
+              <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" /></svg> Contact Us
+            </a>
+            <a href="demo.html" class="btn btn-outline-dark">Book a Live Demo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="rupnidhi-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+
+        <div class="footer-brand-col">
+          <h2 class="footer-logo-text">Rupnidhi</h2>
+          <p class="footer-bio">
+            A complete GST billing solution for growing businesses in India. Simplify your invoicing, track inventory in real-time, and ensure 100% tax compliance with ease.
+          </p>
+
+          <div class="footer-socials">
+            <a href="#" aria-label="Facebook" class="social-icon"><svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg></a>
+            <a href="#" aria-label="Twitter" class="social-icon"><svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" /></svg></a>
+            <a href="#" aria-label="Instagram" class="social-icon"><svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" /></svg></a>
+            <a href="#" aria-label="LinkedIn" class="social-icon"><svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" /></svg></a>
+          </div>
+        </div>
+
+        <div class="footer-links-col">
+          <h4 class="footer-heading">Solutions</h4>
+          <ul class="footer-list">
+            <li><a href="retail.html">Retail Billing</a></li>
+            <li><a href="invoice.html">GST Invoicing</a></li>
+            <li><a href="supermarket.html">Supermarket POS</a></li>
+            <li><a href="medical.html">Medical Store</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4 class="footer-heading">Company</h4>
+          <ul class="footer-list">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4 class="footer-heading">Support</h4>
+          <ul class="footer-list">
+            <li><a href="faq.html">FAQs</a></li>
+            <li><a href="help.html">Help Center</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Rupnidhi. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Security</a>
+          <span class="divider">|</span>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="live-optin-container">
+    <div id="chat-welcome" style="display:block;">Chat Now</div>
+    <div class="chat-icon-box" id="btn-icon-chat">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 24L1.695 17.838C0.65 16.034 0.1 13.988 0.1 11.892C0.103 5.335 5.463 0 12.05 0C15.247 0.001 18.247 1.24 20.503 3.488C22.759 5.736 24.001 8.724 24 11.902C23.997 18.459 18.636 23.794 12.05 23.794H12.045C10.045 23.793 8.08 23.294 6.335 22.346L0 24Z" fill="white" />
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.05 6.56C8.83 6.03 8.6 6.02 8.39 6.01C8.21 6 8.02 6 7.82 6C7.62 6 7.3 6.08 7.03 6.4C6.76 6.72 6 7.49 6 9.05C6 10.62 7.06 12.13 7.21 12.35C7.35 12.56 9.25 15.87 12.25 17.15C14.74 18.21 15.25 18 15.79 17.95C16.33 17.9 17.54 17.18 17.78 16.43C18.03 15.69 18.03 15.05 17.96 14.92C17.88 14.79 17.69 14.71 17.39 14.55C17.1 14.39 15.64 13.62 15.37 13.51C15.1 13.41 14.91 13.35 14.71 13.67C14.51 13.99 13.95 14.71 13.77 14.92C13.6 15.13 13.43 15.16 13.13 15C12.84 14.84 11.89 14.5 10.76 13.42C9.88 12.58 9.29 11.53 9.12 11.22C8.95 10.9 9.12 10.74 9.25 10.57C9.49 10.25 9.89 9.69 9.99 9.48C10.08 9.27 10.03 9.08 9.96 8.92C9.89 8.76 9.31 7.19 9.05 6.56Z" fill="white" />
+      </svg>
+      <div class="notification-badge">1</div>
+    </div>
+    <div id="container-form" class="hide">
+      <div class="conv-header">
+        <div style="background:#fff; border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center;">
+          <img src="assets/images/logo.webp" alt="Rupnidhi" style="width:24px; object-fit:contain;" onerror="this.style.display='none'" />
+        </div>
+        <div><span class="title">Rupnidhi</span><span class="status">GST Billing Software</span></div>
+        <button class="close-btn chat-box-close" aria-label="Close"><i class="fa fa-times"></i></button>
+      </div>
+      <div class="msgs-wrap">
+        <div class="bubble">Welcome to Rupnidhi 👋</div>
+        <div class="bubble">
+          <p style="margin-bottom:8px;font-weight:600;">How can we help you?</p>
+          <a href="demo.html" class="chat-link">Request Demo</a>
+          <a href="pricing.html" class="chat-link">Pricing</a>
+          <a href="https://api.whatsapp.com/send/?phone=+918668025451&text=Hi" class="chat-link" target="_blank">WhatsApp Us</a>
+        </div>
+      </div>
+      <div class="chat-input-row">
+        <input type="text" id="chat-msg-input" placeholder="Send a message..." />
+        <a id="chat-msg-link" href="https://api.whatsapp.com/send/?phone=+918668025451&text=" target="_blank">
+          <i class="fa fa-paper-plane"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+  <script>
+    // 1. Hamburger Menu Logic
+    document.addEventListener("DOMContentLoaded", function () {
+      const menuBtn = document.getElementById('mobileMenuBtn');
+      const navWrapper = document.getElementById('mobileNavWrapper');
+      const dropdownBtn = document.getElementById('mobileDropdownBtn');
+      const subLinks = document.getElementById('mobileSubLinks');
+
+      if (menuBtn) {
+        menuBtn.addEventListener('click', function () {
+          this.classList.toggle('open');
+          navWrapper.classList.toggle('open');
+        });
+      }
+
+      if (dropdownBtn) {
+        dropdownBtn.addEventListener('click', function (e) {
+          e.preventDefault();
+          subLinks.classList.toggle('open');
+          const icon = this.querySelector('i');
+          if (subLinks.classList.contains('open')) {
+            icon.style.transform = 'rotate(180deg)';
+          } else {
+            icon.style.transform = 'rotate(0deg)';
+          }
+        });
+      }
+    });
+
+    // 2. FAQ Accordion Logic
+    document.addEventListener("DOMContentLoaded", function () {
+      const faqButtons = document.querySelectorAll('.faq-question');
+
+      faqButtons.forEach(button => {
+        button.addEventListener('click', function () {
+          this.classList.toggle('active');
+          const answer = this.nextElementSibling;
+          if (answer.style.maxHeight) {
+            answer.style.maxHeight = null;
+          } else {
+            answer.style.maxHeight = answer.scrollHeight + "px";
+          }
+        });
+      });
+    });
+
+    // 3. Chat Widget Logic
+    const chatForm = document.getElementById('container-form');
+    const chatWelcome = document.getElementById('chat-welcome');
+
+    document.getElementById('btn-icon-chat').onclick = function () {
+      chatForm.classList.toggle('hide');
+      chatWelcome.style.display = chatForm.classList.contains('hide') ? 'block' : 'none';
+      this.querySelector('.notification-badge').style.display = 'none';
+    };
+
+    document.querySelectorAll('.chat-box-close').forEach(btn => {
+      btn.onclick = () => { chatForm.classList.add('hide'); chatWelcome.style.display = 'block'; };
+    });
+
+    document.getElementById('chat-msg-input').addEventListener('input', function () {
+      document.getElementById('chat-msg-link').href = 'https://api.whatsapp.com/send/?phone=+918668025451&text=' + encodeURIComponent(this.value);
+    });
+
+    // 4. Lenis Smooth Scroll
+    document.addEventListener("DOMContentLoaded", function() {
+      const lenis = new Lenis({
+        duration: 0.8,
+        easing: (t) => 1 - Math.pow(1 - t, 3),
+        smoothWheel: true,
+        wheelMultiplier: 1.2,
+        smoothTouch: false,
+      });
+
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
+    });
+  </script>
+</body>
+</html>

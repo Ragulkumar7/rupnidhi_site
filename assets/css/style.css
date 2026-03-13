@@ -257,7 +257,7 @@ img, svg {
 }
 
 .hero-content {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto 50px;
 }
 
@@ -293,8 +293,8 @@ img, svg {
   font-size: 1.125rem;
   color: rgba(255, 255, 255, 0.9);
   margin-bottom: 32px;
-  line-height: 1.6;
-  max-width: 650px;
+  line-height: 1.7;
+  max-width: 900px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -461,30 +461,91 @@ img, svg {
 .eco-card-full { flex-direction: column; text-align: center; padding-top: 40px; }
 @media (min-width: 992px) { .eco-card-full { grid-column: span 2; flex-direction: row; text-align: left; padding: 0 0 0 48px; align-items: center; } }
 
-.eco-content-wrapper { position: relative; min-height: 160px; width: 100%; padding: 0 32px; display: flex; flex-direction: column; justify-content: center; overflow: hidden; }
-.eco-card-full .eco-content-left { width: 100%; padding: 40px 32px 0 0; }
-@media (min-width: 992px) { .eco-card-full .eco-content-left { width: 45%; padding: 40px 40px 40px 0; } }
+/* FIX: Increased min-height and added Top/Bottom padding so text has room to animate safely */
+.eco-content-wrapper { position: relative; min-height: 260px; width: 100%; padding: 20px 32px 45px 32px; display: flex; flex-direction: column; justify-content: center; overflow: hidden; }
+
+/* FIX: Adjusted padding for the full-width card to match the new heights */
+.eco-card-full .eco-content-left { width: 100%; padding: 40px 32px 40px 0; }
+@media (min-width: 992px) { .eco-card-full .eco-content-left { width: 45%; padding: 40px 40px 60px 0; } }
 
 .eco-text-shift { transition: transform 0.3s ease-in-out; }
 .eco-title { font-size: 1.25rem; font-weight: 700; color: var(--text-main); margin-bottom: 12px; }
 .eco-text-shift p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.5; margin: 0 auto; max-width: 400px; }
 
-.eco-link { position: absolute; bottom: 0; left: 50%; transform: translate(-50%, 100%); opacity: 0; color: var(--brand-primary); font-weight: 600; font-size: 0.9rem; transition: all 0.3s ease-in-out; text-decoration: none; }
-@media (min-width: 992px) { .eco-card-full .eco-link { left: 0; transform: translate(0, 100%); } }
+/* FIX: Changed bottom positioning so the button glides into the new bottom padding area without overlapping text */
+/* 1. Make the cards align content to the left instead of the center */
+.eco-card-half { 
+  flex-direction: column; 
+  align-items: flex-start !important; /* Aligns items to the left */
+  text-align: left !important; /* Makes the text lines straight */
+  padding-top: 40px; 
+}
 
-.eco-link::after { content: ''; position: absolute; bottom: -4px; left: 50%; transform: translateX(-50%); width: 100%; height: 2px; background-color: var(--brand-primary); transition: width 0.3s ease; }
-@media (min-width: 992px) { .eco-card-full .eco-link::after { left: 0; transform: translateX(0); } }
+.eco-card-full { 
+  flex-direction: column; 
+  text-align: left !important; 
+  padding-top: 40px; 
+}
 
-.eco-link:hover::after { width: 110%; }
+@media (min-width: 992px) { 
+  .eco-card-full { 
+    grid-column: span 2; 
+    flex-direction: row; 
+    padding: 0 0 0 48px; 
+    align-items: center; 
+  } 
+}
+
+/* 2. Remove the auto-centering margin from the paragraphs */
+.eco-text-shift p { 
+  color: var(--text-muted); 
+  font-size: 0.95rem; 
+  line-height: 1.6; 
+  margin: 0 !important; /* Removed auto margin */
+  max-width: 400px; 
+}
+
+/* 3. Move the "Know More" link to the left side */
+.eco-link { 
+  position: absolute; 
+  bottom: 20px; 
+  left: 32px !important; /* Positioned left instead of 50% */
+  transform: translate(0, 150%) !important; /* Removed the -50% centering */
+  opacity: 0; 
+  color: var(--brand-primary); 
+  font-weight: 600; 
+  font-size: 0.9rem; 
+  transition: all 0.3s ease-in-out; 
+  text-decoration: none; 
+}
+
+@media (min-width: 992px) { 
+  .eco-card-full .eco-link { 
+    left: 0 !important; 
+    transform: translate(0, 150%) !important; 
+  } 
+}
+
+/* 4. Fix the button hover underline */
+.eco-link::after { 
+  content: ''; 
+  position: absolute; 
+  bottom: -4px; 
+  left: 0 !important; /* Changed from 50% */
+  transform: translateX(0) !important; /* Changed from -50% */
+  width: 100%; 
+  height: 2px; 
+  background-color: var(--brand-primary); 
+  transition: width 0.3s ease; 
+}
+
 .eco-card:hover .eco-text-shift { transform: translateY(-15px); }
-.eco-card:hover .eco-link { opacity: 1; transform: translate(-50%, 0); }
-@media (min-width: 992px) { .eco-card-full:hover .eco-link { transform: translate(0, 0); } }
 
-.eco-img-bottom { width: 100%; max-width: 500px; margin-top: 24px; border-radius: 8px 8px 0 0; object-fit: contain; }
-.eco-img-right-wrapper { width: 100%; display: flex; justify-content: center; margin-top: 24px; }
-@media (min-width: 992px) { .eco-img-right-wrapper { width: 55%; justify-content: flex-end; margin-top: 0; } }
-.eco-img-right { width: 100%; max-width: 600px; object-fit: contain; border-radius: 8px 0 0 0; }
-
+/* 5. Fix the hover slide-in animation for the left alignment */
+.eco-card:hover .eco-link { 
+  opacity: 1; 
+  transform: translate(0, 0) !important; 
+}
 /* ================= TESTIMONIALS SECTION ================= */
 .rupanidhi-testimonials { margin: 2rem 0; background-color: #ffffff; border-top-left-radius: 1.5rem; border-top-right-radius: 1.5rem; }
 @media (min-width: 1024px) { .rupanidhi-testimonials { border-radius: 1.5rem; } }

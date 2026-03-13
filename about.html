@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>About Us | Rupnidhi GST Billing Software</title>
+  <meta name="description" content="Learn about Rupnidhi, India's most trusted GST billing, POS, and inventory management software built for small and growing businesses.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  
+  <link rel="stylesheet" href="assets/css/style.css"> 
+  
+  <style>
+    /* =========================================================================
+       ABOUT PAGE SPECIFIC STYLES
+       ========================================================================= */
+
+    /* Sleek Hero Section */
+    .about-hero {
+      background: linear-gradient(135deg, var(--brand-primary) 0%, #1a0f3d 100%);
+      padding: 100px 0 120px 0;
+      color: #fff;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .about-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -50px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120%;
+      height: 100px;
+      background: #f8fafc; /* Matches next section */
+      border-radius: 50% 50% 0 0;
+    }
+
+    .about-hero-content {
+      max-width: 850px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .about-hero h1 {
+      font-family: var(--font-head);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      letter-spacing: -1px;
+    }
+
+    .about-hero p {
+      font-size: 1.15rem;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.6;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    /* Mission Section */
+    .mission-section {
+      background: #f8fafc;
+      padding: 60px 0 100px 0;
+      text-align: center;
+    }
+
+    .mission-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 60px;
+      border-radius: var(--radius-lg);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+      border: 1px solid var(--border-color);
+      position: relative;
+      z-index: 10;
+      margin-top: -80px;
+    }
+
+    .mission-wrapper h2 {
+      font-family: var(--font-head);
+      font-size: 2.2rem;
+      color: var(--brand-primary);
+      margin-bottom: 20px;
+      font-weight: 800;
+    }
+
+    .mission-wrapper p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+
+    /* Story Split Section */
+    .story-section {
+      padding: 100px 0;
+      background: #fff;
+    }
+
+    .story-inner {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .story-content {
+      flex: 1;
+    }
+
+    .story-content span.sub-title {
+      display: block;
+      color: #10b981;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+      font-size: 0.9rem;
+    }
+
+    .story-content h2 {
+      font-family: var(--font-head);
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .story-content p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .story-visual {
+      flex: 1;
+    }
+
+    .story-visual img {
+      width: 100%;
+      border-radius: var(--radius-md);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+    }
+
+    @media (max-width: 768px) {
+      .story-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+      .mission-wrapper {
+        padding: 40px 24px;
+      }
+    }
+
+    /* Core Values Grid */
+    .values-section {
+      padding: 100px 0;
+      background: var(--bg-slate);
+    }
+
+    .values-header {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 60px auto;
+    }
+
+    .values-header h2 {
+      font-family: var(--font-head);
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .value-card {
+      background: #fff;
+      padding: 40px 30px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+      transition: transform 0.3s;
+      text-align: center;
+    }
+
+    .value-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--brand-primary);
+      box-shadow: 0 15px 30px rgba(43,24,103,0.08);
+    }
+
+    .value-icon {
+      width: 64px;
+      height: 64px;
+      background: var(--brand-light);
+      color: var(--brand-primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin: 0 auto 20px auto;
+    }
+
+    .value-card h3 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      color: var(--text-main);
+    }
+
+    .value-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* CTA Banner */
+    .about-cta {
+      padding: 100px 0;
+      background: #fff;
+      text-align: center;
+    }
+
+    .about-cta-inner {
+      background: var(--brand-light);
+      border: 1px solid var(--brand-border);
+      border-radius: var(--radius-lg);
+      padding: 80px 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .about-cta-inner h2 {
+      font-family: var(--font-head);
+      font-size: 2.2rem;
+      color: var(--brand-primary);
+      margin-bottom: 16px;
+      font-weight: 800;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/images/logo.webp" alt="Rupnidhi Logo" class="logo-mark">
+        <img src="assets/images/name.webp" class="brand-name-img" alt="Rupnidhi Brand Name" onerror="this.style.display='none'">
+      </a>
+      
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="demo.html">Demo</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li class="has-dropdown">
+          <a href="#">Solutions <i class="fa fa-chevron-down" style="font-size: 10px; margin-left:4px;"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="retail.html">Retail Billing</a></li>
+            <li><a href="wholesale.html">Wholesale Billing</a></li>
+            <li><a href="invoice.html">GST Invoicing</a></li>
+            <li><a href="supermarket.html">Supermarket POS</a></li>
+            <li><a href="medical.html">Medical Store</a></li>
+            <li><a href="poss.html">Restaurant POS</a></li>
+            <li><a href="purchase.html">Purchase & AI</a></li>
+            <li><a href="payroll.html">Payroll & HR</a></li>
+            <li><a href="tasks.html">Task Management</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+      
+      <div class="nav-actions">
+        <a href="https://rupnidhi.com/login.php" class="btn btn-outline-dark">Login</a>
+        <a href="https://rupnidhi.com/booking.html" class="btn btn-orange">Signup</a>
+      </div>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobile-nav-wrapper" id="mobileNavWrapper">
+      <div class="mobile-nav-links">
+        <a href="index.html">Home</a>
+        <a href="demo.html">Demo</a>
+        <a href="features.html">Features</a>
+        <a href="pricing.html">Pricing</a>
+        
+        <div class="mobile-dropdown-group">
+          <a href="#" class="mobile-dropdown-toggle" id="mobileDropdownBtn">Solutions <i class="fa fa-chevron-down"></i></a>
+          <div class="mobile-sub-links" id="mobileSubLinks">
+            <a href="retail.html">Retail Billing</a>
+            <a href="wholesale.html">Wholesale Billing</a>
+            <a href="invoice.html">GST Invoicing</a>
+            <a href="supermarket.html">Supermarket POS</a>
+            <a href="medical.html">Medical Store</a>
+            <a href="poss.html">Restaurant POS</a>
+            <a href="purchase.html">Purchase & AI</a>
+            <a href="payroll.html">Payroll & HR</a>
+            <a href="tasks.html">Task Management</a>
+          </div>
+        </div>
+
+        <a href="contact.html">Contact Us</a>
+        <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 20px;">
+          <a href="https://rupnidhi.com/login.php" class="btn btn-outline-dark" style="text-align: center;">Login</a>
+          <a href="https://rupnidhi.com/booking.html" class="btn btn-orange" style="text-align: center;">Signup Free</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="about-hero">
+    <div class="container">
+      <div class="about-hero-content">
+        <div class="hero-badge" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);">
+          <i class="fa fa-building" style="margin-right: 6px;"></i> Our Story
+        </div>
+        <h1>Empowering Indian Businesses</h1>
+        <p>We build smart, simple, and scalable billing solutions so you can spend less time on paperwork and more time growing your business.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="mission-section">
+    <div class="container">
+      <div class="mission-wrapper">
+        <h2>Our Mission</h2>
+        <p>At Rupnidhi, we believe that running a business is hard enough without having to worry about complex tax calculations, stock discrepancies, and compliance headaches. Our mission is to democratize business software. We provide non-accountant business owners across India with professional, end-to-end GST billing, inventory, and POS tools that are as powerful as enterprise systems, but as easy to use as a smartphone app.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="story-section">
+    <div class="container">
+      <div class="story-inner">
+        <div class="story-content">
+          <span class="sub-title">Who We Are</span>
+          <h2>Built by Neoera Infotech</h2>
+          <p>Rupnidhi was born out of a simple observation: existing accounting software was either too complex for daily shop owners (like TallyPrime) or too basic to handle growing inventory needs (like standard mobile apps).</p>
+          <p>Developed and maintained by <strong>Neoera Infotech</strong> in Coimbatore, Tamil Nadu, we set out to build the perfect middle-ground. A robust, cloud-enabled ecosystem that handles heavy wholesale distributions, rapid retail checkout counters, and complex pharmacy batch tracking, all while remaining incredibly intuitive.</p>
+          <p>Today, we proudly serve retailers, wholesalers, medical stores, and supermarkets across India, ensuring they remain 100% GST compliant without breaking a sweat.</p>
+        </div>
+        <div class="story-visual">
+          <img src="assets/images/image copy 20.png" alt="Rupnidhi Team and Software">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="values-section">
+    <div class="container">
+      <div class="values-header">
+        <h2>What Drives Us</h2>
+      </div>
+
+      <div class="values-grid">
+        
+        <div class="value-card">
+          <div class="value-icon"><i class="fa fa-wand-magic-sparkles"></i></div>
+          <h3>Simplicity First</h3>
+          <p>You don't need an accounting degree to use Rupnidhi. We design every interface, button, and report to be logical, clean, and immediately understandable for any store clerk.</p>
+        </div>
+
+        <div class="value-card">
+          <div class="value-icon"><i class="fa fa-shield-halved"></i></div>
+          <h3>Uncompromising Security</h3>
+          <p>Your financial data is your business's lifeblood. We utilize bank-grade encryption, secure cloud backups, and strict privacy protocols to ensure your data is always safe.</p>
+        </div>
+
+        <div class="value-card">
+          <div class="value-icon"><i class="fa fa-handshake-angle"></i></div>
+          <h3>Customer Success</h3>
+          <p>We don't just sell software; we build partnerships. Our dedicated support team is always ready to help you set up hardware, migrate data, and train your staff.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="about-cta">
+    <div class="container">
+      <div class="about-cta-inner">
+        <h2>Ready to transform your business?</h2>
+        <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 32px;">Join the thousands of business owners who trust Rupnidhi for their daily operations.</p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="https://rupnidhi.com/booking.html" class="btn btn-orange" style="padding: 16px 40px; font-size: 1.1rem;">Start Free Trial</a>
+          <a href="contact.html" class="btn btn-outline-dark" style="padding: 16px 40px; font-size: 1.1rem;">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="rupnidhi-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+
+        <div class="footer-brand-col">
+          <h2 class="footer-logo-text">Rupnidhi</h2>
+          <p class="footer-bio">
+            A complete GST billing solution for growing businesses in India. Simplify your invoicing, track inventory in real-time, and ensure 100% tax compliance with ease.
+          </p>
+
+          <div class="footer-socials">
+            <a href="#" aria-label="Facebook" class="social-icon"><svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg></a>
+            <a href="#" aria-label="Twitter" class="social-icon"><svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" /></svg></a>
+            <a href="#" aria-label="Instagram" class="social-icon"><svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" /></svg></a>
+            <a href="#" aria-label="LinkedIn" class="social-icon"><svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" /></svg></a>
+          </div>
+        </div>
+
+        <div class="footer-links-col">
+          <h4 class="footer-heading">Solutions</h4>
+          <ul class="footer-list">
+            <li><a href="retail.html">Retail Billing</a></li>
+            <li><a href="wholesale.html">Wholesale Billing</a></li>
+            <li><a href="supermarket.html">Supermarket POS</a></li>
+            <li><a href="medical.html">Medical Store</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4 class="footer-heading">Company</h4>
+          <ul class="footer-list">
+            <li><a href="about.html" style="color: var(--brand-primary);">About Us</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4 class="footer-heading">Support</h4>
+          <ul class="footer-list">
+            <li><a href="faq.html">FAQs</a></li>
+            <li><a href="help.html">Help Center</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Rupnidhi. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Security</a>
+          <span class="divider">|</span>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="floating-callback-widget">
+    <button type="button" class="callback-fab" aria-label="Request Callback" onclick="openCallbackForm()">
+      <svg viewBox="0 0 24 24" width="26" height="26" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+      </svg>
+      <span class="callback-tooltip">Request Callback</span>
+    </button>
+  </div>
+  
+  <div class="callback-overlay" id="callbackOverlay" onclick="closeCallbackForm()"></div>
+  <div class="callback-panel" id="callbackPanel">
+    <div class="callback-header">
+      <h3>Request Callback</h3>
+      <button type="button" class="close-panel-btn" onclick="closeCallbackForm()" aria-label="Close">
+        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><path d="M18 6L6 18M6 6l12 12" /></svg>
+      </button>
+    </div>
+    <div class="callback-body">
+      <form action="#" method="POST" class="callback-form">
+        <div class="form-group"><input type="text" placeholder="Company Name *" required></div>
+        <div class="form-group"><input type="email" placeholder="Work Email *" required></div>
+        <div class="form-group"><input type="tel" placeholder="+91 Phone Number *" required></div>
+        <div class="form-group">
+          <select required>
+            <option value="" disabled selected>Select Industry Type *</option>
+            <option value="retail">Retail</option>
+            <option value="wholesale">Wholesale</option>
+            <option value="supermarket">Supermarket</option>
+            <option value="medical">Medical Store</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-group"><textarea placeholder="Elaborate the billing challenges you are looking to solve *" rows="4" required></textarea></div>
+        <div class="form-group captcha-group">
+          <input type="text" placeholder="Enter the captcha" required>
+          <div class="captcha-visual"><span class="captcha-text">36fgy8</span><button type="button" class="captcha-reload" aria-label="Reload Captcha">&#x21bb;</button></div>
+        </div>
+        <p class="privacy-disclaimer">By submitting this form, you agree to our <a href="privacy.html">Privacy Policy</a>.</p>
+        <button type="submit" class="btn-submit-callback">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="live-optin-container">
+    <div id="chat-welcome" style="display:block;">Chat Now</div>
+    <div class="chat-icon-box" id="btn-icon-chat">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 24L1.695 17.838C0.65 16.034 0.1 13.988 0.1 11.892C0.103 5.335 5.463 0 12.05 0C15.247 0.001 18.247 1.24 20.503 3.488C22.759 5.736 24.001 8.724 24 11.902C23.997 18.459 18.636 23.794 12.05 23.794H12.045C10.045 23.793 8.08 23.294 6.335 22.346L0 24Z" fill="white" />
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.05 6.56C8.83 6.03 8.6 6.02 8.39 6.01C8.21 6 8.02 6 7.82 6C7.62 6 7.3 6.08 7.03 6.4C6.76 6.72 6 7.49 6 9.05C6 10.62 7.06 12.13 7.21 12.35C7.35 12.56 9.25 15.87 12.25 17.15C14.74 18.21 15.25 18 15.79 17.95C16.33 17.9 17.54 17.18 17.78 16.43C18.03 15.69 18.03 15.05 17.96 14.92C17.88 14.79 17.69 14.71 17.39 14.55C17.1 14.39 15.64 13.62 15.37 13.51C15.1 13.41 14.91 13.35 14.71 13.67C14.51 13.99 13.95 14.71 13.77 14.92C13.6 15.13 13.43 15.16 13.13 15C12.84 14.84 11.89 14.5 10.76 13.42C9.88 12.58 9.29 11.53 9.12 11.22C8.95 10.9 9.12 10.74 9.25 10.57C9.49 10.25 9.89 9.69 9.99 9.48C10.08 9.27 10.03 9.08 9.96 8.92C9.89 8.76 9.31 7.19 9.05 6.56Z" fill="white" />
+      </svg>
+      <div class="notification-badge">1</div>
+    </div>
+    <div id="container-form" class="hide">
+      <div class="conv-header">
+        <div style="background:#fff; border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center;">
+          <img src="assets/images/logo.webp" alt="Rupnidhi" style="width:24px; object-fit:contain;" onerror="this.style.display='none'" />
+        </div>
+        <div><span class="title">Rupnidhi</span><span class="status">GST Billing Software</span></div>
+        <button class="close-btn chat-box-close" aria-label="Close"><i class="fa fa-times"></i></button>
+      </div>
+      <div class="msgs-wrap">
+        <div class="bubble">Welcome to Rupnidhi 👋</div>
+        <div class="bubble">
+          <p style="margin-bottom:8px;font-weight:600;">How can we help you?</p>
+          <a href="demo.html" class="chat-link">Request Demo</a>
+          <a href="pricing.html" class="chat-link">Pricing</a>
+          <a href="https://api.whatsapp.com/send/?phone=+918668025451&text=Hi" class="chat-link" target="_blank">WhatsApp Us</a>
+        </div>
+      </div>
+      <div class="chat-input-row">
+        <input type="text" id="chat-msg-input" placeholder="Send a message..." />
+        <a id="chat-msg-link" href="https://api.whatsapp.com/send/?phone=+918668025451&text=" target="_blank">
+          <i class="fa fa-paper-plane"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+  <script>
+    // 1. Hamburger Menu Logic
+    document.addEventListener("DOMContentLoaded", function () {
+      const menuBtn = document.getElementById('mobileMenuBtn');
+      const navWrapper = document.getElementById('mobileNavWrapper');
+      const dropdownBtn = document.getElementById('mobileDropdownBtn');
+      const subLinks = document.getElementById('mobileSubLinks');
+
+      if (menuBtn) {
+        menuBtn.addEventListener('click', function () {
+          this.classList.toggle('open');
+          navWrapper.classList.toggle('open');
+        });
+      }
+
+      if (dropdownBtn) {
+        dropdownBtn.addEventListener('click', function (e) {
+          e.preventDefault();
+          subLinks.classList.toggle('open');
+          const icon = this.querySelector('i');
+          if (subLinks.classList.contains('open')) {
+            icon.style.transform = 'rotate(180deg)';
+          } else {
+            icon.style.transform = 'rotate(0deg)';
+          }
+        });
+      }
+    });
+
+    // 2. Callback Sidebar Panel Logic
+    function openCallbackForm() {
+      document.getElementById('callbackPanel').classList.add('open');
+      document.getElementById('callbackOverlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCallbackForm() {
+      document.getElementById('callbackPanel').classList.remove('open');
+      document.getElementById('callbackOverlay').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    // 3. Chat Widget Logic
+    const chatForm = document.getElementById('container-form');
+    const chatWelcome = document.getElementById('chat-welcome');
+
+    document.getElementById('btn-icon-chat').onclick = function () {
+      chatForm.classList.toggle('hide');
+      chatWelcome.style.display = chatForm.classList.contains('hide') ? 'block' : 'none';
+      this.querySelector('.notification-badge').style.display = 'none';
+    };
+
+    document.querySelectorAll('.chat-box-close').forEach(btn => {
+      btn.onclick = () => { chatForm.classList.add('hide'); chatWelcome.style.display = 'block'; };
+    });
+
+    document.getElementById('chat-msg-input').addEventListener('input', function () {
+      document.getElementById('chat-msg-link').href = 'https://api.whatsapp.com/send/?phone=+918668025451&text=' + encodeURIComponent(this.value);
+    });
+
+    // 4. Lenis Smooth Scroll
+    document.addEventListener("DOMContentLoaded", function() {
+      const lenis = new Lenis({
+        duration: 0.8,
+        easing: (t) => 1 - Math.pow(1 - t, 3),
+        smoothWheel: true,
+        wheelMultiplier: 1.2,
+        smoothTouch: false,
+      });
+
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
+    });
+  </script>
+</body>
+</html>
