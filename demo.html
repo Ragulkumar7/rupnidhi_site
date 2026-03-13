@@ -733,6 +733,48 @@
     #chat-msg-link:hover {
       background: var(--brand-hover);
     }
+    /* =========================================================================
+   NAVBAR LOGO FIX (Overrides previous rules)
+   ========================================================================= */
+
+/* 1. Force the container to keep them side-by-side horizontally */
+a.nav-logo {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 12px !important; 
+  flex-wrap: nowrap !important;
+  text-decoration: none;
+}
+
+/* 2. Control the size of the 'R' Icon */
+a.nav-logo img.logo-mark {
+  height: 46px !important; 
+  width: auto !important;
+  object-fit: contain !important;
+  margin: 0 !important;
+}
+
+/* 3. Control the size of the Two-Line Text Image */
+a.nav-logo img.brand-name-img {
+  height: 38px !important; /* Slightly shorter than the icon looks best */
+  width: auto !important;
+  object-fit: contain !important;
+  margin: 0 !important;
+}
+
+/* 4. Keep it looking perfect on mobile phones */
+@media (max-width: 768px) {
+  a.nav-logo { 
+    gap: 8px !important; 
+  }
+  a.nav-logo img.logo-mark { 
+    height: 36px !important; 
+  }
+  a.nav-logo img.brand-name-img { 
+    height: 30px !important; 
+  }
+}
   </style>
 </head>
 
@@ -742,7 +784,7 @@
     <div class="container nav-inner">
       <a href="index.html" class="nav-logo">
         <img src="assets/images/logo.webp" alt="Rupnidhi Logo" class="logo-mark">
-        <img src="assets/name.webp" class="brand-name-img" alt="Rupnidhi Brand Name" onerror="this.style.display='none'">
+        <img src="assets/images/name.webp" class="brand-name-img" alt="Rupnidhi Brand Name" onerror="this.style.display='none'">
       </a>
       
       <ul class="nav-links">
