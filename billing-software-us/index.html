@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Best billing software in the US | Rupnidhi</title>
+  <meta name="description" content="Powerful, secure, and scalable billing software designed to streamline your invoicing, ensure VAT compliance, and grow with your business." />
+  
+  <link rel="icon" type="image/png" href="../assets/favicon.png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  
+  <style>
+    /* =========================================================================
+       FINTECH-STYLE RESET & VARIABLES
+       ========================================================================= */
+    :root {
+      --primary: #0A2540;       /* Very Dark Navy */
+      --secondary: #2563EB;     /* Vibrant Blue */
+      --accent: #38BDF8;        /* Light Blue */
+      --surface: #FFFFFF;
+      --bg-light: #F8FAFC;
+      --text-dark: #0F172A;
+      --text-gray: #475569;
+      --border: #E2E8F0;
+      --nav-height: 80px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: var(--text-dark); line-height: 1.6; background: var(--surface); overflow-x: hidden; }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; line-height: 1.15; letter-spacing: -0.03em; color: var(--primary); }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* =========================================================================
+       CLEAN MINIMAL NAVBAR
+       ========================================================================= */
+    .navbar {
+      position: fixed; top: 0; left: 0; width: 100%; height: var(--nav-height);
+      background: rgba(255, 255, 255, 0.98);
+      border-bottom: 1px solid var(--border);
+      z-index: 1000; transition: box-shadow 0.3s ease;
+    }
+    .navbar.scrolled { box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 100%; }
+    
+    .nav-logo { display: flex; align-items: center; gap: 10px; font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--primary); letter-spacing: -0.5px; }
+    .nav-logo img.logo-icon { height: 36px; width: auto; }
+    .nav-logo img.logo-name { height: 24px; width: auto; }
+    
+    .nav-links { display: flex; gap: 36px; align-items: center; }
+    .nav-links a { font-weight: 500; font-size: 0.95rem; color: var(--text-gray); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--secondary); }
+    
+    .nav-actions { display: flex; gap: 16px; align-items: center; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 24px; border-radius: 6px; font-weight: 600; font-size: 0.95rem; transition: all 0.2s ease; cursor: pointer; border: none; font-family: 'Inter', sans-serif; }
+    .btn-ghost { color: var(--primary); background: transparent; }
+    .btn-ghost:hover { background: var(--bg-light); }
+    .btn-blue { background: var(--secondary); color: #fff; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2); }
+    .btn-blue:hover { background: #1D4ED8; transform: translateY(-1px); box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3); }
+
+    .hamburger { display: none; background: none; border: none; font-size: 1.5rem; color: var(--primary); cursor: pointer; }
+
+    @media (max-width: 992px) {
+      .nav-links, .nav-actions { display: none; }
+      .hamburger { display: block; }
+    }
+
+    .mobile-drawer { position: fixed; top: var(--nav-height); left: 0; width: 100%; background: #fff; border-bottom: 1px solid var(--border); padding: 20px 24px; display: flex; flex-direction: column; gap: 8px; transform: translateY(-150%); transition: transform 0.3s ease; z-index: 999; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+    .mobile-drawer.open { transform: translateY(0); }
+    .mobile-drawer a { font-weight: 500; font-size: 1.1rem; padding: 12px 0; border-bottom: 1px solid var(--bg-light); color: var(--text-dark); }
+    .mobile-drawer .btn { margin-top: 16px; justify-content: center; }
+
+    /* =========================================================================
+       TECH-STYLE HERO SECTION
+       ========================================================================= */
+    .hero {
+      padding: calc(var(--nav-height) + 80px) 0 100px;
+      background-color: var(--surface);
+      background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 40px 40px;
+      background-position: center top;
+      position: relative;
+    }
+    /* Fade out the grid at the bottom */
+    .hero::after {
+      content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 50%;
+      background: linear-gradient(to bottom, transparent, var(--surface)); pointer-events: none;
+    }
+
+    .hero-inner { display: flex; align-items: center; gap: 60px; position: relative; z-index: 10; }
+    .hero-content { flex: 1.1; background: #fff; padding: 40px; border-radius: 16px; border: 1px solid var(--border); box-shadow: 0 20px 40px rgba(0,0,0,0.04); }
+    
+    .hero-tag { display: inline-block; font-family: 'Space Grotesk', sans-serif; font-size: 0.85rem; font-weight: 700; color: var(--secondary); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; }
+    .hero h1 { font-size: clamp(2.8rem, 4vw, 4rem); margin-bottom: 24px; }
+    .hero p { font-size: 1.15rem; color: var(--text-gray); margin-bottom: 32px; max-width: 90%; }
+    
+    .hero-visual { flex: 0.9; position: relative; }
+    .hero-visual img { border-radius: 12px; box-shadow: 0 30px 60px rgba(10, 37, 64, 0.15); border: 1px solid var(--border); }
+
+    @media (max-width: 992px) {
+      .hero-inner { flex-direction: column; }
+      .hero-content { padding: 24px; border: none; box-shadow: none; background: transparent; text-align: center; }
+      .hero p { max-width: 100%; margin: 0 auto 32px; }
+    }
+
+    /* =========================================================================
+       CORE FEATURES (Side-by-Side Detail Blocks)
+       ========================================================================= */
+    .features-section { padding: 100px 0; background: var(--surface); }
+    
+    .feature-row { display: flex; gap: 60px; margin-bottom: 100px; align-items: flex-start; }
+    .feature-row.reverse { flex-direction: row-reverse; }
+    .feature-row:last-child { margin-bottom: 0; }
+    
+    .f-text { flex: 1; position: sticky; top: 120px; }
+    .f-text h2 { font-size: 2.5rem; margin-bottom: 20px; }
+    .f-text p { font-size: 1.1rem; color: var(--text-gray); margin-bottom: 24px; }
+    
+    .f-visual { flex: 1.2; }
+    .feature-card { background: var(--bg-light); border: 1px solid var(--border); padding: 40px; border-radius: 12px; margin-bottom: 24px; transition: transform 0.2s; }
+    .feature-card:hover { transform: translateX(5px); border-color: var(--secondary); }
+    .feature-card h3 { font-size: 1.4rem; margin-bottom: 12px; }
+    .feature-card p { color: var(--text-gray); }
+
+    @media (max-width: 992px) {
+      .feature-row, .feature-row.reverse { flex-direction: column; gap: 40px; }
+      .f-text { position: relative; top: 0; text-align: center; }
+      .feature-card:hover { transform: translateY(-5px); }
+    }
+
+    /* =========================================================================
+       WORKFLOWS & CAPABILITIES (Grid)
+       ========================================================================= */
+    .capabilities-section { padding: 120px 0; background: var(--primary); color: #fff; }
+    .cap-header { text-align: center; max-width: 700px; margin: 0 auto 60px; }
+    .cap-header h2 { color: #fff; font-size: 2.8rem; margin-bottom: 16px; }
+    
+    .cap-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+    .cap-box { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 40px 30px; border-radius: 12px; }
+    .cap-icon { font-size: 2rem; color: var(--accent); margin-bottom: 20px; }
+    .cap-box h3 { color: #fff; font-size: 1.4rem; margin-bottom: 16px; }
+    .cap-box p { color: #94A3B8; font-size: 0.95rem; }
+
+    /* =========================================================================
+       GLOBAL PRICING (Updated to USD for US Market)
+       ========================================================================= */
+    .pricing-section { padding: 120px 0; background: var(--bg-light); border-bottom: 1px solid var(--border); }
+    .pricing-header { text-align: center; margin-bottom: 60px; }
+    .pricing-header h2 { font-size: 2.8rem; margin-bottom: 16px; }
+    
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; max-width: 1000px; margin: 0 auto; align-items: stretch; }
+    
+    .price-card { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 40px; display: flex; flex-direction: column; transition: all 0.3s; }
+    .price-card:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+    .price-card.pro { border-top: 4px solid var(--secondary); box-shadow: 0 20px 40px rgba(10, 37, 64, 0.08); }
+    
+    .p-name { font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem; font-weight: 700; margin-bottom: 12px; color: var(--text-gray); }
+    .p-price { font-family: 'Space Grotesk', sans-serif; font-size: 3.5rem; font-weight: 800; color: var(--primary); margin-bottom: 8px; }
+    .p-price span { font-size: 1.1rem; color: var(--text-gray); font-weight: 500; }
+    .p-desc { color: var(--text-gray); margin-bottom: 32px; font-size: 0.95rem; border-bottom: 1px solid var(--border); padding-bottom: 24px; }
+    
+    .p-features { flex-grow: 1; margin-bottom: 40px; }
+    .p-features li { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; font-size: 0.95rem; color: var(--text-dark); }
+    .p-features li i { color: var(--secondary); margin-top: 4px; }
+    
+    .price-card .btn { width: 100%; padding: 14px; }
+
+    /* =========================================================================
+       CLEAN BORDER FAQ
+       ========================================================================= */
+    .faq-section { padding: 100px 0; background: #fff; }
+    .faq-container { max-width: 800px; margin: 0 auto; }
+    .faq-container h2 { font-size: 2.5rem; margin-bottom: 40px; text-align: center; }
+    
+    .faq-row { border-bottom: 1px solid var(--border); padding: 24px 0; }
+    .faq-q { width: 100%; display: flex; justify-content: space-between; align-items: center; background: none; border: none; font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem; font-weight: 600; color: var(--primary); cursor: pointer; text-align: left; }
+    .faq-q i { color: var(--text-light); transition: transform 0.3s; }
+    .faq-q.open i { transform: rotate(45deg); color: var(--primary); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    .faq-a p { padding-top: 16px; color: var(--text-gray); font-size: 1.05rem; }
+
+    /* =========================================================================
+       ACTION CTA FORM
+       ========================================================================= */
+    .cta-section { padding: 100px 0; background: var(--bg-light); border-top: 1px solid var(--border); text-align: center; }
+    .cta-container { max-width: 500px; margin: 0 auto; }
+    .cta-container h2 { font-size: 2.5rem; margin-bottom: 16px; }
+    .cta-container p { color: var(--text-gray); margin-bottom: 40px; font-size: 1.1rem; }
+    
+    .signup-form { background: #fff; padding: 40px; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.03); text-align: left; }
+    .signup-form label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; color: var(--text-dark); text-transform: uppercase; letter-spacing: 0.5px; }
+    .signup-form input { width: 100%; padding: 14px 16px; border: 1px solid var(--border); border-radius: 6px; margin-bottom: 20px; font-family: 'Inter', sans-serif; font-size: 1rem; transition: border 0.2s; }
+    .signup-form input:focus { outline: none; border-color: var(--secondary); }
+    .signup-form button { width: 100%; padding: 16px; background: var(--primary); color: #fff; font-size: 1.1rem; font-weight: 600; border: none; border-radius: 6px; cursor: pointer; transition: all 0.2s; font-family: 'Inter', sans-serif; }
+    .signup-form button:hover { background: #1e293b; }
+    
+    .form-msg { padding: 12px; border-radius: 6px; font-weight: 500; font-size: 0.95rem; text-align: center; margin-top: 16px; display: none; }
+    .form-msg.success { background: #DCFCE7; color: #065F46; display: block; border: 1px solid #34D399; }
+    .form-msg.error { background: #FEE2E2; color: #991B1B; display: block; border: 1px solid #F87171; }
+
+    /* =========================================================================
+       MINIMAL FOOTER
+       ========================================================================= */
+    .footer { border-top: 1px solid var(--border); padding: 40px 0; background: #fff; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { color: var(--text-gray); font-size: 0.95rem; font-weight: 500; }
+    .footer-links a:hover { color: var(--primary); }
+
+    @media (max-width: 768px) {
+      .footer-inner { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="https://rupnidhi.com/" class="nav-logo">
+        <img src="../assets/images/logo.webp" class="logo-icon" alt="Rupnidhi" onerror="this.src='https://dummyimage.com/40x40/0A2540/fff&text=R'">
+        <img src="../assets/images/name.webp" class="logo-name" alt="Rupnidhi" onerror="this.style.display='none'">
+        <span id="nav-fallback" style="display:none">Rupnidhi</span>
+      </a>
+      
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#compliance">VAT Compliance</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      
+      <div class="nav-actions">
+        <a href="https://rupnidhi.com/login.php" class="btn btn-ghost">Login</a>
+        <a href="#signup" class="btn btn-blue">Start Free Trial</a>
+      </div>
+
+      <button class="hamburger" id="hamburgerBtn"><i class="fa fa-bars"></i></button>
+    </div>
+  </nav>
+
+  <div class="mobile-drawer" id="mobileDrawer">
+    <a href="#features" onclick="toggleMobileMenu()">Features</a>
+    <a href="#compliance" onclick="toggleMobileMenu()">VAT Compliance</a>
+    <a href="#pricing" onclick="toggleMobileMenu()">Pricing</a>
+    <a href="#faq" onclick="toggleMobileMenu()">FAQ</a>
+    <a href="https://rupnidhi.com/login.php" class="btn btn-ghost" onclick="toggleMobileMenu()" style="justify-content: flex-start; padding-left: 0;">Login</a>
+    <a href="#signup" class="btn btn-blue" onclick="toggleMobileMenu()">Start Free Trial</a>
+  </div>
+
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <span class="hero-tag">Global Billing Solution</span>
+        <h1>Smart billing software from Rupnidhi</h1>
+        <p>Our billing platform is built for businesses of all sizes — from startups to enterprises — offering flexibility, automation, and precision. With VAT compliance and robust reporting, you get peace of mind and faster billing cycles.</p>
+        <div style="display: flex; gap: 16px;">
+          <a href="#signup" class="btn btn-blue" style="padding: 14px 28px; font-size: 1.05rem;">Get Started Now</a>
+          <a href="#features" class="btn btn-ghost" style="padding: 14px 28px; font-size: 1.05rem; border: 1px solid var(--border);">Learn More</a>
+        </div>
+      </div>
+      
+      <div class="hero-visual">
+        <img src="../assets/images/image copy.png" alt="Rupnidhi Global Billing Software" onerror="this.src='https://gogstbill.com/wp-content/uploads/2023/08/iPhone-X-1f-copy.png'">
+      </div>
+    </div>
+  </section>
+
+  <section id="features" class="features-section">
+    <div class="container">
+      
+      <div class="feature-row">
+        <div class="f-text">
+          <h2>Customised Software that Fits Your Business</h2>
+          <p>Every business is unique. That’s why our billing solution is fully customizable. Get software that works the exact way you do.</p>
+        </div>
+        <div class="f-visual">
+          <div class="feature-card">
+            <h3>Industry-Specific Formats</h3>
+            <p>Tailor your invoice templates and data structures to meet the exact standards of your specific industry.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Custom Fields & Tax Rules</h3>
+            <p>Add unlimited custom fields to your invoices and configure automated tax rules based on your operational regions.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Tailored Workflows</h3>
+            <p>Build workflows that align precisely with your internal processes, eliminating friction from quote to cash.</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="compliance" class="feature-row reverse">
+        <div class="f-text">
+          <h2>Automated VAT and Tax Compliance</h2>
+          <p>Stay ahead of regional and global tax rules without the manual headache.</p>
+        </div>
+        <div class="f-visual">
+          <div class="feature-card">
+            <h3>Auto-Calculate VAT</h3>
+            <p>Our system automatically calculates VAT amounts based on the customer's location and product type.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Multi-Jurisdictional Rates</h3>
+            <p>Easily support varying tax rates across different states, countries, and global jurisdictions automatically.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Compliant Invoicing</h3>
+            <p>Generate perfectly compliant invoices that eliminate manual accounting errors and save you hours of time.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="capabilities-section">
+    <div class="container">
+      <div class="cap-header">
+        <h2>Advanced Reporting & Analytics</h2>
+        <p style="color: #94A3B8; font-size: 1.1rem;">Understand your business better with real-time dashboards and exportable reports. Track revenue, aging invoices, taxes collected, and more — all from one place.</p>
+      </div>
+
+      <div class="cap-grid">
+        <div class="cap-box">
+          <div class="cap-icon"><i class="fa fa-plug"></i></div>
+          <h3>Seamless Integrations</h3>
+          <p>Connect with CRM systems, payment gateways, accounting tools, and inventory platforms — all without coding.</p>
+        </div>
+        <div class="cap-box">
+          <div class="cap-icon"><i class="fa fa-sitemap"></i></div>
+          <h3>Custom Workflows</h3>
+          <p>No two businesses are the same. Build workflows that align with your processes. Automate repetitive tasks and reduce manual effort.</p>
+        </div>
+        <div class="cap-box">
+          <div class="cap-icon"><i class="fa fa-globe-americas"></i></div>
+          <h3>Multi-Currency Support</h3>
+          <p>Serve customers across borders with ease. Our system supports multiple currencies, exchange rate updates, and international invoicing standards.</p>
+        </div>
+        <div class="cap-box">
+          <div class="cap-icon"><i class="fa fa-headset"></i></div>
+          <h3>24/7 Onboarding Support</h3>
+          <p>Get live help whenever you need it. Our support team assists with setup, customization, VAT compliance guidance, and ongoing questions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="pricing-section">
+    <div class="container">
+      <div class="pricing-header">
+        <h2>Transparent Global Pricing</h2>
+        <p style="color: var(--text-gray); font-size: 1.1rem;">Scale your billing securely. Start with a 30-day free trial.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="price-card">
+          <div class="p-name">Growth</div>
+          <div class="p-price">$29<span>/mo</span></div>
+          <div class="p-desc">For small businesses needing fast, automated billing.</div>
+          <ul class="p-list">
+            <li><i class="fa fa-check"></i> Unlimited Invoices</li>
+            <li><i class="fa fa-check"></i> Basic VAT Automation</li>
+            <li><i class="fa fa-check"></i> 1 Dashboard User</li>
+            <li><i class="fa fa-check"></i> Standard Email Support</li>
+          </ul>
+          <a href="#signup" class="btn btn-outline">Start Free Trial</a>
+        </div>
+
+        <div class="price-card pro">
+          <div class="p-name" style="color: var(--secondary);">Professional</div>
+          <div class="p-price">$99<span>/mo</span></div>
+          <div class="p-desc">For scaling companies needing advanced global tools.</div>
+          <ul class="p-list">
+            <li><i class="fa fa-check"></i> Everything in Growth</li>
+            <li><i class="fa fa-check"></i> Multi-Currency Billing</li>
+            <li><i class="fa fa-check"></i> Advanced Tax & VAT Compliance</li>
+            <li><i class="fa fa-check"></i> CRM & Accounting Integrations</li>
+            <li><i class="fa fa-check"></i> Priority 24/7 Support</li>
+          </ul>
+          <a href="#signup" class="btn btn-blue">Start Free Trial</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="faq-section">
+    <div class="container faq-container">
+      <h2>Frequently Asked Questions</h2>
+      
+      <div class="faq-row">
+        <button class="faq-q">Does this billing software support VAT compliance? <i class="fa fa-plus"></i></button>
+        <div class="faq-a">
+          <p>Yes — our system automatically calculates and applies VAT where required, helping you stay compliant with tax regulations in different regions.</p>
+        </div>
+      </div>
+
+      <div class="faq-row">
+        <button class="faq-q">Is the software customizable for my industry? <i class="fa fa-plus"></i></button>
+        <div class="faq-a">
+          <p>Absolutely. You can tailor fields, templates, workflows, and reporting to match your unique business needs.</p>
+        </div>
+      </div>
+
+      <div class="faq-row">
+        <button class="faq-q">Can I integrate this with my accounting or CRM tools? <i class="fa fa-plus"></i></button>
+        <div class="faq-a">
+          <p>Yes — we offer seamless integrations with popular accounting, CRM, and e-commerce platforms.</p>
+        </div>
+      </div>
+
+      <div class="faq-row" style="border-bottom: none;">
+        <button class="faq-q">Do you support international billing? <i class="fa fa-plus"></i></button>
+        <div class="faq-a">
+          <p>Yes. The software handles multi-currency billing, global tax rules, and adaptable invoice formats to serve customers across borders.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="signup" class="cta-section">
+    <div class="container cta-container">
+      <h2>Upgrade Your Billing Cycle</h2>
+      <p>Streamline your invoicing and ensure global VAT compliance today.</p>
+      
+      <div class="signup-form">
+        <form id="signup-form" onsubmit="handleSignup(event)" novalidate>
+          <input type="hidden" name="page" value="US Billing Software Landing Page" />
+          
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your full name" required />
+          
+          <label for="email">Work Email</label>
+          <input type="email" id="email" name="email" placeholder="name@company.com" required />
+          
+          <label for="mobile">Phone Number</label>
+          <input type="tel" id="mobile" name="mobile" placeholder="Your contact number" required />
+          
+          <label for="password">Create Password</label>
+          <input type="password" id="password" name="password" placeholder="Must be at least 8 characters" required />
+          
+          <button type="submit" id="submit-btn">Get Started Now</button>
+          <div class="form-msg" id="form-msg"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a href="https://rupnidhi.com/" class="nav-logo" style="font-size: 1.2rem;">
+        <img src="../assets/images/logo.webp" alt="Rupnidhi" style="height:24px;" onerror="this.style.display='none'">
+        Rupnidhi
+      </a>
+      <div class="footer-links">
+        <a href="#features">Features</a>
+        <a href="#compliance">VAT Compliance</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div>© 2026 Rupnidhi · Secure Global Billing Software</div>
+    </div>
+  </footer>
+
+  <script>
+    // 1. Mobile Menu Toggle
+    const menuBtn = document.getElementById('hamburgerBtn');
+    const mobileMenu = document.getElementById('mobileDrawer');
+    
+    function toggleMobileMenu() {
+      mobileMenu.classList.toggle('open');
+    }
+    menuBtn.addEventListener('click', toggleMobileMenu);
+
+    // 2. Sticky Navbar
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 20) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // 3. FAQ Accordion (Plus/Minus Rotation)
+    const faqQuestions = document.querySelectorAll('.faq-q');
+    faqQuestions.forEach(q => {
+      q.addEventListener('click', function() {
+        this.classList.toggle('open');
+        const answer = this.nextElementSibling;
+        if (answer.style.maxHeight) {
+          answer.style.maxHeight = null;
+        } else {
+          answer.style.maxHeight = answer.scrollHeight + "px";
+        }
+      });
+    });
+
+    // 4. Form Submission Logic (Mailer.php)
+    async function handleSignup(e) {
+      e.preventDefault();
+      const form  = document.getElementById('signup-form');
+      const btn   = document.getElementById('submit-btn');
+      const msgEl = document.getElementById('form-msg');
+
+      // Basic Validation
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const mobile = document.getElementById('mobile').value;
+      
+      if(!name || !email || !mobile) {
+        msgEl.className = 'form-msg error';
+        msgEl.textContent = '⚠ Please fill in all required fields.';
+        return;
+      }
+
+      msgEl.className   = 'form-msg';
+      msgEl.textContent = '';
+      btn.disabled      = true;
+      btn.textContent   = 'Processing...';
+
+      try {
+        const res  = await fetch('mailer.php', { method: 'POST', body: new FormData(form) });
+        const json = await res.json();
+
+        if (json.success) {
+          msgEl.className   = 'form-msg success';
+          msgEl.textContent = '✓ ' + json.message;
+          form.reset();
+          btn.textContent      = '✓ Account Created!';
+          btn.style.background = '#059669'; 
+          setTimeout(() => {
+            btn.textContent      = 'Get Started Now';
+            btn.style.background = '';
+            btn.disabled         = false;
+          }, 4000);
+        } else {
+          msgEl.className   = 'form-msg error';
+          msgEl.textContent = '⚠ ' + json.message;
+          btn.textContent   = 'Get Started Now';
+          btn.disabled      = false;
+        }
+      } catch {
+        msgEl.className   = 'form-msg error';
+        msgEl.textContent = '⚠ Network error. Please try again.';
+        btn.textContent   = 'Get Started Now';
+        btn.disabled      = false;
+      }
+    }
+  </script>
+
+</body>
+</html>

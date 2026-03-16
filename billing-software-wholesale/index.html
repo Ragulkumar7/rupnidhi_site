@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Billing Software for Wholesale | Customised Software for Wholesale Billing</title>
+  <meta name="description" content="Efficient and easy-to-use billing software for wholesale businesses. Automate invoices, manage stock & generate GST-ready reports with fully customised software tailored to your needs." />
+  
+  <link rel="icon" type="image/png" href="../assets/favicon.png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="canonical" href="https://rupnidhi.com/wholesale-billing/index.html" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  
+  <style>
+    /* =========================================================================
+       DEEP INDIGO SAAS VARIABLES
+       ========================================================================= */
+    :root {
+      --indigo-dark: #1e1b4b;    /* Exact match to the image background */
+      --indigo-card: #2e2a6b;
+      --green-check: #10b981;    /* Bright green for checkmarks */
+      --text-white: #ffffff;
+      --text-offwhite: #cbd5e1;
+      --bg-light: #f8fafc;
+      --text-dark: #0f172a;
+      --text-gray: #475569;
+      --border-color: #e2e8f0;
+      --nav-height: 80px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--text-dark); line-height: 1.6; background: #fff; overflow-x: hidden; }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    h1, h2, h3, h4 { line-height: 1.2; letter-spacing: -0.02em; }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* =========================================================================
+       TRANSPARENT-TO-SOLID NAVBAR
+       ========================================================================= */
+    .navbar {
+      position: fixed; top: 0; left: 0; width: 100%; height: var(--nav-height);
+      background: transparent;
+      z-index: 1000; transition: all 0.3s ease;
+    }
+    .navbar.scrolled { background: var(--indigo-dark); box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 100%; }
+    
+    .nav-logo { display: flex; align-items: center; gap: 8px; font-size: 1.5rem; font-weight: 800; color: var(--text-white); }
+    .nav-logo img.logo-icon { height: 36px; width: auto; }
+    .nav-logo img.logo-name { height: 24px; width: auto; }
+    
+    .nav-links { display: flex; gap: 32px; align-items: center; }
+    .nav-links a { font-weight: 500; font-size: 0.95rem; color: var(--text-offwhite); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text-white); }
+    
+    .nav-actions { display: flex; gap: 16px; align-items: center; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 28px; border-radius: 6px; font-weight: 600; font-size: 0.95rem; transition: all 0.3s ease; cursor: pointer; border: none; font-family: 'Plus Jakarta Sans', sans-serif; }
+    
+    .btn-nav-outline { border: 1px solid rgba(255,255,255,0.3); color: var(--text-white); background: transparent; }
+    .btn-nav-outline:hover { border-color: var(--text-white); background: rgba(255,255,255,0.1); }
+    
+    .btn-white { background: var(--text-white); color: var(--indigo-dark); box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1); }
+    .btn-white:hover { background: #f1f5f9; transform: translateY(-2px); }
+
+    .hamburger { display: none; background: none; border: none; font-size: 1.5rem; color: var(--text-white); cursor: pointer; }
+
+    @media (max-width: 992px) {
+      .nav-links, .nav-actions { display: none; }
+      .hamburger { display: block; }
+    }
+
+    .mobile-drawer { position: fixed; top: var(--nav-height); left: 0; width: 100%; background: var(--indigo-dark); padding: 20px 24px; display: flex; flex-direction: column; gap: 16px; transform: translateY(-150%); transition: transform 0.3s ease; z-index: 999; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .mobile-drawer.open { transform: translateY(0); }
+    .mobile-drawer a { font-weight: 500; font-size: 1.1rem; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-white); }
+    .mobile-drawer .btn { margin-top: 10px; justify-content: center; border: none; }
+
+    /* =========================================================================
+       HIGH-CONVERSION HERO SECTION (Based on the Image)
+       ========================================================================= */
+    .hero {
+      background-color: var(--indigo-dark);
+      padding: calc(var(--nav-height) + 60px) 0 160px;
+      color: var(--text-white);
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-content { max-width: 900px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 10; }
+    
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); color: var(--text-white); padding: 6px 18px; border-radius: 50px; font-size: 0.85rem; font-weight: 600; margin-bottom: 32px; }
+    .hero-badge i { color: var(--text-white); }
+    
+    .hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; margin-bottom: 24px; line-height: 1.15; }
+    .hero p { font-size: 1.15rem; color: var(--text-offwhite); max-width: 800px; margin: 0 auto 32px; line-height: 1.7; }
+    
+    .hero-checkmarks { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-bottom: 40px; font-weight: 600; font-size: 1rem; }
+    .hero-checkmarks span { display: flex; align-items: center; gap: 8px; }
+    .hero-checkmarks i { color: var(--green-check); font-size: 1.1rem; }
+
+    .hero-actions { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+    .hero-actions .btn-white { padding: 16px 36px; font-size: 1.05rem; border-radius: 8px; }
+    .hero-actions .btn-nav-outline { padding: 16px 36px; font-size: 1.05rem; border-radius: 8px; }
+
+    /* Floating Dashboard Image */
+    .hero-visual {
+      max-width: 1050px; margin: -100px auto 0; padding: 0 24px; position: relative; z-index: 20;
+    }
+    .hero-visual img {
+      border-radius: 12px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(0,0,0,0.1); background: #fff;
+    }
+
+    /* =========================================================================
+       CORE WHOLESALE FEATURES (H2s)
+       ========================================================================= */
+    .core-features { padding: 120px 0 80px; background: var(--bg-light); }
+    
+    .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+    
+    .feat-card { background: #fff; padding: 40px 30px; border-radius: 12px; border: 1px solid var(--border-color); border-top: 4px solid var(--indigo-dark); transition: all 0.3s ease; }
+    .feat-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.05); }
+    
+    .feat-icon { width: 50px; height: 50px; background: rgba(30, 27, 75, 0.05); color: var(--indigo-dark); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; border-radius: 8px; margin-bottom: 24px; }
+    .feat-card h2 { font-size: 1.4rem; font-weight: 800; margin-bottom: 16px; color: var(--text-dark); }
+    .feat-card p { font-size: 1rem; color: var(--text-gray); }
+
+    @media (max-width: 900px) {
+      .feature-grid { grid-template-columns: 1fr; }
+    }
+
+    /* =========================================================================
+       ADVANCED CAPABILITIES (H3s)
+       ========================================================================= */
+    .capabilities-section { padding: 80px 0 120px; background: var(--bg-light); }
+    .cap-inner { background: #fff; border-radius: 20px; border: 1px solid var(--border-color); padding: 80px 60px; box-shadow: 0 10px 40px rgba(0,0,0,0.02); }
+    
+    .cap-header { text-align: center; margin-bottom: 60px; }
+    .cap-header h2 { font-size: 2.2rem; font-weight: 800; }
+
+    .cap-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+    
+    .cap-box h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 12px; display: flex; align-items: center; gap: 12px; }
+    .cap-box h3 i { color: var(--green-check); }
+    .cap-box p { color: var(--text-gray); font-size: 1rem; }
+
+    @media (max-width: 900px) {
+      .cap-inner { padding: 40px 24px; }
+      .cap-grid { grid-template-columns: 1fr; gap: 30px; }
+    }
+
+    /* =========================================================================
+       WHOLESALE PRICING
+       ========================================================================= */
+    .pricing-section { padding: 100px 0; background: #fff; border-top: 1px solid var(--border-color); }
+    .pricing-header { text-align: center; margin-bottom: 60px; }
+    .pricing-header h2 { font-size: 2.5rem; margin-bottom: 16px; }
+    
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; max-width: 1000px; margin: 0 auto; align-items: stretch; }
+    
+    .price-card { background: #fff; border: 1px solid var(--border-color); border-radius: 12px; padding: 40px; display: flex; flex-direction: column; transition: all 0.3s; }
+    .price-card:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+    .price-card.pro { border: 2px solid var(--indigo-dark); box-shadow: 0 20px 40px rgba(30, 27, 75, 0.08); position: relative; }
+    
+    .pro-badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--indigo-dark); color: #fff; font-size: 0.8rem; font-weight: 700; padding: 4px 16px; border-radius: 50px; text-transform: uppercase; letter-spacing: 1px; }
+    
+    .p-name { font-size: 1.2rem; font-weight: 700; margin-bottom: 12px; color: var(--text-gray); text-transform: uppercase; letter-spacing: 1px; }
+    .price-card.pro .p-name { color: var(--indigo-dark); }
+    .p-price { font-size: 3rem; font-weight: 800; color: var(--text-dark); margin-bottom: 8px; display: flex; align-items: baseline; gap: 4px; }
+    .p-price span { font-size: 1.1rem; color: var(--text-gray); font-weight: 500; }
+    .p-desc { color: var(--text-gray); margin-bottom: 32px; font-size: 0.95rem; border-bottom: 1px solid var(--border-color); padding-bottom: 24px; }
+    
+    .p-features { flex-grow: 1; margin-bottom: 40px; }
+    .p-features li { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; font-size: 0.95rem; color: var(--text-dark); font-weight: 500; }
+    .p-features li i { color: var(--green-check); margin-top: 4px; }
+    
+    .price-card .btn { width: 100%; padding: 14px; justify-content: center; }
+    .btn-dark { background: var(--indigo-dark); color: #fff; }
+    .btn-dark:hover { background: #151336; }
+
+    /* =========================================================================
+       CLEAN FAQ
+       ========================================================================= */
+    .faq-section { padding: 100px 0; background: var(--bg-light); border-top: 1px solid var(--border-color); }
+    .faq-container { max-width: 800px; margin: 0 auto; }
+    .faq-container h2 { font-size: 2.5rem; margin-bottom: 40px; text-align: center; }
+    
+    .faq-row { border-bottom: 1px solid var(--border-color); padding: 24px 0; }
+    .faq-row:last-child { border-bottom: none; }
+    .faq-q { width: 100%; display: flex; justify-content: space-between; align-items: center; background: none; border: none; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.15rem; font-weight: 700; color: var(--text-dark); cursor: pointer; text-align: left; }
+    .faq-q i { color: var(--text-gray); transition: transform 0.3s; background: #fff; border: 1px solid var(--border-color); padding: 8px; border-radius: 50%; font-size: 0.9rem; }
+    .faq-q.open i { transform: rotate(45deg); background: var(--indigo-dark); color: #fff; border-color: var(--indigo-dark); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    .faq-a p { padding-top: 16px; color: var(--text-gray); font-size: 1.05rem; }
+
+    /* =========================================================================
+       INDIGO CTA FORM
+       ========================================================================= */
+    .cta-section { padding: 100px 0; background: var(--indigo-dark); color: #fff; text-align: center; }
+    .cta-container { max-width: 500px; margin: 0 auto; }
+    .cta-container h2 { font-size: 2.5rem; margin-bottom: 16px; }
+    .cta-container p { color: var(--text-offwhite); margin-bottom: 40px; font-size: 1.1rem; }
+    
+    .signup-form { background: #fff; padding: 40px; border-radius: 12px; text-align: left; color: var(--text-dark); box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
+    .signup-form label { display: block; font-size: 0.85rem; font-weight: 700; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .signup-form input { width: 100%; padding: 14px 16px; border: 1px solid var(--border-color); border-radius: 6px; margin-bottom: 20px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1rem; transition: border 0.2s; }
+    .signup-form input:focus { outline: none; border-color: var(--indigo-dark); }
+    .signup-form button { width: 100%; padding: 16px; font-size: 1.1rem; border-radius: 6px; justify-content: center; }
+    
+    .form-msg { padding: 12px; border-radius: 6px; font-weight: 600; font-size: 0.95rem; text-align: center; margin-top: 16px; display: none; }
+    .form-msg.success { background: #DCFCE7; color: #065F46; display: block; border: 1px solid #34D399; }
+    .form-msg.error { background: #FEE2E2; color: #991B1B; display: block; border: 1px solid #F87171; }
+
+    /* =========================================================================
+       FOOTER
+       ========================================================================= */
+    .footer { border-top: 1px solid var(--border-color); padding: 40px 0; background: #fff; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+    .footer-logo { display: flex; align-items: center; gap: 8px; font-size: 1.2rem; font-weight: 800; color: var(--text-dark); }
+    .footer-logo img { height: 24px; width: auto; }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { color: var(--text-gray); font-size: 0.95rem; font-weight: 600; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--indigo-dark); }
+
+    @media (max-width: 768px) {
+      .footer-inner { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="https://rupnidhi.com/" class="nav-logo">
+        <img src="../assets/images/logo.webp" class="logo-icon" alt="Rupnidhi" onerror="this.src='https://dummyimage.com/40x40/0f172a/fff&text=R'">
+        <img src="../assets/images/name.webp" class="logo-name" alt="Rupnidhi" onerror="this.style.display='none'">
+        <span id="nav-fallback" style="display:none">Rupnidhi</span>
+      </a>
+      
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#analytics">Analytics</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      
+      <div class="nav-actions">
+        <a href="https://rupnidhi.com/login.php" class="btn btn-nav-outline" style="border: none;">Login</a>
+        <a href="#signup" class="btn btn-white">Start Free Trial</a>
+      </div>
+
+      <button class="hamburger" id="hamburgerBtn"><i class="fa fa-bars"></i></button>
+    </div>
+  </nav>
+
+  <div class="mobile-drawer" id="mobileDrawer">
+    <a href="#features" onclick="toggleMobileMenu()">Features</a>
+    <a href="#analytics" onclick="toggleMobileMenu()">Analytics</a>
+    <a href="#pricing" onclick="toggleMobileMenu()">Pricing</a>
+    <a href="#faq" onclick="toggleMobileMenu()">FAQ</a>
+    <a href="https://rupnidhi.com/login.php" class="btn btn-nav-outline" onclick="toggleMobileMenu()" style="border:none; text-align:left; padding-left:0;">Login</a>
+    <a href="#signup" class="btn btn-white" onclick="toggleMobileMenu()">Start Free Trial</a>
+  </div>
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <i class="fa fa-check-circle"></i> Simplify Wholesale Billing, Inventory & Accounting
+      </div>
+      
+      <h1>Billing Software for Wholesale & Global Distribution</h1>
+      <p>Streamline your bulk operations with Rupnidhi’s high-performance wholesale billing ecosystem. From automated VAT/GST compliance to real-time inventory tracking across multiple warehouses, our platform is engineered to handle the complexity of large-scale trade with ease.</p>
+      
+      <div class="hero-checkmarks">
+        <span><i class="fa fa-check-circle"></i> Easy to Use</span>
+        <span><i class="fa fa-check-circle"></i> Multi-Warehouse Ready</span>
+        <span><i class="fa fa-check-circle"></i> ZATCA & GST Compliant</span>
+        <span><i class="fa fa-check-circle"></i> Cloud & Offline Support</span>
+      </div>
+
+      <div class="hero-actions">
+        <a href="#signup" class="btn btn-white">Start Free Trial</a>
+        <a href="#features" class="btn btn-nav-outline">Request Demo</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="hero-visual">
+    <img src="../assets/images/image copy.png" alt="Rupnidhi Wholesale Dashboard" onerror="this.src='https://gogstbill.com/wp-content/uploads/2023/08/iPhone-X-1f-copy.png'">
+  </div>
+
+  <section id="features" class="core-features">
+    <div class="container">
+      <div class="feature-grid">
+        
+        <div class="feat-card">
+          <div class="feat-icon"><i class="fa fa-shopping-cart"></i></div>
+          <h2>Centralized Sales and Bulk Order Management</h2>
+          <p>Managing high-volume wholesale orders requires precision. Our software automates the entire sales workflow, allowing you to convert quotes to invoices instantly, track partial payments, and manage credit limits for various distributors.</p>
+        </div>
+
+        <div class="feat-card">
+          <div class="feat-icon"><i class="fa fa-boxes-stacked"></i></div>
+          <h2>Real-Time Inventory & Warehouse Tracking</h2>
+          <p>Never lose track of your stock levels again. Rupnidhi provides a bird’s-eye view of your inventory across multiple locations. Automated low-stock alerts and "Purchase & Inward" tracking ensure your wholesale supply chain remains uninterrupted and efficient.</p>
+        </div>
+
+        <div class="feat-card">
+          <div class="feat-icon"><i class="fa fa-globe"></i></div>
+          <h2>ZATCA-Ready & Multi-Currency Compliance</h2>
+          <p>Scale your wholesale business globally without tax headaches. Our system is fully ZATCA-ready and VAT-compliant, featuring a global trade logic engine that handles multi-currency transactions and automated tax zone calculations for cross-border shipping.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="analytics" class="capabilities-section">
+    <div class="container">
+      <div class="cap-inner">
+        <div class="cap-header">
+          <h2>Advanced Wholesale Tools</h2>
+        </div>
+        
+        <div class="cap-grid">
+          <div class="cap-box">
+            <h3><i class="fa fa-file-invoice"></i> Automated E-Invoicing</h3>
+            <p>Generate professional, compliant e-invoices in seconds. Our smart billing logic ensures every transaction meets local and international regulations, reducing manual errors and audit risks.</p>
+          </div>
+          
+          <div class="cap-box">
+            <h3><i class="fa fa-chart-pie"></i> Modern Business Analytics</h3>
+            <p>Make data-driven decisions with visual reports on top-selling products, distributor performance, and seasonal trends. Our analytics dashboard turns complex wholesale data into actionable insights.</p>
+          </div>
+          
+          <div class="cap-box">
+            <h3><i class="fa fa-users-cog"></i> Multi-User Role Management</h3>
+            <p>Empower your team while maintaining security. Assign specific roles to sales reps, warehouse managers, and accountants, ensuring they only access the data necessary for their tasks.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="pricing-section">
+    <div class="container">
+      <div class="pricing-header">
+        <h2>Wholesale Pricing Plans</h2>
+        <p style="color: var(--text-gray); font-size: 1.1rem;">Start managing bulk orders today. No credit card required.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="price-card">
+          <div class="p-name">Professional</div>
+          <div class="p-price">₹8,299<span>/mo</span></div>
+          <div class="p-desc">For growing wholesale distributors.</div>
+          <ul class="p-features">
+            <li><i class="fa fa-check"></i> Unlimited Invoices & Quotes</li>
+            <li><i class="fa fa-check"></i> Basic Inventory Tracking</li>
+            <li><i class="fa fa-check"></i> GST & VAT Automation</li>
+            <li><i class="fa fa-check"></i> 3 User Roles</li>
+          </ul>
+          <a href="#signup" class="btn btn-nav-outline" style="color: var(--text-dark); border-color: var(--border-color);">Start Free Trial</a>
+        </div>
+
+        <div class="price-card pro">
+          <div class="pro-badge">Most Popular</div>
+          <div class="p-name" style="color: var(--indigo-dark);">Wholesale Scale</div>
+          <div class="p-price">₹14,999<span>/mo</span></div>
+          <div class="p-desc">For high-volume multi-warehouse operations.</div>
+          <ul class="p-features">
+            <li><i class="fa fa-check"></i> Everything in Professional</li>
+            <li><i class="fa fa-check"></i> Multi-Warehouse Management</li>
+            <li><i class="fa fa-check"></i> Distributor Credit Limits</li>
+            <li><i class="fa fa-check"></i> Advanced Business Analytics</li>
+            <li><i class="fa fa-check"></i> Priority 24/7 Support</li>
+          </ul>
+          <a href="#signup" class="btn btn-dark">Start Free Trial</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="faq-section">
+    <div class="container faq-container">
+      <h2>Frequently Asked Questions</h2>
+      
+      <div class="faq-row">
+        <button class="faq-q">Is the software good for all wholesale businesses? <i class="fa fa-plus"></i></button>
+        <div class="faq-a">
+          <p>Yes, it’s built to support a range of wholesale workflows and can be configured as customised software to fit yours perfectly.</p>
+        </div>
+      </div>
+
+      <div class="faq-row">
+        <button class="faq-q">Can I manage multiple warehouses? <i class="fa fa-plus"></i></button>
+        <div class="faq-a">
+          <p>Absolutely — our billing system supports multi-location inventory tracking and reporting, giving you a bird's-eye view of all your stock.</p>
+        </div>
+      </div>
+
+      <div class="faq-row">
+        <button class="faq-q">Is GST and tax compliance included? <i class="fa fa-plus"></i></button>
+        <div class="faq-a">
+          <p>Yes, automated tax calculation and ready-to-file reports are built in, ensuring you remain fully compliant with local and global regulations.</p>
+        </div>
+      </div>
+
+      <div class="faq-row" style="border-bottom: none;">
+        <button class="faq-q">Do I need technical knowledge to use it? <i class="fa fa-plus"></i></button>
+        <div class="faq-a">
+          <p>No. We’ve designed it to be user-friendly for business owners without IT experience. Your staff can start billing immediately.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="signup" class="cta-section">
+    <div class="container cta-container">
+      <h2>Ready to Scale Your Wholesale Business?</h2>
+      <p>Streamline bulk orders, manage multiple warehouses, and ensure compliance.</p>
+      
+      <div class="signup-form">
+        <form id="signup-form" onsubmit="handleSignup(event)" novalidate>
+          <input type="hidden" name="page" value="Wholesale Billing Software Landing Page" />
+          
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your full name" required />
+          
+          <label for="email">Work Email</label>
+          <input type="email" id="email" name="email" placeholder="name@company.com" required />
+          
+          <label for="mobile">Phone Number</label>
+          <input type="tel" id="mobile" name="mobile" placeholder="Your contact number" required />
+          
+          <label for="password">Create Password</label>
+          <input type="password" id="password" name="password" placeholder="Must be at least 8 characters" required />
+          
+          <button type="submit" id="submit-btn" class="btn btn-dark">Create Free Account</button>
+          <div class="form-msg" id="form-msg"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a href="https://rupnidhi.com/" class="footer-logo">
+        <img src="../assets/images/logo.webp" alt="Rupnidhi" onerror="this.src='https://dummyimage.com/40x40/1e1b4b/fff&text=R'">
+        Rupnidhi
+      </a>
+      <div class="footer-links">
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a href="https://rupnidhi.com/login.php">Login</a>
+      </div>
+      <div style="color: var(--text-gray); font-size: 0.9rem;">© 2026 Rupnidhi · Wholesale Billing Software</div>
+    </div>
+  </footer>
+
+  <script>
+    // 1. Mobile Menu Toggle
+    const menuBtn = document.getElementById('hamburgerBtn');
+    const mobileMenu = document.getElementById('mobileDrawer');
+    
+    function toggleMobileMenu() {
+      mobileMenu.classList.toggle('open');
+    }
+    menuBtn.addEventListener('click', toggleMobileMenu);
+
+    // 2. Transparent to Solid Navbar on Scroll
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 20) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // 3. FAQ Accordion (Plus/Cross Rotation)
+    const faqQuestions = document.querySelectorAll('.faq-q');
+    faqQuestions.forEach(q => {
+      q.addEventListener('click', function() {
+        this.classList.toggle('open');
+        const answer = this.nextElementSibling;
+        if (answer.style.maxHeight) {
+          answer.style.maxHeight = null;
+        } else {
+          answer.style.maxHeight = answer.scrollHeight + "px";
+        }
+      });
+    });
+
+    // 4. Form Submission Logic (Mailer.php)
+    async function handleSignup(e) {
+      e.preventDefault();
+      const form  = document.getElementById('signup-form');
+      const btn   = document.getElementById('submit-btn');
+      const msgEl = document.getElementById('form-msg');
+
+      // Basic Validation
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const mobile = document.getElementById('mobile').value;
+      
+      if(!name || !email || !mobile) {
+        msgEl.className = 'form-msg error';
+        msgEl.textContent = '⚠ Please fill in all required fields.';
+        return;
+      }
+
+      msgEl.className   = 'form-msg';
+      msgEl.textContent = '';
+      btn.disabled      = true;
+      btn.textContent   = 'Processing...';
+
+      try {
+        const res  = await fetch('mailer.php', { method: 'POST', body: new FormData(form) });
+        const json = await res.json();
+
+        if (json.success) {
+          msgEl.className   = 'form-msg success';
+          msgEl.textContent = '✓ ' + json.message;
+          form.reset();
+          btn.textContent      = '✓ Account Created!';
+          btn.style.background = '#10B981'; 
+          setTimeout(() => {
+            btn.textContent      = 'Create Free Account';
+            btn.style.background = '';
+            btn.disabled         = false;
+          }, 4000);
+        } else {
+          msgEl.className   = 'form-msg error';
+          msgEl.textContent = '⚠ ' + json.message;
+          btn.textContent   = 'Create Free Account';
+          btn.disabled      = false;
+        }
+      } catch {
+        msgEl.className   = 'form-msg error';
+        msgEl.textContent = '⚠ Network error. Please try again.';
+        btn.textContent   = 'Create Free Account';
+        btn.disabled      = false;
+      }
+    }
+  </script>
+
+</body>
+</html>

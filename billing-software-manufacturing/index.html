@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Billing Software for Manufacturing | Rupnidhi Customized Solutions</title>
+<meta name="description" content="Streamline your production with Rupnidhi’s billing software for manufacturing. Automate VAT-compliant invoicing, manage raw materials, and scale with our customized software solutions.">
+
+<link rel="canonical" href="https://rupnidhi.com/billing-software-manufacturing/index.html">
+
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://rupnidhi.com/billing-software-manufacturing/index.html">
+<meta property="og:title" content="Customised Billing Software for Manufacturing | Rupnidhi">
+<meta property="og:description" content="Empower manufacturing operations with tailored invoicing, inventory control, and production tracking.">
+<meta property="og:image" content="https://rupnidhi.com/assets/og-image-manufacturing.jpg">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Manufacturing Billing Software | Rupnidhi">
+<meta name="twitter:description" content="Customized software built specifically for manufacturers to manage production flow and GST compliance.">
+<meta name="twitter:image" content="https://rupnidhi.com/assets/og-image-manufacturing.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:      #06060e;
+  --surface: #0d0d1a;
+  --border:  rgba(255,255,255,0.07);
+  --text:    #e8e8f0;
+  --muted:   #7a7a9a;
+  --accent:  #7c5cfc;
+  --accent2: #b07aff;
+  --glow:    rgba(124,92,252,0.35);
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* ─────────────────────────────────────────
+   NAV
+───────────────────────────────────────── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 300;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 48px;
+  background: white;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.nav-logo {
+  font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1.25rem;
+  color: #fff; display: flex; align-items: center; gap: 10px; text-decoration: none;
+}
+.nav-logo-icon {
+  width: 32px; height: 32px; border-radius: 8px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  display: grid; place-items: center; font-size: 1rem; font-weight: 800;
+}
+
+.nav-logo img.logo-img  { height: 38px; width: auto; display: block; }
+.nav-logo img.logo-name { height: 24px; width: auto; display: block; }
+
+.nav-links { display: flex; gap: 32px; list-style: none; }
+.nav-links a { color: black; text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+.nav-links a:hover { color: #fff; }
+.nav-cta { display: flex; align-items: center; gap: 16px; }
+.btn-ghost { color: black; font-size: 0.9rem; text-decoration: none; transition: color 0.2s; }
+.btn-ghost:hover { color: #fff; }
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: #fff; border: none; padding: 10px 22px; border-radius: 8px;
+  font-family: 'Sora', sans-serif; font-size: 0.88rem; font-weight: 600;
+  cursor: pointer; text-decoration: none;
+  transition: opacity 0.2s, transform 0.2s; display: inline-block;
+}
+.btn-primary:hover { opacity: 0.85; transform: translateY(-1px); }
+.btn-outline {
+  border: 1px solid rgba(255,255,255,0.18); color: rgba(255,255,255,0.85);
+  padding: 10px 22px; border-radius: 8px; text-decoration: none;
+  font-size: 0.9rem; transition: border-color 0.2s, background 0.2s; display: inline-block;
+}
+.btn-outline:hover { border-color: rgba(124,92,252,0.5); background: rgba(124,92,252,0.07); }
+
+.hamburger {
+  display: none; flex-direction: column; gap: 5px; cursor: pointer;
+  background: none; border: none; padding: 4px;
+}
+.hamburger span { width: 24px; height: 2px; background: var(--muted); border-radius: 2px; transition: all 0.28s; }
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.mobile-nav {
+  display: none; position: fixed;
+  top: 60px; left: 0; right: 0; z-index: 299;
+  background: rgba(6,6,14,0.97);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  flex-direction: column;
+}
+.mobile-nav.open { display: flex; }
+.mobile-nav a {
+  color: rgba(255,255,255,0.65); text-decoration: none;
+  font-size: 1rem; padding: 1rem 1.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.05); transition: color 0.2s;
+}
+.mobile-nav a:hover { color: #fff; }
+.mobile-nav-foot { display: flex; flex-direction: column; gap: 0.75rem; padding: 1.25rem 1.5rem; }
+
+/* ─────────────────────────────────────────
+   HERO
+───────────────────────────────────────── */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 24px;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.hero-dotgrid {
+  position: absolute; inset: 0; z-index: 1;
+  background: url('https://reflect.app/home/build/q-6c12dbae.png') center top / cover no-repeat;
+  opacity: 0.18; pointer-events: none;
+}
+
+.hero-cone {
+  position: absolute;
+  bottom: -40px; left: 50%;
+  transform: translateX(-50%);
+  width: min(820px, 110vw);
+  z-index: 2; pointer-events: none;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.35) 22%, rgba(0,0,0,0.75) 42%, black 62%);
+  mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.35) 22%, rgba(0,0,0,0.75) 42%, black 62%);
+  opacity: 0.65;
+}
+
+#bh-canvas {
+  position: absolute; inset: 0; z-index: 3;
+  width: 100%; height: 100%; pointer-events: none;
+}
+
+.hero-glow {
+  position: absolute; top: 40%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 760px; height: 560px;
+  background: radial-gradient(ellipse at center, rgba(124,92,252,0.28) 0%, rgba(176,122,255,0.09) 42%, transparent 68%);
+  z-index: 4; pointer-events: none;
+  animation: glowPulse 7s ease-in-out infinite;
+}
+@keyframes glowPulse {
+  0%,100% { opacity:1; transform:translate(-50%,-50%) scale(1); }
+  50%      { opacity:0.70; transform:translate(-50%,-50%) scale(1.1); }
+}
+
+.hero-fade {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 320px; z-index: 5;
+  background: linear-gradient(to bottom, transparent, var(--bg));
+  pointer-events: none;
+}
+
+.hero-text {
+  position: relative; z-index: 10;
+  display: flex; flex-direction: column; align-items: center;
+  text-align: center;
+  padding-top: 164px;
+  padding-bottom: 52px;
+  max-width: 100%;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 1px solid rgba(124,92,252,0.4);
+  background: rgba(124,92,252,0.10);
+  padding: 6px 18px; border-radius: 100px;
+  font-size: 0.8rem; color: var(--accent2); margin-bottom: 26px;
+  animation: fadeUp 0.7s ease both;
+}
+.hero-badge::before { content: '✦'; font-size: 0.62rem; }
+.hero h1 {
+  font-family: 'Sora', sans-serif;
+  font-size: clamp(2.1rem, 5.2vw, 4.5rem);
+  font-weight: 800; line-height: 1.09; max-width: 900px;
+  background: linear-gradient(180deg, #ffffff 25%, rgba(255,255,255,0.55) 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 20px;
+  animation: fadeUp 0.8s 0.08s ease both;
+}
+.hero-sub {
+  max-width: 650px; color: rgba(255,255,255,0.44);
+  font-size: clamp(0.96rem, 1.8vw, 1.1rem); line-height: 1.76; margin-bottom: 36px;
+  animation: fadeUp 0.9s 0.16s ease both;
+}
+.hero-actions {
+  display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;
+  animation: fadeUp 1s 0.24s ease both;
+}
+.hero-actions .btn-primary,
+.hero-actions .btn-outline { padding: 13px 30px; font-size: 0.94rem; }
+
+/* Dashboard Image in Hero */
+.hero-image-wrap {
+  position: relative; z-index: 10;
+  width: 100%; max-width: 960px;
+  padding-bottom: 120px;
+  animation: fadeUp 1s 0.38s ease both;
+}
+.hero-image-frame {
+  border-radius: 14px; overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 0 0 1px rgba(124,92,252,0.14), 0 0 70px rgba(124,92,252,0.14), 0 50px 130px rgba(0,0,0,0.80);
+  position: relative;
+  background: var(--surface);
+  padding: 8px;
+}
+.hero-image-frame img { width: 100%; display: block; border-radius: 8px; }
+
+/* ─────────────────────────────────────────
+   TICKER
+───────────────────────────────────────── */
+.ticker-wrap {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden; padding: 20px 0;
+}
+.ticker-track {
+  display: flex; gap: 40px; width: max-content;
+  animation: ticker 28s linear infinite;
+}
+.ticker-track:hover { animation-play-state: paused; }
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.ticker-item {
+  display: flex; align-items: center; gap: 9px;
+  font-family: 'Sora', sans-serif; font-size: 0.81rem; font-weight: 500;
+  color: rgba(255,255,255,0.35); white-space: nowrap;
+}
+.ticker-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--accent); opacity: 0.55; flex-shrink: 0; }
+
+/* ─────────────────────────────────────────
+   SECTIONS
+───────────────────────────────────────── */
+section { padding: 110px 24px; }
+.container { max-width: 1100px; margin: 0 auto; }
+.section-chip {
+  display: inline-block; font-size: 0.72rem; text-transform: uppercase;
+  letter-spacing: 0.13em; color: var(--accent2);
+  border: 1px solid rgba(124,92,252,0.28); background: rgba(124,92,252,0.07);
+  padding: 4px 13px; border-radius: 100px; margin-bottom: 18px;
+}
+h2.section-title {
+  font-family: 'Sora', sans-serif; font-size: clamp(1.8rem, 3.6vw, 2.85rem);
+  font-weight: 700; max-width: 620px; line-height: 1.18;
+  background: linear-gradient(180deg, #fff 0%, rgba(255,255,255,0.65) 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; margin-bottom: 14px;
+}
+.section-body { color: var(--muted); max-width: 540px; font-size: 1.02rem; line-height: 1.76; margin-bottom: 44px; }
+
+/* ─────────────────────────────────────────
+   FEATURE CARDS
+───────────────────────────────────────── */
+.feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(285px, 1fr)); gap: 18px; }
+.feature-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 16px; padding: 30px; position: relative; overflow: hidden;
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+.feature-card::after {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(124,92,252,0.45), transparent);
+  opacity: 0; transition: opacity 0.3s;
+}
+.feature-card:hover { border-color: rgba(124,92,252,0.28); transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0,0,0,0.42), 0 0 28px var(--glow); }
+.feature-card:hover::after { opacity: 1; }
+.feature-icon {
+  width: 46px; height: 46px; border-radius: 11px; font-size: 1.25rem;
+  background: linear-gradient(135deg, rgba(124,92,252,0.18), rgba(176,122,255,0.08));
+  border: 1px solid rgba(124,92,252,0.22);
+  display: grid; place-items: center; margin-bottom: 18px;
+}
+.feature-card h3 { font-family: 'Sora', sans-serif; font-size: 1rem; font-weight: 600; color: #fff; margin-bottom: 9px; }
+.feature-card p  { color: var(--muted); font-size: 0.9rem; line-height: 1.65; }
+
+/* ─────────────────────────────────────────
+   SPLIT IMAGE SECTIONS (Replacing CSS Cards)
+───────────────────────────────────────── */
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+.split.rev { direction: rtl; }
+.split.rev > * { direction: ltr; }
+
+.split-image {
+  position: relative; border-radius: 18px; padding: 8px; 
+  background: rgba(255,255,255,0.03); border: 1px solid var(--border);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+.split-image img { width: 100%; border-radius: 12px; display: block; border: 1px solid rgba(255,255,255,0.08); }
+.split-image::before {
+  content: ''; position: absolute; top: -50px; right: -50px;
+  width: 150px; height: 150px; border-radius: 50%;
+  background: var(--glow); filter: blur(60px); pointer-events: none;
+}
+
+/* ─────────────────────────────────────────
+   PRICING
+───────────────────────────────────────── */
+.pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+.pricing-card { 
+  background: var(--surface); border: 1px solid var(--border); 
+  padding: 40px 30px; border-radius: 18px; position: relative; transition: all 0.3s; 
+}
+.pricing-card:hover { 
+  border-color: rgba(124,92,252,0.4); transform: translateY(-4px); 
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 30px var(--glow); 
+}
+.pricing-card.featured { 
+  background: rgba(124,92,252,0.05); border-color: rgba(124,92,252,0.3); 
+}
+.pricing-card h3 { font-family: 'Sora', sans-serif; font-size: 1.2rem; color: #fff; margin-bottom: 12px; }
+.pricing-price { font-family: 'Sora', sans-serif; font-size: 2.8rem; font-weight: 700; color: #fff; margin-bottom: 24px; display: flex; align-items: baseline; gap: 4px; }
+.pricing-price span { font-size: 1rem; color: var(--muted); font-weight: 400; font-family: 'DM Sans', sans-serif; }
+.pricing-features { list-style: none; margin-bottom: 32px; padding-top: 24px; border-top: 1px solid var(--border); }
+.pricing-features li { display: flex; align-items: flex-start; gap: 12px; font-size: 0.95rem; color: var(--text); margin-bottom: 14px; }
+.pricing-features li::before { content: '✓'; color: var(--accent2); font-weight: bold; }
+
+/* ─────────────────────────────────────────
+   FAQ
+───────────────────────────────────────── */
+.faq-list { display: flex; flex-direction: column; gap: 3px; }
+.faq-item { border: 1px solid var(--border); border-radius: 11px; overflow: hidden; transition: border-color 0.2s; }
+.faq-item:hover { border-color: rgba(124,92,252,0.28); }
+.faq-q {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 19px 22px; cursor: pointer;
+  font-family: 'Sora', sans-serif; font-size: 0.94rem; font-weight: 500; color: #fff;
+  background: var(--surface); user-select: none;
+}
+.faq-icon { color: var(--accent2); font-size: 1.1rem; transition: transform 0.3s; flex-shrink: 0; margin-left: 14px; }
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+.faq-a {
+  max-height: 0; overflow: hidden;
+  background: rgba(13,13,26,0.5); padding: 0 22px;
+  color: var(--muted); font-size: 0.9rem; line-height: 1.74;
+  transition: max-height 0.4s ease, padding 0.3s;
+}
+.faq-item.open .faq-a { max-height: 220px; padding: 15px 22px 20px; }
+
+/* ─────────────────────────────────────────
+   CONTACT FORM
+───────────────────────────────────────── */
+.contact-section { border-top: 1px solid var(--border); }
+.contact-inner {
+  display: grid; grid-template-columns: 1fr 1.1fr; gap: 5rem; align-items: start;
+}
+.contact-chip {
+  display: inline-block; font-size: 0.72rem; text-transform: uppercase;
+  letter-spacing: 0.13em; color: var(--accent2);
+  border: 1px solid rgba(124,92,252,0.28); background: rgba(124,92,252,0.07);
+  padding: 4px 13px; border-radius: 100px; margin-bottom: 18px;
+}
+.contact-h2 {
+  font-family: 'Sora', sans-serif;
+  font-size: clamp(1.7rem, 3vw, 2.4rem); font-weight: 700; line-height: 1.2;
+  background: linear-gradient(180deg, #fff 0%, rgba(255,255,255,0.65) 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; margin-bottom: 1rem;
+}
+.contact-p { color: var(--muted); font-size: 0.98rem; line-height: 1.76; margin-bottom: 2rem; }
+.contact-detail { display: flex; align-items: flex-start; gap: 0.875rem; margin-bottom: 1rem; }
+.contact-detail-icon {
+  width: 38px; height: 38px; border-radius: 9px; flex-shrink: 0;
+  background: linear-gradient(135deg, rgba(124,92,252,0.18), rgba(176,122,255,0.08));
+  border: 1px solid rgba(124,92,252,0.22);
+  display: grid; place-items: center; font-size: 0.95rem; margin-top: 0.1rem;
+}
+.contact-detail-text { font-size: 0.875rem; color: var(--muted); line-height: 1.6; }
+.contact-detail-text strong { display: block; color: var(--text); font-weight: 600; margin-bottom: 0.1rem; font-size: 0.9rem; }
+.form-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 18px; padding: 2.25rem; position: relative; overflow: hidden;
+}
+.form-card::before {
+  content: ''; position: absolute; top: -50px; right: -50px;
+  width: 130px; height: 130px; border-radius: 50%;
+  background: var(--glow); filter: blur(50px); pointer-events: none;
+}
+.form-card-h3 {
+  font-family: 'Sora', sans-serif; font-size: 1.05rem; font-weight: 600;
+  color: #fff; margin-bottom: 0.3rem;
+}
+.form-subtitle { font-size: 0.82rem; color: var(--muted); margin-bottom: 1.75rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form-group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1rem; }
+.form-label {
+  font-size: 0.68rem; font-weight: 600; color: rgba(255,255,255,0.4);
+  letter-spacing: 0.08em; text-transform: uppercase;
+}
+.req { color: #f87171; }
+.form-input, .form-textarea {
+  width: 100%; padding: 0.72rem 1rem;
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 9px; color: var(--text);
+  font-size: 0.9rem; font-family: 'DM Sans', sans-serif; outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s; appearance: none;
+}
+.form-input::placeholder, .form-textarea::placeholder { color: var(--muted); opacity: 0.6; }
+.form-input:focus, .form-textarea:focus {
+  border-color: rgba(124,92,252,0.55);
+  box-shadow: 0 0 0 3px rgba(124,92,252,0.12);
+}
+.form-textarea { resize: vertical; min-height: 115px; line-height: 1.6; }
+.form-submit {
+  width: 100%; padding: 0.875rem 1.5rem; margin-top: 1.25rem; border-radius: 8px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: #fff; font-size: 0.94rem; font-weight: 600; border: none;
+  cursor: pointer; font-family: 'Sora', sans-serif; letter-spacing: -0.01em;
+  transition: opacity 0.2s, transform 0.2s;
+  display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+}
+.form-submit:hover { opacity: 0.88; transform: translateY(-1px); }
+.form-submit:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+.form-note { font-size: 0.72rem; color: var(--muted); text-align: center; margin-top: 0.875rem; opacity: 0.7; }
+.form-alert {
+  padding: 0.875rem 1rem; border-radius: 9px;
+  font-size: 0.85rem; font-weight: 500; line-height: 1.5;
+  margin-bottom: 1.25rem; display: none;
+}
+.form-alert.success {
+  background: rgba(74,222,128,0.08); border: 1px solid rgba(74,222,128,0.22);
+  color: #4ade80; display: block;
+}
+.form-alert.error {
+  background: rgba(248,113,113,0.08); border: 1px solid rgba(248,113,113,0.22);
+  color: #f87171; display: block;
+}
+
+/* ─────────────────────────────────────────
+   CTA
+───────────────────────────────────────── */
+.cta-section {
+  position: relative; overflow: hidden;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+.cta-dotgrid {
+  position: absolute; inset: 0; z-index: 0;
+  background: url('https://reflect.app/home/build/q-6c12dbae.png') center / cover no-repeat;
+  opacity: 0.10; pointer-events: none;
+}
+.cta-bh-wrap {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 840px; height: 840px;
+  z-index: 1; pointer-events: none;
+}
+.cta-bh-wrap video {
+  width: 100%; height: 100%; object-fit: cover;
+  border-radius: 50%; opacity: 0.48;
+}
+.cta-bh-wrap::after {
+  content: '';
+  position: absolute; inset: -8%;
+  background: radial-gradient(ellipse at center, transparent 25%, var(--bg) 65%);
+  border-radius: 50%;
+}
+.cta-section .container { position: relative; z-index: 3; }
+.cta-section h2 { max-width: 680px; margin: 0 auto 14px; }
+.cta-section p  { color: var(--muted); max-width: 460px; margin: 0 auto 38px; font-size: 1.02rem; line-height: 1.74; }
+.cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.cta-btns .btn-primary,
+.cta-btns .btn-outline { padding: 14px 34px; font-size: 1rem; }
+
+/* ─────────────────────────────────────────
+   FOOTER
+───────────────────────────────────────── */
+footer {
+  border-top: 1px solid var(--border); padding: 36px 48px;
+  display: flex; align-items: center; justify-content: space-between;
+  color: var(--muted); font-size: 0.84rem;
+}
+.footer-logo { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1.05rem; color: #fff; display: flex; align-items: center; gap: 9px; }
+.footer-logo-icon { width: 26px; height: 26px; border-radius: 6px; background: linear-gradient(135deg, var(--accent), var(--accent2)); display: grid; place-items: center; font-size: 0.85rem; font-weight: 800; }
+.footer-links { display: flex; gap: 20px; }
+.footer-links a { color: var(--muted); text-decoration: none; font-size: 0.82rem; transition: color 0.2s; }
+.footer-links a:hover { color: #fff; }
+
+/* ─────────────────────────────────────────
+   ANIMATIONS & RESPONSIVE
+───────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(26px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-in { opacity: 0; transform: translateY(28px); transition: opacity 0.75s ease, transform 0.75s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 900px) {
+  nav { padding: 14px 24px; }
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .split { grid-template-columns: 1fr; gap: 36px; }
+  .split.rev { direction: ltr; }
+  .hero-cone { width: 480px; }
+  .cta-bh-wrap { width: 500px; height: 500px; }
+  .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+  footer { flex-direction: column; gap: 14px; text-align: center; }
+}
+@media (max-width: 600px) {
+  .hero-text { padding-top: 120px; }
+  .hero-cone { width: 300px; }
+  .feature-grid { grid-template-columns: 1fr; }
+  section { padding: 70px 18px; }
+  nav { padding: 12px 18px; }
+  .cta-bh-wrap { width: 300px; height: 300px; }
+  footer { padding: 26px 18px; flex-direction: column; gap: 14px; text-align: center; }
+  .form-row { grid-template-columns: 1fr; }
+  .form-card { padding: 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="https://rupnidhi.com/" class="nav-logo">
+    <img src="../assets/images/logo.webp" class="logo-img" alt="Rupnidhi" onerror="this.style.display='none'">
+    <img src="../assets/images/name.webp" class="logo-name" alt="Rupnidhi" onerror="this.style.display='none'; document.getElementById('logo-fb').style.display='flex'">
+    <span id="logo-fb" style="display:none; align-items:center; gap:10px;">
+      <div class="nav-logo-icon">R</div>Rupnidhi
+    </span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#features">Features</a></li>
+    <li><a href="#solutions">Solutions</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <div class="nav-cta">
+    <a href="https://rupnidhi.com/login.php" class="btn-ghost">Login</a>
+    <a href="#contact" class="btn-primary">Start Free Trial</a>
+  </div>
+  <button class="hamburger" id="ham" onclick="toggleMenu()" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="#features"  onclick="closeMenu()">Features</a>
+  <a href="#solutions" onclick="closeMenu()">Solutions</a>
+  <a href="#pricing"   onclick="closeMenu()">Pricing</a>
+  <a href="#faq"       onclick="closeMenu()">FAQ</a>
+  <div class="mobile-nav-foot">
+    <a href="https://rupnidhi.com/login.php" class="btn-ghost" style="font-size:1rem;padding:.5rem 0">Login</a>
+    <a href="#contact" onclick="closeMenu()" class="btn-primary" style="text-align:center;padding:.75rem 1.5rem;border-radius:8px">Get Started</a>
+  </div>
+</div>
+
+
+<section class="hero" id="hero">
+  <div class="hero-dotgrid"></div>
+  <canvas id="bh-canvas"></canvas>
+  <div class="hero-glow"></div>
+  <div class="hero-fade"></div>
+
+  <div class="hero-text">
+    <div class="hero-badge">Billing Software for Manufacturing</div>
+    <h1>Customised Billing Software<br>for Manufacturing Businesses</h1>
+    <p class="hero-sub">Empower your manufacturing operations with a tailored billing solution that simplifies invoicing, inventory control, tax compliance, and production tracking — all in one scalable platform.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Start Free Trial</a>
+      <a href="#features" class="btn-outline">See Features</a>
+    </div>
+  </div>
+
+  <div class="hero-image-wrap">
+    <div class="hero-image-frame">
+      <img src="../assets/images/image copy.png" alt="Rupnidhi Manufacturing Dashboard" onerror="this.src='https://gogstbill.com/wp-content/uploads/2023/08/iPhone-X-1f-copy.png'">
+    </div>
+  </div>
+</section>
+
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="ticker-dot"></span>GST-Compliant Invoicing</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Raw Material Tracking</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Production Batch Management</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Real-Time Analytics</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Payment Automation</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Custom Invoice Templates</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>HSN Code Support</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Scalable Platform</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>GST-Compliant Invoicing</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Raw Material Tracking</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Production Batch Management</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Real-Time Analytics</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Payment Automation</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Custom Invoice Templates</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>HSN Code Support</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Scalable Platform</span>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <div class="split fade-in">
+      <div>
+        <div class="section-chip">Our Platform</div>
+        <h2 class="section-title">Our Customised Software for Manufacturing</h2>
+        <p class="section-body">Our billing software is built specifically for manufacturers who need more than basic invoicing — it’s a customised software solution that integrates with your production flow and business processes.</p>
+        <a href="#contact" class="btn-primary">Explore Platform →</a>
+      </div>
+      <div class="split-image">
+        <img src="../assets/images/image copy 4.png" alt="Manufacturing Workflow Software" onerror="this.src='https://gogstbill.com/wp-content/uploads/2023/08/iPhone-X-1f-copy.png'">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="features" style="background:radial-gradient(ellipse at 50% 0,rgba(124,92,252,.07) 0,transparent 60%)">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:60px" class="fade-in">
+      <div class="section-chip">Key Features</div>
+      <h2 class="section-title" style="margin:0 auto 14px">Key Features Designed for Manufacturing Workflows</h2>
+      <p class="section-body" style="margin:0 auto">Tailored capabilities help you manage raw materials, production schedules, and finished goods, while also generating GST-compliant invoices and financial reports in real time.</p>
+    </div>
+    <div class="feature-grid fade-in">
+      <div class="feature-card">
+        <div class="feature-icon">🧾</div>
+        <h3>Advanced GST-Compliant Billing</h3>
+        <p>Generate professional GST-compliant manufacturing invoices instantly, including with HSN codes and applicable tax rules for B2B and B2C transactions.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🎨</div>
+        <h3>Flexible Invoice & Template Customisation</h3>
+        <p>Design invoices that reflect your branding and business needs. Customised layouts, fields, and reporting help you work the way your business requires.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>Real-Time Reporting & Analytics</h3>
+        <p>Get insights into sales trends, production stages, stock movements, and profit margins with dashboards and exportable reports.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="solutions">
+  <div class="container">
+    <div class="split rev fade-in">
+      <div>
+        <div class="section-chip">Financial Management</div>
+        <h2 class="section-title">Intuitive Financial Management & Billing Automation</h2>
+        <p class="section-body">Automate repetitive tasks like invoicing, payment tracking, and stock updates so you can focus on production and customer satisfaction.</p>
+        <a href="#contact" class="btn-primary">See How It Works →</a>
+      </div>
+      <div class="split-image">
+        <img src="../assets/images/image copy 6.png" alt="Financial Automation" onerror="this.src='https://gogstbill.com/wp-content/uploads/2023/08/iPhone-X-1f-copy.png'">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:radial-gradient(ellipse at 50% 100%,rgba(124,92,252,.06) 0,transparent 60%)">
+  <div class="container">
+    <div class="split fade-in">
+      <div>
+        <div class="section-chip">Scalable Platform</div>
+        <h2 class="section-title">Scalable & Future-Ready Customised Software Platform</h2>
+        <p class="section-body">Whether you’re a small workshop or a large factory, the software scales with your business and adapts to changes in workflow and compliance standards.</p>
+        <a href="#contact" class="btn-primary">Start Scaling Today →</a>
+      </div>
+      <div class="split-image">
+        <img src="../assets/images/image copy 17.png" alt="Scalable Manufacturing Software" onerror="this.src='https://gogstbill.com/wp-content/uploads/2023/08/iPhone-X-1f-copy.png'">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:60px" class="fade-in">
+      <div class="section-chip">Pricing Plans</div>
+      <h2 class="section-title" style="margin:0 auto 14px">Software Licensing</h2>
+      <p class="section-body" style="margin:0 auto">Scale your manufacturing operations securely. Start today with zero setup fees.</p>
+    </div>
+    
+    <div class="pricing-grid fade-in">
+      <div class="pricing-card">
+        <h3>Starter</h3>
+        <div class="pricing-price">₹2,499<span>/mo</span></div>
+        <ul class="pricing-features">
+          <li>Basic Manufacturing Invoicing</li>
+          <li>GST & Financial Reports</li>
+          <li>Standard Support SLA</li>
+        </ul>
+        <a href="#contact" class="btn-outline" style="width: 100%; text-align: center;">Select Starter</a>
+      </div>
+
+      <div class="pricing-card featured">
+        <h3>Professional</h3>
+        <div class="pricing-price">₹8,299<span>/mo</span></div>
+        <ul class="pricing-features">
+          <li>Everything in Starter</li>
+          <li>Inventory & Production Tracking</li>
+          <li>Batch Management & HSN Support</li>
+          <li>Priority 24/7 Support</li>
+        </ul>
+        <a href="#contact" class="btn-primary" style="width: 100%; text-align: center;">Start Free Trial</a>
+      </div>
+
+      <div class="pricing-card">
+        <h3>Enterprise</h3>
+        <div class="pricing-price" style="font-size: 2.5rem; padding: 10px 0;">Custom</div>
+        <ul class="pricing-features">
+          <li>Multi-unit Factory Management</li>
+          <li>Customised Software Modules</li>
+          <li>Advanced Analytics & Full API Access</li>
+          <li>Dedicated Account Manager</li>
+        </ul>
+        <a href="#contact" class="btn-outline" style="width: 100%; text-align: center;">Contact Sales</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:52px" class="fade-in">
+      <div class="section-chip">FAQ</div>
+      <h2 class="section-title" style="margin:0 auto 10px">Frequently Asked Questions</h2>
+      <p style="color:var(--muted);font-size:.875rem;margin-top:.5rem">
+        Still have questions? <a href="#contact" style="color:var(--accent2);text-decoration:none;font-weight:500">Contact us →</a>
+      </p>
+    </div>
+    <div class="faq-list fade-in" style="max-width:740px;margin:0 auto">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">Q1: How is billing software for manufacturing different from regular billing software?<span class="faq-icon">+</span></div>
+        <div class="faq-a">Manufacturing billing software connects invoicing with production, raw material tracking, batch management, and finished goods inventory — making it a complete customised software solution built for factories and production units.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">Q2: Can the software handle GST billing and tax compliance?<span class="faq-icon">+</span></div>
+        <div class="faq-a">Yes. The software generates GST-compliant invoices with HSN codes, tax breakdowns (CGST, SGST, IGST), and detailed GST reports to simplify return filing.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">Q3: Is the software suitable for small and medium manufacturing businesses?<span class="faq-icon">+</span></div>
+        <div class="faq-a">Absolutely. The system is scalable and works for small workshops, mid-size manufacturing units, and growing factories that need customised software tailored to their workflow.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">Q4: Can I customize invoice formats and reports?<span class="faq-icon">+</span></div>
+        <div class="faq-a">Yes. You can customize invoice templates, add branding, modify fields, and generate reports based on your production and sales requirements.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">Q5: Does it include inventory and production tracking features?<span class="faq-icon">+</span></div>
+        <div class="faq-a">Yes. The software manages raw materials, stock levels, batch tracking, production output, and finished goods — helping you maintain accurate records and reduce losses.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section" id="contact" style="padding:110px 24px">
+  <div class="container">
+    <div class="contact-inner fade-in">
+      <div>
+        <div class="contact-chip">Get in Touch</div>
+        <h2 class="contact-h2">Let's Talk About Your<br>Manufacturing Business</h2>
+        <p class="contact-p">Tell us about your billing and production requirements. Our team will get back to you within one business day with a customised solution tailored to your workflow.</p>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">✉️</div>
+          <div class="contact-detail-text">
+            <strong>Email Us</strong>contact@rupnidhi.com
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">🕐</div>
+          <div class="contact-detail-text">
+            <strong>Response Time</strong>Within 1 business day
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">🏭</div>
+          <div class="contact-detail-text">
+            <strong>We Specialise In</strong>Manufacturing · Production Tracking · GST Billing
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">✅</div>
+          <div class="contact-detail-text">
+            <strong>Scales With You</strong>Small Workshop → Large Factory → Enterprise
+          </div>
+        </div>
+      </div>
+      <div class="form-card">
+        <h3 class="form-card-h3">Send Us a Message</h3>
+        <p class="form-subtitle">Fill in the details below and we'll reach out shortly.</p>
+        <div id="formAlert" class="form-alert" role="alert"></div>
+        <form id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="fname">Full Name <span class="req">*</span></label>
+              <input class="form-input" type="text" id="fname" name="name" placeholder="Your full name" required/>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="femail">Email <span class="req">*</span></label>
+              <input class="form-input" type="email" id="femail" name="email" placeholder="you@company.com" required/>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="fcompany">Company Name</label>
+              <input class="form-input" type="text" id="fcompany" name="company" placeholder="Optional"/>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="fphone">Phone Number</label>
+              <input class="form-input" type="tel" id="fphone" name="phone" placeholder="Optional"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="fmessage">Message <span class="req">*</span></label>
+            <textarea class="form-textarea" id="fmessage" name="message" placeholder="Describe your manufacturing business and billing requirements…" required></textarea>
+          </div>
+          <button type="submit" class="form-submit" id="submitBtn">
+            <span id="submitText">Send Message →</span>
+          </button>
+          <p class="form-note">Your details are sent securely to contact@rupnidhi.com — no spam, ever.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" style="padding:110px 24px">
+  <div class="cta-dotgrid"></div>
+  <div class="cta-bh-wrap">
+    <video autoplay muted loop playsinline>
+      <source src="https://reflect.app/home/build/q-ba39153a.webm" type="video/webm">
+    </video>
+  </div>
+  <div class="container fade-in">
+    <div class="section-chip">Get Started</div>
+    <h2 class="section-title">Ready to Transform Your Manufacturing Operations?</h2>
+    <p>Join hundreds of manufacturers who streamlined their billing, compliance, and production tracking with Rupnidhi.</p>
+    <div class="cta-btns">
+      <a href="#contact" class="btn-primary">Start Free Trial</a>
+      <a href="#contact" class="btn-outline">Book a Demo</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">
+    <div class="footer-logo-icon">R</div>Rupnidhi
+  </div>
+  <div>© 2026 Rupnidhi Customized Solutions. All rights reserved.</div>
+  <div class="footer-links">
+    <a href="#">Privacy</a><a href="#">Terms</a>
+    <a href="#contact">Contact</a>
+  </div>
+</footer>
+
+<script>
+/* ═══════════════════════════════════════════════════
+   BLACKHOLE CANVAS
+═══════════════════════════════════════════════════ */
+(function () {
+  const canvas = document.getElementById('bh-canvas');
+  const ctx    = canvas.getContext('2d');
+  const hero   = document.getElementById('hero');
+  let W, H, cx, cy;
+
+  function resize () {
+    W = canvas.width  = hero.offsetWidth;
+    H = canvas.height = hero.offsetHeight;
+    cx = W / 2;
+    cy = H * 0.40;
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  let mx = W / 2, my = H * 0.4;
+  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+
+  function rand(a, b) { return a + Math.random() * (b - a); }
+
+  class P {
+    init(fresh) {
+      const spread = Math.min(W, H) * 0.44;
+      const r = fresh ? rand(70, spread) : rand(spread * 0.82, spread);
+      this.a  = rand(0, Math.PI * 2);
+      this.r  = r;
+      this.va = rand(0.0003, 0.0009) * (Math.random() < 0.5 ? 1 : -1);
+      this.dr = rand(0.045, 0.13);
+      this.sz = rand(0.4, 1.5);
+      this.op = rand(0.06, 0.48);
+      this.hue = rand(220, 288);
+      this.sat = rand(55, 92);
+    }
+    constructor() { this.init(true); }
+    step() {
+      const px = cx + Math.cos(this.a) * this.r;
+      const py = cy + Math.sin(this.a) * this.r;
+      const dx = mx - px, dy = my - py;
+      const d  = Math.hypot(dx, dy);
+      if (d < 170) {
+        const f = (170 - d) / 170 * 0.5;
+        this.va += f * 0.025;
+        this.r  += f * 0.45;
+      }
+      this.a += this.va;
+      this.r -= this.dr + (this.r < 110 ? 0.22 : 0);
+      if (this.r < 8) this.init(false);
+    }
+    draw() {
+      const px = cx + Math.cos(this.a) * this.r;
+      const py = cy + Math.sin(this.a) * this.r;
+      const fade = Math.min(1, (this.r - 8) / 80);
+      ctx.beginPath();
+      ctx.arc(px, py, this.sz, 0, Math.PI * 2);
+      ctx.fillStyle = `hsla(${this.hue},${this.sat}%,72%,${this.op * fade})`;
+      ctx.fill();
+    }
+  }
+
+  const pts = Array.from({ length: 360 }, () => new P());
+
+  function disk(t) {
+    [[36,13,0.19],[60,19,0.11],[90,25,0.055],[128,21,0.025]].forEach(([r, w, a]) => {
+      const p = 1 + 0.04 * Math.sin(t * 0.85 + r * 0.05);
+      const g = ctx.createRadialGradient(cx,cy,r*0.5*p, cx,cy,(r+w)*p);
+      g.addColorStop(0, `rgba(120,75,255,${a})`);
+      g.addColorStop(1, 'rgba(0,0,0,0)');
+      ctx.beginPath(); ctx.arc(cx,cy,(r+w)*p,0,Math.PI*2);
+      ctx.fillStyle = g; ctx.fill();
+    });
+  }
+
+  function core() {
+    const g = ctx.createRadialGradient(cx,cy,0, cx,cy,50);
+    g.addColorStop(0,   'rgba(0,0,0,1)');
+    g.addColorStop(0.5, 'rgba(6,6,14,0.95)');
+    g.addColorStop(1,   'rgba(6,6,14,0)');
+    ctx.beginPath(); ctx.arc(cx,cy,50,0,Math.PI*2);
+    ctx.fillStyle = g; ctx.fill();
+  }
+
+  function lens(t) {
+    ctx.save(); ctx.globalCompositeOperation = 'lighter';
+    for (let i = 0; i < 3; i++) {
+      const a = t * 0.27 + i * 2.094;
+      const lx = cx + Math.cos(a)*34, ly = cy + Math.sin(a)*20;
+      const g  = ctx.createRadialGradient(lx,ly,0, lx,ly,24);
+      g.addColorStop(0,'rgba(160,100,255,0.12)'); g.addColorStop(1,'transparent');
+      ctx.beginPath(); ctx.arc(lx,ly,24,0,Math.PI*2);
+      ctx.fillStyle = g; ctx.fill();
+    }
+    ctx.restore();
+  }
+
+  let t = 0;
+  (function loop() {
+    requestAnimationFrame(loop);
+    t += 0.016;
+    ctx.fillStyle = 'rgba(6,6,14,0.18)';
+    ctx.fillRect(0, 0, W, H);
+    disk(t);
+    pts.forEach(p => { p.step(); p.draw(); });
+    lens(t);
+    core();
+  })();
+})();
+
+/* Scroll fade-in */
+const obs = new IntersectionObserver(
+  es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+  { threshold: 0.1 }
+);
+document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+/* FAQ */
+function toggleFAQ(q) {
+  const item = q.parentElement;
+  const open = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!open) item.classList.add('open');
+}
+
+/* Mobile nav */
+function toggleMenu() {
+  const ham = document.getElementById('ham');
+  const nav = document.getElementById('mobileNav');
+  const isOpen = nav.classList.contains('open');
+  if (isOpen) {
+    nav.classList.remove('open');
+    ham.classList.remove('open');
+    ham.setAttribute('aria-label', 'Open menu');
+  } else {
+    nav.classList.add('open');
+    ham.classList.add('open');
+    ham.setAttribute('aria-label', 'Close menu');
+  }
+}
+function closeMenu() {
+  document.getElementById('mobileNav').classList.remove('open');
+  document.getElementById('ham').classList.remove('open');
+}
+
+/* Contact form submit */
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn      = document.getElementById('submitBtn');
+  const btnText  = document.getElementById('submitText');
+  const alertBox = document.getElementById('formAlert');
+
+  alertBox.className  = 'form-alert';
+  alertBox.textContent = '';
+
+  const name    = document.getElementById('fname').value.trim();
+  const email   = document.getElementById('femail').value.trim();
+  const message = document.getElementById('fmessage').value.trim();
+
+  if (!name || !email || !message) {
+    alertBox.className  = 'form-alert error';
+    alertBox.textContent = '⚠ Please fill in your name, email address, and message.';
+    alertBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    return;
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    alertBox.className  = 'form-alert error';
+    alertBox.textContent = '⚠ Please enter a valid email address.';
+    alertBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    return;
+  }
+
+  btn.disabled      = true;
+  btnText.textContent = 'Sending…';
+
+  try {
+    const res  = await fetch('contact.php', { method: 'POST', body: new FormData(this) });
+    const data = await res.json();
+    if (data.success) {
+      alertBox.className  = 'form-alert success';
+      alertBox.textContent = '✓ ' + data.message;
+      this.reset();
+    } else {
+      alertBox.className  = 'form-alert error';
+      alertBox.textContent = '⚠ ' + data.message;
+    }
+  } catch (err) {
+    alertBox.className  = 'form-alert error';
+    alertBox.textContent = '⚠ Network error. Please email us directly at contact@rupnidhi.com';
+  }
+
+  btn.disabled      = false;
+  btnText.textContent = 'Send Message →';
+  alertBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+});
+</script>
+</body>
+</html>

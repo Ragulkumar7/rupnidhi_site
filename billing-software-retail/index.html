@@ -1,0 +1,1381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Billing Software for Retail | Rupnidhi Smart GST Billing Solution</title>
+  <meta name="description" content="Complete GST billing software in India with fast invoicing, e-invoice support, retail billing & cloud access." />
+  
+  <link rel="icon" type="image/png" href="../assets/favicon.png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="canonical" href="https://rupnidhi.com/retail-billing-software/index.html" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  
+  <style>
+    /* =========================================================================
+       LIGHT MODERN VARIABLES
+       ========================================================================= */
+    :root {
+      --bg-page: #F8FAFC;
+      --bg-white: #FFFFFF;
+      --text-dark: #0F172A;
+      --text-gray: #475569;
+      --text-light: #94A3B8;
+      --accent-indigo: #4F46E5;
+      --accent-indigo-light: #EEF2FF;
+      --accent-success: #10B981;
+      --accent-orange: #F97316;
+      --border-light: #E2E8F0;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+      --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      --radius-full: 9999px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { 
+      font-family: 'Inter', sans-serif; 
+      color: var(--text-dark); 
+      line-height: 1.6; 
+      background: var(--bg-page); 
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    h1, h2, h3, h4 { font-family: 'Plus Jakarta Sans', sans-serif; line-height: 1.2; letter-spacing: -0.02em; }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* =========================================================================
+       FLOATING PILL NAVIGATION - Glassmorphism
+       ========================================================================= */
+    .nav-wrapper {
+      position: fixed;
+      top: 0; left: 0; width: 100%;
+      padding: 20px 0;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+    .nav-wrapper.scrolled {
+      padding: 12px 0;
+      background: rgba(248, 250, 252, 0.8);
+      backdrop-filter: blur(12px);
+    }
+
+    .floating-nav {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-lg), 0 0 0 1px rgba(0,0,0,0.02);
+      border-radius: var(--radius-full);
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+    }
+
+    .nav-logo { 
+      display: flex; align-items: center; gap: 10px; 
+      font-family: 'Plus Jakarta Sans', sans-serif; 
+      font-size: 1.25rem; font-weight: 800; 
+      color: var(--text-dark); 
+    }
+    .nav-logo img { height: 32px; width: auto; }
+
+    .nav-links { display: flex; gap: 32px; align-items: center; }
+    .nav-links a { 
+      font-weight: 500; font-size: 0.95rem; 
+      color: var(--text-gray); 
+      transition: all 0.2s;
+      position: relative;
+    }
+    .nav-links a:hover { color: var(--accent-indigo); }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: -4px; left: 0;
+      width: 0; height: 2px; background: var(--accent-indigo);
+      border-radius: 2px; transition: width 0.3s;
+    }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-actions { display: flex; gap: 12px; align-items: center; }
+    
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 10px 24px; border-radius: var(--radius-full);
+      font-weight: 600; font-size: 0.95rem; font-family: 'Inter', sans-serif;
+      transition: all 0.2s ease; cursor: pointer; border: none;
+    }
+    .btn-login { 
+      color: var(--text-dark); background: transparent;
+      border: 1px solid transparent;
+    }
+    .btn-login:hover { 
+      background: var(--bg-page); 
+      border-color: var(--border-light);
+    }
+    .btn-primary { 
+      background: var(--accent-indigo); color: #fff;
+      box-shadow: 0 4px 14px rgba(79, 70, 229, 0.25);
+    }
+    .btn-primary:hover { 
+      background: #4338CA; 
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(79, 70, 229, 0.35);
+    }
+    .btn-secondary {
+      background: var(--text-dark); color: #fff;
+    }
+    .btn-secondary:hover {
+      background: #1e293b;
+      transform: translateY(-1px);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--border-light);
+      color: var(--text-dark);
+    }
+    .btn-outline:hover {
+      border-color: var(--accent-indigo);
+      color: var(--accent-indigo);
+      background: var(--accent-indigo-light);
+    }
+
+    .hamburger { 
+      display: none; background: none; border: none; 
+      font-size: 1.5rem; color: var(--text-dark); cursor: pointer; 
+    }
+
+    @media (max-width: 992px) {
+      .nav-links, .nav-actions { display: none; }
+      .hamburger { display: block; }
+      .floating-nav { width: 92%; padding: 16px 20px; border-radius: var(--radius-lg); }
+    }
+
+    /* Mobile Menu */
+    .mobile-menu {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(20px);
+      z-index: 999; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 24px;
+      opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+    }
+    .mobile-menu.open { opacity: 1; pointer-events: auto; }
+    .mobile-menu a { 
+      font-family: 'Plus Jakarta Sans', sans-serif; 
+      font-size: 1.5rem; font-weight: 700; color: var(--text-dark);
+    }
+    .mobile-menu .btn { margin-top: 16px; font-size: 1.1rem; padding: 16px 40px; }
+
+    /* =========================================================================
+       HERO - Soft Gradient Mesh
+       ========================================================================= */
+    .hero {
+      padding: 160px 24px 100px;
+      background: linear-gradient(180deg, var(--bg-page) 0%, #fff 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; top: -50%; left: -10%;
+      width: 120%; height: 100%;
+      background: radial-gradient(ellipse, rgba(79, 70, 229, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      display: grid; grid-template-columns: 1fr 1.2fr;
+      gap: 60px; align-items: center; position: relative; z-index: 1;
+    }
+
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--accent-indigo-light);
+      color: var(--accent-indigo);
+      font-weight: 700; font-size: 0.85rem;
+      padding: 8px 16px; border-radius: var(--radius-full);
+      margin-bottom: 24px; border: 1px solid rgba(79, 70, 229, 0.2);
+      width: fit-content;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 5vw, 4rem);
+      font-weight: 800;
+      margin-bottom: 24px;
+      line-height: 1.1;
+      color: var(--text-dark);
+    }
+    .hero h1 span {
+      color: var(--accent-indigo);
+      position: relative;
+    }
+    .hero h1 span::after {
+      content: ''; position: absolute; bottom: 0; left: 0;
+      width: 100%; height: 8px;
+      background: rgba(79, 70, 229, 0.2);
+      z-index: -1; border-radius: 4px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--text-gray);
+      margin-bottom: 32px;
+      line-height: 1.8;
+      max-width: 540px;
+    }
+
+    .hero-actions {
+      display: flex; gap: 16px; margin-bottom: 48px;
+    }
+    .hero-actions .btn {
+      padding: 16px 32px; font-size: 1.05rem;
+    }
+
+    .hero-stats {
+      display: flex; gap: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-light);
+    }
+    .stat-item h4 {
+      font-size: 2rem; font-weight: 800;
+      color: var(--accent-indigo); margin-bottom: 4px;
+    }
+    .stat-item p {
+      font-size: 0.95rem; color: var(--text-light);
+      margin: 0;
+    }
+
+    .hero-visual {
+      position: relative;
+      border-radius: var(--radius-xl);
+      background: linear-gradient(135deg, #fff 0%, var(--accent-indigo-light) 100%);
+      padding: 20px;
+      box-shadow: 
+        0 40px 80px -20px rgba(15, 23, 42, 0.15),
+        0 0 0 1px rgba(0,0,0,0.05);
+    }
+    .hero-visual img {
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-xl);
+      border: 1px solid var(--border-light);
+    }
+    .floating-tag {
+      position: absolute;
+      background: #fff;
+      padding: 12px 20px;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border-light);
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: flex; align-items: center; gap: 8px;
+      animation: float 6s ease-in-out infinite;
+    }
+    .tag-1 { top: 10%; left: -20px; animation-delay: 0s; }
+    .tag-2 { bottom: 20%; right: -20px; animation-delay: 2s; color: var(--accent-success); }
+    .tag-3 { top: 50%; right: -40px; animation-delay: 4s; color: var(--accent-orange); }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @media (max-width: 992px) {
+      .hero-inner { grid-template-columns: 1fr; text-align: center; }
+      .hero-badge { margin: 0 auto 24px; }
+      .hero p { margin-left: auto; margin-right: auto; }
+      .hero-actions { justify-content: center; }
+      .hero-stats { justify-content: center; }
+      .hero-visual { max-width: 600px; margin: 0 auto; }
+      .floating-tag { display: none; }
+    }
+
+    /* =========================================================================
+       TRUST STRIP - Clean Logo Cloud
+       ========================================================================= */
+    .trust-strip {
+      background: #fff;
+      padding: 60px 24px;
+      border-top: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .trust-title {
+      text-align: center;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--text-light);
+      margin-bottom: 32px;
+    }
+    .trust-grid {
+      display: flex; justify-content: center;
+      flex-wrap: wrap; gap: 24px;
+      max-width: 900px; margin: 0 auto;
+    }
+    .trust-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 12px 24px;
+      background: var(--bg-page);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-light);
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--text-gray);
+      transition: all 0.3s;
+    }
+    .trust-item:hover {
+      border-color: var(--accent-indigo);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    .trust-item i { color: var(--accent-success); font-size: 1.1rem; }
+
+    /* =========================================================================
+       BENTO GRID FEATURES - 2024 Trend
+       ========================================================================= */
+    .section { padding: 100px 24px; }
+    .section-header {
+      text-align: center; max-width: 700px;
+      margin: 0 auto 60px;
+    }
+    .section-header h2 {
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      font-weight: 800;
+      margin-bottom: 16px;
+      color: var(--text-dark);
+    }
+    .section-header p {
+      font-size: 1.15rem;
+      color: var(--text-gray);
+      line-height: 1.7;
+    }
+
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .bento-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-xl);
+      padding: 40px;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    .bento-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent-indigo), transparent);
+      opacity: 0; transition: opacity 0.3s;
+    }
+    .bento-card:hover {
+      border-color: rgba(79, 70, 229, 0.3);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-xl);
+    }
+    .bento-card:hover::before { opacity: 1; }
+
+    .bento-wide { grid-column: span 2; }
+    .bento-tall { grid-row: span 2; }
+
+    .bento-icon {
+      width: 56px; height: 56px;
+      background: var(--accent-indigo-light);
+      border: 1px solid rgba(79, 70, 229, 0.2);
+      border-radius: var(--radius-md);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24px; color: var(--accent-indigo);
+      margin-bottom: 24px;
+      transition: all 0.3s;
+    }
+    .bento-card:hover .bento-icon {
+      background: var(--accent-indigo);
+      color: #fff;
+      transform: scale(1.05);
+    }
+
+    .bento-card h3 {
+      font-size: 1.4rem; font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--text-dark);
+    }
+    .bento-card p {
+      color: var(--text-gray);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .bento-highlight {
+      background: linear-gradient(135deg, var(--text-dark) 0%, #1e293b 100%);
+      color: #fff;
+      border: none;
+    }
+    .bento-highlight .bento-icon {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.2);
+      color: #fff;
+    }
+    .bento-highlight h3 { color: #fff; }
+    .bento-highlight p { color: #cbd5e1; }
+    .bento-highlight:hover {
+      transform: translateY(-4px) scale(1.01);
+      box-shadow: 0 30px 60px -10px rgba(15, 23, 42, 0.4);
+    }
+
+    @media (max-width: 900px) {
+      .bento-grid { grid-template-columns: 1fr; }
+      .bento-wide, .bento-tall { grid-column: span 1; grid-row: span 1; }
+    }
+
+    /* =========================================================================
+       ASYMMETRICAL SPLIT SECTIONS
+       ========================================================================= */
+    .split-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      margin-bottom: 120px;
+    }
+    .split-section.reverse { direction: rtl; }
+    .split-section.reverse > * { direction: ltr; }
+
+    .split-content h2 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      margin-bottom: 24px;
+      line-height: 1.1;
+      color: var(--text-dark);
+    }
+    .split-content h2 span {
+      color: var(--accent-indigo);
+      position: relative;
+    }
+    .split-content p {
+      font-size: 1.15rem;
+      color: var(--text-gray);
+      margin-bottom: 20px;
+      line-height: 1.8;
+    }
+
+    .feature-list {
+      display: flex; flex-direction: column; gap: 16px;
+      margin-top: 32px;
+    }
+    .feature-list li {
+      display: flex; align-items: center; gap: 12px;
+      font-weight: 500;
+    }
+    .feature-list li i {
+      color: var(--accent-success);
+      font-size: 1.2rem;
+    }
+
+    .split-visual {
+      position: relative;
+      border-radius: var(--radius-xl);
+      background: linear-gradient(135deg, var(--accent-indigo-light) 0%, #fff 100%);
+      padding: 24px;
+    }
+    .split-visual::before {
+      content: ''; position: absolute;
+      top: -20px; right: -20px;
+      width: 100%; height: 100%;
+      background: var(--accent-indigo-light);
+      border-radius: var(--radius-xl);
+      z-index: -1;
+      transform: rotate(3deg);
+      opacity: 0.6;
+    }
+    .split-visual img {
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-xl);
+      border: 1px solid var(--border-light);
+    }
+
+    @media (max-width: 900px) {
+      .split-section, .split-section.reverse {
+        grid-template-columns: 1fr;
+        text-align: center;
+        direction: ltr;
+        gap: 40px;
+      }
+      .split-section.reverse > * { direction: ltr; }
+      .feature-list li { justify-content: center; }
+      .split-visual::before { display: none; }
+    }
+
+    /* =========================================================================
+       METRICS / WHY CHOOSE - Card Grid
+       ========================================================================= */
+    .metrics-section {
+      background: linear-gradient(135deg, #0F172A 0%, #1e293b 100%);
+      border-radius: var(--radius-xl);
+      padding: 80px 60px;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .metrics-section::before {
+      content: ''; position: absolute;
+      top: -50%; left: -50%;
+      width: 200%; height: 200%;
+      background: radial-gradient(circle, rgba(79, 70, 229, 0.15) 0%, transparent 50%);
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .metrics-content h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 24px;
+    }
+    .metrics-content > p {
+      font-size: 1.1rem;
+      color: #94a3b8;
+      margin-bottom: 32px;
+      line-height: 1.7;
+    }
+
+    .check-list {
+      display: flex; flex-direction: column; gap: 16px;
+    }
+    .check-list li {
+      display: flex; align-items: center; gap: 12px;
+      font-size: 1.05rem;
+    }
+    .check-list li i {
+      color: var(--accent-success);
+      font-size: 1.2rem;
+    }
+
+    .metric-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .metric-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 28px;
+      border-radius: var(--radius-lg);
+      transition: all 0.3s;
+    }
+    .metric-card:hover {
+      background: rgba(255,255,255,0.08);
+      transform: translateY(-4px);
+    }
+    .metric-card h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .metric-card p {
+      font-size: 0.95rem;
+      color: #94a3b8;
+      line-height: 1.6;
+    }
+    .metric-card.wide { grid-column: span 2; }
+
+    @media (max-width: 900px) {
+      .metrics-grid { grid-template-columns: 1fr; }
+      .metrics-section { padding: 40px 24px; }
+      .metric-cards { grid-template-columns: 1fr; }
+      .metric-card.wide { grid-column: span 1; }
+    }
+
+    /* =========================================================================
+       PRICING - Clean Cards
+       ========================================================================= */
+    .pricing-section { background: #fff; }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+      align-items: start;
+    }
+    .price-card {
+      background: var(--bg-page);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-xl);
+      padding: 40px 32px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    .price-card:hover {
+      border-color: rgba(79, 70, 229, 0.3);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-xl);
+    }
+    .price-card.featured {
+      background: #fff;
+      border-color: var(--accent-indigo);
+      box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1), var(--shadow-xl);
+      transform: scale(1.02);
+    }
+    .price-card.featured:hover {
+      transform: scale(1.02) translateY(-4px);
+    }
+
+    .price-badge {
+      position: absolute;
+      top: -12px; left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent-indigo);
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: var(--radius-full);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .plan-name {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-light);
+      margin-bottom: 8px;
+    }
+    .price-card.featured .plan-name { color: var(--accent-indigo); }
+
+    .plan-price {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+    }
+    .plan-price span {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-light);
+    }
+
+    .plan-desc {
+      color: var(--text-gray);
+      font-size: 0.95rem;
+      margin-bottom: 32px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .plan-features {
+      list-style: none;
+      margin-bottom: 32px;
+    }
+    .plan-features li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-gray);
+    }
+    .plan-features li i {
+      color: var(--accent-indigo);
+      font-size: 1rem;
+    }
+
+    .price-card .btn {
+      width: 100%;
+      justify-content: center;
+      border-radius: var(--radius-md);
+      padding: 14px;
+    }
+
+    @media (max-width: 992px) {
+      .pricing-grid { grid-template-columns: 1fr; max-width: 400px; }
+      .price-card.featured { transform: none; }
+      .price-card.featured:hover { transform: translateY(-4px); }
+    }
+
+    /* =========================================================================
+       FAQ - Minimal Accordion
+       ========================================================================= */
+    .faq-wrapper { max-width: 800px; margin: 0 auto; }
+    .faq-item {
+      border-bottom: 1px solid var(--border-light);
+      overflow: hidden;
+    }
+    .faq-question {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 0;
+      background: none;
+      border: none;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      cursor: pointer;
+      text-align: left;
+      transition: color 0.2s;
+    }
+    .faq-question:hover { color: var(--accent-indigo); }
+    .faq-icon {
+      width: 32px; height: 32px;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--bg-page);
+      border-radius: var(--radius-md);
+      color: var(--text-light);
+      transition: all 0.3s;
+      flex-shrink: 0;
+    }
+    .faq-question.active .faq-icon {
+      transform: rotate(45deg);
+      background: var(--accent-indigo-light);
+      color: var(--accent-indigo);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease-out;
+    }
+    .faq-answer p {
+      padding: 0 0 28px;
+      color: var(--text-gray);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      max-width: 90%;
+    }
+
+    /* =========================================================================
+       CTA SECTION - Soft Gradient
+       ========================================================================= */
+    .cta-section {
+      background: linear-gradient(180deg, var(--bg-page) 0%, #fff 50%, var(--bg-page) 100%);
+      padding: 100px 24px;
+      text-align: center;
+    }
+    .cta-content {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .cta-content h2 {
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+    .cta-content > p {
+      font-size: 1.2rem;
+      color: var(--text-gray);
+      margin-bottom: 40px;
+    }
+
+    .form-box {
+      background: #fff;
+      padding: 40px;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-xl);
+      text-align: left;
+    }
+    .form-group { margin-bottom: 24px; }
+    .form-box label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+    .form-box input {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      transition: all 0.2s;
+      background: var(--bg-page);
+    }
+    .form-box input:focus {
+      outline: none;
+      border-color: var(--accent-indigo);
+      background: #fff;
+      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+    }
+    .form-box button {
+      width: 100%;
+      padding: 16px;
+      border-radius: var(--radius-md);
+      font-size: 1.1rem;
+      margin-top: 8px;
+    }
+
+    .form-msg {
+      padding: 14px;
+      border-radius: var(--radius-md);
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-align: center;
+      margin-top: 20px;
+      display: none;
+    }
+    .form-msg.success {
+      background: #DCFCE7;
+      color: #065F46;
+      display: block;
+    }
+    .form-msg.error {
+      background: #FEE2E2;
+      color: #991B1B;
+      display: block;
+    }
+
+    /* =========================================================================
+       FOOTER - Clean Minimal
+       ========================================================================= */
+    .footer {
+      background: #fff;
+      border-top: 1px solid var(--border-light);
+      padding: 60px 24px 40px;
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    .footer-brand {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--text-dark);
+    }
+    .footer-links {
+      display: flex;
+      gap: 32px;
+    }
+    .footer-links a {
+      color: var(--text-gray);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--accent-indigo); }
+    .footer-copy {
+      color: var(--text-light);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .footer-inner { flex-direction: column; text-align: center; }
+    }
+
+    /* =========================================================================
+       SCROLL REVEAL ANIMATIONS
+       ========================================================================= */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="nav-wrapper" id="navWrapper">
+    <nav class="floating-nav">
+      <a href="https://rupnidhi.com/" class="nav-logo">
+        <img src="../assets/images/logo.webp" class="logo-img" alt="Rupnidhi" onerror="this.style.display='none'">
+    <img src="../assets/images/name.webp" class="logo-name" alt="Rupnidhi" onerror="this.style.display='none'; document.getElementById('logo-fb').style.display='flex'">
+    <span id="logo-fb" style="display:none; align-items:center; gap:10px;">
+      <div class="nav-logo-icon">R</div>Rupnidhi
+    </span>
+      </a>
+      
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#benefits">Benefits</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      
+      <div class="nav-actions">
+        <a href="https://rupnidhi.com/login.php" class="btn btn-login">Login</a>
+        <a href="#signup" class="btn btn-primary">Start Free Trial</a>
+      </div>
+
+      <button class="hamburger" id="menuBtn"><i class="fa fa-bars"></i></button>
+    </nav>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="hamburger" id="closeBtn" style="position: absolute; top: 24px; right: 24px;">
+      <i class="fa fa-times"></i>
+    </button>
+    <a href="#features" class="menu-link">Features</a>
+    <a href="#benefits" class="menu-link">Benefits</a>
+    <a href="#pricing" class="menu-link">Pricing</a>
+    <a href="#faq" class="menu-link">FAQ</a>
+    <a href="https://rupnidhi.com/login.php" class="menu-link">Login</a>
+    <a href="#signup" class="btn btn-primary menu-link">Get Started</a>
+  </div>
+
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <i class="fa-solid fa-crown"></i>
+          Smart GST Billing Solution
+        </div>
+        <h1>Retail Billing Software with <span>Complete GST</span> Compliance</h1>
+        <p>Rupnidhi provides the most reliable GST billing software in India, tailored for retail establishments and companies of all kinds. Quickly create GST-compliant invoices, manage inventory, and streamline tax reporting.</p>
+        
+        <div class="hero-actions">
+          <a href="#signup" class="btn btn-primary">
+            Start Billing Today
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="#pricing" class="btn btn-outline">View Pricing</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <h4>10K+</h4>
+            <p>Businesses Trust Us</p>
+          </div>
+          <div class="stat-item">
+            <h4>1M+</h4>
+            <p>Invoices Generated</p>
+          </div>
+          <div class="stat-item">
+            <h4>99.9%</h4>
+            <p>Uptime Guaranteed</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <img src="../assets/images/image copy 2.png" alt="Rupnidhi Dashboard" onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80'">
+        <div class="floating-tag tag-1">
+          <i class="fa-solid fa-check-circle" style="color: var(--accent-success);"></i>
+          GST Verified
+        </div>
+        <div class="floating-tag tag-2">
+          <i class="fa-solid fa-shield-check"></i>
+          Secure Cloud
+        </div>
+        <div class="floating-tag tag-3">
+          <i class="fa-solid fa-bolt"></i>
+          Lightning Fast
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="trust-strip">
+    <div class="container">
+      <div class="trust-title">Why Retailers Choose Rupnidhi</div>
+      <div class="trust-grid">
+        <div class="trust-item"><i class="fa fa-check-circle"></i> 100% GST Compliant</div>
+        <div class="trust-item"><i class="fa fa-cloud"></i> Cloud Based</div>
+        <div class="trust-item"><i class="fa fa-mobile-screen"></i> Mobile Access</div>
+        <div class="trust-item"><i class="fa fa-headset"></i> 24/7 Support</div>
+        <div class="trust-item"><i class="fa fa-lock"></i> Bank-Grade Security</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Powerful Features for Modern Retail</h2>
+        <p>Everything you need to run your retail business efficiently, from billing to inventory management.</p>
+      </div>
+
+      <div class="bento-grid">
+        <div class="bento-card bento-wide reveal">
+          <div class="bento-icon"><i class="fa fa-receipt"></i></div>
+          <h3>Instant GST Billing</h3>
+          <p>Create professional GST invoices within seconds with automated tax calculation and beautiful digital invoice formats. Fully compliant with latest government regulations.</p>
+        </div>
+        
+        <div class="bento-card reveal">
+          <div class="bento-icon"><i class="fa fa-boxes-stacked"></i></div>
+          <h3>Smart Inventory</h3>
+          <p>Monitor stock levels, track product movement, and get low-stock alerts in real-time.</p>
+        </div>
+
+        <div class="bento-card reveal">
+          <div class="bento-icon"><i class="fa fa-credit-card"></i></div>
+          <h3>Multi-Payment</h3>
+          <p>Accept UPI, QR codes, cash, cards, and online payments directly from the billing screen.</p>
+        </div>
+
+        <div class="bento-card bento-wide bento-highlight reveal">
+          <div class="bento-icon"><i class="fa fa-cloud"></i></div>
+          <h3>100% Cloud-Based & Secure</h3>
+          <p>Advanced cloud encryption keeps your retail data completely safe and automatically backed up. Access your business from anywhere, anytime with military-grade security.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background: #fff;">
+    <div class="container">
+      <div class="split-section reveal">
+        <div class="split-content">
+          <h2>Complete <span>POS Solution</span> for Retail</h2>
+          <p>Faster checkout and fewer billing errors with seamless barcode scanner and POS integration. Your staff can start billing immediately with our intuitive, zero-training interface.</p>
+          <ul class="feature-list">
+            <li><i class="fa fa-check-circle"></i> Barcode & QR scanning support</li>
+            <li><i class="fa fa-check-circle"></i> Thermal printer integration</li>
+            <li><i class="fa fa-check-circle"></i> Cash drawer management</li>
+            <li><i class="fa fa-check-circle"></i> Multi-user access control</li>
+          </ul>
+        </div>
+        <div class="split-visual">
+          <img src="../assets/images/image copy 4.png" alt="POS Interface" onerror="this.src='https://images.unsplash.com/photo-1556740758-90de374c12ad?w=800&q=80'">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="benefits" class="section">
+    <div class="container">
+      <div class="metrics-section reveal">
+        <div class="metrics-grid">
+          <div class="metrics-content">
+            <h2>Why Rupnidhi is the Right Choice</h2>
+            <p>Join thousands of retailers who have transformed their billing process with our intelligent software solution.</p>
+            <ul class="check-list">
+              <li><i class="fa fa-check-circle"></i> 100% GST-compliant retail billing</li>
+              <li><i class="fa fa-check-circle"></i> Cloud-based secure data storage</li>
+              <li><i class="fa fa-check-circle"></i> Easy-to-use billing interface</li>
+              <li><i class="fa fa-check-circle"></i> Generate invoices in under 30 seconds</li>
+            </ul>
+          </div>
+          <div class="metric-cards">
+            <div class="metric-card">
+              <h4>⚡ Fast Checkout</h4>
+              <p>Reduce waiting time and enhance customer satisfaction with quick billing.</p>
+            </div>
+            <div class="metric-card">
+              <h4>📊 Simple Tax Filing</h4>
+              <p>Generate GST reports instantly for hassle-free return filing.</p>
+            </div>
+            <div class="metric-card wide">
+              <h4>🔒 Data Security & Backup</h4>
+              <p>Your information remains secure and accessible only to authorized users through encrypted cloud servers with automatic daily backups.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="section pricing-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Simple, Transparent Pricing</h2>
+        <p>Start your 30-day free trial today. No credit card required.</p>
+      </div>
+
+      <div class="pricing-grid reveal">
+        <div class="price-card">
+          <h3 class="plan-name">Starter</h3>
+          <div class="plan-price">₹2,499<span>/mo</span></div>
+          <p class="plan-desc">Perfect for small retail shops getting started with GST billing.</p>
+          <ul class="plan-features">
+            <li><i class="fa fa-check"></i> Billing & Stock Management</li>
+            <li><i class="fa fa-check"></i> GST-compliant Invoicing</li>
+            <li><i class="fa fa-check"></i> Mobile App Access</li>
+            <li><i class="fa fa-check"></i> Basic Email Support</li>
+          </ul>
+          <a href="#signup" class="btn btn-outline">Choose Starter</a>
+        </div>
+
+        <div class="price-card featured">
+          <div class="price-badge">Most Popular</div>
+          <h3 class="plan-name" style="color: var(--accent-indigo);">Professional</h3>
+          <div class="plan-price">₹8,299<span>/mo</span></div>
+          <p class="plan-desc">For growing businesses needing full compliance and automation.</p>
+          <ul class="plan-features">
+            <li><i class="fa fa-check"></i> Everything in Starter</li>
+            <li><i class="fa fa-check"></i> E-invoice & E-way Bill</li>
+            <li><i class="fa fa-check"></i> Barcode / POS Integration</li>
+            <li><i class="fa fa-check"></i> Multi-Currency Support</li>
+            <li><i class="fa fa-check"></i> Priority 24/7 Support</li>
+          </ul>
+          <a href="#signup" class="btn btn-primary">Get Professional</a>
+        </div>
+
+        <div class="price-card">
+          <h3 class="plan-name">Enterprise</h3>
+          <div class="plan-price" style="font-size: 2.5rem;">Custom</div>
+          <p class="plan-desc">For multi-branch retail enterprises with custom requirements.</p>
+          <ul class="plan-features">
+            <li><i class="fa fa-check"></i> Centralized Dashboard</li>
+            <li><i class="fa fa-check"></i> Dedicated Account Manager</li>
+            <li><i class="fa fa-check"></i> Multi-branch Management</li>
+            <li><i class="fa fa-check"></i> Custom Security Audits</li>
+          </ul>
+          <a href="https://rupnidhi.com/booking.html" class="btn btn-outline">Contact Sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Frequently Asked Questions</h2>
+      </div>
+      
+      <div class="faq-wrapper reveal">
+        <div class="faq-item">
+          <button class="faq-question">
+            Is the software suitable for small retail shops?
+            <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. Rupnidhi is designed for small, medium, and large retailers. Its simple interface allows even first-time users to start billing without technical training. Our onboarding process takes less than 5 minutes.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Does it support e-invoice and e-way bill generation?
+            <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, Rupnidhi provides integrated e-invoice and e-way bill support directly within the platform. Generate government-compliant e-invoices with a single click and track e-way bills seamlessly.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Can I manage multiple retail outlets from one account?
+            <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, Rupnidhi is built for growth. You can monitor sales, track stock transfers between branches, and view "Store-Wise" profit reports from a single Centralized Dashboard on your phone, no matter where you are.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" style="border-bottom: none;">
+          <button class="faq-question">
+            How secure is my business data?
+            <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+          </button>
+          <div class="faq-answer">
+            <p>Rupnidhi uses 256-bit encrypted cloud storage with automatic backup to protect your billing and financial data. Your information remains secure and accessible only to authorized users. We are ISO 27001 certified.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="signup" class="cta-section">
+    <div class="container">
+      <div class="cta-content reveal">
+        <h2>Start Billing Smarter Today</h2>
+        <p>Join thousands of growing Indian businesses using Rupnidhi for fast, accurate, and 100% compliant retail billing.</p>
+        
+        <div class="form-box">
+          <form id="signup-form" onsubmit="handleSignup(event)" novalidate>
+            <input type="hidden" name="page" value="Retail GST Billing Software" />
+            
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" placeholder="John Doe" required />
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="john@company.com" required />
+            </div>
+            
+            <div class="form-group">
+              <label for="mobile">Mobile Number</label>
+              <input type="tel" id="mobile" name="mobile" placeholder="+91 98765 43210" required />
+            </div>
+            
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password" placeholder="Create a strong password" required />
+            </div>
+            
+            <button type="submit" id="submit-btn" class="btn btn-secondary">
+              Get GST Software Now
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+            <div class="form-msg" id="form-msg"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <i class="fa-solid fa-bolt" style="color: var(--accent-indigo); margin-right: 8px;"></i>
+        Rupnidhi
+      </div>
+      <div class="footer-links">
+        <a href="#features">Features</a>
+        <a href="#benefits">Benefits</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a href="https://rupnidhi.com/login.php">Login</a>
+      </div>
+      <div class="footer-copy">© 2026 Rupnidhi · Made in India 🇮🇳</div>
+    </div>
+  </footer>
+
+  <script>
+    // Navigation scroll effect
+    window.addEventListener('scroll', () => {
+      const wrapper = document.getElementById('navWrapper');
+      if (window.scrollY > 20) {
+        wrapper.classList.add('scrolled');
+      } else {
+        wrapper.classList.remove('scrolled');
+      }
+    });
+
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const closeBtn = document.getElementById('closeBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuLinks = document.querySelectorAll('.menu-link');
+
+    function toggleMenu() {
+      mobileMenu.classList.toggle('open');
+      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    }
+
+    menuBtn.addEventListener('click', toggleMenu);
+    closeBtn.addEventListener('click', toggleMenu);
+    menuLinks.forEach(link => link.addEventListener('click', toggleMenu));
+
+    // FAQ Accordion
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(q => {
+      q.addEventListener('click', function() {
+        this.classList.toggle('active');
+        const answer = this.nextElementSibling;
+        if (answer.style.maxHeight) {
+          answer.style.maxHeight = null;
+        } else {
+          answer.style.maxHeight = answer.scrollHeight + "px";
+        }
+      });
+    });
+
+    // Scroll reveal animation
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Form submission
+    async function handleSignup(e) {
+      e.preventDefault();
+      const form = document.getElementById('signup-form');
+      const btn = document.getElementById('submit-btn');
+      const msgEl = document.getElementById('form-msg');
+
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const mobile = document.getElementById('mobile').value;
+      
+      if(!name || !email || !mobile) {
+        msgEl.className = 'form-msg error';
+        msgEl.textContent = 'Please fill in all required fields.';
+        return;
+      }
+
+      msgEl.className = 'form-msg';
+      msgEl.textContent = '';
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+
+      try {
+        const res = await fetch('mailer.php', { method: 'POST', body: new FormData(form) });
+        const json = await res.json();
+
+        if (json.success) {
+          msgEl.className = 'form-msg success';
+          msgEl.textContent = '✓ ' + json.message;
+          form.reset();
+          btn.innerHTML = '<i class="fa-solid fa-check"></i> Request Submitted!';
+          btn.style.background = '#10B981';
+          setTimeout(() => {
+            btn.innerHTML = 'Get GST Software Now <i class="fa-solid fa-arrow-right"></i>';
+            btn.style.background = '';
+            btn.disabled = false;
+          }, 4000);
+        } else {
+          msgEl.className = 'form-msg error';
+          msgEl.textContent = '⚠ ' + json.message;
+          btn.innerHTML = 'Get GST Software Now <i class="fa-solid fa-arrow-right"></i>';
+          btn.disabled = false;
+        }
+      } catch {
+        msgEl.className = 'form-msg error';
+        msgEl.textContent = '⚠ Network error. Please email us at support@rupnidhi.com';
+        btn.innerHTML = 'Get GST Software Now <i class="fa-solid fa-arrow-right"></i>';
+        btn.disabled = false;
+      }
+    }
+  </script>
+
+</body>
+</html>

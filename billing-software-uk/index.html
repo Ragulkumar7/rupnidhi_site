@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>UAE VAT Compliant Billing Software | Rupnidhi Customized Solutions</title>
+<meta name="description" content="Streamline your business in the UAE with Rupnidhi’s FTA-compliant billing software. Automate VAT invoicing, manage multi-currency transactions, and scale effortlessly.">
+
+<link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+<style>
+/* ─────────────────────────────────────────
+   ENTERPRISE SAAS VARIABLES & RESET
+───────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --brand-blue: #006aff;       /* Primary SaaS Blue */
+  --brand-blue-hover: #005ce6;
+  --brand-dark: #111827;       /* Near Black for Headings */
+  
+  --bg-white: #ffffff;
+  --bg-light: #f9fafb;         /* Very soft gray for sections */
+  --bg-accent: #f0fdf4;        /* Soft green for success/badges */
+  
+  --text-main: #4b5563;        /* Slate gray for body text */
+  --border-light: #e5e7eb;
+  
+  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  --shadow-hover: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  --shadow-floating: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 24px;
+  
+  --nav-height: 72px;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Roboto', sans-serif;
+  background: var(--bg-white);
+  color: var(--text-main);
+  overflow-x: hidden;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Poppins', sans-serif;
+  color: var(--brand-dark);
+  line-height: 1.2;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+/* ─────────────────────────────────────────
+   CLEAN WHITE NAVBAR
+───────────────────────────────────────── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  height: var(--nav-height);
+  background: rgba(255, 255, 255, 0.98);
+  border-bottom: 1px solid var(--border-light);
+  display: flex; align-items: center;
+  transition: box-shadow 0.3s;
+}
+nav.scrolled { box-shadow: var(--shadow-card); }
+
+.nav-inner { display: flex; align-items: center; justify-content: space-between; width: 100%; }
+
+.nav-logo {
+  display: flex; align-items: center; gap: 8px;
+  font-family: 'Poppins', sans-serif; font-size: 1.4rem; font-weight: 700;
+  color: var(--brand-dark); text-decoration: none;
+}
+.nav-logo img { height: 32px; width: auto; }
+
+.nav-links { display: flex; gap: 32px; list-style: none; margin: 0; padding: 0; }
+.nav-links a { color: var(--text-main); text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: color 0.2s; }
+.nav-links a:hover { color: var(--brand-blue); }
+
+.nav-actions { display: flex; align-items: center; gap: 16px; }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 10px 24px; border-radius: var(--radius-sm);
+  font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 0.95rem;
+  text-decoration: none; cursor: pointer; border: none; transition: all 0.2s;
+}
+.btn-ghost { color: var(--brand-dark); background: transparent; }
+.btn-ghost:hover { color: var(--brand-blue); }
+.btn-primary { background: var(--brand-blue); color: #fff; }
+.btn-primary:hover { background: var(--brand-blue-hover); box-shadow: var(--shadow-card); }
+.btn-outline { border: 1px solid var(--border-light); background: #fff; color: var(--brand-dark); }
+.btn-outline:hover { border-color: var(--brand-blue); color: var(--brand-blue); }
+
+.hamburger { display: none; background: none; border: none; font-size: 1.5rem; color: var(--brand-dark); cursor: pointer; }
+
+.mobile-nav {
+  display: none; position: fixed; top: var(--nav-height); left: 0; right: 0;
+  background: #fff; border-bottom: 1px solid var(--border-light);
+  flex-direction: column; z-index: 999; box-shadow: var(--shadow-card);
+}
+.mobile-nav.open { display: flex; }
+.mobile-nav a { padding: 16px 24px; border-bottom: 1px solid var(--bg-light); color: var(--brand-dark); font-weight: 500; text-decoration: none; }
+
+@media (max-width: 992px) {
+  .nav-links, .nav-actions { display: none; }
+  .hamburger { display: block; }
+}
+
+/* ─────────────────────────────────────────
+   SAAS HERO SECTION (Split Layout)
+───────────────────────────────────────── */
+.hero {
+  padding: calc(var(--nav-height) + 60px) 0 80px;
+  background: linear-gradient(to bottom, #ffffff 0%, var(--bg-light) 100%);
+  overflow: hidden;
+}
+.hero-inner {
+  display: flex; align-items: center; gap: 60px;
+}
+.hero-content { flex: 1; }
+.hero-tag {
+  display: inline-block; background: var(--bg-accent); color: #166534;
+  padding: 6px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 600;
+  margin-bottom: 20px; border: 1px solid #bbf7d0;
+}
+.hero h1 { font-size: clamp(2.5rem, 4vw, 3.5rem); margin-bottom: 20px; line-height: 1.2; }
+.hero p { font-size: 1.15rem; color: var(--text-main); margin-bottom: 32px; max-width: 90%; }
+
+/* Inline Email Form (Classic SaaS Pattern) */
+.hero-inline-form {
+  display: flex; gap: 12px; max-width: 500px; margin-bottom: 24px;
+}
+.hero-inline-form input {
+  flex: 1; padding: 14px 16px; border: 1px solid var(--border-light); border-radius: var(--radius-sm);
+  font-family: 'Roboto', sans-serif; font-size: 1rem; outline: none; transition: border 0.2s;
+}
+.hero-inline-form input:focus { border-color: var(--brand-blue); }
+.hero-inline-form button {
+  padding: 0 32px; height: 50px;
+}
+.hero-guarantee { font-size: 0.85rem; color: #9ca3af; display: flex; align-items: center; gap: 6px; }
+
+.hero-visual { flex: 1; position: relative; }
+.hero-visual img {
+  width: 100%; border-radius: var(--radius-md); display: block;
+  box-shadow: var(--shadow-floating); border: 1px solid var(--border-light);
+  background: #fff;
+}
+
+@media (max-width: 992px) {
+  .hero-inner { flex-direction: column; text-align: center; }
+  .hero p { margin: 0 auto 32px; max-width: 100%; }
+  .hero-inline-form { margin: 0 auto 24px; flex-direction: column; }
+  .hero-guarantee { justify-content: center; }
+}
+
+/* ─────────────────────────────────────────
+   TRUST BANNER
+───────────────────────────────────────── */
+.trust-banner {
+  padding: 40px 0; background: #fff; border-bottom: 1px solid var(--border-light); text-align: center;
+}
+.trust-banner p { font-size: 0.9rem; font-weight: 600; color: #9ca3af; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; }
+.trust-logos { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; color: #d1d5db; font-size: 1.5rem; }
+.trust-logos span { display: flex; align-items: center; gap: 8px; font-weight: 600; font-family: 'Poppins', sans-serif; }
+
+/* ─────────────────────────────────────────
+   STRUCTURED FEATURE SECTIONS
+───────────────────────────────────────── */
+.section-pad { padding: 100px 0; }
+.bg-gray { background: var(--bg-light); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); }
+
+.sec-header { text-align: center; max-width: 700px; margin: 0 auto 60px; }
+.sec-header h2 { font-size: 2.5rem; margin-bottom: 16px; }
+.sec-header p { font-size: 1.1rem; color: var(--text-main); }
+
+/* Alternating Split Rows */
+.split-row { display: flex; align-items: center; gap: 80px; margin-bottom: 100px; }
+.split-row:last-child { margin-bottom: 0; }
+.split-row.reverse { flex-direction: row-reverse; }
+
+.split-text { flex: 1; }
+.split-icon { width: 48px; height: 48px; border-radius: var(--radius-sm); background: #eff6ff; color: var(--brand-blue); display: flex; align-items: center; justify-content: center; font-size: 1.25rem; margin-bottom: 20px; }
+.split-text h2 { font-size: 2rem; margin-bottom: 16px; }
+.split-text p { font-size: 1.05rem; margin-bottom: 24px; }
+.split-list { list-style: none; margin-bottom: 24px; }
+.split-list li { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; font-weight: 500; color: var(--brand-dark); }
+.split-list li i { color: #10b981; }
+
+.split-visual { flex: 1.2; }
+.split-visual img { width: 100%; border-radius: var(--radius-md); box-shadow: var(--shadow-hover); border: 1px solid var(--border-light); }
+
+@media (max-width: 992px) {
+  .split-row, .split-row.reverse { flex-direction: column; text-align: center; gap: 40px; margin-bottom: 80px; }
+  .split-icon { margin: 0 auto 20px; }
+  .split-list { display: inline-block; text-align: left; }
+}
+
+/* ─────────────────────────────────────────
+   FEATURE GRID (CARDS)
+───────────────────────────────────────── */
+.feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+.f-card {
+  background: #fff; border: 1px solid var(--border-light); border-radius: var(--radius-md);
+  padding: 40px 32px; transition: all 0.3s ease;
+}
+.f-card:hover { box-shadow: var(--shadow-hover); border-color: #cbd5e1; transform: translateY(-4px); }
+.f-card-icon { width: 50px; height: 50px; border-radius: var(--radius-sm); background: #f3f4f6; color: var(--brand-dark); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 20px; }
+.f-card h3 { font-size: 1.25rem; margin-bottom: 12px; }
+.f-card p { font-size: 0.95rem; }
+
+/* ─────────────────────────────────────────
+   CLEAN PRICING TABLE (AED)
+───────────────────────────────────────── */
+.pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; max-width: 1040px; margin: 0 auto; align-items: stretch; }
+
+.price-card {
+  background: #fff; border: 1px solid var(--border-light); border-radius: var(--radius-md);
+  padding: 48px 40px; display: flex; flex-direction: column;
+}
+.price-card.popular {
+  border: 2px solid var(--brand-blue); box-shadow: var(--shadow-floating); position: relative;
+}
+.popular-badge {
+  position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+  background: var(--brand-blue); color: #fff; font-size: 0.75rem; font-weight: 700;
+  padding: 6px 16px; border-radius: 50px; text-transform: uppercase; letter-spacing: 1px;
+}
+
+.p-name { font-family: 'Poppins', sans-serif; font-size: 1.25rem; font-weight: 600; color: var(--brand-dark); margin-bottom: 8px; }
+.p-price { font-family: 'Poppins', sans-serif; font-size: 3rem; font-weight: 700; color: var(--brand-dark); margin-bottom: 8px; display: flex; align-items: baseline; gap: 4px; }
+.p-price span { font-size: 1rem; color: var(--text-main); font-weight: 400; font-family: 'Roboto', sans-serif;}
+.p-desc { font-size: 0.95rem; margin-bottom: 32px; padding-bottom: 32px; border-bottom: 1px solid var(--border-light); }
+
+.p-features { list-style: none; flex-grow: 1; margin-bottom: 40px; }
+.p-features li { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; font-size: 0.95rem; color: var(--brand-dark); }
+.p-features li i { color: #10b981; margin-top: 4px; }
+
+.btn-full { width: 100%; height: 48px; }
+
+/* ─────────────────────────────────────────
+   FAQ ACCORDION
+───────────────────────────────────────── */
+.faq-container { max-width: 800px; margin: 0 auto; background: #fff; border: 1px solid var(--border-light); border-radius: var(--radius-md); padding: 20px 40px; }
+.faq-item { border-bottom: 1px solid var(--border-light); }
+.faq-item:last-child { border-bottom: none; }
+.faq-q {
+  width: 100%; display: flex; justify-content: space-between; align-items: center;
+  padding: 24px 0; background: none; border: none; font-family: 'Poppins', sans-serif;
+  font-size: 1.05rem; font-weight: 500; color: var(--brand-dark); cursor: pointer; text-align: left;
+}
+.faq-icon { color: var(--text-main); transition: transform 0.3s; font-size: 1rem; }
+.faq-item.open .faq-icon { transform: rotate(45deg); color: var(--brand-blue); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+.faq-a p { padding-bottom: 24px; font-size: 0.95rem; }
+
+/* ─────────────────────────────────────────
+   BOTTOM CTA & CONTACT FORM
+───────────────────────────────────────── */
+.cta-section { padding: 100px 0; background: var(--brand-dark); color: #fff; }
+.cta-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+
+.cta-text h2 { font-size: 2.5rem; color: #fff; margin-bottom: 20px; }
+.cta-text p { font-size: 1.1rem; color: #9ca3af; margin-bottom: 40px; }
+.cta-list { list-style: none; }
+.cta-list li { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; font-size: 1rem; color: #d1d5db; }
+.cta-list li i { color: #10b981; }
+
+.cta-form { background: #fff; border-radius: var(--radius-md); padding: 40px; color: var(--brand-dark); box-shadow: var(--shadow-floating); }
+.cta-form h3 { font-size: 1.5rem; margin-bottom: 24px; }
+
+.form-group { margin-bottom: 20px; }
+.form-label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; color: var(--brand-dark); }
+.form-input, .form-textarea {
+  width: 100%; padding: 14px 16px; border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm); font-family: 'Roboto', sans-serif; font-size: 1rem;
+  background: #fff; outline: none; transition: border 0.2s;
+}
+.form-input:focus, .form-textarea:focus { border-color: var(--brand-blue); box-shadow: 0 0 0 3px rgba(0, 106, 255, 0.1); }
+.form-textarea { resize: vertical; min-height: 100px; }
+
+.form-alert { padding: 14px; border-radius: var(--radius-sm); font-size: 0.95rem; font-weight: 500; margin-bottom: 20px; display: none; text-align: center; }
+.form-alert.success { background: #dcfce7; border: 1px solid #bbf7d0; color: #166534; display: block; }
+.form-alert.error { background: #fee2e2; border: 1px solid #fecaca; color: #991b1b; display: block; }
+
+@media (max-width: 900px) {
+  .cta-inner { grid-template-columns: 1fr; }
+  .cta-form { padding: 32px 24px; }
+}
+
+/* ─────────────────────────────────────────
+   FOOTER
+───────────────────────────────────────── */
+footer { background: var(--bg-white); border-top: 1px solid var(--border-light); padding: 60px 0 40px; }
+.footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; border-bottom: 1px solid var(--border-light); padding-bottom: 40px; margin-bottom: 40px; }
+.f-logo { font-family: 'Poppins', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--brand-dark); display: flex; align-items: center; gap: 8px; }
+.f-logo img { height: 24px; width: auto; }
+.f-links { display: flex; gap: 32px; }
+.f-links a { color: var(--text-main); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: color 0.2s; }
+.f-links a:hover { color: var(--brand-blue); }
+.f-bottom { text-align: center; font-size: 0.9rem; color: #9ca3af; }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="container nav-inner">
+    <a href="https://rupnidhi.com/" class="nav-logo">
+      <img src="../assets/images/logo.webp" class="logo-img" alt="Rupnidhi" onerror="this.style.display='none'">
+      <img src="../assets/images/name.webp" class="logo-name" alt="Rupnidhi" onerror="this.style.display='none'; document.getElementById('logo-fb').style.display='flex'">
+      <span id="logo-fb" style="display:none; align-items:center; gap:10px;">
+        <div class="nav-logo-icon">R</div>Rupnidhi
+      </span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#features">Features</a></li>
+      <li><a href="#compliance">Compliance</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="https://rupnidhi.com/login.php" class="btn btn-ghost">Sign In</a>
+      <a href="#contact" class="btn btn-primary">Start Free Trial</a>
+    </div>
+    <button class="hamburger" id="ham" onclick="toggleMenu()">
+      <i class="fa fa-bars"></i>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="#features" onclick="closeMenu()">Features</a>
+  <a href="#compliance" onclick="closeMenu()">Compliance</a>
+  <a href="#pricing" onclick="closeMenu()">Pricing</a>
+  <a href="#faq" onclick="closeMenu()">FAQ</a>
+  <div style="padding: 20px 24px; display: flex; flex-direction: column; gap: 12px; background: var(--bg-light);">
+    <a href="https://rupnidhi.com/login.php" class="btn btn-outline" style="text-align: center;">Sign In</a>
+    <a href="#contact" class="btn btn-primary" style="text-align: center;" onclick="closeMenu()">Start Free Trial</a>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-content">
+      <span class="hero-tag">UAE FTA Compliant Software</span>
+      <h1>Smart Multi-Currency Billing Software for UAE Enterprises</h1>
+      <p>Break geographical barriers and streamline your international trade. Rupnidhi provides an automated, secure, and customised software experience that allows you to invoice in any currency while maintaining strict UAE VAT compliance.</p>
+      
+      <form class="hero-inline-form" onsubmit="event.preventDefault(); document.getElementById('contact').scrollIntoView({behavior: 'smooth'}); document.getElementById('femail').value = this.querySelector('input').value; document.getElementById('fname').focus();">
+        <input type="email" placeholder="Enter your work email" required>
+        <button type="submit" class="btn btn-primary">Get Started</button>
+      </form>
+      <div class="hero-guarantee"><i class="fa fa-shield-alt"></i> 14-day free trial. No credit card required.</div>
+    </div>
+    <div class="hero-visual">
+      <img src="../assets/images/image copy.png" alt="UAE Billing Dashboard" onerror="this.src='https://gogstbill.com/wp-content/uploads/2023/08/iPhone-X-1f-copy.png'">
+    </div>
+  </div>
+</section>
+
+<div class="trust-bar trust-banner">
+  <div class="container">
+    <p>TRUSTED BY GROWING BUSINESSES ACROSS THE GCC</p>
+    <div class="trust-logos">
+      <span><i class="fa fa-building"></i> LogisticsCorp</span>
+      <span><i class="fa fa-shopping-cart"></i> RetailMax</span>
+      <span><i class="fa fa-industry"></i> GulfTrade</span>
+      <span><i class="fa fa-box"></i> WholesaleHub</span>
+    </div>
+  </div>
+</div>
+
+<section id="features" class="section-pad">
+  <div class="container">
+    <div class="sec-header">
+      <h2>Built for Global Trade and Local Compliance</h2>
+      <p>Managing a global business from the UAE shouldn't mean manual spreadsheets. Our platform automates the heavy lifting, ensuring accuracy and legal compliance.</p>
+    </div>
+
+    <div class="split-row">
+      <div class="split-text">
+        <div class="split-icon"><i class="fa fa-sync-alt"></i></div>
+        <h2>Real-Time Exchange Rate Automation</h2>
+        <p>Eliminate the risk of manual entry errors. Our software automatically syncs with global exchange rates to ensure every invoice reflects the current market value.</p>
+        <ul class="split-list">
+          <li><i class="fa fa-check-circle"></i> Protect profit margins from fluctuation</li>
+          <li><i class="fa fa-check-circle"></i> Support for USD, EUR, GBP and more</li>
+          <li><i class="fa fa-check-circle"></i> Custom manual rate overrides available</li>
+        </ul>
+      </div>
+      <div class="split-visual">
+        <img src="../assets/images/image copy 4.png" alt="Exchange Rate Automation" onerror="this.src='https://gogstbill.com/wp-content/uploads/2023/08/iPhone-X-1f-copy.png'">
+      </div>
+    </div>
+
+    <div id="compliance" class="split-row reverse">
+      <div class="split-text">
+        <div class="split-icon"><i class="fa fa-file-invoice-dollar"></i></div>
+        <h2>FTA VAT & ZATCA Compliance</h2>
+        <p>Stay compliant across Middle Eastern borders. Our system generates tax-compliant invoices automatically based on the customer’s region, strictly adhering to UAE VAT laws.</p>
+        <ul class="split-list">
+          <li><i class="fa fa-check-circle"></i> Automated Tax Zone Calculations</li>
+          <li><i class="fa fa-check-circle"></i> ZATCA Phase 2 E-Invoicing Ready</li>
+          <li><i class="fa fa-check-circle"></i> One-click VAT return reports</li>
+        </ul>
+      </div>
+      <div class="split-visual">
+        <img src="../assets/images/image copy 6.png" alt="VAT Compliance" onerror="this.src='https://gogstbill.com/wp-content/uploads/2023/08/iPhone-X-1f-copy.png'">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section-pad bg-gray">
+  <div class="container">
+    <div class="sec-header">
+      <h2>Advanced Business Modules</h2>
+      <p>Scalable tools designed to grow with your enterprise.</p>
+    </div>
+    
+    <div class="feature-grid">
+      <div class="f-card">
+        <div class="f-card-icon"><i class="fa fa-chart-pie"></i></div>
+        <h3>Unified Financial Reporting</h3>
+        <p>View your business performance in one place. Even if you bill globally, your dashboard displays all reports in AED, giving you a clear view of your total cash flow and P&L.</p>
+      </div>
+      
+      <div class="f-card">
+        <div class="f-card-icon"><i class="fa fa-cogs"></i></div>
+        <h3>Tailored Industry Workflows</h3>
+        <p>We don’t believe in "one size fits all." Rupnidhi offers customised software modules for various industries including Trade, Logistics, and Corporate Retail.</p>
+      </div>
+      
+      <div class="f-card">
+        <div class="f-card-icon"><i class="fa fa-network-wired"></i></div>
+        <h3>Seamless API Integration</h3>
+        <p>Our headless API architecture allows you to connect our billing engine seamlessly with your existing ERP or CRM systems.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing" class="section-pad">
+  <div class="container">
+    <div class="sec-header">
+      <h2>Transparent Corporate Pricing</h2>
+      <p>Scale your global operations securely. Start today with zero setup fees.</p>
+    </div>
+
+    <div class="pricing-grid">
+      <div class="price-card">
+        <div class="p-name">Growth</div>
+        <div class="p-price">AED 149<span>/mo</span></div>
+        <div class="p-desc">For growing businesses needing fast, automated UAE billing.</div>
+        <ul class="p-features">
+          <li><i class="fa fa-check"></i> Unlimited Invoices</li>
+          <li><i class="fa fa-check"></i> Basic VAT Automation</li>
+          <li><i class="fa fa-check"></i> 1 Dashboard User</li>
+          <li><i class="fa fa-check"></i> Standard Email Support</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline btn-full">Select Growth</a>
+      </div>
+
+      <div class="price-card popular">
+        <div class="popular-badge">Most Popular</div>
+        <div class="p-name" style="color: var(--brand-blue);">Professional</div>
+        <div class="p-price">AED 399<span>/mo</span></div>
+        <div class="p-desc">For scaling companies needing advanced global tools.</div>
+        <ul class="p-features">
+          <li><i class="fa fa-check"></i> Everything in Growth</li>
+          <li><i class="fa fa-check"></i> Multi-Currency Engine</li>
+          <li><i class="fa fa-check"></i> Global VAT/ZATCA Compliance</li>
+          <li><i class="fa fa-check"></i> Real-time Exchange Sync</li>
+          <li><i class="fa fa-check"></i> Priority 24/7 Support</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary btn-full">Start Free Trial</a>
+      </div>
+
+      <div class="price-card">
+        <div class="p-name">Enterprise</div>
+        <div class="p-price" style="font-size: 2.2rem; padding: 10px 0;">Custom Pricing</div>
+        <div class="p-desc">For multinational deployment and heavy API usage.</div>
+        <ul class="p-features">
+          <li><i class="fa fa-check"></i> Dedicated Account Manager</li>
+          <li><i class="fa fa-check"></i> Deep API Integrations</li>
+          <li><i class="fa fa-check"></i> Customised Software Modules</li>
+          <li><i class="fa fa-check"></i> Custom Security Audits</li>
+        </ul>
+        <a href="https://rupnidhi.com/contact.html" class="btn btn-outline btn-full">Contact Sales</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="section-pad bg-gray">
+  <div class="container">
+    <div class="sec-header">
+      <h2>Frequently Asked Questions</h2>
+    </div>
+    
+    <div class="faq-container">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFAQ(this)">Does the software support automatic currency conversion? <i class="fa fa-chevron-down faq-icon"></i></button>
+        <div class="faq-a"><p>Yes, the system automatically converts international currencies into AED (or your base currency) using real-time rates, though you also have the option to set manual rates for specific contracts.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFAQ(this)">Is the software compliant with UAE FTA regulations? <i class="fa fa-chevron-down faq-icon"></i></button>
+        <div class="faq-a"><p>Absolutely. Our software is built to handle UAE VAT requirements flawlessly, and is also ZATCA-approved for cross-border businesses operating in Saudi Arabia.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFAQ(this)">Can I get a version of the software tailored to my business? <i class="fa fa-chevron-down faq-icon"></i></button>
+        <div class="faq-a"><p>Yes, Rupnidhi specializes in customised software. We can tailor every feature of the platform to fit your specific industry requirements and operational workflows.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFAQ(this)">How many currencies does the system support? <i class="fa fa-chevron-down faq-icon"></i></button>
+        <div class="faq-a"><p>Our multi-currency billing engine supports all major global currencies, allowing you to send professional invoices in your customer's preferred currency effortlessly.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" id="contact">
+  <div class="container">
+    <div class="cta-inner">
+      
+      <div class="cta-info">
+        <h2>Digitize Your Financial Infrastructure.</h2>
+        <p>Tell us about your multi-currency and VAT requirements. Our enterprise team will prepare a tailored demonstration for your firm.</p>
+        <ul class="cta-list">
+          <li><i class="fa fa-check-circle"></i> 14-Day Platform Evaluation</li>
+          <li><i class="fa fa-check-circle"></i> Dedicated UAE Onboarding Specialist</li>
+          <li><i class="fa fa-check-circle"></i> Enterprise-Grade Data Security</li>
+        </ul>
+      </div>
+
+      <div class="cta-form">
+        <h3>Request Platform Access</h3>
+        
+        <div id="formAlert" class="form-alert" role="alert"></div>
+        
+        <form id="contactForm" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="fname">Full Name *</label>
+            <input class="form-input" type="text" id="fname" name="name" placeholder="John Doe" required/>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="femail">Corporate Email *</label>
+            <input class="form-input" type="email" id="femail" name="email" placeholder="john@company.ae" required/>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="fmobile">Phone Number *</label>
+            <input class="form-input" type="tel" id="fmobile" name="mobile" placeholder="+971 50 000 0000" required/>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="fmessage">Requirements *</label>
+            <textarea class="form-textarea" id="fmessage" name="message" placeholder="Describe your VAT and multi-currency billing needs..." required></textarea>
+          </div>
+          
+          <button type="submit" class="btn btn-primary form-submit" id="submitBtn">
+            <span id="submitText">Submit Request</span>
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="f-logo">
+        <img src="../assets/images/logo.webp" alt="Rupnidhi" onerror="this.src='https://dummyimage.com/40x40/111827/fff&text=R'">
+        Rupnidhi
+      </div>
+      <div class="f-links">
+        <a href="#features">Features</a>
+        <a href="#compliance">Compliance</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </div>
+    </div>
+    <div class="f-bottom">© 2026 Rupnidhi Customized Solutions. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+/* ─────────────────────────────────────────
+   NAV SCROLL EFFECT
+───────────────────────────────────────── */
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('nav');
+  if (window.scrollY > 10) {
+    nav.classList.add('scrolled');
+  } else {
+    nav.classList.remove('scrolled');
+  }
+});
+
+/* ─────────────────────────────────────────
+   MOBILE MENU
+───────────────────────────────────────── */
+function toggleMenu() {
+  const nav = document.getElementById('mobileNav');
+  const isOpen = nav.classList.contains('open');
+  if (isOpen) {
+    nav.classList.remove('open');
+  } else {
+    nav.classList.add('open');
+  }
+}
+function closeMenu() {
+  document.getElementById('mobileNav').classList.remove('open');
+}
+
+/* ─────────────────────────────────────────
+   FAQ ACCORDION
+───────────────────────────────────────── */
+function toggleFAQ(btn) {
+  const item = btn.parentElement;
+  const open = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!open) item.classList.add('open');
+}
+
+/* ─────────────────────────────────────────
+   CONTACT FORM (contact.php)
+───────────────────────────────────────── */
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn      = document.getElementById('submitBtn');
+  const btnText  = document.getElementById('submitText');
+  const alertBox = document.getElementById('formAlert');
+
+  alertBox.className  = 'form-alert';
+  alertBox.style.display = 'none';
+
+  const name    = document.getElementById('fname').value.trim();
+  const email   = document.getElementById('femail').value.trim();
+  const mobile  = document.getElementById('fmobile').value.trim();
+  const message = document.getElementById('fmessage').value.trim();
+
+  if (!name || !email || !mobile || !message) {
+    alertBox.className  = 'form-alert error';
+    alertBox.textContent = 'Please fill in all required fields.';
+    alertBox.style.display = 'block';
+    return;
+  }
+
+  btn.disabled = true;
+  btnText.textContent = 'Processing...';
+
+  try {
+    const res  = await fetch('contact.php', { method: 'POST', body: new FormData(this) });
+    const data = await res.json();
+    if (data.success) {
+      alertBox.className  = 'form-alert success';
+      alertBox.textContent = data.message;
+      alertBox.style.display = 'block';
+      this.reset();
+    } else {
+      alertBox.className  = 'form-alert error';
+      alertBox.textContent = data.message;
+      alertBox.style.display = 'block';
+    }
+  } catch (err) {
+    alertBox.className  = 'form-alert error';
+    alertBox.textContent = 'Network error. Please email contact@rupnidhi.com';
+    alertBox.style.display = 'block';
+  }
+
+  btn.disabled = false;
+  btnText.textContent = 'Submit Request';
+});
+</script>
+</body>
+</html>

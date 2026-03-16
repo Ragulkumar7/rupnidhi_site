@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Cloud Billing Software for Business | Rupnidhi Solutions</title>
+  <meta name="description" content="Discover powerful cloud billing software for businesses — secure, flexible, and easy to use. Automate invoicing, manage subscriptions, and grow smarter with customised software solutions." />
+  
+  <link rel="icon" type="image/png" href="../assets/favicon.png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  
+  <style>
+    /* =========================================================================
+       CLOUD GLASSMORPHISM VARIABLES
+       ========================================================================= */
+    :root {
+      --text-dark: #0B1727;
+      --text-muted: #475569;
+      --accent-blue: #3B82F6;
+      --accent-purple: #8B5CF6;
+      --accent-cyan: #06B6D4;
+      --glass-bg: rgba(255, 255, 255, 0.7);
+      --glass-border: rgba(255, 255, 255, 0.5);
+      --glass-shadow: 0 8px 32px rgba(11, 23, 39, 0.05);
+      --nav-height: 80px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    
+    body { 
+      font-family: 'Inter', sans-serif; 
+      color: var(--text-dark); 
+      line-height: 1.6; 
+      background-color: #F1F5F9;
+      overflow-x: hidden; 
+      position: relative;
+    }
+
+    /* Animated Ambient Cloud Blobs */
+    .ambient-blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      z-index: -1;
+      opacity: 0.6;
+      animation: float 20s infinite alternate;
+    }
+    .blob-1 { top: -10%; left: -10%; width: 50vw; height: 50vw; background: rgba(59, 130, 246, 0.4); }
+    .blob-2 { top: 20%; right: -10%; width: 40vw; height: 40vw; background: rgba(139, 92, 246, 0.3); animation-delay: -5s; }
+    .blob-3 { bottom: 10%; left: 20%; width: 60vw; height: 60vw; background: rgba(6, 182, 212, 0.3); animation-delay: -10s; }
+
+    @keyframes float {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(5%, 10%) scale(1.1); }
+    }
+
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    h1, h2, h3, h4 { font-family: 'Syne', sans-serif; line-height: 1.1; color: var(--text-dark); letter-spacing: -0.02em; }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 10; }
+
+    /* =========================================================================
+       GLASS NAVBAR
+       ========================================================================= */
+    .navbar {
+      position: fixed; top: 0; left: 0; width: 100%; height: var(--nav-height);
+      background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--glass-border);
+      z-index: 1000; transition: all 0.3s ease;
+    }
+    .navbar.scrolled { background: rgba(255, 255, 255, 0.85); box-shadow: var(--glass-shadow); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 100%; }
+    
+    .nav-logo { display: flex; align-items: center; gap: 10px; font-family: 'Syne', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--text-dark); }
+    .nav-logo img.logo-icon { height: 36px; width: auto; }
+    .nav-logo img.logo-name { height: 24px; width: auto; }
+    
+    .nav-links { display: flex; gap: 36px; align-items: center; }
+    .nav-links a { font-weight: 500; font-size: 0.95rem; color: var(--text-muted); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent-blue); }
+    
+    .nav-actions { display: flex; gap: 16px; align-items: center; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 28px; border-radius: 100px; font-weight: 600; font-size: 0.95rem; transition: all 0.3s ease; cursor: pointer; border: none; font-family: 'Inter', sans-serif; }
+    .btn-ghost { color: var(--text-dark); background: rgba(255,255,255,0.5); border: 1px solid var(--glass-border); backdrop-filter: blur(10px); }
+    .btn-ghost:hover { background: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+    .btn-gradient { background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple)); color: #fff; box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3); }
+    .btn-gradient:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4); }
+
+    .hamburger { display: none; background: none; border: none; font-size: 1.5rem; color: var(--text-dark); cursor: pointer; }
+
+    @media (max-width: 992px) {
+      .nav-links, .nav-actions { display: none; }
+      .hamburger { display: block; }
+    }
+
+    .mobile-drawer { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(241, 245, 249, 0.95); backdrop-filter: blur(20px); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 24px; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; z-index: 999; }
+    .mobile-drawer.open { opacity: 1; pointer-events: auto; }
+    .mobile-drawer a { font-family: 'Syne', sans-serif; font-size: 1.8rem; font-weight: 700; color: var(--text-dark); }
+    .close-btn { position: absolute; top: 30px; right: 30px; background: none; border: none; font-size: 2rem; cursor: pointer; color: var(--text-dark); }
+
+    /* =========================================================================
+       ETHEREAL HERO SECTION
+       ========================================================================= */
+    .hero {
+      padding: calc(var(--nav-height) + 100px) 0 80px;
+      text-align: center;
+    }
+
+    .hero-content { max-width: 900px; margin: 0 auto; }
+    .hero-tag { display: inline-block; font-size: 0.85rem; font-weight: 700; color: var(--accent-purple); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 24px; background: rgba(255,255,255,0.6); border: 1px solid var(--glass-border); padding: 8px 20px; border-radius: 50px; backdrop-filter: blur(10px); }
+    .hero h1 { font-size: clamp(3rem, 5vw, 5rem); margin-bottom: 24px; font-weight: 800; background: linear-gradient(135deg, var(--text-dark), #1E293B); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero p { font-size: 1.25rem; color: var(--text-muted); margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto; }
+    
+    .hero-actions { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+
+    .glass-mockup {
+      max-width: 1000px; margin: 60px auto 0;
+      background: var(--glass-bg);
+      backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+      border: 1px solid var(--glass-border);
+      border-radius: 24px;
+      padding: 12px;
+      box-shadow: 0 30px 60px rgba(11, 23, 39, 0.1);
+    }
+    .glass-mockup img { border-radius: 16px; border: 1px solid rgba(255,255,255,0.8); }
+
+    /* =========================================================================
+       STAGGERED GLASS CARDS (H2s)
+       ========================================================================= */
+    .h2-section { padding: 120px 0; }
+    
+    .glass-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+      border-radius: 24px;
+      padding: 60px;
+      box-shadow: var(--glass-shadow);
+      margin-bottom: 40px;
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      transition: transform 0.4s ease;
+    }
+    .glass-card:hover { transform: translateY(-5px); background: rgba(255,255,255,0.85); }
+    .glass-card.reverse { flex-direction: row-reverse; }
+
+    .gc-text { flex: 1; }
+    .gc-text h2 { font-size: 2.4rem; margin-bottom: 20px; line-height: 1.15; }
+    .gc-text p { font-size: 1.15rem; color: var(--text-muted); }
+    
+    .gc-icon { flex: 0.8; display: flex; justify-content: center; align-items: center; }
+    .gc-icon-inner { width: 200px; height: 200px; border-radius: 50%; background: linear-gradient(135deg, rgba(255,255,255,0.8), rgba(255,255,255,0.2)); border: 1px solid rgba(255,255,255,0.8); display: flex; align-items: center; justify-content: center; font-size: 5rem; color: var(--accent-blue); box-shadow: inset 0 0 20px rgba(255,255,255,0.5), 0 20px 40px rgba(0,0,0,0.05); }
+
+    @media (max-width: 900px) {
+      .glass-card, .glass-card.reverse { flex-direction: column; text-align: center; gap: 40px; padding: 40px 24px; }
+      .gc-icon-inner { width: 150px; height: 150px; font-size: 3.5rem; }
+    }
+
+    /* =========================================================================
+       SUB-FEATURES GRID (H3s)
+       ========================================================================= */
+    .h3-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 80px;
+    }
+
+    .h3-card {
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 40px 30px;
+      text-align: left;
+      transition: all 0.3s;
+    }
+    .h3-card:hover { background: #fff; box-shadow: var(--glass-shadow); transform: translateY(-5px); }
+
+    .h3-icon { width: 56px; height: 56px; border-radius: 16px; background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue)); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 24px; box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3); }
+    .h3-card h3 { font-size: 1.4rem; margin-bottom: 16px; }
+    .h3-card p { color: var(--text-muted); font-size: 1.05rem; line-height: 1.6; }
+
+    /* =========================================================================
+       PRICING SECTION (Adapted to Cloud Theme)
+       ========================================================================= */
+    .pricing-section { padding: 100px 0; }
+    .pricing-header { text-align: center; margin-bottom: 60px; }
+    .pricing-header h2 { font-size: 3rem; margin-bottom: 16px; }
+    
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; max-width: 1100px; margin: 0 auto; }
+    
+    .price-card { background: var(--glass-bg); backdrop-filter: blur(20px); border: 1px solid var(--glass-border); border-radius: 24px; padding: 40px; display: flex; flex-direction: column; transition: all 0.3s; }
+    .price-card:hover { background: #fff; box-shadow: var(--glass-shadow); }
+    .price-card.pro { border: 2px solid var(--accent-purple); position: relative; background: #fff; }
+    
+    .pro-badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--accent-purple); color: #fff; font-size: 0.8rem; font-weight: 700; padding: 4px 16px; border-radius: 50px; text-transform: uppercase; letter-spacing: 1px; }
+    
+    .p-name { font-family: 'Syne', sans-serif; font-size: 1.5rem; font-weight: 700; margin-bottom: 16px; color: var(--text-dark); }
+    .p-price { font-family: 'Syne', sans-serif; font-size: 3.5rem; font-weight: 800; color: var(--text-dark); margin-bottom: 8px; display: flex; align-items: baseline; gap: 4px; }
+    .p-price span { font-size: 1.1rem; color: var(--text-muted); font-weight: 500; font-family: 'Inter', sans-serif;}
+    .p-desc { color: var(--text-muted); margin-bottom: 32px; font-size: 1rem; border-bottom: 1px solid var(--glass-border); padding-bottom: 24px; }
+    
+    .p-features { flex-grow: 1; margin-bottom: 40px; }
+    .p-features li { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; font-size: 1rem; color: var(--text-dark); }
+    .p-features li i { color: var(--accent-blue); margin-top: 4px; }
+    
+    .price-card .btn { width: 100%; padding: 16px; justify-content: center; }
+
+    /* =========================================================================
+       CLEAN FAQ ACCORDION
+       ========================================================================= */
+    .faq-section { padding: 100px 0; }
+    .faq-container { max-width: 800px; margin: 0 auto; background: var(--glass-bg); backdrop-filter: blur(20px); border: 1px solid var(--glass-border); border-radius: 24px; padding: 40px; box-shadow: var(--glass-shadow); }
+    .faq-container h2 { font-size: 2.8rem; margin-bottom: 40px; text-align: center; }
+    
+    .faq-row { border-bottom: 1px solid rgba(0,0,0,0.05); padding: 24px 0; }
+    .faq-row:last-child { border-bottom: none; }
+    .faq-q { width: 100%; display: flex; justify-content: space-between; align-items: center; background: none; border: none; font-family: 'Syne', sans-serif; font-size: 1.2rem; font-weight: 700; color: var(--text-dark); cursor: pointer; text-align: left; }
+    .faq-q i { color: var(--accent-purple); transition: transform 0.3s; background: rgba(139, 92, 246, 0.1); padding: 8px; border-radius: 50%; }
+    .faq-q.open i { transform: rotate(45deg); background: var(--accent-purple); color: #fff; }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    .faq-a p { padding-top: 16px; color: var(--text-muted); font-size: 1.05rem; }
+
+    /* =========================================================================
+       GLASS CTA FORM
+       ========================================================================= */
+    .cta-section { padding: 120px 0; text-align: center; }
+    .cta-container { max-width: 600px; margin: 0 auto; }
+    .cta-container h2 { font-size: 3rem; margin-bottom: 16px; }
+    .cta-container p { color: var(--text-muted); margin-bottom: 40px; font-size: 1.15rem; }
+    
+    .signup-form { background: rgba(255,255,255,0.8); backdrop-filter: blur(20px); padding: 40px; border-radius: 24px; border: 1px solid var(--glass-border); box-shadow: 0 20px 40px rgba(0,0,0,0.05); text-align: left; }
+    .signup-form label { display: block; font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; color: var(--text-dark); }
+    .signup-form input { width: 100%; padding: 14px 16px; border: 1px solid var(--glass-border); border-radius: 12px; margin-bottom: 20px; font-family: 'Inter', sans-serif; font-size: 1rem; background: rgba(255,255,255,0.5); transition: all 0.3s; }
+    .signup-form input:focus { outline: none; border-color: var(--accent-blue); background: #fff; box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1); }
+    .signup-form button { width: 100%; padding: 16px; font-size: 1.1rem; border-radius: 12px; margin-top: 8px; }
+    
+    .form-msg { padding: 12px; border-radius: 12px; font-weight: 500; font-size: 0.95rem; text-align: center; margin-top: 16px; display: none; }
+    .form-msg.success { background: #DCFCE7; color: #065F46; display: block; border: 1px solid #34D399; }
+    .form-msg.error { background: #FEE2E2; color: #991B1B; display: block; border: 1px solid #F87171; }
+
+    /* =========================================================================
+       FOOTER
+       ========================================================================= */
+    .footer { border-top: 1px solid var(--glass-border); padding: 40px 0; background: rgba(255,255,255,0.4); backdrop-filter: blur(10px); margin-top: 40px;}
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { color: var(--text-muted); font-size: 0.95rem; font-weight: 500; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--accent-blue); }
+
+    @media (max-width: 768px) {
+      .footer-inner { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="ambient-blob blob-1"></div>
+  <div class="ambient-blob blob-2"></div>
+  <div class="ambient-blob blob-3"></div>
+
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="https://rupnidhi.com/" class="nav-logo">
+        <img src="../assets/images/logo.webp" class="logo-icon" alt="Rupnidhi" onerror="this.src='https://dummyimage.com/40x40/0B1727/fff&text=R'">
+        <img src="../assets/images/name.webp" class="logo-name" alt="Rupnidhi" onerror="this.style.display='none'">
+        <span id="nav-fallback" style="display:none">Rupnidhi</span>
+      </a>
+      
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      
+      <div class="nav-actions">
+        <a href="https://rupnidhi.com/login.php" class="btn btn-ghost">Login</a>
+        <a href="#signup" class="btn btn-gradient">Start Free Trial</a>
+      </div>
+
+      <button class="hamburger" id="hamburgerBtn"><i class="fa fa-bars"></i></button>
+    </div>
+  </nav>
+
+  <div class="mobile-drawer" id="mobileDrawer">
+    <button class="close-btn" id="closeMenuBtn"><i class="fa fa-times"></i></button>
+    <a href="#features" onclick="toggleMobileMenu()">Features</a>
+    <a href="#pricing" onclick="toggleMobileMenu()">Pricing</a>
+    <a href="#faq" onclick="toggleMobileMenu()">FAQ</a>
+    <a href="https://rupnidhi.com/login.php" class="btn btn-ghost" onclick="toggleMobileMenu()" style="border:none;">Login</a>
+    <a href="#signup" class="btn btn-gradient" onclick="toggleMobileMenu()">Start Free Trial</a>
+  </div>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <span class="hero-tag">Cloud Billing Solutions</span>
+        <h1>Smart Cloud Billing Software for Business Excellence</h1>
+        <p>Empower your enterprise with a seamless, secure, and scalable billing environment. Rupnidhi provides a comprehensive customised software experience designed to automate your financial workflows, reduce manual errors, and give you real-time insights into your business growth from anywhere in the world.</p>
+        
+        <div class="hero-actions">
+          <a href="#signup" class="btn btn-gradient">Automate Your Billing</a>
+          <a href="#features" class="btn btn-ghost">Discover Features</a>
+        </div>
+      </div>
+      
+      <div class="glass-mockup">
+        <img src="../assets/images/image copy.png" alt="Rupnidhi Cloud Dashboard" onerror="this.src='https://gogstbill.com/wp-content/uploads/2023/08/iPhone-X-1f-copy.png'">
+      </div>
+    </div>
+  </section>
+
+  <section id="features" class="h2-section">
+    <div class="container">
+      
+      <div class="glass-card">
+        <div class="gc-text">
+          <h2>Cloud Billing Software for Business Growth</h2>
+          <p>Simplify your billing and payment processes with powerful cloud tools designed for modern businesses. Enjoy automation, security, and scalability with our customised software solutions.</p>
+        </div>
+        <div class="gc-icon">
+          <div class="gc-icon-inner"><i class="fa fa-cloud-upload-alt"></i></div>
+        </div>
+      </div>
+
+      <div class="glass-card reverse">
+        <div class="gc-text">
+          <h2>Customised Software for Every Business Need</h2>
+          <p>Get billing tools tailored to your business requirements. Whether you’re a startup or an enterprise, our customised software adapts to your workflows, customer types, and pricing models.</p>
+        </div>
+        <div class="gc-icon">
+          <div class="gc-icon-inner" style="color: var(--accent-purple);"><i class="fa fa-sliders-h"></i></div>
+        </div>
+      </div>
+
+      <div class="glass-card">
+        <div class="gc-text">
+          <h2>Secure and Scalable Cloud Platform</h2>
+          <p>Built with enterprise-grade security, our cloud billing system ensures your financial data is safe. Scale effortlessly as your customer base grows — no hardware or maintenance headaches.</p>
+        </div>
+        <div class="gc-icon">
+          <div class="gc-icon-inner" style="color: var(--accent-cyan);"><i class="fa fa-shield-alt"></i></div>
+        </div>
+      </div>
+
+      <div class="h3-grid">
+        <div class="h3-card">
+          <div class="h3-icon"><i class="fa fa-desktop"></i></div>
+          <h3>User-Friendly Dashboard</h3>
+          <p>Effortlessly monitor revenue, customer activity, and billing statuses from a clear, intuitive dashboard — no technical skills required.</p>
+        </div>
+
+        <div class="h3-card">
+          <div class="h3-icon" style="background: linear-gradient(135deg, var(--accent-purple), #EC4899); box-shadow: 0 10px 20px rgba(139, 92, 246, 0.3);"><i class="fa fa-tags"></i></div>
+          <h3>Flexible Pricing & Subscriptions</h3>
+          <p>Support all pricing models — one-time, recurring, tiered, usage-based — and give your customers multiple payment options without complications.</p>
+        </div>
+
+        <div class="h3-card">
+          <div class="h3-icon" style="background: linear-gradient(135deg, #10B981, #06B6D4); box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);"><i class="fa fa-chart-pie"></i></div>
+          <h3>Analytics & Reporting Tools</h3>
+          <p>Turn billing data into insights with powerful reports. Track trends, forecast revenue, and optimise your business decisions with visual charts and downloadable summaries.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="pricing" class="pricing-section">
+    <div class="container">
+      <div class="pricing-header">
+        <h2>Transparent Cloud Pricing</h2>
+        <p style="color: var(--text-muted); font-size: 1.15rem;">Scale your business efficiently. Start with a 30-day free trial.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="price-card">
+          <div class="p-name">Starter</div>
+          <div class="p-price">₹2,499<span>/mo</span></div>
+          <div class="p-desc">Perfect for small businesses adopting cloud billing.</div>
+          <ul class="p-features">
+            <li><i class="fa fa-check-circle"></i> Customised Software Basic</li>
+            <li><i class="fa fa-check-circle"></i> Invoicing & Subscriptions</li>
+            <li><i class="fa fa-check-circle"></i> Cloud Data Backup</li>
+            <li><i class="fa fa-check-circle"></i> Standard Support</li>
+          </ul>
+          <a href="#signup" class="btn btn-ghost">Start Free Trial</a>
+        </div>
+
+        <div class="price-card pro">
+          <div class="pro-badge">Most Popular</div>
+          <div class="p-name" style="color: var(--accent-purple);">Professional</div>
+          <div class="p-price">₹8,299<span>/mo</span></div>
+          <div class="p-desc">For growing enterprises needing full automation.</div>
+          <ul class="p-features">
+            <li><i class="fa fa-check-circle"></i> Everything in Starter</li>
+            <li><i class="fa fa-check-circle"></i> Advanced Custom Workflows</li>
+            <li><i class="fa fa-check-circle"></i> Analytics & Reporting Tools</li>
+            <li><i class="fa fa-check-circle"></i> Payment Integrations</li>
+            <li><i class="fa fa-check-circle"></i> Priority 24/7 Support</li>
+          </ul>
+          <a href="#signup" class="btn btn-gradient">Start Free Trial</a>
+        </div>
+
+        <div class="price-card">
+          <div class="p-name">Enterprise</div>
+          <div class="p-price" style="font-size: 2.5rem; line-height: 1.4;">Custom</div>
+          <div class="p-desc">Tailored specifically for large scale operations.</div>
+          <ul class="p-features">
+            <li><i class="fa fa-check-circle"></i> Full API Integration</li>
+            <li><i class="fa fa-check-circle"></i> Dedicated Account Manager</li>
+            <li><i class="fa fa-check-circle"></i> Multi-branch Management</li>
+            <li><i class="fa fa-check-circle"></i> Custom Security Audits</li>
+          </ul>
+          <a href="https://rupnidhi.com/booking.html" class="btn btn-ghost">Contact Sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="faq-section">
+    <div class="container">
+      <div class="faq-container">
+        <h2>Frequently Asked Questions</h2>
+        
+        <div class="faq-row">
+          <button class="faq-q">1. What is cloud billing software? <i class="fa fa-plus"></i></button>
+          <div class="faq-a">
+            <p>Cloud billing software is an online platform that automates billing, invoicing, payment processing, and subscription management for businesses — accessible from anywhere with an internet connection.</p>
+          </div>
+        </div>
+
+        <div class="faq-row">
+          <button class="faq-q">2. How does customised software help my business? <i class="fa fa-plus"></i></button>
+          <div class="faq-a">
+            <p>Customised software adapts to your specific workflows, pricing models, and customer needs — giving you more control and better operational fit than off-the-shelf tools.</p>
+          </div>
+        </div>
+
+        <div class="faq-row">
+          <button class="faq-q">3. Is my financial data secure in the cloud? <i class="fa fa-plus"></i></button>
+          <div class="faq-a">
+            <p>Yes. Our platform uses encrypted connections, secure data storage, and regular backups to keep your billing information protected and compliant with industry standards.</p>
+          </div>
+        </div>
+
+        <div class="faq-row">
+          <button class="faq-q">4. Can I integrate this with my existing systems? <i class="fa fa-plus"></i></button>
+          <div class="faq-a">
+            <p>Absolutely. Our cloud billing software supports integration with CRMs, accounting platforms, payment gateways, and other tools to streamline your business processes.</p>
+          </div>
+        </div>
+
+        <div class="faq-row" style="border-bottom: none;">
+          <button class="faq-q">5. Can the software be tailored to my specific industry? <i class="fa fa-plus"></i></button>
+          <div class="faq-a">
+            <p>Yes, we specialize in providing customised software tweaks to ensure the interface and features align perfectly with your industry-specific requirements.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="signup" class="cta-section">
+    <div class="container cta-container">
+      <h2>Transform Your Billing</h2>
+      <p>Automate your financial workflows and scale securely in the cloud.</p>
+      
+      <div class="signup-form">
+        <form id="signup-form" onsubmit="handleSignup(event)" novalidate>
+          <input type="hidden" name="page" value="Cloud Billing Software Landing Page" />
+          
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your full name" required />
+          
+          <label for="email">Work Email</label>
+          <input type="email" id="email" name="email" placeholder="name@company.com" required />
+          
+          <label for="mobile">Phone Number</label>
+          <input type="tel" id="mobile" name="mobile" placeholder="Your contact number" required />
+          
+          <label for="password">Create Password</label>
+          <input type="password" id="password" name="password" placeholder="Must be at least 8 characters" required />
+          
+          <button type="submit" id="submit-btn" class="btn btn-gradient" style="border-radius: 12px;">Get Started Now</button>
+          <div class="form-msg" id="form-msg"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a href="https://rupnidhi.com/" class="nav-logo" style="font-size: 1.2rem;">
+        <img src="../assets/images/logo.webp" alt="Rupnidhi" style="height:24px;" onerror="this.style.display='none'">
+        Rupnidhi
+      </a>
+      <div class="footer-links">
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a href="https://rupnidhi.com/login.php">Login</a>
+      </div>
+      <div>© 2026 Rupnidhi · Cloud Software Solutions</div>
+    </div>
+  </footer>
+
+  <script>
+    // 1. Mobile Menu Toggle
+    const menuBtn = document.getElementById('hamburgerBtn');
+    const closeBtn = document.getElementById('closeMenuBtn');
+    const mobileMenu = document.getElementById('mobileDrawer');
+    
+    function toggleMobileMenu() {
+      mobileMenu.classList.toggle('open');
+      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    }
+    menuBtn.addEventListener('click', toggleMobileMenu);
+    closeBtn.addEventListener('click', toggleMobileMenu);
+
+    // 2. Sticky Navbar Glass Effect
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 20) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // 3. FAQ Accordion
+    const faqQuestions = document.querySelectorAll('.faq-q');
+    faqQuestions.forEach(q => {
+      q.addEventListener('click', function() {
+        this.classList.toggle('open');
+        const answer = this.nextElementSibling;
+        if (answer.style.maxHeight) {
+          answer.style.maxHeight = null;
+        } else {
+          answer.style.maxHeight = answer.scrollHeight + "px";
+        }
+      });
+    });
+
+    // 4. Form Submission Logic (Mailer.php)
+    async function handleSignup(e) {
+      e.preventDefault();
+      const form  = document.getElementById('signup-form');
+      const btn   = document.getElementById('submit-btn');
+      const msgEl = document.getElementById('form-msg');
+
+      // Basic Validation
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const mobile = document.getElementById('mobile').value;
+      
+      if(!name || !email || !mobile) {
+        msgEl.className = 'form-msg error';
+        msgEl.textContent = '⚠ Please fill in all required fields.';
+        return;
+      }
+
+      msgEl.className   = 'form-msg';
+      msgEl.textContent = '';
+      btn.disabled      = true;
+      btn.textContent   = 'Processing...';
+
+      try {
+        const res  = await fetch('mailer.php', { method: 'POST', body: new FormData(form) });
+        const json = await res.json();
+
+        if (json.success) {
+          msgEl.className   = 'form-msg success';
+          msgEl.textContent = '✓ ' + json.message;
+          form.reset();
+          btn.textContent      = '✓ Account Created!';
+          btn.style.background = '#10B981'; 
+          setTimeout(() => {
+            btn.textContent      = 'Get Started Now';
+            btn.style.background = '';
+            btn.disabled         = false;
+          }, 4000);
+        } else {
+          msgEl.className   = 'form-msg error';
+          msgEl.textContent = '⚠ ' + json.message;
+          btn.textContent   = 'Get Started Now';
+          btn.disabled      = false;
+        }
+      } catch {
+        msgEl.className   = 'form-msg error';
+        msgEl.textContent = '⚠ Network error. Please try again.';
+        btn.textContent   = 'Get Started Now';
+        btn.disabled      = false;
+      }
+    }
+  </script>
+
+</body>
+</html>

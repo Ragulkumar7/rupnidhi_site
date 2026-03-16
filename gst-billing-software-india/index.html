@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Best GST Billing Software in India | Rupnidhi</title>
+  <meta name="description" content="Complete GST billing software in India with fast invoicing, e-invoice support, retail billing & cloud access." />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  
+  <style>
+    /* =========================================================================
+       ROOT & RESET
+       ========================================================================= */
+    :root {
+      --brand-primary: #1a0f3d;   /* Deep Indigo */
+      --brand-secondary: #2b1867;
+      --accent-orange: #031863;   /* Conversion Orange */
+      --accent-green: #10b981;    /* Success Green */
+      --bg-light: #f8fafc;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --border-color: #e2e8f0;
+      --nav-height: 80px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--text-main); line-height: 1.6; background: #fff; overflow-x: hidden; }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /* =========================================================================
+       NAVIGATION
+       ========================================================================= */
+    .navbar {
+      position: fixed; top: 0; left: 0; width: 100%; height: var(--nav-height);
+      background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color); z-index: 1000;
+      transition: box-shadow 0.3s ease;
+    }
+    .navbar.scrolled { box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+    .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 100%; display: flex; align-items: center; justify-content: space-between; }
+    
+    .nav-logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.5rem; color: var(--brand-primary); }
+    .nav-logo img { height: 40px; }
+    
+    .nav-links { display: flex; gap: 32px; align-items: center; }
+    .nav-links a { font-weight: 600; font-size: 0.95rem; color: var(--text-main); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent-orange); }
+    
+    .nav-actions { display: flex; gap: 16px; align-items: center; }
+    .btn { padding: 12px 24px; border-radius: 8px; font-weight: 700; font-size: 0.95rem; transition: all 0.3s ease; cursor: pointer; text-align: center; border: none; display: inline-flex; justify-content: center; text-decoration: none;}
+    .btn-outline { border: 2px solid var(--border-color); color: var(--text-main); background: transparent; }
+    .btn-outline:hover { border-color: var(--brand-primary); color: var(--brand-primary); }
+    .btn-primary { background: var(--accent-orange); color: #fff; box-shadow: 0 4px 15px rgba(234, 88, 12, 0.3); }
+    .btn-primary:hover { background: #c2410c; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(234, 88, 12, 0.4); }
+
+    .hamburger { display: none; background: none; border: none; font-size: 1.5rem; color: var(--brand-primary); cursor: pointer; }
+
+    @media (max-width: 992px) {
+      .nav-links, .nav-actions { display: none; }
+      .hamburger { display: block; }
+    }
+
+    /* =========================================================================
+       MOBILE MENU
+       ========================================================================= */
+    .mobile-menu {
+      position: fixed; top: var(--nav-height); left: 0; width: 100%; background: #fff;
+      border-bottom: 1px solid var(--border-color); padding: 20px 24px;
+      display: flex; flex-direction: column; gap: 16px; transform: translateY(-150%);
+      transition: transform 0.3s ease; z-index: 999; box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    .mobile-menu.open { transform: translateY(0); }
+    .mobile-menu a { font-weight: 600; font-size: 1.1rem; padding: 10px 0; border-bottom: 1px solid var(--bg-light); }
+    .mobile-menu .btn { margin-top: 10px; }
+
+    /* =========================================================================
+       HERO SECTION
+       ========================================================================= */
+    .hero { padding: calc(var(--nav-height) + 60px) 24px 80px; background: var(--bg-light); position: relative; overflow: hidden; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .hero-inner { display: flex; align-items: center; gap: 60px; }
+    
+    .hero-content { flex: 1; max-width: 600px; }
+    .hero-badge { display: inline-block; background: rgba(16, 185, 129, 0.1); color: var(--accent-green); font-weight: 800; padding: 6px 16px; border-radius: 50px; font-size: 0.85rem; margin-bottom: 24px; text-transform: uppercase; letter-spacing: 1px; }
+    .hero h1 { font-size: clamp(2.5rem, 4vw, 3.5rem); font-weight: 800; color: var(--brand-primary); line-height: 1.15; margin-bottom: 24px; letter-spacing: -1px; }
+    .hero p { font-size: 1.15rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 32px; }
+    
+    .hero-visual { flex: 1; position: relative; }
+    .hero-visual img { width: 100%; border-radius: 16px; box-shadow: 0 30px 60px rgba(26, 15, 61, 0.15); transform: perspective(1000px) rotateY(-5deg); transition: transform 0.5s ease; border: 1px solid var(--border-color); }
+    .hero-visual img:hover { transform: perspective(1000px) rotateY(0deg); }
+
+    @media (max-width: 992px) {
+      .hero-inner { flex-direction: column; text-align: center; }
+      .hero-content { margin: 0 auto; }
+      .hero-visual img { transform: none; }
+      .hero-cta { justify-content: center; display: flex; flex-wrap: wrap; gap: 16px; }
+    }
+
+    /* =========================================================================
+       TRUST STRIP (Why Choose Us)
+       ========================================================================= */
+    .trust-strip { background: var(--brand-primary); color: #fff; padding: 40px 24px; }
+    .trust-title { text-align: center; font-size: 0.9rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 24px; }
+    .trust-grid { display: flex; justify-content: center; flex-wrap: wrap; gap: 30px 40px; }
+    .trust-item { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 1rem; }
+    .trust-item i { color: var(--accent-green); font-size: 1.2rem; }
+
+    /* =========================================================================
+       FEATURES GRID
+       ========================================================================= */
+    .section { padding: 100px 24px; }
+    .section-header { text-align: center; max-width: 700px; margin: 0 auto 60px auto; }
+    .section-header h2 { font-size: clamp(2rem, 3vw, 2.5rem); font-weight: 800; color: var(--brand-primary); margin-bottom: 16px; line-height: 1.2; }
+    
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+    .feature-card { background: #fff; border: 1px solid var(--border-color); padding: 40px 30px; border-radius: 16px; text-align: left; transition: all 0.3s ease; box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
+    .feature-card:hover { border-color: var(--brand-primary); transform: translateY(-5px); box-shadow: 0 15px 30px rgba(26, 15, 61, 0.08); }
+    .feature-icon { width: 60px; height: 60px; background: var(--bg-light); color: var(--brand-primary); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 24px; }
+    .feature-card h3 { font-size: 1.3rem; font-weight: 800; margin-bottom: 12px; color: var(--brand-primary); }
+    .feature-card p { color: var(--text-muted); font-size: 1rem; }
+
+    /* =========================================================================
+       BENEFITS (Alternating Rows)
+       ========================================================================= */
+    .benefits-section { background: var(--bg-light); }
+    .benefit-row { display: flex; align-items: center; gap: 60px; margin-bottom: 100px; }
+    .benefit-row:last-child { margin-bottom: 0; }
+    .benefit-row.reverse { flex-direction: row-reverse; }
+    
+    .br-content { flex: 1; }
+    .br-content h3 { font-size: 2.2rem; font-weight: 800; color: var(--brand-primary); margin-bottom: 20px; line-height: 1.2; }
+    .br-content p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 16px; }
+    
+    .br-visual { flex: 1; position: relative; }
+    .br-visual img { width: 100%; border-radius: 16px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); border: 1px solid var(--border-color); }
+
+    @media (max-width: 992px) {
+      .benefit-row, .benefit-row.reverse { flex-direction: column; text-align: center; gap: 40px; margin-bottom: 80px; }
+    }
+
+    /* =========================================================================
+       PRICING SECTION
+       ========================================================================= */
+    .pricing-section { background: #fff; }
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1100px; margin: 0 auto; align-items: stretch; }
+    .price-card { background: var(--bg-light); border: 1px solid var(--border-color); border-radius: 16px; padding: 40px 30px; position: relative; transition: all 0.3s ease; box-shadow: 0 4px 20px rgba(0,0,0,0.03); display: flex; flex-direction: column; }
+    .price-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(26,15,61,0.08); border-color: var(--brand-primary); background: #fff; }
+    .price-card.popular { background: #fff; border-color: var(--brand-primary); box-shadow: 0 10px 40px rgba(26,15,61,0.1); transform: scale(1.02); }
+    .price-card.popular:hover { transform: scale(1.02) translateY(-5px); }
+    .popular-badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--accent-orange); color: #fff; padding: 6px 20px; font-size: 0.85rem; font-weight: 800; border-radius: 50px; text-transform: uppercase; letter-spacing: 1px; }
+    .plan-name { font-size: 1.2rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 8px; }
+    .price-card.popular .plan-name { color: var(--brand-primary); }
+    .plan-price { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 2.8rem; font-weight: 800; color: var(--text-main); margin-bottom: 8px; display: flex; align-items: baseline; gap: 4px;}
+    .plan-price span { font-size: 1rem; font-weight: 500; color: var(--text-muted); }
+    .plan-desc { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid var(--border-color); }
+    .plan-features { list-style: none; margin-bottom: 32px; flex-grow: 1; }
+    .plan-features li { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; font-size: 0.95rem; color: var(--text-main); font-weight: 500; }
+    .plan-features li i { color: var(--accent-green); margin-top: 4px; font-size: 1.1rem; }
+    .price-card .btn { width: 100%; justify-content: center; }
+
+    /* =========================================================================
+       FAQ SECTION
+       ========================================================================= */
+    .faq-section-wrap { background: var(--bg-light); }
+    .faq-container { max-width: 800px; margin: 0 auto; }
+    .faq-item { border: 1px solid var(--border-color); border-radius: 12px; margin-bottom: 16px; overflow: hidden; background: #fff; }
+    .faq-question { width: 100%; text-align: left; padding: 20px 24px; background: none; border: none; font-size: 1.1rem; font-weight: 700; color: var(--brand-primary); cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: background 0.3s; font-family: 'Plus Jakarta Sans', sans-serif; }
+    .faq-question:hover { background: var(--bg-light); }
+    .faq-icon { font-size: 1.5rem; color: var(--text-muted); transition: transform 0.3s; }
+    .faq-question.active .faq-icon { transform: rotate(45deg); color: var(--brand-primary); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; background: #fff; }
+    .faq-answer p { padding: 0 24px 24px; color: var(--text-muted); font-size: 1rem; line-height: 1.7; }
+
+    /* =========================================================================
+       BOTTOM CTA & INLINE FORM
+       ========================================================================= */
+    .cta-section { background: var(--brand-primary); color: #fff; padding: 100px 24px; text-align: center; }
+    .cta-inner { max-width: 800px; margin: 0 auto; }
+    .cta-inner h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; margin-bottom: 24px; line-height: 1.2; }
+    .cta-inner p { font-size: 1.15rem; color: rgba(255,255,255,0.8); margin-bottom: 40px; }
+    
+    .signup-form { background: #fff; padding: 40px; border-radius: 16px; max-width: 500px; margin: 0 auto; box-shadow: 0 20px 50px rgba(0,0,0,0.3); text-align: left; }
+    .signup-form label { font-size: 0.9rem; font-weight: 700; color: var(--brand-primary); margin-bottom: 8px; display: block; }
+    .signup-form input { width: 100%; padding: 14px 16px; border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 20px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1rem; transition: border 0.3s; }
+    .signup-form input:focus { outline: none; border-color: var(--brand-primary); }
+    .signup-form button { width: 100%; padding: 16px; background: var(--accent-orange); color: #fff; font-size: 1.1rem; font-weight: 800; border: none; border-radius: 8px; cursor: pointer; transition: all 0.3s; font-family: 'Plus Jakarta Sans', sans-serif; }
+    .signup-form button:hover { background: #c2410c; }
+    .signup-form button:disabled { opacity: 0.7; cursor: not-allowed; }
+    
+    .form-msg { padding: 12px; border-radius: 8px; font-weight: 600; font-size: 0.95rem; text-align: center; margin-top: 16px; display: none; }
+    .form-msg.success { background: #d1fae5; color: #065f46; display: block; }
+    .form-msg.error { background: #fee2e2; color: #991b1b; display: block; }
+
+    /* =========================================================================
+       FOOTER
+       ========================================================================= */
+    .footer { background: #fff; padding: 40px 24px; border-top: 1px solid var(--border-color); text-align: center; color: var(--text-muted); font-size: 0.95rem; }
+    .footer-links { display: flex; justify-content: center; gap: 24px; margin-bottom: 20px; flex-wrap: wrap; }
+    .footer-links a { font-weight: 600; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--brand-primary); }
+
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <img src="./../assets/images/logo.webp" alt="Rupnidhi Logo" onerror="this.src='https://dummyimage.com/40x40/1a0f3d/fff&text=R'">
+        <img src="./../assets/images/name.webp" class="brand-name-img" alt="Rupnidhi Brand Name" onerror="this.style.display='none'">
+      </a>
+      
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#benefits">Benefits</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      
+      <div class="nav-actions">
+        <a href="https://rupnidhi.com/login.php" class="btn btn-outline">Login</a>
+        <a href="#signup" class="btn btn-primary">Start Free Trial</a>
+      </div>
+
+      <button class="hamburger" id="mobileMenuBtn"><i class="fa fa-bars"></i></button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#features" onclick="toggleMobileMenu()">Features</a>
+    <a href="#benefits" onclick="toggleMobileMenu()">Benefits</a>
+    <a href="#pricing" onclick="toggleMobileMenu()">Pricing</a>
+    <a href="#faq" onclick="toggleMobileMenu()">FAQ</a>
+    <a href="https://rupnidhi.com/login.php" class="btn btn-outline" onclick="toggleMobileMenu()">Login</a>
+    <a href="#signup" class="btn btn-primary" onclick="toggleMobileMenu()">Start Free Trial</a>
+  </div>
+
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <span class="hero-badge">#1 Billing Software in India</span>
+        <h1>Complete GST Billing Software in India for Retail & Businesses</h1>
+        <p>India’s most reliable GST billing software designed for retail shops and businesses of all sizes. Create GST-compliant invoices instantly, manage inventory with ease, track payments accurately, and simplify tax filing.</p>
+        <div class="hero-cta" style="display: flex; gap: 16px;">
+          <a href="#signup" class="btn btn-primary" style="padding: 16px 32px; font-size: 1.1rem;">Start Billing Today</a>
+          <a href="#features" class="btn btn-outline" style="padding: 16px 32px; font-size: 1.1rem;">Explore Features</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="./../assets/images/image copy 2.png" alt="Rupnidhi Dashboard" onerror="this.src='https://gogstbill.com/wp-content/uploads/2023/08/iPhone-X-1f-copy.png'">
+      </div>
+    </div>
+  </section>
+
+  <section class="trust-strip">
+    <div class="container">
+      <div class="trust-title">Why Choose Rupnidhi Billing Software?</div>
+      <div class="trust-grid">
+        <div class="trust-item"><i class="fa fa-check-circle"></i> Fully compliant GST</div>
+        <div class="trust-item"><i class="fa fa-cloud"></i> Secure cloud access</div>
+        <div class="trust-item"><i class="fa fa-desktop"></i> Easy-to-use dashboard</div>
+        <div class="trust-item"><i class="fa fa-tag"></i> Affordable pricing</div>
+        <div class="trust-item"><i class="fa fa-headset"></i> 24/7 customer support</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Smart Features of Our GST Billing Software</h2>
+        <p style="font-size: 1.15rem; color: var(--text-muted);">Everything you need to automate your billing, reduce manual effort, and grow your business faster.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fa fa-file-invoice-dollar"></i></div>
+          <h3>All-in-One Tax Compliance</h3>
+          <p>Fully automated for GST, VAT, and ZATCA to keep your business legal and completely stress-free during tax season.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fa fa-globe"></i></div>
+          <h3>Multi-Currency Billing</h3>
+          <p>Automatically converts international currencies using real-time exchange rates, perfect for global sales and exports.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fa fa-bolt"></i></div>
+          <h3>Zero-Training Interface</h3>
+          <p>A simple, user-friendly design that allows your staff to start counter billing immediately without technical help.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="benefits" class="section benefits-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Benefits of Using Cloud-Based GST Billing Software</h2>
+      </div>
+
+      <div class="benefit-row">
+        <div class="br-content">
+          <h3>Real-Time Access from Any Device</h3>
+          <p>With secure cloud connectivity, you may access your billing information at any time and from any location.</p>
+          <p>Continually track data, create invoices, and keep an eye on sales from a desktop, laptop, iPad, or smartphone without missing a beat.</p>
+        </div>
+        <div class="br-visual">
+          <img src="./../assets/images/image copy 17.png" alt="Cloud Access" onerror="this.src='https://gogstbill.com/wp-content/uploads/2023/08/iPhone-X-1f-copy.png'">
+        </div>
+      </div>
+
+      <div class="benefit-row reverse">
+        <div class="br-content">
+          <h3>Faster Billing Process</h3>
+          <p>Generate GST invoices instantly with automated tax calculations and highly streamlined counter workflows.</p>
+          <p>Reduce manual errors and serve your retail customers quickly with a barcode-integrated efficient billing system.</p>
+        </div>
+        <div class="br-visual">
+          <img src="./../assets/images/image copy 4.png" alt="Fast Billing" onerror="this.src='https://gogstbill.com/wp-content/uploads/2023/08/iPhone-X-1f-copy.png'">
+        </div>
+      </div>
+
+      <div class="benefit-row">
+        <div class="br-content">
+          <h3>Easy Tax Filing Preparation</h3>
+          <p>Simplify GST return filing with perfectly organized tax reports and automated summaries ready for your CA.</p>
+          <p>Get accurate, split data for CGST, SGST, and IGST to ensure smooth and hassle-free tax compliance every month.</p>
+        </div>
+        <div class="br-visual">
+          <img src="./../assets/images/image copy 6.png" alt="Tax Filing" onerror="this.src='https://gogstbill.com/wp-content/uploads/2023/08/iPhone-X-1f-copy.png'">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="section pricing-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Simple, Transparent Pricing</h2>
+        <p style="font-size: 1.15rem; color: var(--text-muted);">Three tiers for every stage of growth. The first 30 days are completely free — no credit card required.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="price-card">
+          <h3 class="plan-name">Starter</h3>
+          <div class="plan-price">₹2,499<span>/mo</span></div>
+          <p class="plan-desc">For small retail shops getting started with GST billing.</p>
+          <ul class="plan-features">
+            <li><i class="fa fa-check-circle"></i> Billing & Stock Management</li>
+            <li><i class="fa fa-check-circle"></i> Real-time Basic Analytics</li>
+            <li><i class="fa fa-check-circle"></i> GST-compliant Invoicing</li>
+            <li><i class="fa fa-check-circle"></i> Mobile Billing (Android/iOS)</li>
+            <li><i class="fa fa-check-circle"></i> Email Support</li>
+          </ul>
+          <a href="#signup" class="btn btn-outline">Choose Starter</a>
+        </div>
+
+        <div class="price-card popular">
+          <div class="popular-badge">Recommended</div>
+          <h3 class="plan-name">Professional</h3>
+          <div class="plan-price">₹8,299<span>/mo</span></div>
+          <p class="plan-desc">For growing businesses needing full compliance and automation.</p>
+          <ul class="plan-features">
+            <li><i class="fa fa-check-circle"></i> Everything in Starter</li>
+            <li><i class="fa fa-check-circle"></i> Full ZATCA & VAT Compliance</li>
+            <li><i class="fa fa-check-circle"></i> E-invoice & E-way Bill</li>
+            <li><i class="fa fa-check-circle"></i> Multi-Currency & Cloud Sync</li>
+            <li><i class="fa fa-check-circle"></i> Barcode / POS Integration</li>
+            <li><i class="fa fa-check-circle"></i> UPI QR on Invoices</li>
+            <li><i class="fa fa-check-circle"></i> Priority 24/7 Support</li>
+          </ul>
+          <a href="#signup" class="btn btn-primary">Go Professional</a>
+        </div>
+
+        <div class="price-card">
+          <h3 class="plan-name">Enterprise</h3>
+          <div class="plan-price">Custom</div>
+          <p class="plan-desc">For multi-branch enterprises with custom requirements.</p>
+          <ul class="plan-features">
+            <li><i class="fa fa-check-circle"></i> Full API & Headless Access</li>
+            <li><i class="fa fa-check-circle"></i> Dedicated Account Manager</li>
+            <li><i class="fa fa-check-circle"></i> Multi-branch & Multi-user</li>
+            <li><i class="fa fa-check-circle"></i> Custom Security Audits</li>
+            <li><i class="fa fa-check-circle"></i> Global Trade Logic Engine</li>
+          </ul>
+          <a href="https://rupnidhi.com/booking.html" class="btn btn-outline">Contact Sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="section faq-section-wrap">
+    <div class="container faq-container">
+      <div class="section-header">
+        <h2>Frequently Asked Questions</h2>
+      </div>
+      
+      <div class="faq-item">
+        <button class="faq-question">What type of business do you run? <span class="faq-icon">+</span></button>
+        <div class="faq-answer">
+          <p>Rupnidhi provides business software for billing, invoicing, and financial management for enterprises needing compliant and automated financial operations.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How many bills do you generate per day? <span class="faq-icon">+</span></button>
+        <div class="faq-answer">
+          <p>At Rupnidhi, we efficiently generate over 1,000 bills per day through our advanced, fast, and reliable billing software system, ensuring accuracy, GST compliance, and seamless performance for businesses of all sizes.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Which features matter most to you? <span class="faq-icon">+</span></button>
+        <div class="faq-answer">
+          <p>The features that matter most are GST-compliant invoicing, E-invoice & e-way bill support, inventory management, and mobile billing (Android/iPhone) for flexible operations. We also value customer statements & credit tracking, detailed accounting reports & GST return reports, multi-device / cloud sync, seamless barcode / POS integration, and UPI QR on invoices for fast and secure payments.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What is your approximate budget? <span class="faq-icon">+</span></button>
+        <div class="faq-answer">
+          <p>With a low to moderate budget range, we provide cost-effective pricing, GST-compliant invoicing, inventory management, mobile billing, e-invoice and e-way bill support, and comprehensive accounting reports with cloud sync and point-of-sale connectivity.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="signup" class="cta-section">
+    <div class="container">
+      <div class="cta-inner">
+        <h2>Streamline Your Business with Smart & Automated GST Billing Software</h2>
+        <p>Instantly create invoices, view real-time company data from any device, and streamline tax filing with automatic reporting with this robust cloud-based solution designed for expanding Indian businesses.</p>
+        
+        <form class="signup-form" id="signup-form" onsubmit="handleSignup(event)" novalidate>
+          <input type="hidden" name="page" value="GST Billing Software India Landing Page" />
+          
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your full name" required />
+          
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email address" required />
+          
+          <label for="mobile">Mobile Number</label>
+          <input type="tel" id="mobile" name="mobile" placeholder="Enter your 10-digit mobile number" required />
+          
+          <button type="submit" id="submit-btn">Get GST Software Now →</button>
+          <div class="form-msg" id="form-msg"></div>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="#features">Features</a>
+        <a href="#benefits">Benefits</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a href="https://rupnidhi.com/login.php">Login</a>
+        <a href="mailto:support@rupnidhi.com">Contact Support</a>
+      </div>
+      <p>© 2026 Rupnidhi · Complete GST Billing Software · Made in India 🇮🇳</p>
+    </div>
+  </footer>
+
+  <script>
+    // 1. Sticky Navbar
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 20) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // 2. Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    function toggleMobileMenu() {
+      mobileMenu.classList.toggle('open');
+    }
+    mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+
+    // 3. FAQ Accordion
+    const faqButtons = document.querySelectorAll('.faq-question');
+    faqButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        this.classList.toggle('active');
+        const answer = this.nextElementSibling;
+        if (answer.style.maxHeight) {
+          answer.style.maxHeight = null;
+        } else {
+          answer.style.maxHeight = answer.scrollHeight + "px";
+        } 
+      });
+    });
+
+    // 4. Form Submission Logic (Copied from your original code)
+    async function handleSignup(e) {
+      e.preventDefault();
+      const form  = document.getElementById('signup-form');
+      const btn   = document.getElementById('submit-btn');
+      const msgEl = document.getElementById('form-msg');
+
+      // Basic Validation
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const mobile = document.getElementById('mobile').value;
+      
+      if(!name || !email || !mobile) {
+        msgEl.className = 'form-msg error';
+        msgEl.textContent = '⚠ Please fill in all fields.';
+        return;
+      }
+
+      // Reset UI
+      msgEl.className   = 'form-msg';
+      msgEl.textContent = '';
+      btn.disabled      = true;
+      btn.textContent   = 'Sending Request...';
+
+      try {
+        const res  = await fetch('mailer.php', { method: 'POST', body: new FormData(form) });
+        const json = await res.json();
+
+        if (json.success) {
+          msgEl.className   = 'form-msg success';
+          msgEl.textContent = '✓ ' + json.message;
+          form.reset();
+          btn.textContent      = '✓ Request Submitted!';
+          btn.style.background = '#059669'; // Success Green
+          setTimeout(() => {
+            btn.textContent      = 'Get GST Software Now →';
+            btn.style.background = '';
+            btn.disabled         = false;
+          }, 4000);
+        } else {
+          msgEl.className   = 'form-msg error';
+          msgEl.textContent = '⚠ ' + json.message;
+          btn.textContent   = 'Get GST Software Now →';
+          btn.disabled      = false;
+        }
+      } catch {
+        msgEl.className   = 'form-msg error';
+        msgEl.textContent = '⚠ Network error. Please email us at support@rupnidhi.com';
+        btn.textContent   = 'Get GST Software Now →';
+        btn.disabled      = false;
+      }
+    }
+  </script>
+
+</body>
+</html>
